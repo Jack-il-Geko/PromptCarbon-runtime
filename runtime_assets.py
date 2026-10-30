@@ -3,6 +3,9 @@ import hashlib
 import json
 import os
 import shutil
+import ssl
+
+import certifi
 import tempfile
 import urllib.error
 import urllib.request
@@ -38,7 +41,7 @@ def ensure_assets(groups=("task", "reasoning", "tokenizer")):
             partial=archive.with_suffix('.partial')
             print(f"Downloading {name}: {asset['bytes']/1e6:.1f} MB",flush=True)
             try:
-                with urllib.request.urlopen(url,timeout=60) as src,partial.open('wb') as dst:
+                with urllib.request.urlopen(url,timeout=60,context=ssl.create_default_context(cafile=certifi.where())) as src,partial.open('wb') as dst:
                     shutil.copyfileobj(src,dst)
                 if digest(partial)!=asset['sha256']:raise RuntimeError('Asset checksum mismatch: '+name)
                 partial.replace(archive)
