@@ -1,0 +1,128 @@
+{
+  "schema": 1,
+  "base_url": "https://github.com/Jack-il-Geko/PromptCarbon-runtime/releases/download/runtime-v1",
+  "publication_status": "Runtime v1 assets approved by the owner for publication.",
+  "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "assets": {
+    "task": {
+      "archive": "task.zip",
+      "sha256": "cf667197305bbf5fd821217acc44666975512de2d9547c4c0567baa5e312fff3",
+      "bytes": 153915589,
+      "files": {
+        "analyser/task_classifier/strategia_BERT_Medium/model/model.safetensors": {
+          "bytes": 165576340,
+          "sha256": "9d66f7e55431840a1ce9179bd0a5357f4de68caa4cbd7320883753b0ff78c67a"
+        },
+        "analyser/task_classifier/strategia_BERT_Medium/model/tokenizer_config.json": {
+          "bytes": 1300,
+          "sha256": "e711904cac23112776b678356ccf702cf934babaa01125f698ac43bf9ad38e73"
+        },
+        "analyser/task_classifier/strategia_BERT_Medium/model/special_tokens_map.json": {
+          "bytes": 125,
+          "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3"
+        },
+        "analyser/task_classifier/strategia_BERT_Medium/model/config.json": {
+          "bytes": 3396,
+          "sha256": "13074c26656693ba32a903ecbedce26525d2da6ca02e4bfd959250b0599c8962"
+        },
+        "analyser/task_classifier/strategia_BERT_Medium/model/tokenizer.json": {
+          "bytes": 711396,
+          "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
+        },
+        "analyser/task_classifier/strategia_BERT_Medium/model/vocab.txt": {
+          "bytes": 231508,
+          "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+        }
+      }
+    },
+    "reasoning": {
+      "archive": "reasoning.zip",
+      "sha256": "cb9c2770e75f906430f7f82cda8ecce4da518a53b32b549c68b67947200d4ad3",
+      "bytes": 153859015,
+      "files": {
+        "analyser/reasoning_level_estimator/bert_medium/model/model.safetensors": {
+          "bytes": 165514780,
+          "sha256": "0b652c69ba9831656479b0f3235a11bb43be9e698dfaa1ac7bc3aefc864015df"
+        },
+        "analyser/reasoning_level_estimator/bert_medium/model/tokenizer_config.json": {
+          "bytes": 1300,
+          "sha256": "e711904cac23112776b678356ccf702cf934babaa01125f698ac43bf9ad38e73"
+        },
+        "analyser/reasoning_level_estimator/bert_medium/model/special_tokens_map.json": {
+          "bytes": 125,
+          "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3"
+        },
+        "analyser/reasoning_level_estimator/bert_medium/model/config.json": {
+          "bytes": 806,
+          "sha256": "74f9aebad5788d1d2851dcc3f2bcc6ad3affe3aa8384ad5c6516109e21aba372"
+        },
+        "analyser/reasoning_level_estimator/bert_medium/model/tokenizer.json": {
+          "bytes": 711396,
+          "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
+        },
+        "analyser/reasoning_level_estimator/bert_medium/model/vocab.txt": {
+          "bytes": 231508,
+          "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+        }
+      }
+    },
+    "constraint": {
+      "archive": "constraint.zip",
+      "sha256": "97d0df71ca944fba2d5bef34ea412f25ac6b96bb9f435d817f47a3aa2da206a5",
+      "bytes": 152905630,
+      "files": {
+        "analyser/constraint_extractor/automatic/model/model.safetensors": {
+          "bytes": 164491160,
+          "sha256": "a417cc09fc4c29502ec28867bbe60f42b971e751833281ae8eb6c0467026ba09"
+        },
+        "analyser/constraint_extractor/automatic/model/tokenizer_config.json": {
+          "bytes": 1300,
+          "sha256": "e711904cac23112776b678356ccf702cf934babaa01125f698ac43bf9ad38e73"
+        },
+        "analyser/constraint_extractor/automatic/model/special_tokens_map.json": {
+          "bytes": 125,
+          "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3"
+        },
+        "analyser/constraint_extractor/automatic/model/config.json": {
+          "bytes": 1280,
+          "sha256": "caee8ca7b2ee3f876a4a48b939f4b836de05c158ea4620a7a244ea593b756ae8"
+        },
+        "analyser/constraint_extractor/automatic/model/tokenizer.json": {
+          "bytes": 711396,
+          "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
+        },
+        "analyser/constraint_extractor/automatic/model/vocab.txt": {
+          "bytes": 231508,
+          "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+        }
+      }
+    },
+    "tokenizer": {
+      "archive": "tokenizer.zip",
+      "sha256": "ade883a70b627fb8852d6a2b2e9265900fc7abeb5bca3ffcc51cca71193e4591",
+      "bytes": 3765739,
+      "files": {
+        "assets/qwen_tokenizer/config.json": {
+          "bytes": 661,
+          "sha256": "eed00b17e22553979d090fa492e587e92885e328914c8e0b0b78f0a0d3576b3b"
+        },
+        "assets/qwen_tokenizer/tokenizer.json": {
+          "bytes": 7031645,
+          "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+        },
+        "assets/qwen_tokenizer/tokenizer_config.json": {
+          "bytes": 7305,
+          "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+        },
+        "assets/qwen_tokenizer/vocab.json": {
+          "bytes": 2776833,
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        },
+        "assets/qwen_tokenizer/merges.txt": {
+          "bytes": 1671839,
+          "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+        }
+      }
+    }
+  }
+}

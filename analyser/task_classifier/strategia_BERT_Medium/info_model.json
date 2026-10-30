@@ -1,0 +1,38 @@
+{
+  "model_id": "google/bert_uncased_L-8_H-512_A-8",
+  "revision": "53b17ea0d90728ac770dfd13fcb3abdc75e4f4bf",
+  "seed": 43,
+  "epoch": 3,
+  "configuration": {
+    "model_id": "google/bert_uncased_L-8_H-512_A-8",
+    "revision": "53b17ea0d90728ac770dfd13fcb3abdc75e4f4bf",
+    "seed": 43,
+    "max_length": 256,
+    "truncation": "head_and_tail",
+    "batch_size": 16,
+    "learning_rate": 3e-05,
+    "weight_decay": 0.01,
+    "max_epochs": 10,
+    "patience": 3,
+    "selection": "validation_macro_f1",
+    "precision": "float32",
+    "optimizer": "AdamW",
+    "attention": "eager",
+    "gradient_clip": 1.0
+  },
+  "model_files": {
+    "model.safetensors": "9d66f7e55431840a1ce9179bd0a5357f4de68caa4cbd7320883753b0ff78c67a",
+    "tokenizer_config.json": "e711904cac23112776b678356ccf702cf934babaa01125f698ac43bf9ad38e73",
+    "special_tokens_map.json": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+    "config.json": "13074c26656693ba32a903ecbedce26525d2da6ca02e4bfd959250b0599c8962",
+    "tokenizer.json": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+    "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+  },
+  "train_sha256": "7750d836a9bb7d3e3f624f263eb6c23a51c731371ea0099f6973e21bca5a0cdd",
+  "shared_dataset_sha256": "943428317308ea286456988854ce7774c746c9a4dd27ae6cf805945d92c848bc",
+  "taxonomy_sha256": "32c13e01072b0ff043cd10f3f2bc86a82a83836b490d4ad41aef9e9d240fd7d8",
+  "selection_fixed_by_user": true,
+  "test_inference_started": false,
+  "manifest_scope": "Checkpoint-selection snapshot. test_inference_started records the state at selection, not the current evaluation status.",
+  "final_evaluation_report": "reports/task_classifier/RISULTATI_FINALI_TASK_CLASSIFIER.md"
+}

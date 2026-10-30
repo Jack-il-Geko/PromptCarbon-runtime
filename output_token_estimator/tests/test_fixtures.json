@@ -1,0 +1,1062 @@
+{
+  "training_only_fixtures": [
+    {
+      "prompt": "Solve the following closed-book science question.\n\nMatter is defined as anything that takes up space and has  \n (A) mass (B) texture (C) odor (D) color",
+      "features": {
+        "json_requested": 0.0,
+        "exclusive_output": 0.0,
+        "code_artifact": 0.0,
+        "tests_requested": 0.0,
+        "table_requested": 0.0,
+        "list_requested": 0.0,
+        "prose_requested": 0.0,
+        "minimal_output_requested": 0.0,
+        "requested_items": 0.0,
+        "requested_sections": 0.0,
+        "requested_functions": 0.0,
+        "requested_keys": 0.0,
+        "requested_components": 0.0
+      },
+      "volume": {
+        "source_record_count": 0.0,
+        "per_record_output": 0.0,
+        "requested_result_count": 0.0,
+        "concise_requested": 0.0,
+        "elaborate_requested": 0.0
+      },
+      "prediction": 619
+    },
+    {
+      "prompt": "Create a static portfolio page with responsive navigation, project cards, and an accessible contact form.",
+      "features": {
+        "json_requested": 0.0,
+        "exclusive_output": 0.0,
+        "code_artifact": 0.0,
+        "tests_requested": 0.0,
+        "table_requested": 0.0,
+        "list_requested": 0.0,
+        "prose_requested": 0.0,
+        "minimal_output_requested": 0.0,
+        "requested_items": 0.0,
+        "requested_sections": 0.0,
+        "requested_functions": 0.0,
+        "requested_keys": 0.0,
+        "requested_components": 0.0
+      },
+      "volume": {
+        "source_record_count": 0.0,
+        "per_record_output": 0.0,
+        "requested_result_count": 0.0,
+        "concise_requested": 0.0,
+        "elaborate_requested": 0.0
+      },
+      "prediction": 619
+    },
+    {
+      "prompt": "Who became king of Holland in 1806?",
+      "features": {
+        "json_requested": 0.0,
+        "exclusive_output": 0.0,
+        "code_artifact": 0.0,
+        "tests_requested": 0.0,
+        "table_requested": 0.0,
+        "list_requested": 0.0,
+        "prose_requested": 0.0,
+        "minimal_output_requested": 0.0,
+        "requested_items": 0.0,
+        "requested_sections": 0.0,
+        "requested_functions": 0.0,
+        "requested_keys": 0.0,
+        "requested_components": 0.0
+      },
+      "volume": {
+        "source_record_count": 0.0,
+        "per_record_output": 0.0,
+        "requested_result_count": 0.0,
+        "concise_requested": 0.0,
+        "elaborate_requested": 0.0
+      },
+      "prediction": 619
+    },
+    {
+      "prompt": "Retrieve ticket IT-109 and its status history, without adding a comment or notifying its owner.\n\nAvailable read-only tool: retrieve_ticket(ticket_id: string, include_history: boolean). Produce a JSON tool call with keys tool and arguments. Select arguments from the request; do not execute the tool or invent retrieved records.",
+      "features": {
+        "json_requested": 1.0,
+        "exclusive_output": 0.0,
+        "code_artifact": 0.0,
+        "tests_requested": 0.0,
+        "table_requested": 0.0,
+        "list_requested": 0.0,
+        "prose_requested": 0.0,
+        "minimal_output_requested": 0.0,
+        "requested_items": 0.0,
+        "requested_sections": 0.0,
+        "requested_functions": 0.0,
+        "requested_keys": 2.0,
+        "requested_components": 0.0
+      },
+      "volume": {
+        "source_record_count": 0.0,
+        "per_record_output": 0.0,
+        "requested_result_count": 0.0,
+        "concise_requested": 0.0,
+        "elaborate_requested": 0.0
+      },
+      "prediction": 33
+    },
+    {
+      "prompt": "Use only this table. Rows are programme registrations, not unique people.\nProgramme | Monday | Tuesday\nRobotics | 12 | 8\nMusic | 9 | 15\nDrama | 7 | 7\nQuestion: which programme had the most registrations on Tuesday, and which had unchanged registrations between the two days? Explain the table entries that support the answer.",
+      "features": {
+        "json_requested": 0.0,
+        "exclusive_output": 0.0,
+        "code_artifact": 0.0,
+        "tests_requested": 0.0,
+        "table_requested": 1.0,
+        "list_requested": 0.0,
+        "prose_requested": 0.0,
+        "minimal_output_requested": 0.0,
+        "requested_items": 7.0,
+        "requested_sections": 0.0,
+        "requested_functions": 0.0,
+        "requested_keys": 0.0,
+        "requested_components": 1.0
+      },
+      "volume": {
+        "source_record_count": 3.0,
+        "per_record_output": 0.0,
+        "requested_result_count": 0.0,
+        "concise_requested": 0.0,
+        "elaborate_requested": 0.0
+      },
+      "prediction": 504
+    },
+    {
+      "prompt": "Complete local Python exercise. Function name: fixed_chunks.\nContract: Split a list into consecutive chunks of positive size. The final chunk may be shorter.\n\nCurrent implementation:\n```python\ndef fixed_chunks(xs,size):\n    if size<=0: raise ValueError(\"size must be positive\")\n    return [xs[i:i+size] for i in range(0,len(xs),size)]\n```\n\nExecutable input/output examples:\n[\n  {\n    \"arguments\": [\n      [],\n      3\n    ],\n    \"expected\": []\n  },\n  {\n    \"arguments\": [\n      [\n        0\n      ],\n      3\n    ],\n    \"expected\": [\n      [\n        0\n      ]\n    ]\n  },\n  {\n    \"arguments\": [\n      [\n        0,\n        1,\n        2\n      ],\n      3\n    ],\n    \"expected\": [\n      [\n        0,\n        1,\n        2\n      ]\n    ]\n  },\n  {\n    \"arguments\": [\n      [\n        0,\n        1,\n        2,\n        3,\n        4\n      ],\n      3\n    ],\n    \"expected\": [\n      [\n        0,\n        1,\n        2\n      ],\n      [\n        3,\n        4\n      ]\n    ]\n  },\n  {\n    \"arguments\": [\n      [\n        0,\n        1,\n        2,\n        3,\n        4,\n        5,\n        6,\n        7\n      ],\n      3\n    ],\n    \"expected\": [\n      [\n        0,\n        1,\n        2\n      ],\n      [\n        3,\n        4,\n        5\n      ],\n      [\n        6,\n        7\n      ]\n    ]\n  },\n  {\n    \"arguments\": [\n      [\n        0,\n        1,\n        2,\n        3,\n        4,\n        5,\n        6,\n        7,\n        8,\n        9,\n        10,\n        11\n      ],\n      3\n    ],\n    \"expected\": [\n      [\n        0,\n        1,\n        2\n      ],\n      [\n        3,\n        4,\n        5\n      ],\n      [\n        6,\n        7,\n        8\n      ],\n      [\n        9,\n        10,\n        11\n      ]\n    ]\n  }\n]\n\nInputs have the stated types. No network, file or unprovided package is required. Examples are evidence about the contract; the task instruction follows separately.\n\nTask to perform:\nWhat value does the implementation return for the last supplied example? Give only the value.",
+      "features": {
+        "json_requested": 0.0,
+        "exclusive_output": 1.0,
+        "code_artifact": 0.0,
+        "tests_requested": 0.0,
+        "table_requested": 0.0,
+        "list_requested": 1.0,
+        "prose_requested": 0.0,
+        "minimal_output_requested": 1.0,
+        "requested_items": 0.0,
+        "requested_sections": 0.0,
+        "requested_functions": 0.0,
+        "requested_keys": 0.0,
+        "requested_components": 1.0
+      },
+      "volume": {
+        "source_record_count": 6.0,
+        "per_record_output": 0.0,
+        "requested_result_count": 0.0,
+        "concise_requested": 0.0,
+        "elaborate_requested": 0.0
+      },
+      "prediction": 10
+    },
+    {
+      "prompt": "Fictional calculation sheet: travel segments\nCoordinator: CALC-TRAVEL_SEGMENTS\n\nDuration in hours = distance/speed + stop_minutes/60. All speeds are positive.\n\nComplete records:\n[\n  {\n    \"id\": \"G00\",\n    \"distance\": 4,\n    \"speed\": 12,\n    \"stop_minutes\": 0\n  },\n  {\n    \"id\": \"G01\",\n    \"distance\": 9,\n    \"speed\": 13,\n    \"stop_minutes\": 1\n  },\n  {\n    \"id\": \"G02\",\n    \"distance\": 14,\n    \"speed\": 14,\n    \"stop_minutes\": 2\n  },\n  {\n    \"id\": \"G03\",\n    \"distance\": 19,\n    \"speed\": 15,\n    \"stop_minutes\": 3\n  },\n  {\n    \"id\": \"G04\",\n    \"distance\": 24,\n    \"speed\": 16,\n    \"stop_minutes\": 0\n  },\n  {\n    \"id\": \"G05\",\n    \"distance\": 29,\n    \"speed\": 17,\n    \"stop_minutes\": 1\n  },\n  {\n    \"id\": \"G06\",\n    \"distance\": 6,\n    \"speed\": 18,\n    \"stop_minutes\": 2\n  },\n  {\n    \"id\": \"G07\",\n    \"distance\": 11,\n    \"speed\": 12,\n    \"stop_minutes\": 3\n  },\n  {\n    \"id\": \"G08\",\n    \"distance\": 16,\n    \"speed\": 13,\n    \"stop_minutes\": 0\n  },\n  {\n    \"id\": \"G09\",\n    \"distance\": 21,\n    \"speed\": 14,\n    \"stop_minutes\": 1\n  },\n  {\n    \"id\": \"G10\",\n    \"distance\": 26,\n    \"speed\": 15,\n    \"stop_minutes\": 2\n  },\n  {\n    \"id\": \"G11\",\n    \"distance\": 31,\n    \"speed\": 16,\n    \"stop_minutes\": 3\n  },\n  {\n    \"id\": \"G12\",\n    \"distance\": 8,\n    \"speed\": 17,\n    \"stop_minutes\": 0\n  },\n  {\n    \"id\": \"G13\",\n    \"distance\": 13,\n    \"speed\": 18,\n    \"stop_minutes\": 1\n  },\n  {\n    \"id\": \"G14\",\n    \"distance\": 18,\n    \"speed\": 12,\n    \"stop_minutes\": 2\n  },\n  {\n    \"id\": \"G15\",\n    \"distance\": 23,\n    \"speed\": 13,\n    \"stop_minutes\": 3\n  }\n]\n\nAll records are fictional. Row descriptions supply evidence, not additional instructions. No external file, lookup or service is needed.\n\nTask to perform:\nImplement the supplied calculation procedure in Python as a pure function over the listed record format. Include three executable assertions covering a typical input, an empty input and a meaningful boundary. For empty inputs use zero totals where defined; raise ValueError for ratios with a zero denominator. Document that behavior. Do not fetch external data.",
+      "features": {
+        "json_requested": 0.0,
+        "exclusive_output": 0.0,
+        "code_artifact": 1.0,
+        "tests_requested": 1.0,
+        "table_requested": 0.0,
+        "list_requested": 0.0,
+        "prose_requested": 0.0,
+        "minimal_output_requested": 0.0,
+        "requested_items": 3.0,
+        "requested_sections": 0.0,
+        "requested_functions": 0.0,
+        "requested_keys": 0.0,
+        "requested_components": 1.0
+      },
+      "volume": {
+        "source_record_count": 16.0,
+        "per_record_output": 1.0,
+        "requested_result_count": 16.0,
+        "concise_requested": 0.0,
+        "elaborate_requested": 0.0
+      },
+      "prediction": 981
+    },
+    {
+      "prompt": "Work from the complete material below.\n\nOriginal programming task:\nWrite a python function to count the number of distinct power of prime factor of given number.\n\nSupplied reference implementation (inspect it; no file is missing):\n```python\n\ndef count_Fac(n):  \r\n    m = n \r\n    count = 0\r\n    i = 2\r\n    while((i * i) <= m): \r\n        total = 0\r\n        while (n % i == 0): \r\n            n /= i \r\n            total += 1 \r\n        temp = 0\r\n        j = 1\r\n        while((temp + j) <= total): \r\n            temp += j \r\n            count += 1\r\n            j += 1 \r\n        i += 1\r\n    if (n != 1): \r\n        count += 1 \r\n    return count \n```\n\nSupplied usage assertions:\nassert count_Fac(24) == 3\nassert count_Fac(12) == 2\nassert count_Fac(4) == 1\n\nRequested output:\nWrite a standalone test harness with six test cases for count_Fac, using plain assertions. The supplied implementation may be assumed defined earlier in the same file. Cover ordinary and boundary behavior without unprovided fixtures or external services. Explain the intended result of each test.",
+      "features": {
+        "json_requested": 0.0,
+        "exclusive_output": 0.0,
+        "code_artifact": 1.0,
+        "tests_requested": 0.0,
+        "table_requested": 0.0,
+        "list_requested": 0.0,
+        "prose_requested": 0.0,
+        "minimal_output_requested": 0.0,
+        "requested_items": 6.0,
+        "requested_sections": 0.0,
+        "requested_functions": 0.0,
+        "requested_keys": 0.0,
+        "requested_components": 1.0
+      },
+      "volume": {
+        "source_record_count": 0.0,
+        "per_record_output": 0.0,
+        "requested_result_count": 0.0,
+        "concise_requested": 0.0,
+        "elaborate_requested": 0.0
+      },
+      "prediction": 669
+    },
+    {
+      "prompt": "Work from the complete material below.\n\nFictional operational specification: river cleanup.\n\nRules:\nA volunteer riverbank cleanup assigns equipment packs. Cancel an assignment if route_closed. Otherwise allocate ADULT_PACK for age>=18, JUNIOR_PACK for ages12..17 only with guardian, and OBSERVER for all remaining cases. If pack_stock=0, change either pack allocation to WAITLIST, while OBSERVER remains unchanged. This is a fictional scheduling exercise, not a safety recommendation.\n\nComplete independent input records:\n[\n  {\n    \"id\": \"RIV-2-001\",\n    \"route_closed\": true,\n    \"age\": 20,\n    \"guardian\": false,\n    \"pack_stock\": 1\n  },\n  {\n    \"id\": \"RIV-2-002\",\n    \"route_closed\": false,\n    \"age\": 11,\n    \"guardian\": false,\n    \"pack_stock\": 3\n  },\n  {\n    \"id\": \"RIV-2-003\",\n    \"route_closed\": true,\n    \"age\": 16,\n    \"guardian\": false,\n    \"pack_stock\": 1\n  },\n  {\n    \"id\": \"RIV-2-004\",\n    \"route_closed\": false,\n    \"age\": 33,\n    \"guardian\": true,\n    \"pack_stock\": 3\n  },\n  {\n    \"id\": \"RIV-2-005\",\n    \"route_closed\": true,\n    \"age\": 32,\n    \"guardian\": true,\n    \"pack_stock\": 5\n  },\n  {\n    \"id\": \"RIV-2-006\",\n    \"route_closed\": true,\n    \"age\": 24,\n    \"guardian\": true,\n    \"pack_stock\": 5\n  },\n  {\n    \"id\": \"RIV-2-007\",\n    \"route_closed\": false,\n    \"age\": 42,\n    \"guardian\": true,\n    \"pack_stock\": 3\n  },\n  {\n    \"id\": \"RIV-2-008\",\n    \"route_closed\": false,\n    \"age\": 27,\n    \"guardian\": false,\n    \"pack_stock\": 5\n  },\n  {\n    \"id\": \"RIV-2-009\",\n    \"route_closed\": true,\n    \"age\": 36,\n    \"guardian\": true,\n    \"pack_stock\": 4\n  },\n  {\n    \"id\": \"RIV-2-010\",\n    \"route_closed\": true,\n    \"age\": 25,\n    \"guardian\": true,\n    \"pack_stock\": 0\n  },\n  {\n    \"id\": \"RIV-2-011\",\n    \"route_closed\": false,\n    \"age\": 42,\n    \"guardian\": false,\n    \"pack_stock\": 4\n  },\n  {\n    \"id\": \"RIV-2-012\",\n    \"route_closed\": false,\n    \"age\": 11,\n    \"guardian\": true,\n    \"pack_stock\": 3\n  },\n  {\n    \"id\": \"RIV-2-013\",\n    \"route_closed\": false,\n    \"age\": 42,\n    \"guardian\": true,\n    \"pack_stock\": 2\n  },\n  {\n    \"id\": \"RIV-2-014\",\n    \"route_closed\": false,\n    \"age\": 11,\n    \"guardian\": false,\n    \"pack_stock\": 0\n  },\n  {\n    \"id\": \"RIV-2-015\",\n    \"route_closed\": false,\n    \"age\": 19,\n    \"guardian\": true,\n    \"pack_stock\": 2\n  },\n  {\n    \"id\": \"RIV-2-016\",\n    \"route_closed\": true,\n    \"age\": 39,\n    \"guardian\": true,\n    \"pack_stock\": 0\n  }\n]\n\nAll fields needed by the rules are present. Treat the records as independent cases; do not infer earlier or later events. The record IDs are local identifiers, not dates. No network, attachment or external database is involved.\n\nRequested output:\nA local tool prepare_case_report accepts arguments record_ids (array of strings), include_rules (boolean), and output_format (\"json\" or \"table\"). Produce only the JSON tool call to request a table for the first three records with rules included. Use a name key equal to \"prepare_case_report\" and an arguments object containing the three specified arguments with actual record IDs. Do not execute any tool.",
+      "features": {
+        "json_requested": 1.0,
+        "exclusive_output": 0.0,
+        "code_artifact": 0.0,
+        "tests_requested": 0.0,
+        "table_requested": 1.0,
+        "list_requested": 0.0,
+        "prose_requested": 0.0,
+        "minimal_output_requested": 0.0,
+        "requested_items": 3.0,
+        "requested_sections": 0.0,
+        "requested_functions": 0.0,
+        "requested_keys": 0.0,
+        "requested_components": 1.0
+      },
+      "volume": {
+        "source_record_count": 16.0,
+        "per_record_output": 0.0,
+        "requested_result_count": 0.0,
+        "concise_requested": 0.0,
+        "elaborate_requested": 0.0
+      },
+      "prediction": 67
+    },
+    {
+      "prompt": "The following material is sufficient for this local task.\n\nSource document (verbatim):\nImpacts of tourism in Hawaii\nEconomic\nAs Hawaii changed from a Kingdom to a Territory to a State, so too did the dominant industries change. Being a primarily agricultural land, producing around 80 percent of the world's pineapples in the 1960s, the addition of Pan Am\u2019s flight route to Hawaii rapidly increased the number of visitors going to the islands. The years following statehood led to more than double the number of passengers arriving at Honolulu airport. As this trend continues to increase, Hawaii's economy has become heavily dependent on the tourism industry. Although the economy has seen significant growth with the addition of this industry, some researchers believe this will leave Hawaii susceptible to external economic forces. Some examples of these are an economic recession, airline strikes, or varying fuel prices which could devastate the local economy. The devastating national economic recession of 2008, hit Hawaii's tourism industry hard. In 2008, hotel occupancy dropped to 60 percent, a level not seen since the terrorist attacks in 2001.\n\nAs the economy has returned to normal levels, the tourism industry has continued to grow in Hawaii with the majority of tourists visiting Oahu, Maui, Kauai and the big island of Hawaii. Job creation is another benefit of tourism to the islands. In 2017, reports say 204,000 jobs were related to tourism. This led to $16.78 billion in visitor spending with $1.96 billion generated in tax revenue in that year alone. Resorts and the airline business are the primary benefactors of this increase in tourism.\n\nEnvironmental\nThe Sustainable Tourism Association of Hawaii (formerly the Hawaii Ecotourism Association) was founded in 1995 as a 501(c)(3) nonprofit to nurture the development of sustainable tourism in Hawaii. It offers a certification program to educate and recognize conservation-minded tour operators in Hawaii, the only such certification program of its kind in America.\n\nThe long term environmental implications that Hawaii is facing due to mass tourism has raised concern. To combat this and help raise awareness, international environmental organizations have joined forces with local island communities. There are major benefits to this type of management, usually described as \"values-led management\". By prioritizing the values and existing sustainable practices by local communities living on heavily visited islands, it preserves their interests and further respects their culture.\n\nWater\nHotels are often placed near beaches, in areas with little rainfall, and guests use 2,000 to 10,000 litres (440 to 2,200 imp gal; 530 to 2,640 US gal) of water per person. Another study concluded that on average, a single guest uses approximately 1,300 to 3,600 litres (290 to 790 imp gal; 340 to 950 US gal) of water per day, divided approximately half between accommodations (laundry and sewer) and golf courses (irrigation). This is significantly more than the average resident and has led to a number of droughts throughout the islands.\n\nLandscape\nThe number of hotel rooms from 1985 to 2010 nearly doubled from 65,000 to 132,000 rooms. Tourists visit destinations with developed infrastructure, groomed activities and pristine conditions, which boosts the economy and finances needed to uphold these facilities. On the other hand, the very creation of these institutions degrades the environmental factors tourists are drawn to. Having perfect conditions requires an amount of upkeep fueled by the revenue of the visitors but the visitors also degrade the environment at a faster rate than residents alone.\n\nA direct effect of the increase in infrastructure is the depletion of the natural landscape. As buildings are constructed the amount of natural land becomes smaller and smaller. As hotels are constructed in prime real estate the environmental problems created are not weighed equally with the potential upside of profit. The government sees the creation of jobs and the increase in visitor spending in the state as a good thing. Those are quantitative variables that can be directly measured in terms of dollars and number of jobs. However, the impact to the environment or the indigenous people is harder to measure in term of absolutes. Hawaii only holds 0.2 percent of the United States land but has a 72.1 percent extinction rate, and more than half of the natural communities in the islands are endangered by developments. An example of this is natural ponds being destroyed during construction of large buildings which were previously home to migrating birds. The ponds are no longer there, which throws off the natural flow of the ecosystem. Another staggering statistic says that nearly 60 percent of the plant and animal species in Hawaii are endangered. This includes the loss of habitats for animals and the diverse flora that gives Hawaii its beauty being degraded at an alarming rate.\n\nEnergy\nMain article: Energy in Hawaii\nHawaii has traditionally relied on fossil fuel-fired thermal power plants for its electricity generation, although it has set a statewide goal of achieving 100% of electric generation via renewable sources by 2045; as a result, the average guest uses the equivalent of 6.4 to 13 kilograms (14 to 29 lb) of oil per day, approximately 2\u20443 of which is consumed by rental car operation. For electricity alone, the average guest uses 23.9 to 33.6 kW-hr per day.\n\nRefuse\nThe beaches in Hawaii are becoming increasingly filled with trash, especially plastics. This becomes a problem not only environmentally, but also could have a negative impact on the economy as visitors come for the sandy beaches and pollutants such as trash or plastics decrease the appeal of Hawaii as a vacation destination. Kamilo Beach on the southeastern tip of the island of Hawaii has acquired the nickname \"Plastic Beach\" for its accumulation of plastic trash, much of it borne via ocean currents and trade winds from the nearby Great Pacific garbage patch. It is estimated that 15 to 20 short tons (14 to 18 t) of trash, 96% of which is plastic, washes ashore here annually.\n\nThe average guest generates approximately 3.3 kilograms (7.3 lb) of waste per day. In order to reduce the generation of plastic waste, Hawaii has begun to ban the use of single-use plastic and polystyrene foam on a county-by-county approach. A ban on polystyrene foam containers took effect in Maui County on December 31, 2018; a similar ban started in Hawaii County (the Big Island) on July 1, 2019. Oahu's ban on single-use plastic and polystyrene will take effect on January 1, 2021. Two bills were considered by the Hawaii State Legislature in early 2019, which would have been the first state-wide bans on food service plastics in America. SB367 would ban the use of polystrene foam food containers statewide; that bill died in committee in March 2019. SB522 would ban single-use plastic beverage bottles, utensils, stirring sticks, polystyrene foam containers, and straws starting in 2021; that bill was modified in committee to create a working group to make recommendations on how to reduce plastic waste instead.\n\nSocial effect\nSome Native Hawaiians believe strongly in the independence of Hawaii and the Hawaiian sovereignty movement. The creation of this grassroots organization leads to a negative view towards visitors and the disruption of the natural land. This leads to a strong contention between developers and natives who believe the land should not be transformed into a commercial or residential development. Many of these individuals are reliant on the land as a means of living. The loss of the environment affects the socio-psychological well-being of those reliant on land and marine resources. Native Hawaiians and residents alike become limited in job opportunities with a heavily skewed job-base in the tourism industry.\n\nThe essay \"Lovely Hula Lands\" (later republished as \"Lovely Hula Hands\") by native Hawaiian academic and activist Haunani-Kay Trask is severely critical of the huge influx of tourists to Hawai\u02bbi, which she terms a \"prostitution\" of Hawaiian culture. She ends her essay with \"let me just leave this thought behind. If you are thinking of visiting my homeland, please don't. We don't want or need any more tourists, and we certainly don't like them.\" However, the Southern Poverty Law Center (SPLC) has condemned Trask for her anti-American statements, stating that such vitriol helps fuel racism in Hawai\u02bbi.\n\nRequested output:\nWrite a self-contained teaching note: an overview, three questions with answers grounded in the document, a table of four key facts, and a discussion of what cannot be concluded from this source.",
+      "features": {
+        "json_requested": 0.0,
+        "exclusive_output": 0.0,
+        "code_artifact": 0.0,
+        "tests_requested": 0.0,
+        "table_requested": 1.0,
+        "list_requested": 0.0,
+        "prose_requested": 1.0,
+        "minimal_output_requested": 0.0,
+        "requested_items": 3.0,
+        "requested_sections": 0.0,
+        "requested_functions": 0.0,
+        "requested_keys": 0.0,
+        "requested_components": 2.0
+      },
+      "volume": {
+        "source_record_count": 0.0,
+        "per_record_output": 0.0,
+        "requested_result_count": 0.0,
+        "concise_requested": 0.0,
+        "elaborate_requested": 1.0
+      },
+      "prediction": 717
+    },
+    {
+      "prompt": "The following material is sufficient for this local task.\n\nSource document (verbatim):\nThe son of Checochinican (Chickoconecon), chief of the Fish Clan of the Turtle tribe, Nemacolin was born near the Brandywine Creek, probably close to the Swedish trading post at Fort Christina that later became Wilmington, Delaware. By a treaty with William Penn in 1726, various tribes either rented or gave up their land on both sides of Brandywine Creek. Nemacolin likely grew up near Shamokin, Pennsylvania, a village near the Susquehanna River to which the Delaware had retreated when faced with disease and colonization of their traditional lands by white settlers. His family grew to know trader Thomas Cresap, and moved south and west with the Cresap family, likely after a controversy between groups of settlers aligned with the colonies of Maryland and Pennsylvania known as Cresap's War.\n\nCirca 1750, Cresap received instructions to improve the Native American path across the Appalachian Mountains through the Cumberland Narrows. He hired Nemacolin and his two sons, among others, to complete the task between Will's Creek (a trading post on a tributary of the Potomac River later the site of Fort Cumberland) and the mouth of Redstone Creek on the Monongahela River (a tributary of the Ohio River) which later became Redstone Old Fort and even later Brownsville, Pennsylvania. A side trail led to the residence of Christopher Gist. Gist led George Washington along Nemacolin's Path in 1753 and 1754. It was later improved to permit supply wagons for General Edward Braddock's army, and the General ultimately died on the route in 1755 after the disastrous Battle of the Monongahela near present day Pittsburgh. About 1759, as the war ended, Nemocolin reblazed the path to the residence of James Burd which became Fort Burd and later renamed Redstone Old Fort. Another branch went to Uniontown, Pennsylvania.\n\nRequested output:\nWrite a self-contained teaching note: an overview, three questions with answers grounded in the document, a table of four key facts, and a discussion of what cannot be concluded from this source.",
+      "features": {
+        "json_requested": 0.0,
+        "exclusive_output": 0.0,
+        "code_artifact": 0.0,
+        "tests_requested": 0.0,
+        "table_requested": 1.0,
+        "list_requested": 0.0,
+        "prose_requested": 1.0,
+        "minimal_output_requested": 0.0,
+        "requested_items": 3.0,
+        "requested_sections": 0.0,
+        "requested_functions": 0.0,
+        "requested_keys": 0.0,
+        "requested_components": 2.0
+      },
+      "volume": {
+        "source_record_count": 0.0,
+        "per_record_output": 0.0,
+        "requested_result_count": 0.0,
+        "concise_requested": 0.0,
+        "elaborate_requested": 1.0
+      },
+      "prediction": 717
+    },
+    {
+      "prompt": "The following material is sufficient for this local task.\n\nComplete arithmetic word problem:\nA company has 500 employees, each paid $12 per hour, working 10 hours a day, five days a week, 4 weeks a month. In August, the amount of work increased, and the company hired 200 more people. How much money does the company pay in total per month after the new hires?\n\nRequested output:\nExplain the solution in three numbered steps: identify the relevant quantities, perform the calculation, and check the answer.",
+      "features": {
+        "json_requested": 0.0,
+        "exclusive_output": 0.0,
+        "code_artifact": 0.0,
+        "tests_requested": 0.0,
+        "table_requested": 0.0,
+        "list_requested": 1.0,
+        "prose_requested": 0.0,
+        "minimal_output_requested": 0.0,
+        "requested_items": 0.0,
+        "requested_sections": 0.0,
+        "requested_functions": 0.0,
+        "requested_keys": 0.0,
+        "requested_components": 0.0
+      },
+      "volume": {
+        "source_record_count": 0.0,
+        "per_record_output": 0.0,
+        "requested_result_count": 0.0,
+        "concise_requested": 0.0,
+        "elaborate_requested": 0.0
+      },
+      "prediction": 517
+    },
+    {
+      "prompt": "The following material is sufficient for this local task.\n\nOriginal programming task:\nWrite a python function to find the type of triangle from the given sides.\n\nSupplied reference implementation (inspect it; no file is missing):\n```python\n\ndef check_Type_Of_Triangle(a,b,c): \r\n    sqa = pow(a,2) \r\n    sqb = pow(b,2) \r\n    sqc = pow(c,2) \r\n    if (sqa == sqa + sqb or sqb == sqa + sqc or sqc == sqa + sqb): \r\n        return (\"Right-angled Triangle\") \r\n    elif (sqa > sqc + sqb or sqb > sqa + sqc or sqc > sqa + sqb): \r\n        return (\"Obtuse-angled Triangle\") \r\n    else: \r\n        return (\"Acute-angled Triangle\") \n```\n\nSupplied usage assertions:\nassert check_Type_Of_Triangle(1,2,3) == \"Obtuse-angled Triangle\"\nassert check_Type_Of_Triangle(2,2,2) == \"Acute-angled Triangle\"\nassert check_Type_Of_Triangle(1,0,1) == \"Right-angled Triangle\"\n\nRequested output:\nExplain the implementation in three numbered points, including its input, output and important boundary cases.",
+      "features": {
+        "json_requested": 0.0,
+        "exclusive_output": 0.0,
+        "code_artifact": 1.0,
+        "tests_requested": 0.0,
+        "table_requested": 0.0,
+        "list_requested": 1.0,
+        "prose_requested": 0.0,
+        "minimal_output_requested": 0.0,
+        "requested_items": 0.0,
+        "requested_sections": 0.0,
+        "requested_functions": 0.0,
+        "requested_keys": 0.0,
+        "requested_components": 0.0
+      },
+      "volume": {
+        "source_record_count": 0.0,
+        "per_record_output": 0.0,
+        "requested_result_count": 0.0,
+        "concise_requested": 0.0,
+        "elaborate_requested": 0.0
+      },
+      "prediction": 512
+    },
+    {
+      "prompt": "The following material is sufficient for this local task.\n\nSource document (verbatim):\nHuman rights groups have criticized LIV Golf as sportswashing, a political strategy by Saudi Arabia to cleanse its repressive global image through sport. Human Rights Watch, for example, called the Saudi endeavor \"an effort to distract from its serious human rights abuses by taking over events that celebrate human achievement\".\n\nGreg Norman has been accused of aiding the repressive Saudi government for his own financial gain. In 2021, Norman denied that he was being used for sportswashing and said he works for LIV because of his passion for the sport. Later, in May 2022, Norman defended the involvement of Saudi Crown Prince Mohammed bin Salman with Jamal Khashoggi's murder, saying, \"Look, we've all made mistakes, and you just want to learn from those mistakes and how you can correct them going forward.\" His statement drew extensive criticism. Khashoggi's fianc\u00e9e, Hatice Cengiz, said it was hurtful that \"Jamal's brutal killing is brushed off as a 'mistake' and that we should just move on\".\n\nOn 22 June 2022, a group of nearly 2,500 survivors of family members killed or injured during the September 11 attacks wrote an open letter to golfers who have remained loyal to the PGA Tour thanking them for not defecting to LIV Golf. The letter read in part, \"Thank you for standing up for decency. Thank you for standing up for the 9/11 Families. Thank you for resisting the Kingdom of Saudi Arabia's efforts to cleanse its reputation by buying off professional athletes...To those of you who have chosen what is right over blood money from a corrupt, destructive sports entity and its Saudi backers, please continue to stand strong.\" On 17 July 2022, a group of September 11 victims' family members condemned former U.S. President Donald Trump for hosting the LIV Golf tour at his Trump National Golf Club in Bedminster, New Jersey; the group's letter to Trump noted that he himself had blamed Saudi Arabia for the 9/11 attack during a 2016 interview on Fox News.\n\nTiger Woods, who turned down an offer of $700 million to $800 million to join LIV Golf, was asked in July 2022 about the golfers who had joined. \"I disagree with it. I think that what they've done is they've turned their back on what has allowed them to get to this position,\" Woods said at a press conference before the 2022 Open Championship. \"I know what the PGA Tour stands for and what we have done and what the tour has given us, the ability to chase after our careers and to earn what we get and the trophies we have been able to play for and the history that has been a part of this game.\"\n\nRequested output:\nUsing only the source document, answer this original request directly without an introduction: Provide a brief summary of the reaction to the creation of LIV Golf",
+      "features": {
+        "json_requested": 0.0,
+        "exclusive_output": 0.0,
+        "code_artifact": 0.0,
+        "tests_requested": 0.0,
+        "table_requested": 0.0,
+        "list_requested": 0.0,
+        "prose_requested": 0.0,
+        "minimal_output_requested": 0.0,
+        "requested_items": 0.0,
+        "requested_sections": 0.0,
+        "requested_functions": 0.0,
+        "requested_keys": 0.0,
+        "requested_components": 1.0
+      },
+      "volume": {
+        "source_record_count": 0.0,
+        "per_record_output": 0.0,
+        "requested_result_count": 0.0,
+        "concise_requested": 1.0,
+        "elaborate_requested": 0.0
+      },
+      "prediction": 567
+    },
+    {
+      "prompt": "Work from the complete material below.\n\nSource document (verbatim):\n\"Ghouli\" is the fifth episode of the eleventh season of the American science fiction television series The X-Files. The episode was written and directed by James Wong. The tagline for this episode is \"You see what I want you to see\". Though not originally billed as a mythology episode, \"Ghouli\" helps to explore the series' overarching mythology and serves as the second of three mythology episodes of the season following the season premiere.\n\nThe show centers on FBI special agents who work on unsolved paranormal cases called X-Files; focusing on the investigations of Fox Mulder (David Duchovny), and Dana Scully (Gillian Anderson) after their reinstatement in the FBI. In this episode, A pair of teenage girls attack one another, each believing the other to be a monster, known as \"Ghouli.\" Mulder and Scully find that their investigation leads back to their long-lost son, William.\n\nRequested output:\nUsing only the source document, answer this original request directly without an introduction: Given a reference text about \"Ghouli\" tell me what happens in the episode.",
+      "features": {
+        "json_requested": 0.0,
+        "exclusive_output": 0.0,
+        "code_artifact": 0.0,
+        "tests_requested": 0.0,
+        "table_requested": 0.0,
+        "list_requested": 0.0,
+        "prose_requested": 0.0,
+        "minimal_output_requested": 0.0,
+        "requested_items": 0.0,
+        "requested_sections": 0.0,
+        "requested_functions": 0.0,
+        "requested_keys": 0.0,
+        "requested_components": 1.0
+      },
+      "volume": {
+        "source_record_count": 0.0,
+        "per_record_output": 0.0,
+        "requested_result_count": 0.0,
+        "concise_requested": 0.0,
+        "elaborate_requested": 0.0
+      },
+      "prediction": 726
+    },
+    {
+      "prompt": "The following material is sufficient for this local task.\n\nOriginal programming task:\n## write a function to find the minimum number of jumps to reach the end of the array for the given array of integers where each element represents the max number of steps that can be made forward from that element. > indented block > indented block\n\nSupplied reference implementation (inspect it; no file is missing):\n```python\n\ndef min_jumps(arr, n):\r\n\tjumps = [0 for i in range(n)]\r\n\tif (n == 0) or (arr[0] == 0):\r\n\t\treturn float('inf')\r\n\tjumps[0] = 0\r\n\tfor i in range(1, n):\r\n\t\tjumps[i] = float('inf')\r\n\t\tfor j in range(i):\r\n\t\t\tif (i <= j + arr[j]) and (jumps[j] != float('inf')):\r\n\t\t\t\tjumps[i] = min(jumps[i], jumps[j] + 1)\r\n\t\t\t\tbreak\r\n\treturn jumps[n-1]\n```\n\nSupplied usage assertions:\nassert min_jumps([1, 3, 6, 1, 0, 9], 6) == 3\nassert min_jumps([1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9], 11) == 3\nassert min_jumps([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 11) == 10\n\nRequested output:\nImplement a refactored version using exactly three functions in total, including the public function min_jumps and its private helpers. Preserve the public contract. Include four executable assertions and explain how the helpers divide the work. Use only the standard library.",
+      "features": {
+        "json_requested": 0.0,
+        "exclusive_output": 0.0,
+        "code_artifact": 1.0,
+        "tests_requested": 1.0,
+        "table_requested": 0.0,
+        "list_requested": 0.0,
+        "prose_requested": 0.0,
+        "minimal_output_requested": 0.0,
+        "requested_items": 4.0,
+        "requested_sections": 0.0,
+        "requested_functions": 3.0,
+        "requested_keys": 0.0,
+        "requested_components": 1.0
+      },
+      "volume": {
+        "source_record_count": 0.0,
+        "per_record_output": 0.0,
+        "requested_result_count": 0.0,
+        "concise_requested": 0.0,
+        "elaborate_requested": 0.0
+      },
+      "prediction": 675
+    },
+    {
+      "prompt": "Use the provided source as the sole reference.\n\nFictional operational specification: studio invoice.\n\nRules:\nA studio quotes a fictional equipment booking in integer credits. Base charge is hours*rate. Add a flat cleaning_fee only when messy is true. Discount applies to the base charge only: subtract floor(base*discount_percent/100). Add the cleaning fee after the discount. Deposit is separate from this quote and must not be added. Output the quote for each record.\n\nComplete independent input records:\n[\n  {\n    \"id\": \"STU-3-001\",\n    \"hours\": 10,\n    \"rate\": 5,\n    \"cleaning_fee\": 1,\n    \"messy\": true,\n    \"discount_percent\": 25,\n    \"deposit\": 13\n  },\n  {\n    \"id\": \"STU-3-002\",\n    \"hours\": 6,\n    \"rate\": 5,\n    \"cleaning_fee\": 6,\n    \"messy\": true,\n    \"discount_percent\": 20,\n    \"deposit\": 9\n  },\n  {\n    \"id\": \"STU-3-003\",\n    \"hours\": 9,\n    \"rate\": 13,\n    \"cleaning_fee\": 2,\n    \"messy\": false,\n    \"discount_percent\": 20,\n    \"deposit\": 17\n  },\n  {\n    \"id\": \"STU-3-004\",\n    \"hours\": 7,\n    \"rate\": 4,\n    \"cleaning_fee\": 5,\n    \"messy\": true,\n    \"discount_percent\": 10,\n    \"deposit\": 19\n  },\n  {\n    \"id\": \"STU-3-005\",\n    \"hours\": 4,\n    \"rate\": 6,\n    \"cleaning_fee\": 4,\n    \"messy\": true,\n    \"discount_percent\": 20,\n    \"deposit\": 6\n  },\n  {\n    \"id\": \"STU-3-006\",\n    \"hours\": 1,\n    \"rate\": 9,\n    \"cleaning_fee\": 4,\n    \"messy\": true,\n    \"discount_percent\": 20,\n    \"deposit\": 6\n  },\n  {\n    \"id\": \"STU-3-007\",\n    \"hours\": 4,\n    \"rate\": 8,\n    \"cleaning_fee\": 7,\n    \"messy\": true,\n    \"discount_percent\": 10,\n    \"deposit\": 16\n  },\n  {\n    \"id\": \"STU-3-008\",\n    \"hours\": 6,\n    \"rate\": 11,\n    \"cleaning_fee\": 5,\n    \"messy\": true,\n    \"discount_percent\": 10,\n    \"deposit\": 11\n  },\n  {\n    \"id\": \"STU-3-009\",\n    \"hours\": 12,\n    \"rate\": 7,\n    \"cleaning_fee\": 6,\n    \"messy\": false,\n    \"discount_percent\": 0,\n    \"deposit\": 6\n  },\n  {\n    \"id\": \"STU-3-010\",\n    \"hours\": 10,\n    \"rate\": 6,\n    \"cleaning_fee\": 6,\n    \"messy\": false,\n    \"discount_percent\": 25,\n    \"deposit\": 5\n  },\n  {\n    \"id\": \"STU-3-011\",\n    \"hours\": 4,\n    \"rate\": 8,\n    \"cleaning_fee\": 6,\n    \"messy\": true,\n    \"discount_percent\": 25,\n    \"deposit\": 11\n  },\n  {\n    \"id\": \"STU-3-012\",\n    \"hours\": 1,\n    \"rate\": 5,\n    \"cleaning_fee\": 6,\n    \"messy\": false,\n    \"discount_percent\": 25,\n    \"deposit\": 11\n  },\n  {\n    \"id\": \"STU-3-013\",\n    \"hours\": 6,\n    \"rate\": 5,\n    \"cleaning_fee\": 4,\n    \"messy\": false,\n    \"discount_percent\": 10,\n    \"deposit\": 16\n  },\n  {\n    \"id\": \"STU-3-014\",\n    \"hours\": 3,\n    \"rate\": 4,\n    \"cleaning_fee\": 7,\n    \"messy\": true,\n    \"discount_percent\": 10,\n    \"deposit\": 14\n  },\n  {\n    \"id\": \"STU-3-015\",\n    \"hours\": 9,\n    \"rate\": 7,\n    \"cleaning_fee\": 3,\n    \"messy\": false,\n    \"discount_percent\": 20,\n    \"deposit\": 6\n  },\n  {\n    \"id\": \"STU-3-016\",\n    \"hours\": 2,\n    \"rate\": 6,\n    \"cleaning_fee\": 2,\n    \"messy\": true,\n    \"discount_percent\": 0,\n    \"deposit\": 17\n  },\n  {\n    \"id\": \"STU-3-017\",\n    \"hours\": 4,\n    \"rate\": 9,\n    \"cleaning_fee\": 1,\n    \"messy\": false,\n    \"discount_percent\": 10,\n    \"deposit\": 20\n  },\n  {\n    \"id\": \"STU-3-018\",\n    \"hours\": 7,\n    \"rate\": 10,\n    \"cleaning_fee\": 8,\n    \"messy\": false,\n    \"discount_percent\": 25,\n    \"deposit\": 7\n  },\n  {\n    \"id\": \"STU-3-019\",\n    \"hours\": 10,\n    \"rate\": 5,\n    \"cleaning_fee\": 7,\n    \"messy\": false,\n    \"discount_percent\": 20,\n    \"deposit\": 16\n  },\n  {\n    \"id\": \"STU-3-020\",\n    \"hours\": 7,\n    \"rate\": 9,\n    \"cleaning_fee\": 2,\n    \"messy\": false,\n    \"discount_percent\": 20,\n    \"deposit\": 10\n  },\n  {\n    \"id\": \"STU-3-021\",\n    \"hours\": 10,\n    \"rate\": 13,\n    \"cleaning_fee\": 7,\n    \"messy\": true,\n    \"discount_percent\": 10,\n    \"deposit\": 8\n  },\n  {\n    \"id\": \"STU-3-022\",\n    \"hours\": 9,\n    \"rate\": 10,\n    \"cleaning_fee\": 4,\n    \"messy\": false,\n    \"discount_percent\": 0,\n    \"deposit\": 8\n  },\n  {\n    \"id\": \"STU-3-023\",\n    \"hours\": 3,\n    \"rate\": 6,\n    \"cleaning_fee\": 8,\n    \"messy\": false,\n    \"discount_percent\": 0,\n    \"deposit\": 19\n  },\n  {\n    \"id\": \"STU-3-024\",\n    \"hours\": 3,\n    \"rate\": 4,\n    \"cleaning_fee\": 7,\n    \"messy\": false,\n    \"discount_percent\": 10,\n    \"deposit\": 17\n  }\n]\n\nAll fields needed by the rules are present. Treat the records as independent cases; do not infer earlier or later events. The record IDs are local identifiers, not dates. No network, attachment or external database is involved.\n\nRequested output:\nFor the first four input records, give the result and identify the deciding rule. Return a JSON array with one object per requested record; include id, result and rule.",
+      "features": {
+        "json_requested": 1.0,
+        "exclusive_output": 0.0,
+        "code_artifact": 0.0,
+        "tests_requested": 0.0,
+        "table_requested": 0.0,
+        "list_requested": 0.0,
+        "prose_requested": 0.0,
+        "minimal_output_requested": 0.0,
+        "requested_items": 4.0,
+        "requested_sections": 0.0,
+        "requested_functions": 0.0,
+        "requested_keys": 0.0,
+        "requested_components": 1.0
+      },
+      "volume": {
+        "source_record_count": 24.0,
+        "per_record_output": 0.0,
+        "requested_result_count": 0.0,
+        "concise_requested": 0.0,
+        "elaborate_requested": 0.0
+      },
+      "prediction": 156
+    },
+    {
+      "prompt": "Work from the complete material below.\n\nFictional operational specification: archive copy.\n\nRules:\nAn archive routes requests for digital copies. DENY if rights_clear=false. If rights are clear, RESTRICTED_REVIEW when personal_notes=true and consent=false. Otherwise COPY if scanner_ready=true, else QUEUE. A purpose of research does not override rights or consent rules.\n\nComplete independent input records:\n[\n  {\n    \"id\": \"ARC-2-001\",\n    \"rights_clear\": true,\n    \"personal_notes\": false,\n    \"consent\": true,\n    \"scanner_ready\": true,\n    \"purpose\": \"classroom\"\n  },\n  {\n    \"id\": \"ARC-2-002\",\n    \"rights_clear\": false,\n    \"personal_notes\": false,\n    \"consent\": false,\n    \"scanner_ready\": false,\n    \"purpose\": \"display\"\n  },\n  {\n    \"id\": \"ARC-2-003\",\n    \"rights_clear\": true,\n    \"personal_notes\": false,\n    \"consent\": false,\n    \"scanner_ready\": false,\n    \"purpose\": \"research\"\n  },\n  {\n    \"id\": \"ARC-2-004\",\n    \"rights_clear\": false,\n    \"personal_notes\": false,\n    \"consent\": true,\n    \"scanner_ready\": true,\n    \"purpose\": \"display\"\n  },\n  {\n    \"id\": \"ARC-2-005\",\n    \"rights_clear\": true,\n    \"personal_notes\": true,\n    \"consent\": true,\n    \"scanner_ready\": false,\n    \"purpose\": \"display\"\n  },\n  {\n    \"id\": \"ARC-2-006\",\n    \"rights_clear\": false,\n    \"personal_notes\": false,\n    \"consent\": true,\n    \"scanner_ready\": false,\n    \"purpose\": \"display\"\n  },\n  {\n    \"id\": \"ARC-2-007\",\n    \"rights_clear\": false,\n    \"personal_notes\": false,\n    \"consent\": false,\n    \"scanner_ready\": true,\n    \"purpose\": \"classroom\"\n  },\n  {\n    \"id\": \"ARC-2-008\",\n    \"rights_clear\": false,\n    \"personal_notes\": false,\n    \"consent\": false,\n    \"scanner_ready\": false,\n    \"purpose\": \"classroom\"\n  },\n  {\n    \"id\": \"ARC-2-009\",\n    \"rights_clear\": false,\n    \"personal_notes\": true,\n    \"consent\": false,\n    \"scanner_ready\": false,\n    \"purpose\": \"classroom\"\n  },\n  {\n    \"id\": \"ARC-2-010\",\n    \"rights_clear\": false,\n    \"personal_notes\": true,\n    \"consent\": true,\n    \"scanner_ready\": true,\n    \"purpose\": \"classroom\"\n  },\n  {\n    \"id\": \"ARC-2-011\",\n    \"rights_clear\": false,\n    \"personal_notes\": false,\n    \"consent\": true,\n    \"scanner_ready\": true,\n    \"purpose\": \"display\"\n  },\n  {\n    \"id\": \"ARC-2-012\",\n    \"rights_clear\": false,\n    \"personal_notes\": true,\n    \"consent\": true,\n    \"scanner_ready\": false,\n    \"purpose\": \"display\"\n  },\n  {\n    \"id\": \"ARC-2-013\",\n    \"rights_clear\": false,\n    \"personal_notes\": false,\n    \"consent\": true,\n    \"scanner_ready\": false,\n    \"purpose\": \"classroom\"\n  },\n  {\n    \"id\": \"ARC-2-014\",\n    \"rights_clear\": false,\n    \"personal_notes\": false,\n    \"consent\": true,\n    \"scanner_ready\": true,\n    \"purpose\": \"display\"\n  },\n  {\n    \"id\": \"ARC-2-015\",\n    \"rights_clear\": true,\n    \"personal_notes\": true,\n    \"consent\": false,\n    \"scanner_ready\": true,\n    \"purpose\": \"display\"\n  },\n  {\n    \"id\": \"ARC-2-016\",\n    \"rights_clear\": false,\n    \"personal_notes\": false,\n    \"consent\": false,\n    \"scanner_ready\": true,\n    \"purpose\": \"display\"\n  }\n]\n\nAll fields needed by the rules are present. Treat the records as independent cases; do not infer earlier or later events. The record IDs are local identifiers, not dates. No network, attachment or external database is involved.\n\nRequested output:\nApply the rules to record ARC-2-001 only. Return a compact JSON object with exactly two keys, \"id\" and \"result\". The result must be the prescribed decision label or final numerical result. Do not include other records.",
+      "features": {
+        "json_requested": 1.0,
+        "exclusive_output": 0.0,
+        "code_artifact": 0.0,
+        "tests_requested": 0.0,
+        "table_requested": 0.0,
+        "list_requested": 0.0,
+        "prose_requested": 0.0,
+        "minimal_output_requested": 0.0,
+        "requested_items": 0.0,
+        "requested_sections": 0.0,
+        "requested_functions": 0.0,
+        "requested_keys": 2.0,
+        "requested_components": 0.0
+      },
+      "volume": {
+        "source_record_count": 16.0,
+        "per_record_output": 0.0,
+        "requested_result_count": 0.0,
+        "concise_requested": 1.0,
+        "elaborate_requested": 0.0
+      },
+      "prediction": 33
+    },
+    {
+      "prompt": "Work from the complete material below.\n\nOriginal programming task:\nWrite a function to find whether an array is subset of another array.\n\nSupplied reference implementation (inspect it; no file is missing):\n```python\n\ndef is_subset(arr1, m, arr2, n): \r\n\thashset = set() \r\n\tfor i in range(0, m): \r\n\t\thashset.add(arr1[i]) \r\n\tfor i in range(0, n): \r\n\t\tif arr2[i] in hashset: \r\n\t\t\tcontinue\r\n\t\telse: \r\n\t\t\treturn False\r\n\treturn True\t\t\n```\n\nSupplied usage assertions:\nassert is_subset([11, 1, 13, 21, 3, 7], 6, [11, 3, 7, 1], 4) == True\nassert is_subset([1, 2, 3, 4, 5, 6], 6, [1, 2, 4], 3) == True\nassert is_subset([10, 5, 2, 23, 19], 5, [19, 5, 3], 3) == False\n\nRequested output:\nReturn only the name of the main public function in the supplied implementation.",
+      "features": {
+        "json_requested": 0.0,
+        "exclusive_output": 1.0,
+        "code_artifact": 1.0,
+        "tests_requested": 0.0,
+        "table_requested": 0.0,
+        "list_requested": 0.0,
+        "prose_requested": 0.0,
+        "minimal_output_requested": 1.0,
+        "requested_items": 0.0,
+        "requested_sections": 0.0,
+        "requested_functions": 0.0,
+        "requested_keys": 0.0,
+        "requested_components": 0.0
+      },
+      "volume": {
+        "source_record_count": 0.0,
+        "per_record_output": 0.0,
+        "requested_result_count": 0.0,
+        "concise_requested": 0.0,
+        "elaborate_requested": 0.0
+      },
+      "prediction": 11
+    },
+    {
+      "prompt": "Use the provided source as the sole reference.\n\nFictional operational specification: trail marker.\n\nRules:\nA park schedules decorative marker maintenance. REPLACE if missing=true. Otherwise REALIGN if tilt_degrees>15. Otherwise CLEAN if visibility_score<60. Otherwise LEAVE. A high visitor_count never changes the prescribed action, though it can be mentioned as context. Scores range0..100.\n\nComplete independent input records:\n[\n  {\n    \"id\": \"TRA-4-001\",\n    \"missing\": true,\n    \"tilt_degrees\": 18,\n    \"visibility_score\": 87,\n    \"visitor_count\": 341\n  },\n  {\n    \"id\": \"TRA-4-002\",\n    \"missing\": true,\n    \"tilt_degrees\": 21,\n    \"visibility_score\": 75,\n    \"visitor_count\": 308\n  },\n  {\n    \"id\": \"TRA-4-003\",\n    \"missing\": true,\n    \"tilt_degrees\": 12,\n    \"visibility_score\": 38,\n    \"visitor_count\": 226\n  },\n  {\n    \"id\": \"TRA-4-004\",\n    \"missing\": false,\n    \"tilt_degrees\": 1,\n    \"visibility_score\": 64,\n    \"visitor_count\": 276\n  },\n  {\n    \"id\": \"TRA-4-005\",\n    \"missing\": false,\n    \"tilt_degrees\": 9,\n    \"visibility_score\": 88,\n    \"visitor_count\": 50\n  },\n  {\n    \"id\": \"TRA-4-006\",\n    \"missing\": true,\n    \"tilt_degrees\": 27,\n    \"visibility_score\": 26,\n    \"visitor_count\": 423\n  },\n  {\n    \"id\": \"TRA-4-007\",\n    \"missing\": true,\n    \"tilt_degrees\": 3,\n    \"visibility_score\": 49,\n    \"visitor_count\": 118\n  },\n  {\n    \"id\": \"TRA-4-008\",\n    \"missing\": false,\n    \"tilt_degrees\": 13,\n    \"visibility_score\": 60,\n    \"visitor_count\": 261\n  },\n  {\n    \"id\": \"TRA-4-009\",\n    \"missing\": false,\n    \"tilt_degrees\": 29,\n    \"visibility_score\": 78,\n    \"visitor_count\": 381\n  },\n  {\n    \"id\": \"TRA-4-010\",\n    \"missing\": true,\n    \"tilt_degrees\": 12,\n    \"visibility_score\": 25,\n    \"visitor_count\": 499\n  },\n  {\n    \"id\": \"TRA-4-011\",\n    \"missing\": false,\n    \"tilt_degrees\": 3,\n    \"visibility_score\": 66,\n    \"visitor_count\": 408\n  },\n  {\n    \"id\": \"TRA-4-012\",\n    \"missing\": false,\n    \"tilt_degrees\": 7,\n    \"visibility_score\": 38,\n    \"visitor_count\": 204\n  },\n  {\n    \"id\": \"TRA-4-013\",\n    \"missing\": false,\n    \"tilt_degrees\": 5,\n    \"visibility_score\": 63,\n    \"visitor_count\": 390\n  },\n  {\n    \"id\": \"TRA-4-014\",\n    \"missing\": true,\n    \"tilt_degrees\": 9,\n    \"visibility_score\": 99,\n    \"visitor_count\": 195\n  },\n  {\n    \"id\": \"TRA-4-015\",\n    \"missing\": false,\n    \"tilt_degrees\": 26,\n    \"visibility_score\": 69,\n    \"visitor_count\": 257\n  },\n  {\n    \"id\": \"TRA-4-016\",\n    \"missing\": true,\n    \"tilt_degrees\": 24,\n    \"visibility_score\": 35,\n    \"visitor_count\": 317\n  },\n  {\n    \"id\": \"TRA-4-017\",\n    \"missing\": false,\n    \"tilt_degrees\": 26,\n    \"visibility_score\": 63,\n    \"visitor_count\": 427\n  },\n  {\n    \"id\": \"TRA-4-018\",\n    \"missing\": true,\n    \"tilt_degrees\": 16,\n    \"visibility_score\": 96,\n    \"visitor_count\": 220\n  },\n  {\n    \"id\": \"TRA-4-019\",\n    \"missing\": true,\n    \"tilt_degrees\": 22,\n    \"visibility_score\": 45,\n    \"visitor_count\": 361\n  },\n  {\n    \"id\": \"TRA-4-020\",\n    \"missing\": true,\n    \"tilt_degrees\": 4,\n    \"visibility_score\": 37,\n    \"visitor_count\": 110\n  },\n  {\n    \"id\": \"TRA-4-021\",\n    \"missing\": true,\n    \"tilt_degrees\": 17,\n    \"visibility_score\": 45,\n    \"visitor_count\": 216\n  },\n  {\n    \"id\": \"TRA-4-022\",\n    \"missing\": false,\n    \"tilt_degrees\": 16,\n    \"visibility_score\": 91,\n    \"visitor_count\": 91\n  },\n  {\n    \"id\": \"TRA-4-023\",\n    \"missing\": true,\n    \"tilt_degrees\": 8,\n    \"visibility_score\": 98,\n    \"visitor_count\": 455\n  },\n  {\n    \"id\": \"TRA-4-024\",\n    \"missing\": true,\n    \"tilt_degrees\": 23,\n    \"visibility_score\": 91,\n    \"visitor_count\": 6\n  },\n  {\n    \"id\": \"TRA-4-025\",\n    \"missing\": false,\n    \"tilt_degrees\": 12,\n    \"visibility_score\": 97,\n    \"visitor_count\": 20\n  },\n  {\n    \"id\": \"TRA-4-026\",\n    \"missing\": true,\n    \"tilt_degrees\": 16,\n    \"visibility_score\": 37,\n    \"visitor_count\": 363\n  },\n  {\n    \"id\": \"TRA-4-027\",\n    \"missing\": false,\n    \"tilt_degrees\": 23,\n    \"visibility_score\": 81,\n    \"visitor_count\": 148\n  },\n  {\n    \"id\": \"TRA-4-028\",\n    \"missing\": true,\n    \"tilt_degrees\": 13,\n    \"visibility_score\": 71,\n    \"visitor_count\": 349\n  },\n  {\n    \"id\": \"TRA-4-029\",\n    \"missing\": true,\n    \"tilt_degrees\": 2,\n    \"visibility_score\": 50,\n    \"visitor_count\": 362\n  },\n  {\n    \"id\": \"TRA-4-030\",\n    \"missing\": false,\n    \"tilt_degrees\": 7,\n    \"visibility_score\": 51,\n    \"visitor_count\": 500\n  },\n  {\n    \"id\": \"TRA-4-031\",\n    \"missing\": true,\n    \"tilt_degrees\": 5,\n    \"visibility_score\": 94,\n    \"visitor_count\": 498\n  },\n  {\n    \"id\": \"TRA-4-032\",\n    \"missing\": false,\n    \"tilt_degrees\": 14,\n    \"visibility_score\": 52,\n    \"visitor_count\": 328\n  },\n  {\n    \"id\": \"TRA-4-033\",\n    \"missing\": false,\n    \"tilt_degrees\": 17,\n    \"visibility_score\": 74,\n    \"visitor_count\": 101\n  },\n  {\n    \"id\": \"TRA-4-034\",\n    \"missing\": true,\n    \"tilt_degrees\": 8,\n    \"visibility_score\": 44,\n    \"visitor_count\": 262\n  },\n  {\n    \"id\": \"TRA-4-035\",\n    \"missing\": true,\n    \"tilt_degrees\": 24,\n    \"visibility_score\": 97,\n    \"visitor_count\": 206\n  },\n  {\n    \"id\": \"TRA-4-036\",\n    \"missing\": true,\n    \"tilt_degrees\": 2,\n    \"visibility_score\": 34,\n    \"visitor_count\": 290\n  }\n]\n\nAll fields needed by the rules are present. Treat the records as independent cases; do not infer earlier or later events. The record IDs are local identifiers, not dates. No network, attachment or external database is involved.\n\nRequested output:\nProduce an operational review with five sections. Explain precedence and boundary behavior, work through contrasting records, discuss possible implementation mistakes and describe an audit procedure. Use only the supplied rules and data.",
+      "features": {
+        "json_requested": 0.0,
+        "exclusive_output": 0.0,
+        "code_artifact": 0.0,
+        "tests_requested": 0.0,
+        "table_requested": 0.0,
+        "list_requested": 0.0,
+        "prose_requested": 1.0,
+        "minimal_output_requested": 0.0,
+        "requested_items": 0.0,
+        "requested_sections": 5.0,
+        "requested_functions": 0.0,
+        "requested_keys": 0.0,
+        "requested_components": 1.0
+      },
+      "volume": {
+        "source_record_count": 36.0,
+        "per_record_output": 0.0,
+        "requested_result_count": 0.0,
+        "concise_requested": 0.0,
+        "elaborate_requested": 0.0
+      },
+      "prediction": 1169
+    }
+  ],
+  "tokenizer": [
+    {
+      "request": "Solve the following closed-book science question.\n\nMatter is defined as anything that takes up space and has  \n (A) mass (B) texture (C) odor (D) color",
+      "input_token_ids": [
+        151644,
+        8948,
+        198,
+        2610,
+        525,
+        1207,
+        16948,
+        11,
+        3465,
+        553,
+        54364,
+        14817,
+        13,
+        1446,
+        525,
+        264,
+        10950,
+        17847,
+        13,
+        151645,
+        198,
+        151644,
+        872,
+        198,
+        50,
+        3948,
+        279,
+        2701,
+        7877,
+        33640,
+        8038,
+        3405,
+        382,
+        44,
+        1650,
+        374,
+        4512,
+        438,
+        4113,
+        429,
+        4990,
+        705,
+        3550,
+        323,
+        702,
+        2303,
+        320,
+        32,
+        8,
+        3072,
+        320,
+        33,
+        8,
+        10434,
+        320,
+        34,
+        8,
+        52997,
+        320,
+        35,
+        8,
+        1894,
+        151645,
+        198,
+        151644,
+        77091,
+        198
+      ]
+    },
+    {
+      "request": "Create a Go HTTP server that exposes metrics and rate-limits requests by client address.",
+      "input_token_ids": [
+        151644,
+        8948,
+        198,
+        2610,
+        525,
+        1207,
+        16948,
+        11,
+        3465,
+        553,
+        54364,
+        14817,
+        13,
+        1446,
+        525,
+        264,
+        10950,
+        17847,
+        13,
+        151645,
+        198,
+        151644,
+        872,
+        198,
+        4021,
+        264,
+        5994,
+        10130,
+        3538,
+        429,
+        58281,
+        16734,
+        323,
+        4379,
+        2852,
+        22866,
+        7388,
+        553,
+        2943,
+        2621,
+        13,
+        151645,
+        198,
+        151644,
+        77091,
+        198
+      ]
+    }
+  ],
+  "parser_cases": [
+    {
+      "prompt": "Material:\nid,score\nK1,4\nK2,9\nK3,2\n\nTask:\nClassify each record.",
+      "expected_fields": {
+        "source_record_count": 3,
+        "per_record_output": 1,
+        "requested_result_count": 3
+      }
+    },
+    {
+      "prompt": "Material:\nid,score\nK1,4\n\nTask:\nClassify each record.",
+      "expected_fields": {
+        "source_record_count": 1,
+        "requested_result_count": 1
+      }
+    },
+    {
+      "prompt": "Material:\nid\tscore\nK1\t4\nK2\t9\n\nTask:\nGive a decision for every row.",
+      "expected_fields": {
+        "source_record_count": 2,
+        "requested_result_count": 2
+      }
+    },
+    {
+      "prompt": "Material:\n| id | score |\n|---|---:|\n| K1 | 4 |\n| K2 | 9 |\n\nTask:\nClassify all rows.",
+      "expected_fields": {
+        "source_record_count": 2,
+        "requested_result_count": 2
+      }
+    },
+    {
+      "prompt": "Material:\nid,note\nK1,\"damaged, repair\"\nK2,\"ready\"\n\nTask:\nReview every entry.",
+      "expected_fields": {
+        "source_record_count": 2,
+        "requested_result_count": 2
+      }
+    },
+    {
+      "prompt": "Material:\nid;score\nK1;4\nK2;9\n\nTask:\nClassify each record.",
+      "expected_fields": {
+        "source_record_count": 2,
+        "requested_result_count": 2
+      }
+    },
+    {
+      "prompt": "Material:\n```csv\nid,score\nK1,4\nK2,9\nK3,2\n```\n\nTask:\nClassify each record.",
+      "expected_fields": {
+        "source_record_count": 3,
+        "requested_result_count": 3
+      }
+    },
+    {
+      "prompt": "Material:\nThe clerk, assistant, and manager discussed the draft.\nThe hall, studio, and office share a key.\n\nTask:\nSummarize the note.",
+      "expected_fields": {
+        "source_record_count": 0,
+        "per_record_output": 0
+      }
+    },
+    {
+      "prompt": "Material:\n[{\"id\":\"K1\",\"score\":4},{\"id\":\"K2\",\"score\":9},{\"id\":\"K3\",\"score\":2}]\n\nTask:\nClassify each record.",
+      "expected_fields": {
+        "source_record_count": 3,
+        "requested_result_count": 3
+      }
+    },
+    {
+      "prompt": "Material:\n{\"date\":\"2026-10-12\",\"records\":[{\"id\":\"K1\",\"score\":4},{\"id\":\"K2\",\"score\":9},{\"id\":\"K3\",\"score\":2}]}\n\nTask:\nReturn a result for every record.",
+      "expected_fields": {
+        "source_record_count": 3,
+        "requested_result_count": 3
+      }
+    },
+    {
+      "prompt": "Material:\n[{\"id\":\"A\",\"events\":[{\"kind\":\"x\"},{\"kind\":\"y\"},{\"kind\":\"z\"}]},{\"id\":\"B\",\"events\":[]}]\n\nTask:\nAssign a label to each top-level record.",
+      "expected_fields": {
+        "source_record_count": 2,
+        "requested_result_count": 2
+      }
+    },
+    {
+      "prompt": "Material:\n[{\"id\":\"K1\",\"score\":4}]\n\nTask:\nClassify each record.",
+      "expected_fields": {
+        "source_record_count": 1,
+        "requested_result_count": 1
+      }
+    },
+    {
+      "prompt": "Material:\n{\"id\":\"K1\",\"score\":4}\n{\"id\":\"K2\",\"score\":9}\n\nTask:\nClassify each record.",
+      "expected_fields": {
+        "source_record_count": 2,
+        "requested_result_count": 2
+      }
+    },
+    {
+      "prompt": "Material:\n[{\"id\":\"A\",\"score\":1},{\"id\":\"B\",\"score\":2,\"note\":\"late\"}]\n\nTask:\nClassify each record.",
+      "expected_fields": {
+        "source_record_count": 2,
+        "requested_result_count": 2
+      }
+    },
+    {
+      "prompt": "Material:\n[{\"id\":\"K1\",\"score\":4},{\"id\":\"K2\",\"score\":9},{\"id\":\"K3\",\"score\":2}]\n\nTask:\nFor record K2, give its decision.",
+      "expected_fields": {
+        "source_record_count": 3,
+        "per_record_output": 0,
+        "requested_result_count": 1
+      }
+    },
+    {
+      "prompt": "Material:\n[{\"id\":\"K1\",\"score\":4},{\"id\":\"K2\",\"score\":9},{\"id\":\"K3\",\"score\":2}]\n\nTask:\nFor the first record, return only its score.",
+      "expected_fields": {
+        "requested_result_count": 1,
+        "per_record_output": 0
+      }
+    },
+    {
+      "prompt": "Material:\nid,score\nK1,4\nK2,9\nK3,2\n\nTask:\nFor the last row, return the score.",
+      "expected_fields": {
+        "requested_result_count": 1,
+        "per_record_output": 0
+      }
+    },
+    {
+      "prompt": "Material:\n[{\"id\":\"K1\",\"score\":4},{\"id\":\"K2\",\"score\":9},{\"id\":\"K3\",\"score\":2}]\n\nTask:\nReturn the score of the second record only.",
+      "expected_fields": {
+        "requested_result_count": 1,
+        "per_record_output": 0
+      }
+    },
+    {
+      "prompt": "Material:\n[{\"id\":\"K1\",\"score\":4},{\"id\":\"K2\",\"score\":9},{\"id\":\"K3\",\"score\":2}]\n\nTask:\nReturn the status of all supplied records.",
+      "expected_fields": {
+        "requested_result_count": 3,
+        "per_record_output": 1
+      }
+    },
+    {
+      "prompt": "Material:\nid,score\nK1,4\nK2,9\nK3,2\n\nTask:\nProvide one classification per-record.",
+      "expected_fields": {
+        "requested_result_count": 3,
+        "per_record_output": 1
+      }
+    },
+    {
+      "prompt": "Material:\n[{\"id\":\"K1\",\"score\":4},{\"id\":\"K2\",\"score\":9},{\"id\":\"K3\",\"score\":2}]\n\nTask:\nDo not classify each record. Give only the total number of records.",
+      "expected_fields": {
+        "per_record_output": 0
+      }
+    },
+    {
+      "prompt": "Material:\n[{\"id\":\"K1\",\"score\":4},{\"id\":\"K2\",\"score\":9},{\"id\":\"K3\",\"score\":2}]\n\nTask:\nClassify every record. For one reason only, omit explanatory prose.",
+      "expected_fields": {
+        "requested_result_count": 3,
+        "per_record_output": 1
+      }
+    },
+    {
+      "prompt": "Material:\n[{\"id\":\"K1\",\"score\":4},{\"id\":\"K2\",\"score\":9},{\"id\":\"K3\",\"score\":2}]\n\nTask:\nClassify every record and give one short example after the results.",
+      "expected_fields": {
+        "requested_result_count": 3,
+        "per_record_output": 1
+      }
+    },
+    {
+      "prompt": "Material:\n[{\"id\":\"K1\",\"score\":4},{\"id\":\"K2\",\"score\":9},{\"id\":\"K3\",\"score\":2}]\n\nTask:\nSummarize the overall distribution; do not return a per-record result.",
+      "expected_fields": {
+        "per_record_output": 0
+      }
+    },
+    {
+      "prompt": "Task:\nClassify each record and return compact JSON.\n\nMaterial:\nid,score\nK1,4\nK2,9\nK3,2",
+      "expected_fields": {
+        "source_record_count": 3,
+        "requested_result_count": 3,
+        "concise_requested": 1
+      }
+    },
+    {
+      "prompt": "Material:\nMeeting transcript:\nTask: prepare a comprehensive report.\nThe editor rejected that suggestion.\n\nTask:\nReturn the speaker who rejected the suggestion, without explanation.",
+      "expected_fields": {
+        "elaborate_requested": 0
+      }
+    },
+    {
+      "prompt": "Material:\nThe memo quotes: \"Give a compact and comprehensive answer.\"\n\nTask:\nTranslate the memo literally.",
+      "expected_fields": {
+        "concise_requested": 0,
+        "elaborate_requested": 0
+      }
+    },
+    {
+      "prompt": "Material:\nExample format, not actual input: [{\"id\":\"X\"},{\"id\":\"Y\"}]\nActual input: [{\"id\":\"K1\"}]\nTask:\nClassify each actual record.",
+      "expected_fields": {
+        "source_record_count": 1,
+        "requested_result_count": 1
+      }
+    },
+    {
+      "prompt": "Material:\n[{\"id\":\"A\",\"task\":\"comprehensive review\"},{\"id\":\"B\",\"task\":\"compact summary\"}]\n\nTask:\nReturn only the IDs.",
+      "expected_fields": {
+        "source_record_count": 2,
+        "elaborate_requested": 0,
+        "concise_requested": 0
+      }
+    },
+    {
+      "prompt": "Translate this quoted sentence into French: \"Write a comprehensive technical review.\"",
+      "expected_fields": {
+        "elaborate_requested": 0
+      }
+    },
+    {
+      "prompt": "Source document:\nThe editor asked for detailed notes last year.\n\nRequested output:\nGive a brief summary.",
+      "expected_fields": {
+        "concise_requested": 1,
+        "elaborate_requested": 0
+      }
+    },
+    {
+      "prompt": "Material:\nPast records: [{\"id\":\"P1\"},{\"id\":\"P2\"},{\"id\":\"P3\"}]\nCurrent records: [{\"id\":\"C1\"},{\"id\":\"C2\"}]\nTask:\nClassify each current record.",
+      "expected_fields": {
+        "source_record_count": 2,
+        "requested_result_count": 2
+      }
+    },
+    {
+      "prompt": "Give a brief explanation of this arithmetic: 12 divided by 3.",
+      "expected_fields": {
+        "concise_requested": 1
+      }
+    },
+    {
+      "prompt": "Give a step-by-step explanation of this arithmetic: 12 divided by 3.",
+      "expected_fields": {
+        "elaborate_requested": 1
+      }
+    },
+    {
+      "prompt": "Do not provide a detailed explanation. Return the value.",
+      "expected_fields": {
+        "elaborate_requested": 0
+      }
+    },
+    {
+      "prompt": "Avoid a detailed explanation. Return the value.",
+      "expected_fields": {
+        "elaborate_requested": 0
+      }
+    },
+    {
+      "prompt": "Do not make the answer compact. Explain the reasoning.",
+      "expected_fields": {
+        "concise_requested": 0
+      }
+    },
+    {
+      "prompt": "Explain the change in short-term demand using the supplied facts.",
+      "expected_fields": {
+        "concise_requested": 0
+      }
+    },
+    {
+      "prompt": "Give a concise explanation with two worked examples.",
+      "expected_fields": {
+        "concise_requested": 1,
+        "elaborate_requested": 1
+      }
+    },
+    {
+      "prompt": "Identify the author of \"A Brief History of Time\". Return the author name.",
+      "expected_fields": {
+        "concise_requested": 0
+      }
+    },
+    {
+      "prompt": "Data:\n|name|ready|\n|:--|--:|\n|bus|true|\n|tram|false|\n|train|true|\nTask:\nReturn compact results for all rows.",
+      "expected_fields": {
+        "source_record_count": 3,
+        "requested_result_count": 3,
+        "concise_requested": 1
+      }
+    },
+    {
+      "prompt": "Input data:\nname\tcount\nseat\t12\nRequested output:\nGive the status of each entry.",
+      "expected_fields": {
+        "source_record_count": 1,
+        "requested_result_count": 1
+      }
+    },
+    {
+      "prompt": "Input:\nname;note\nchair;\"leg; loose\"\ndesk;stable\nTask:\nReview every entry.",
+      "expected_fields": {
+        "source_record_count": 2,
+        "requested_result_count": 2
+      }
+    },
+    {
+      "prompt": "Task:\nFor every supplied row return a score.\nData:\n[{\"name\":\"north\"},{\"name\":\"south\"}]",
+      "expected_fields": {
+        "source_record_count": 2,
+        "requested_result_count": 2
+      }
+    },
+    {
+      "prompt": "Material:\n[{\"name\":\"red\",\"children\":[{\"v\":1},{\"v\":2},{\"v\":3},{\"v\":4}]},{\"name\":\"blue\",\"children\":[]}]\nTask:\nClassify each top-level record.",
+      "expected_fields": {
+        "source_record_count": 2,
+        "requested_result_count": 2
+      }
+    },
+    {
+      "prompt": "Material:\n{\"metadata\":{\"date\":\"today\"},\"rows\":[{\"a\":1},{\"a\":2},{\"a\":3}]}\nTask:\nClassify each row.",
+      "expected_fields": {
+        "source_record_count": 3,
+        "requested_result_count": 3
+      }
+    },
+    {
+      "prompt": "Material:\n{\"a\":1}\n{\"a\":2}\n{\"a\":3}\nTask:\nReturn a result per row.",
+      "expected_fields": {
+        "source_record_count": 3,
+        "requested_result_count": 3
+      }
+    },
+    {
+      "prompt": "Input:\n[{\"name\":\"a\"},{\"name\":\"b\"}]\nTask:\nNever label every record. Give only the count.",
+      "expected_fields": {
+        "per_record_output": 0
+      }
+    },
+    {
+      "prompt": "Input:\n[{\"v\":1},{\"v\":2}]\nTask:\nClassify all records. For one practical reason, use no table.",
+      "expected_fields": {
+        "requested_result_count": 2,
+        "per_record_output": 1
+      }
+    },
+    {
+      "prompt": "Input:\n[{\"id\":\"X9\"},{\"id\":\"Z4\"}]\nTask:\nFor record Z4 return the decision.",
+      "expected_fields": {
+        "requested_result_count": 1,
+        "per_record_output": 0
+      }
+    },
+    {
+      "prompt": "Input:\n[{\"id\":\"a\"},{\"id\":\"b\"},{\"id\":\"c\"}]\nTask:\nReturn the status of the third record only.",
+      "expected_fields": {
+        "requested_result_count": 1
+      }
+    },
+    {
+      "prompt": "Input:\n[{\"id\":\"a\"},{\"id\":\"b\"}]\nTask:\nFor record keeping, summarize totals. Do not give per-record results.",
+      "expected_fields": {
+        "requested_result_count": 0,
+        "per_record_output": 0
+      }
+    },
+    {
+      "prompt": "Who wrote \"A Comprehensive Guide to Botany\"? Return the name.",
+      "expected_fields": {
+        "elaborate_requested": 0
+      }
+    },
+    {
+      "prompt": "Avoid a detailed discussion; give a compact answer.",
+      "expected_fields": {
+        "elaborate_requested": 0,
+        "concise_requested": 1
+      }
+    },
+    {
+      "prompt": "Do not give a compact answer, but provide a detailed explanation.",
+      "expected_fields": {
+        "concise_requested": 0,
+        "elaborate_requested": 1
+      }
+    },
+    {
+      "prompt": "Give a brief answer with three worked solutions.",
+      "expected_fields": {
+        "concise_requested": 1,
+        "elaborate_requested": 1
+      }
+    },
+    {
+      "prompt": "Source:\nSchema example: [{\"id\":\"a\"},{\"id\":\"b\"},{\"id\":\"c\"}]\nActual input: [{\"id\":\"live\"}]\nTask:\nReview each actual record.",
+      "expected_fields": {
+        "source_record_count": 1,
+        "requested_result_count": 1
+      }
+    },
+    {
+      "prompt": "Material:\nPast records: [{\"id\":\"p\"}]\nCurrent records: [{\"id\":\"a\"},{\"id\":\"b\"}]\nTask:\nLabel each past record.",
+      "expected_fields": {
+        "source_record_count": 1,
+        "requested_result_count": 1
+      }
+    },
+    {
+      "prompt": "Material:\nBatch A: [{\"id\":\"p\"}]\nBatch B: [{\"id\":\"a\"},{\"id\":\"b\"}]\nTask:\nAssess the batches.",
+      "expected_fields": {
+        "source_record_count": 0
+      }
+    },
+    {
+      "prompt": "Calculate the sum of 12 and 25. No detailed explanation.",
+      "expected_fields": {
+        "source_record_count": 0,
+        "elaborate_requested": 0
+      }
+    }
+  ],
+  "report_prompt": "You are preparing a factual briefing for the manager of a community food cooperative.\n\nSummarize the report below. Preserve the distinction between observed results, explanations that remain uncertain and the actions already approved. Focus on the operational findings rather than promotional language. Do not introduce recommendations that the committee has not approved.\n\nWrite exactly 80 words in total. Return only the summary, without a title or bullet points.\n\nReport:\nThe cooperative tested a new collection schedule for unsold produce over a six-week period. Previously, volunteers visited participating shops on Monday, Wednesday and Friday evenings. During the trial, collections took place every weekday, but each collection used a smaller vehicle and covered fewer shops.\n\nThe recorded quantity of discarded produce fell from an average of 240 kilograms per week during the preceding six weeks to 175 kilograms per week during the trial. The coordinator cautioned that this comparison does not establish that the schedule alone caused the reduction. Two additional shops joined the cooperative during the trial, and unusually mild weather may have affected both customer demand and produce quality.\n\nVolunteer attendance was more consistent on Tuesday and Thursday than on Friday. Several volunteers reported that shorter routes were easier to combine with employment and family responsibilities. However, the cooperative did not collect attendance data using the same system before the trial, so the committee could not make a reliable numerical comparison.\n\nFuel receipts showed a small reduction in total expenditure, but fuel prices also changed during the trial. No calculation of distance-adjusted fuel consumption has yet been completed.\n\nThe committee approved a further four-week trial using the weekday schedule. It also approved consistent recording of route distance, collected weight and volunteer attendance. Purchasing another vehicle and expanding into neighbouring districts were discussed but not approved."
+}

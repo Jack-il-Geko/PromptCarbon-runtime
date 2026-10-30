@@ -1,0 +1,464 @@
+{
+  "_description": "Defines the 33 allowed task labels, their meanings, examples, and SNI mappings.",
+  "name": "PromptCarbon Task Taxonomy",
+  "version": "0.1-curated",
+  "labels_count": 33,
+  "notes": {
+    "labels": "The 33 labels are transcribed from the PromptPrism taxonomy supplied for PromptCarbon.",
+    "definitions": "Operational definitions authored for PromptCarbon; not quotations from Super-NaturalInstructions.",
+    "source_tasks": "Representative Super-NaturalInstructions IDs are included only where a useful mapping was identified. Empty lists are intentional.",
+    "prototype_examples": "PromptCarbon-authored semantic prototypes; not copied dataset instances.",
+    "warning": "A partial mapping must not be treated as proof that the source task is equivalent to the PromptPrism class."
+  },
+  "tasks": [
+    {
+      "task": "Classification:Sentiment Analysis",
+      "definition": "Classify the sentiment, polarity, emotion, or evaluative attitude expressed in a text.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "direct",
+      "source_tasks": [
+        "task195_sentiment140_classification",
+        "task363_sst2_polarity_classification",
+        "task475_yelp_polarity_classification",
+        "task512_twitter_emotion_classification",
+        "task761_app_review_classification"
+      ],
+      "prototype_examples": [
+        "Classify this customer review as positive, negative, or neutral.",
+        "Determine the sentiment expressed in this tweet."
+      ]
+    },
+    {
+      "task": "Classification:Topic Classification",
+      "definition": "Assign a text, document, or question to one topic, subject, genre, or domain category.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "direct",
+      "source_tasks": [
+        "task197_mnli_domain_answer_generation",
+        "task198_mnli_domain_classification",
+        "task379_agnews_topic_classification",
+        "task521_trivia_question_classification",
+        "task1592_yahoo_answers_topics_classfication",
+        "task1593_yahoo_answers_topics_classification"
+      ],
+      "prototype_examples": [
+        "Classify this news article by topic.",
+        "Which subject category does this question belong to?"
+      ]
+    },
+    {
+      "task": "Classification:Toxicity Detection",
+      "definition": "Determine whether text contains toxic, hateful, offensive, abusive, or bullying language, or classify the type of such harmful language.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "direct",
+      "source_tasks": [
+        "task838_cdt_classification",
+        "task839_cdt_classification",
+        "task1494_bengali_hate_speech_classification",
+        "task1537_tamil_offenseval_dravidian_classification",
+        "task1538_malayalam_offenseval_dravidian_classification",
+        "task1539_kannada_offenseval_dravidian_classification"
+      ],
+      "prototype_examples": [
+        "Is the following comment offensive or non-offensive?",
+        "Detect whether this post contains hate speech."
+      ]
+    },
+    {
+      "task": "Classification:Multi-label Classification",
+      "definition": "Assign two or more applicable labels to the same input from a predefined label set.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "partial",
+      "source_tasks": [
+        "task046_miscellaneous_question_typing"
+      ],
+      "prototype_examples": [
+        "Assign all applicable categories to this document.",
+        "Choose every label that describes the following text."
+      ]
+    },
+    {
+      "task": "Classification:Others",
+      "definition": "A classification request that does not fit the other Classification subcategories.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "none",
+      "source_tasks": [],
+      "prototype_examples": [
+        "Classify whether these two sentences entail or contradict each other.",
+        "Determine whether this sentence is formal or informal."
+      ]
+    },
+    {
+      "task": "Open Book QA:Reading Comprehension",
+      "definition": "Answer a question by reading and understanding a passage or context supplied in the prompt.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "direct",
+      "source_tasks": [
+        "task002_quoref_answer_generation",
+        "task028_drop_answer_generation",
+        "task164_mcscript_question_answering_text",
+        "task309_race_answer_generation",
+        "task380_boolq_yes_no_question",
+        "task395_persianqa_answer_generation",
+        "task467_parsinlu_rc_answer_generation",
+        "task1570_cmrc2018_answer_generation"
+      ],
+      "prototype_examples": [
+        "Read the passage and answer the question.",
+        "Based only on the text below, what caused the event?"
+      ]
+    },
+    {
+      "task": "Open Book QA:Document-based QA",
+      "definition": "Answer a question using a supplied document or long structured source as the evidence base.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "direct",
+      "source_tasks": [
+        "task460_qasper_answer_generation",
+        "task597_cuad_answer_generation",
+        "task598_cuad_answer_generation"
+      ],
+      "prototype_examples": [
+        "Using this research paper, answer the following question.",
+        "According to the supplied contract, when may the agreement be terminated?"
+      ]
+    },
+    {
+      "task": "Open Book QA:Multi-document QA",
+      "definition": "Answer a question by combining evidence from multiple supplied documents, passages, or sources.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "direct",
+      "source_tasks": [
+        "task230_iirc_passage_classification",
+        "task237_iirc_answer_from_subtext_answer_generation",
+        "task238_iirc_answer_from_passage_answer_generation"
+      ],
+      "prototype_examples": [
+        "Use these three documents to answer the question.",
+        "Combine the evidence in the supplied sources and identify the answer."
+      ]
+    },
+    {
+      "task": "Open Book QA:Context-specific Questions",
+      "definition": "Answer a question whose answer depends on context, conversation, table, or other information explicitly supplied with the request.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "direct",
+      "source_tasks": [
+        "task239_tweetqa_answer_generation",
+        "task580_socialiqa_answer_generation",
+        "task758_msr_sqa_question_answer_generation",
+        "task1441_doqa_movies_answer_generation"
+      ],
+      "prototype_examples": [
+        "Given this conversation, what does the speaker mean?",
+        "Using the table above, what was the highest value?"
+      ]
+    },
+    {
+      "task": "Open Book QA:Others",
+      "definition": "An evidence-grounded question-answering request that does not fit the other Open Book QA subcategories.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "partial",
+      "source_tasks": [
+        "task041_qasc_answer_generation",
+        "task740_lhoestq_answer_generation_quantity",
+        "task741_lhoestq_answer_generation_place"
+      ],
+      "prototype_examples": [
+        "Use the supplied evidence to answer this question.",
+        "Answer this question from the information provided."
+      ]
+    },
+    {
+      "task": "Closed Book QA:Factual QA",
+      "definition": "Answer a factual question without a supporting passage or document supplied in the prompt.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "direct",
+      "source_tasks": [
+        "task305_jeopardy_answer_generation_normal",
+        "task306_jeopardy_answer_generation_double",
+        "task307_jeopardy_answer_generation_final",
+        "task308_jeopardy_answer_generation_all",
+        "task1564_triviaqa_answer_generation"
+      ],
+      "prototype_examples": [
+        "Who wrote The Divine Comedy?",
+        "What is the capital of Canada?"
+      ]
+    },
+    {
+      "task": "Closed Book QA:Common Knowledge Questions",
+      "definition": "Answer a question using general or commonsense knowledge without evidence supplied in the prompt.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "direct",
+      "source_tasks": [
+        "task073_commonsenseqa_answer_generation",
+        "task820_protoqa_answer_generation"
+      ],
+      "prototype_examples": [
+        "Why do people usually carry an umbrella when it rains?",
+        "What object would you normally use to cut paper?"
+      ]
+    },
+    {
+      "task": "Closed Book QA:Others",
+      "definition": "A question-answering request without supplied evidence that does not fit the other Closed Book QA subcategories.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "partial",
+      "source_tasks": [
+        "task228_arc_answer_generation_easy",
+        "task229_arc_answer_generation_hard"
+      ],
+      "prototype_examples": [
+        "Answer the following question using your own knowledge.",
+        "Explain the answer to this science question without using an attached source."
+      ]
+    },
+    {
+      "task": "Coding:Algorithm Implementation",
+      "definition": "Implement a specified algorithm or translate an algorithmic procedure into executable code.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "none",
+      "source_tasks": [],
+      "prototype_examples": [
+        "Implement Dijkstra's shortest-path algorithm in Python.",
+        "Write an implementation of merge sort."
+      ]
+    },
+    {
+      "task": "Coding:Debugging",
+      "definition": "Identify, explain, and/or fix defects in existing code.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "none",
+      "source_tasks": [],
+      "prototype_examples": [
+        "Find the bug in this Python function and fix it.",
+        "Why does this code throw an IndexError?"
+      ]
+    },
+    {
+      "task": "Coding:Code Generation",
+      "definition": "Generate source code from a natural-language requirement when the request is broader than one specified function or named algorithm.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "none",
+      "source_tasks": [],
+      "prototype_examples": [
+        "Create a Python script that reads a CSV and generates a report.",
+        "Write SQL for this data-processing requirement."
+      ]
+    },
+    {
+      "task": "Coding:Code Explanation",
+      "definition": "Explain the behavior, structure, purpose, or output of existing source code.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "none",
+      "source_tasks": [],
+      "prototype_examples": [
+        "Explain what this function does.",
+        "Walk me through this SQL query."
+      ]
+    },
+    {
+      "task": "Coding:Function Implementation",
+      "definition": "Implement or complete a specific function or method according to a stated signature or behavior.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "none",
+      "source_tasks": [],
+      "prototype_examples": [
+        "Implement the function is_prime(n).",
+        "Complete this Java method so that it returns the maximum value."
+      ]
+    },
+    {
+      "task": "Coding:Others",
+      "definition": "A programming or software-development request that does not fit the other Coding subcategories.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "none",
+      "source_tasks": [],
+      "prototype_examples": [
+        "Suggest a better structure for this software project.",
+        "Convert this configuration to another programming-related format."
+      ]
+    },
+    {
+      "task": "Reasoning:Logical Reasoning",
+      "definition": "Solve a problem primarily through deduction, consistency checking, ordering, entailment, or explicit logical relations.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "partial",
+      "source_tasks": [
+        "task199_mnli_classification",
+        "task463_parsinlu_entailment_classification"
+      ],
+      "prototype_examples": [
+        "If all A are B and no B are C, can any A be C?",
+        "Determine which conclusion follows from these premises."
+      ]
+    },
+    {
+      "task": "Reasoning:Mathematical Problem Solving",
+      "definition": "Solve a mathematical problem requiring calculation, algebraic manipulation, quantitative reasoning, or mathematical derivation.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "direct",
+      "source_tasks": [
+        "task745_ai2_arithmetic_questions_arithmetic",
+        "task835_mathdataset_answer_generation",
+        "task1405_find_median"
+      ],
+      "prototype_examples": [
+        "Solve 3x + 7 = 25.",
+        "A train travels 120 km in 2 hours. What is its average speed?"
+      ]
+    },
+    {
+      "task": "Reasoning:Causal Reasoning",
+      "definition": "Determine, explain, or infer cause-and-effect relationships between events, states, or claims.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "direct",
+      "source_tasks": [
+        "task969_xcopa_commonsense_cause_effect_et",
+        "task970_sherliic_causal_relationship"
+      ],
+      "prototype_examples": [
+        "Which event is the most likely cause of the second event?",
+        "Explain whether A could have caused B."
+      ]
+    },
+    {
+      "task": "Reasoning:Others",
+      "definition": "A reasoning-intensive request that does not fit Logical, Mathematical, or Causal Reasoning.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "partial",
+      "source_tasks": [
+        "task004_mctaco_answer_generation_event_duration",
+        "task178_quartz_question_answering"
+      ],
+      "prototype_examples": [
+        "Determine the most plausible explanation for this situation.",
+        "Solve this problem by combining several constraints."
+      ]
+    },
+    {
+      "task": "Summarization:Text Summarization",
+      "definition": "Produce a shorter representation of one supplied text while preserving its main information.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "direct",
+      "source_tasks": [
+        "task511_reddit_tifu_long_text_summarization",
+        "task522_news_editorial_summary",
+        "task1355_sent_comp_summarization",
+        "task1357_xlsum_summary_generation",
+        "task1572_samsum_summary"
+      ],
+      "prototype_examples": [
+        "Summarize the following article in three sentences.",
+        "Give me a concise summary of this conversation."
+      ]
+    },
+    {
+      "task": "Summarization:Multi-document Summarization",
+      "definition": "Produce one summary by integrating information from two or more supplied documents or texts.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "none",
+      "source_tasks": [],
+      "prototype_examples": [
+        "Summarize these three reports into one coherent overview.",
+        "Combine the main findings of the supplied documents into a single summary."
+      ]
+    },
+    {
+      "task": "Summarization:Others",
+      "definition": "A summarization or compression request that does not fit the other Summarization subcategories.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "partial",
+      "source_tasks": [
+        "task1340_msr_text_compression_compression",
+        "task510_reddit_tifu_title_summarization",
+        "task743_eurlex_summarization"
+      ],
+      "prototype_examples": [
+        "Compress this sentence while preserving its meaning.",
+        "Create a short title that captures the main point of this text."
+      ]
+    },
+    {
+      "task": "Function calling:Data Retrieval",
+      "definition": "Request an external function or tool primarily to retrieve records, user information, stored data, or other structured information.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "none",
+      "source_tasks": [],
+      "prototype_examples": [
+        "Call get_user_info to retrieve the user record.",
+        "Fetch the order with this identifier."
+      ]
+    },
+    {
+      "task": "Function calling:System Operations",
+      "definition": "Request an external function or tool to perform or inspect a system-level operation such as status checking or validation.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "none",
+      "source_tasks": [],
+      "prototype_examples": [
+        "Call check_status for this service.",
+        "Validate this token using the authentication function."
+      ]
+    },
+    {
+      "task": "Function calling:API Integration",
+      "definition": "Request interaction with an external API or service through a function or tool call.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "none",
+      "source_tasks": [],
+      "prototype_examples": [
+        "Call the weather API for Rome and return the forecast.",
+        "Send this request to the external payment service."
+      ]
+    },
+    {
+      "task": "Function calling:Data Transformation",
+      "definition": "Request a function or tool primarily to transform, convert, normalize, or format supplied data.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "partial",
+      "source_tasks": [
+        "task1404_date_conversion",
+        "task1498_24hour_to_12hour_clock"
+      ],
+      "prototype_examples": [
+        "Use convert_units to convert these values to kilograms.",
+        "Call format_data to normalize this record."
+      ]
+    },
+    {
+      "task": "Function calling:Multi-function Chain",
+      "definition": "Request a workflow that requires two or more dependent function or tool calls.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "none",
+      "source_tasks": [],
+      "prototype_examples": [
+        "Retrieve the customer record, check the subscription, then update the account.",
+        "Search for the flight and then call the booking function with the selected result."
+      ]
+    },
+    {
+      "task": "Function calling:Others",
+      "definition": "A function- or tool-calling request that does not fit the other Function calling subcategories.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "none",
+      "source_tasks": [],
+      "prototype_examples": [
+        "Invoke the appropriate tool to complete this request.",
+        "Use the available function required for this operation."
+      ]
+    },
+    {
+      "task": "Others",
+      "definition": "A prompt whose primary task does not belong to any other PromptPrism category in this taxonomy.",
+      "definition_source": "PromptCarbon operational definition",
+      "sni_support": "none",
+      "source_tasks": [],
+      "prototype_examples": [
+        "Translate this paragraph from Italian to English.",
+        "Write a short poem about autumn."
+      ]
+    }
+  ]
+}

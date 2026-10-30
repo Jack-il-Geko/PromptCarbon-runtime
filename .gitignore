@@ -1,0 +1,14 @@
+.venv*/
+.cache/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+*.key
+.DS_Store
+*.log
+assets/
+analyser/**/model/
+data/
+benchmarks/
+_distribution/

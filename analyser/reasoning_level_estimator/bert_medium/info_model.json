@@ -1,0 +1,82 @@
+{
+  "active_checkpoint": "model/",
+  "base_model": "google/bert_uncased_L-8_H-512_A-8",
+  "base_revision": "53b17ea0d90728ac770dfd13fcb3abdc75e4f4bf",
+  "training_examples": 1470,
+  "training_class_counts": {
+    "Basic": 490,
+    "Intermediate": 490,
+    "Advanced": 490
+  },
+  "validation_examples": 162,
+  "seed": 43,
+  "selected_epoch": 2,
+  "learning_rate": 3e-05,
+  "batch_size": 8,
+  "max_epochs": 12,
+  "weight_decay": 0.01,
+  "selection": "Highest validation Macro F1; tie lower validation cross entropy; no test selection.",
+  "precision": "float32",
+  "attention": "eager",
+  "id2label": {
+    "0": "Basic",
+    "1": "Intermediate",
+    "2": "Advanced"
+  },
+  "parameters": 41374723,
+  "preprocessing": {
+    "max_length": 512,
+    "head_content": 255,
+    "tail_content": 255,
+    "special_tokens": 2,
+    "sliding_window": false
+  },
+  "decision": "Softmax argmax, no threshold or fallback",
+  "checkpoint_files_sha256": {
+    "config.json": "74f9aebad5788d1d2851dcc3f2bcc6ad3affe3aa8384ad5c6516109e21aba372",
+    "model.safetensors": "0b652c69ba9831656479b0f3235a11bb43be9e698dfaa1ac7bc3aefc864015df",
+    "special_tokens_map.json": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+    "tokenizer.json": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+    "tokenizer_config.json": "e711904cac23112776b678356ccf702cf934babaa01125f698ac43bf9ad38e73",
+    "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+  },
+  "validation": {
+    "correct": 160,
+    "n": 162,
+    "accuracy": 0.9876543209876543,
+    "macro_f1": 0.9876537917207843,
+    "limitation": "Repeatedly reused development validation."
+  },
+  "final_comparison": {
+    "n": 90,
+    "correct": 81,
+    "accuracy": 0.9,
+    "macro_f1": 0.8995156482861401,
+    "test_sha256": "0f5e875ce00f0d1cf51a15ac4c53fe694dd439a3641c4b84a0a2c40c65f0616f"
+  },
+  "final_comparison_report": "reports/reasoning_level/RISULTATI_FINALI_REASONING_LEVEL.md",
+  "sliding_window_report": "Historical validation result summarized in final component report; no sliding-window model active.",
+  "limitations": [
+    "Assistant-authored and reviewed sample",
+    "Central request may be omitted on long prompts",
+    "Reasoning level is not an empirical energy multiplier"
+  ],
+  "integration_date": "2026-10-22",
+  "source_checkpoint_historical": "experiments/reasoning_level_data_scaling/add_900/model/",
+  "source_checkpoint_status": "Historical path removed in requested cleanup; the exact selected bytes remain in active model/.",
+  "public_id2label": {
+    "0": "low",
+    "1": "medium",
+    "2": "high"
+  },
+  "id2label_scope": "Unchanged internal checkpoint names; public names are in public_id2label.",
+  "public_label_rename": {
+    "date": "2026-10-22",
+    "mapping": {
+      "Basic": "low",
+      "Intermediate": "medium",
+      "Advanced": "high"
+    },
+    "weights_and_class_ids_unchanged": true
+  }
+}

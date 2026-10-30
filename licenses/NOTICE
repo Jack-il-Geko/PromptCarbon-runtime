@@ -1,0 +1,2 @@
+Qwen is licensed under the Qwen RESEARCH LICENSE AGREEMENT, Copyright (c) Alibaba Cloud. All Rights Reserved.
+BERT base architecture and tokenizer derive from Google Research BERT, licensed under Apache License 2.0. Fine-tuned checkpoints are PromptCarbon project artifacts.

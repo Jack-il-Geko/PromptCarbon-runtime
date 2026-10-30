@@ -1,0 +1,979 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PromptCarbon</title>
+<style>
+      :root {
+        color-scheme: light;
+        --bg: #f5f3ee;
+        --ink: #16211f;
+        --muted: #60706b;
+        --line: #d9ded7;
+        --panel: #ffffff;
+        --accent: #0b7a75;
+        --accent-dark: #075653;
+        --warn: #b35722;
+        --green-bg: #e8f6ee;
+        --green-ink: #126c3f;
+        --amber-bg: #fff3d8;
+        --amber-ink: #95600f;
+        --red-bg: #fde8e4;
+        --red-ink: #a33a2d;
+        --shadow: 0 18px 45px rgba(22, 33, 31, 0.09);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--bg);
+        color: var(--ink);
+      }
+
+      .app-shell {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 34px 0 48px;
+      }
+
+      .page-header {
+        margin-bottom: 22px;
+      }
+
+      .workspace {
+        display: block;
+      }
+
+      .prompt-panel,
+      .metric-panel,
+      .data-section,
+      .model-section {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+      }
+
+      .brand-title {
+        margin: 0;
+        color: var(--ink);
+        font-size: clamp(2rem, 5vw, 4.6rem);
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: 0;
+      }
+
+      .hero-line {
+        margin: 8px 0 0;
+        max-width: 62ch;
+        color: var(--muted);
+        font-size: clamp(1rem, 1.6vw, 1.25rem);
+        font-weight: 700;
+        line-height: 1.35;
+      }
+
+      .kicker {
+        margin: 0 0 10px;
+        color: var(--accent);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2 {
+        margin: 0;
+        letter-spacing: 0;
+        line-height: 1.05;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 5vw, 4.8rem);
+        max-width: 9ch;
+      }
+
+      h2 {
+        font-size: 1.35rem;
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .prompt-panel {
+        padding: 24px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--ink);
+        font-weight: 800;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 260px;
+        resize: vertical;
+        border: 1px solid #cfd8d4;
+        border-radius: 8px;
+        padding: 16px;
+        font: inherit;
+        line-height: 1.5;
+        color: var(--ink);
+        background: #fbfcfb;
+      }
+
+      textarea:focus {
+        outline: 3px solid rgba(11, 122, 117, 0.18);
+        border-color: var(--accent);
+      }
+
+      .form-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      button {
+        min-height: 42px;
+        border: 0;
+        border-radius: 8px;
+        padding: 0 18px;
+        background: var(--accent);
+        color: #fff;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: var(--accent-dark);
+      }
+
+      .run-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        border-radius: 8px;
+        padding: 0 18px;
+        background: #16211f;
+        color: #fff;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .run-link:hover {
+        background: #2d3b38;
+      }
+
+      .run-link.disabled {
+        pointer-events: none;
+        opacity: 0.48;
+      }
+
+      .secondary,
+      .icon-button {
+        background: #e7eeee;
+        color: var(--accent-dark);
+      }
+
+      .secondary:hover,
+      .icon-button:hover {
+        background: #d8e5e3;
+      }
+
+      .icon-button {
+        width: 42px;
+        padding: 0;
+        font-size: 1.25rem;
+      }
+
+      .summary-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin: 18px 0;
+      }
+
+      .metric-panel {
+        padding: 22px;
+      }
+
+      .label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--muted);
+        font-size: 0.84rem;
+        font-weight: 800;
+      }
+
+      .metric-panel strong {
+        display: block;
+        font-size: clamp(1.35rem, 2.6vw, 2.2rem);
+        line-height: 1.1;
+      }
+
+      .metric-panel p {
+        margin: 10px 0 0;
+      }
+
+      .recommendation {
+        border-color: rgba(11, 122, 117, 0.4);
+      }
+
+      .recommendation .label {
+        color: var(--accent-dark);
+      }
+
+      .recommendation > strong {
+        font-size: clamp(2rem, 4vw, 3.4rem);
+      }
+
+      .recommendation-stats {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .recommendation-stats div {
+        min-height: 86px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 14px;
+        background: #fbfcfb;
+      }
+
+      .recommendation-stats span {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 800;
+      }
+
+      .recommendation-stats strong {
+        display: block;
+        color: var(--ink);
+        font-size: clamp(1.15rem, 2vw, 1.65rem);
+        line-height: 1.15;
+      }
+
+      .collective-impact {
+        margin: 16px 0 0;
+      }
+
+      .collective-impact p {
+        margin: 0 0 6px;
+        color: var(--accent-dark);
+        font-size: clamp(1rem, 1.5vw, 1.18rem);
+        font-weight: 800;
+        line-height: 1.4;
+      }
+
+      .collective-impact p:last-child {
+        margin-bottom: 0;
+      }
+
+      .data-section,
+      .model-section {
+        padding: 22px;
+        margin-top: 18px;
+      }
+
+      .section-heading {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+
+      .status {
+        margin-bottom: 14px;
+        padding: 12px 14px;
+        border-radius: 8px;
+        background: #eef6f5;
+        color: var(--accent-dark);
+        font-weight: 700;
+      }
+
+      .status.warning {
+        background: #fff3e8;
+        color: var(--warn);
+      }
+
+      .formula {
+        margin: -4px 0 18px;
+        max-width: 78ch;
+        color: var(--ink);
+        font-weight: 700;
+      }
+
+      .calculation-note {
+        margin: -4px 0 18px;
+        max-width: 92ch;
+      }
+
+      .calculation-note p {
+        margin: 0 0 10px;
+      }
+
+      .calculation-note p:last-child {
+        margin-bottom: 0;
+      }
+
+      .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 14px;
+      }
+
+      .legend span {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        min-height: 30px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 0 12px;
+        color: var(--ink);
+        background: #fff;
+        font-size: 0.88rem;
+        font-weight: 800;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+
+      .dot.green {
+        background: var(--green-ink);
+      }
+
+      .dot.amber {
+        background: var(--amber-ink);
+      }
+
+      .dot.red {
+        background: var(--red-ink);
+      }
+
+      .table-wrap {
+        width: 100%;
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        min-width: 840px;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 14px 12px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        white-space: nowrap;
+      }
+
+      th {
+        color: var(--muted);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      tr.slot-green td {
+        background: var(--green-bg);
+      }
+
+      tr.slot-medium td {
+        background: var(--amber-bg);
+      }
+
+      tr.slot-red td {
+        background: var(--red-bg);
+      }
+
+      .slot-pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 88px;
+        margin-right: 8px;
+        border-radius: 999px;
+        padding: 4px 9px;
+        font-size: 0.78rem;
+        font-weight: 900;
+      }
+
+      .slot-pill.green {
+        color: var(--green-ink);
+        background: rgba(18, 108, 63, 0.12);
+      }
+
+      .slot-pill.medium {
+        color: var(--amber-ink);
+        background: rgba(149, 96, 15, 0.13);
+      }
+
+      .slot-pill.red {
+        color: var(--red-ink);
+        background: rgba(163, 58, 45, 0.12);
+      }
+
+      td.best {
+        color: var(--green-ink);
+        font-weight: 900;
+      }
+
+      .saving-positive {
+        color: var(--green-ink);
+        font-weight: 900;
+      }
+
+      .saving-neutral {
+        color: var(--muted);
+        font-weight: 800;
+      }
+
+      .saving-negative {
+        color: var(--red-ink);
+        font-weight: 900;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      @media (max-width: 880px) {
+        .summary-grid {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          max-width: none;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .app-shell {
+          width: min(100% - 22px, 1180px);
+          padding-top: 16px;
+        }
+
+        .prompt-panel,
+        .metric-panel,
+        .data-section,
+        .model-section {
+          padding: 18px;
+        }
+
+        .form-actions {
+          flex-direction: column;
+        }
+
+        .recommendation-stats {
+          grid-template-columns: 1fr;
+        }
+      }
+    
+      [hidden] { display: none !important; }
+      .prompt-heading { display: flex; gap: 24px; align-items: end; justify-content: space-between; margin-bottom: 14px; }
+      .prompt-heading > label { margin: 0 0 10px; }
+      .model-choice { width: min(100%, 300px); }
+      .model-choice label, .length-fields label { font-size: .84rem; margin-bottom: 8px; }
+      input, select { width: 100%; min-height: 44px; border: 1px solid #cfd8d4; border-radius: 8px; padding: 10px 12px; background: #fbfcfb; color: var(--ink); font: inherit; }
+      input:focus, select:focus, button:focus-visible, summary:focus-visible { outline: 3px solid rgba(11,122,117,.18); outline-offset: 2px; border-color: var(--accent); }
+      .form-actions { flex-wrap: wrap; }
+      button:disabled { cursor: wait; opacity: .55; }
+      .recommendation-stats > div { min-width: 0; }
+      .recommendation-stats strong { overflow-wrap: anywhere; }
+      .recommendation-stats #taskStat, .recommendation-stats #reasoningStat { font-size: clamp(1rem, 1.7vw, 1.35rem); }
+      .recommendation-stats small { display: block; margin-top: 7px; color: var(--muted); line-height: 1.4; }
+      .result-heading { display: flex; gap: 16px; justify-content: space-between; align-items: baseline; }
+      .result-heading .label { margin: 0; }
+      #timing { margin: 0; color: var(--muted); font-size: .84rem; white-space: nowrap; }
+      .recommendation > strong { display: block; margin-top: 12px; }
+      .recommendation #status { margin: 16px 0 0; }
+      #status[data-state="error"] { background: #fff3e8; color: var(--warn); }
+      pre { margin: 18px 0 0; border: 1px solid var(--line); border-radius: 8px; padding: 16px; background: #fbfcfb; color: var(--ink); font-size: .88rem; line-height: 1.55; white-space: pre-wrap; overflow-wrap: anywhere; overflow: auto; }
+      .length-fields { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; align-items: end; }
+      .preference-field { max-width: 340px; margin-bottom: 14px; }
+      .length-help { margin: 10px 0 0; font-size: .9rem; }
+      .automatic-option { border-top: 1px solid var(--line); margin-top: 22px; padding-top: 18px; }
+      summary { color: var(--accent-dark); font-weight: 800; cursor: pointer; }
+      .automatic-option button { margin-top: 14px; }
+      @media (max-width: 560px) {
+        .prompt-heading { display: block; }
+        .model-choice { width: 100%; margin-bottom: 18px; }
+        .prompt-heading > label { margin-bottom: 10px; }
+        .length-fields { grid-template-columns: 1fr; }
+        .result-heading { flex-wrap: wrap; gap: 6px; }
+        .recommendation > strong { font-size: 2rem; }
+      }
+
+      #carbonPanel caption { text-align:left; color:var(--muted); padding:0 0 14px; font-size:.85rem; }
+      #carbonPanel td > span { display:block; }
+      #carbonPanel .slot-badge { font-size:.75rem; color:var(--muted); margin-bottom:6px; }
+      #carbonPanel .cfe-best { color:var(--green-ink); font-weight:800; }
+      #carbonPanel .legend span span { border:0; padding:0; min-height:0; }
+      #carbonPanel .recommendation-stats strong { overflow-wrap:anywhere; }
+</style>
+</head>
+
+  <body>
+    <main class="app-shell">
+      <header class="page-header">
+        <h1 class="brand-title">PROMPTCARBON</h1>
+        <p class="hero-line">Find the lowest-carbon moment to run your AI prompt.</p>
+      </header>
+      <section class="workspace" aria-label="Prompt workspace">
+        <div class="prompt-panel">
+          <div class="prompt-heading">
+            <label for="userPrompt">Your prompt</label>
+            <div class="model-choice">
+              <label for="targetModel">Target model</label>
+              <select id="targetModel">
+                <option value="Qwen/Qwen2.5-3B-Instruct">Qwen2.5-3B-Instruct</option>
+                <option value="gpt-5">GPT-5</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <textarea id="userPrompt" name="prompt" rows="8" lang="en" spellcheck="true" placeholder="Paste the prompt you want to analyze..."></textarea>
+          <div class="form-actions">
+            <button id="carbonButton" type="button">Update estimate</button>
+            <button id="tokenizeButton" class="secondary" type="button">Count input tokens</button>
+            <button id="classifyButton" class="secondary" type="button">Classify task</button>
+            <button id="reasoningButton" class="secondary" type="button">Estimate reasoning level</button>
+            <button id="outputButton" class="secondary" type="button">Estimate output tokens</button>
+          </div>
+        </div>
+      </section>
+      <section class="model-section" aria-labelledby="lengthHeading">
+        <div class="section-heading">
+          <div><p class="kicker">Output length</p><h2 id="lengthHeading">Set a word limit</h2></div>
+        </div>
+        <p class="calculation-note">Choose a word limit, or use automatic extraction below.</p>
+        <form id="lengthForm">
+          <div class="preference-field">
+            <label for="lengthType">Word limit</label>
+            <select id="lengthType">
+              <option value="none">No word limit</option>
+              <option value="maximum">At most</option>
+              <option value="exact">Exactly</option>
+              <option value="minimum">At least</option>
+              <option value="range">Between</option>
+              <option value="about">About</option>
+            </select>
+          </div>
+          <div id="lengthFields" class="length-fields" hidden>
+            <div class="length-field">
+              <label id="lengthValueLabel" for="lengthValue">Word count</label>
+              <input id="lengthValue" type="number" min="1" max="9007199254740991" step="1" required disabled>
+            </div>
+            <div id="lengthMaximumField" class="length-field" hidden>
+              <label for="lengthMaximum">Maximum words</label>
+              <input id="lengthMaximum" type="number" min="1" max="9007199254740991" step="1" required disabled>
+            </div>
+          </div>
+          <p id="aboutHelp" class="length-help" hidden>A desired approximate word count, not a strict limit.</p>
+          <div class="form-actions"><button id="lengthButton" type="submit">Check word limit</button></div>
+        </form>
+        <details class="automatic-option">
+          <summary>Automatic constraint extraction (optional)</summary>
+          <label for="constraintMode">Constraints for output estimation</label>
+          <select id="constraintMode"><option value="manual">Use manual settings (default)</option><option value="automatic">Extract from prompt with BERT</option></select>
+          <p class="length-help">BERT detects word limits in English prompts. Check its suggestion before using it.</p>
+          <button id="extractButton" type="button" class="secondary">Suggest constraints with BERT</button>
+        </details>
+      </section>
+      <section id="carbonPanel" hidden aria-live="polite"></section>
+      <section class="summary-grid" aria-label="Analysis results">
+        <article class="metric-panel recommendation" id="analysisPanel" aria-busy="false">
+          <div class="result-heading">
+            <span class="label">Prompt analysis</span>
+            <p id="timing"></p>
+          </div>
+          <strong id="resultTitle">Ready when you are</strong>
+          <p id="status" class="status" role="status" data-state="ready">Choose an action to analyze your prompt.</p>
+          <div class="recommendation-stats">
+            <div><span>Input tokens</span><strong id="inputStat">—</strong><small id="inputNote" hidden></small></div>
+            <div><span>Estimated output tokens</span><strong id="outputStat">—</strong><small id="outputNote" hidden></small></div>
+            <div><span>Task</span><strong id="taskStat">—</strong><small id="taskNote" hidden></small></div>
+            <div><span>Reasoning level</span><strong id="reasoningStat">—</strong><small id="reasoningNote" hidden></small></div>
+            <div><span>Length constraint</span><strong id="lengthStat">—</strong><small id="lengthNote" hidden></small></div>
+          </div>
+          <p id="outputWarnings" class="length-help" hidden></p>
+          <pre id="result" aria-live="polite" hidden></pre>
+        </article>
+      </section>
+    </main>
+<script type="module">
+    
+/* The Python server uses a local tokenizer or OpenAI's token-counting API. */
+async function countInputTokens(prompt, targetModel) {
+  const response = await fetch('/api/tokenize', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ prompt, targetModel })
+  });
+  const result = await response.json();
+  if (!response.ok) throw new Error(result.error || 'Token count unavailable.');
+  if (!Number.isInteger(result.inputTokens) || result.inputTokens <= 0)
+    throw new Error('Invalid server response.');
+  const hasFallbackMetadata = 'accuracy' in result || 'tokenizer' in result;
+  if (
+    hasFallbackMetadata &&
+    (result.accuracy !== 'APPROXIMATE' || !result.tokenizer)
+  ) throw new Error('Invalid fallback metadata in the server response.');
+  return result;
+}
+
+async function classifyTask(prompt) {
+  const response = await fetch('/api/classify-task', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ prompt })
+  });
+  const result = await response.json();
+  if (!response.ok) throw new Error(result.error || 'Task classification unavailable.');
+  if (!result.task || !/^\d+\.\d{2}%$/.test(result.confidence))
+    throw new Error('Invalid server response.');
+  return result;
+}
+
+async function extractConstraints(prompt) {
+  const response = await fetch('/api/extract-constraints', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ prompt })
+  });
+  const output = await response.json();
+  if (!response.ok) throw new Error(output.error || 'Constraint extraction unavailable.');
+  if (Object.keys(output).length !== 1 || !('lengthConstraint' in output))
+    throw new Error('Invalid constraint response.');
+  const constraints = output.lengthConstraint === null ? []
+    : Array.isArray(output.lengthConstraint) ? output.lengthConstraint : [output.lengthConstraint];
+  for (const item of constraints) {
+    if (!item || Object.keys(item).sort().join(',') !== 'type,unit,value' ||
+        !['exact', 'max', 'min', 'approx'].includes(item.type) ||
+        item.unit !== 'words' ||
+        !Number.isInteger(item.value) || item.value <= 0)
+      throw new Error('Invalid constraint response.');
+  }
+  return output;
+}
+
+// These settings are separate from the original prompt and its input token count.
+const lengthType = document.getElementById('lengthType');
+const lengthValue = document.getElementById('lengthValue');
+const lengthMaximum = document.getElementById('lengthMaximum');
+function updateLengthFields() {
+  const hasPreference = lengthType.value !== 'none';
+  const isRange = lengthType.value === 'range';
+  document.getElementById('lengthFields').hidden = !hasPreference;
+  document.getElementById('lengthMaximumField').hidden = !isRange;
+  document.getElementById('lengthValueLabel').textContent = isRange ? 'Minimum words' : 'Word count';
+  document.getElementById('aboutHelp').hidden = lengthType.value !== 'about';
+  lengthValue.disabled = !hasPreference;
+  lengthMaximum.disabled = !hasPreference || !isRange;
+}
+function readLengthPreference() {
+  if (lengthType.value === 'none') return null;
+  const value = lengthType.value === 'range'
+    ? [Number(lengthValue.value), Number(lengthMaximum.value)]
+    : Number(lengthValue.value);
+  const numbers = Array.isArray(value) ? value : [value];
+  if (numbers.some(number => !Number.isSafeInteger(number) || number <= 0))
+    throw new Error('Enter positive whole numbers.');
+  if (Array.isArray(value) && value[0] > value[1])
+    throw new Error('The minimum cannot exceed the maximum.');
+  return { type: lengthType.value, value, unit: 'words' };
+}
+async function checkOutputLength() {
+  const response = await fetch('/api/output-length', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ lengthConstraint: readLengthPreference() })
+  });
+  const output = await response.json();
+  if (!response.ok) throw new Error(output.error || 'Invalid length preference.');
+  return output;
+}
+lengthType.addEventListener('change', updateLengthFields);
+updateLengthFields();
+
+async function estimateReasoningLevel(prompt) {
+  const response = await fetch('/api/estimate-reasoning-level', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({prompt})
+  });
+  const output = await response.json();
+  if (!response.ok) throw new Error(output.error || 'Reasoning estimation unavailable.');
+  if (Object.keys(output).length !== 1 || !['low', 'medium', 'high'].includes(output.reasoningLevel))
+    throw new Error('Invalid reasoning level response.');
+  return output;
+}
+
+async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
+  const constraintSource = document.getElementById('constraintMode').value;
+  const response = await fetch(endpoint, {
+    method: 'POST', headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({prompt: document.getElementById('userPrompt').value,
+      targetModel: document.getElementById('targetModel').value, constraintSource,
+      lengthConstraint: constraintSource === 'manual' ? readLengthPreference() : null})
+  });
+  const output = await response.json();
+  if (!response.ok) throw new Error(output.error || 'Output estimate unavailable.');
+  if (!Number.isInteger(output.outputTokens) || output.outputTokens < 0) throw new Error('Invalid output estimate.');
+  return output;
+}
+    const outputButton = document.getElementById('outputButton');
+    const lengthButton = document.getElementById('lengthButton');
+    const tokenizeButton = document.getElementById('tokenizeButton');
+    const classifyButton = document.getElementById('classifyButton');
+    const reasoningButton = document.getElementById('reasoningButton');
+    const extractButton = document.getElementById('extractButton');
+    const status = document.getElementById('status');
+    const result = document.getElementById('result');
+    const timing = document.getElementById('timing');
+
+    function clearSummary() {
+      document.getElementById("carbonPanel").hidden = true;
+      document.getElementById('outputWarnings').hidden = true;
+      for (const id of ['inputStat', 'outputStat', 'taskStat', 'reasoningStat', 'lengthStat']) document.getElementById(id).textContent = '—';
+      for (const id of ['inputNote', 'outputNote', 'taskNote', 'reasoningNote', 'lengthNote']) {
+        document.getElementById(id).textContent = '';
+        document.getElementById(id).hidden = true;
+      }
+    }
+    function showNote(id, text) {
+      const element = document.getElementById(id);
+      element.textContent = text;
+      element.hidden = !text;
+    }
+    function showSummary(output) {
+      if ('outputTokens' in output) {
+        showSummary({inputTokens: output.inputTokens});
+        showSummary({task: output.task, confidence: output.confidence});
+        showSummary({reasoningLevel: output.reasoningLevel});
+        showSummary({lengthConstraint: output.lengthConstraint});
+        document.getElementById('outputStat').textContent = output.outputTokens.toLocaleString('en-US');
+        showNote('outputNote', 'Experimental · Qwen2.5-3B-Instruct BF16');
+        showNote('inputNote', 'Full request, including any appended manual preference');
+        document.getElementById('resultTitle').textContent = 'Output tokens estimated';
+        const warning = document.getElementById('outputWarnings');
+        warning.textContent = 'Experimental estimate of visible output tokens. Length preferences are requests, not guaranteed output sizes. Automatic constraints should be checked.';
+        warning.hidden = false;
+      } else if ('inputTokens' in output) {
+        document.getElementById('inputStat').textContent = output.inputTokens.toLocaleString('en-US');
+        showNote('inputNote', output.accuracy === 'APPROXIMATE' ? 'Approximate count' : '');
+        document.getElementById('resultTitle').textContent = 'Input tokens counted';
+      } else if ('task' in output) {
+        document.getElementById('taskStat').textContent = output.task;
+        showNote('taskNote', `Confidence: ${output.confidence}`);
+        document.getElementById('resultTitle').textContent = 'Task classified';
+      } else if ('reasoningLevel' in output) {
+        document.getElementById('reasoningStat').textContent = output.reasoningLevel;
+        showNote('reasoningNote', 'Estimated reasoning required, not measured energy use.');
+        document.getElementById('resultTitle').textContent = 'Reasoning level estimated';
+      } else if ('lengthConstraint' in output) {
+        const value = output.lengthConstraint;
+        const labels = {exact: 'Exactly', maximum: 'At most', max: 'At most', minimum: 'At least', min: 'At least', about: 'About', approx: 'About'};
+        const values = value === null ? [] : Array.isArray(value) ? value : [value];
+        document.getElementById('lengthStat').textContent = value === null ? 'No word limit'
+          : values.map(item => item.type === 'range'
+            ? `${item.value[0]}–${item.value[1]} ${item.unit}`
+            : `${labels[item.type]} ${item.value} ${item.unit}`).join(' · ');
+        showNote('lengthNote', 'See the complete result below.');
+        document.getElementById('resultTitle').textContent = 'Length constraint checked';
+      }
+    }
+
+    let inputRevision = 0;
+    let currentRun = 0;
+    const watchedInputs = ['userPrompt', 'targetModel', 'constraintMode', 'lengthType', 'lengthValue', 'lengthMaximum'];
+
+    function inputSnapshot() {
+      return JSON.stringify(watchedInputs.map(id => document.getElementById(id).value));
+    }
+
+    function invalidateResults() {
+      inputRevision += 1;
+      clearSummary();
+      result.hidden = true;
+      result.textContent = '';
+      timing.textContent = '';
+      document.getElementById('resultTitle').textContent = 'Analysis needs updating';
+      status.dataset.state = 'ready';
+      status.textContent = 'Inputs changed. Run the analysis again.';
+    }
+
+    async function runAction(message, action, completion = 'Analysis completed.') {
+      const revision = inputRevision;
+      const snapshot = inputSnapshot();
+      const run = ++currentRun;
+      const isCurrent = () => run === currentRun && revision === inputRevision && snapshot === inputSnapshot();
+      document.getElementById('carbonButton').disabled = true;
+      outputButton.disabled = true;
+      lengthButton.disabled = true;
+      tokenizeButton.disabled = true;
+      classifyButton.disabled = true;
+      reasoningButton.disabled = true;
+      extractButton.disabled = true;
+      clearSummary();
+      result.hidden = true;
+      result.textContent = '';
+      document.getElementById('analysisPanel').setAttribute('aria-busy', 'true');
+      document.getElementById('resultTitle').textContent = 'Analyzing your prompt';
+      status.dataset.state = 'loading';
+      timing.textContent = '';
+      status.textContent = message;
+      const start = performance.now();
+      try {
+        const output = await action();
+        if (!isCurrent()) return;
+        result.textContent = JSON.stringify(Object.fromEntries(Object.entries(output).filter(([key]) => key !== "carbonFootprint")), null, 2);
+        result.hidden = false;
+        showSummary(output);
+        if (output.carbonFootprint) showCarbon(output.carbonFootprint);
+        status.dataset.state = 'complete';
+        status.textContent = typeof output.taskCategory === 'string'
+          ? 'Analysis completed, but the task classification is uncertain.'
+          : completion;
+        timing.textContent = `Time: ${((performance.now() - start) / 1000).toFixed(2)} s`;
+      } catch (error) {
+        if (!isCurrent()) return;
+        status.textContent = `Error: ${error.message}`;
+        status.dataset.state = 'error';
+        document.getElementById('resultTitle').textContent = 'Analysis unavailable';
+      } finally {
+        if (run !== currentRun) return;
+        document.getElementById('analysisPanel').setAttribute('aria-busy', 'false');
+        document.getElementById('carbonButton').disabled = false;
+        outputButton.disabled = false;
+        lengthButton.disabled = false;
+        tokenizeButton.disabled = false;
+        classifyButton.disabled = false;
+        reasoningButton.disabled = false;
+        extractButton.disabled = false;
+      }
+    }
+
+    for (const id of watchedInputs) {
+      for (const event of ['input', 'change']) {
+        document.getElementById(id).addEventListener(event, invalidateResults);
+      }
+    }
+
+    document.getElementById('lengthForm').addEventListener('submit', event => {
+      event.preventDefault();
+      runAction('Checking output length...', checkOutputLength);
+    });
+
+    tokenizeButton.addEventListener('click', () => runAction(
+      'Counting tokens...',
+      () => countInputTokens(
+        document.getElementById('userPrompt').value,
+        document.getElementById('targetModel').value
+      )
+    ));
+
+    extractButton.addEventListener('click', () => runAction(
+      'Extracting global length constraints... The first request loads the model.',
+      () => extractConstraints(document.getElementById('userPrompt').value),
+      'Automatic suggestion completed. Check the detected constraints; manual settings have not changed.'
+    ));
+
+    reasoningButton.addEventListener('click', () => runAction(
+      'Estimating reasoning level... The first request loads the model.',
+      () => estimateReasoningLevel(document.getElementById('userPrompt').value),
+      'Reasoning level estimated. Long prompts use the beginning and end of the text.'
+    ));
+
+    outputButton.addEventListener('click', () => runAction(
+      'Estimating output tokens with the current analyser...', () => estimateOutputTokens(),
+      'Experimental output estimate completed. No response was generated.'
+    ));
+
+    classifyButton.addEventListener('click', () => runAction(
+      'Classifying task... The first classification may take a little longer.',
+      () => classifyTask(document.getElementById('userPrompt').value)
+    ));
+
+    function showCarbon(c) {
+      const panel = document.getElementById('carbonPanel');
+      panel.replaceChildren(); panel.hidden = false;
+      function add(parent, tag, text='', className='') {
+        const node = document.createElement(tag);
+        node.textContent = text; node.className = className;
+        parent.appendChild(node); return node;
+      }
+      const number = x => Number(x).toPrecision(4);
+      const time = x => new Intl.DateTimeFormat('en-GB', {timeZone:'Europe/London',month:'short',day:'2-digit',hour:'2-digit',minute:'2-digit',timeZoneName:'short'}).format(new Date(x));
+      const summary = add(panel, 'section', '', 'summary-grid');
+      const card = add(summary, 'article', '', 'metric-panel recommendation');
+      add(card, 'span', 'Recommendation', 'label');
+      const best = c.recommendation;
+      add(card, 'strong', best ? (best.runNow ? 'Now is the best time' : time(best.start)) : 'Time comparison unavailable');
+      add(card, 'p', best ? `Suggested window: ${time(best.start)} – ${time(best.end)}.` : c.forecastError);
+      const stats = add(card, 'div', '', 'recommendation-stats');
+      for (const [label, value] of [
+        ['CO₂e reduction', best ? `${best.reductionPercent.toFixed(2)}%` : 'Unavailable'],
+        ['Prompt SCI · recommended', best ? `${number(best.bestGCO2eApprox)} gCO₂e/request*` : 'Unavailable'],
+        ['Compared with now', best ? `${number(best.currentGCO2eApprox)} gCO₂e/request*` : 'Unavailable']
+      ]) {const box=add(stats,'div');add(box,'span',label);add(box,'strong',value);}
+      add(card, 'p', `Estimated energy: ${number(c.energyWh)} Wh · Hardware footprint: ${number(c.embodiedGCO2e)} gCO₂e`, 'calculation-note');
+      if (best) {
+
+        const forecast = add(panel,'section','','data-section');
+        const heading=add(forecast,'div','','section-heading');
+        const title=add(heading,'div');add(title,'p','Next 3 hours','kicker');
+        add(title,'h2','Estimated SCI by half-hour slot');
+        add(forecast,'div','Estimated impact per request · UK local time','status');
+        const legend=add(forecast,'div','','legend');
+        for(const [color,label] of [['green','Lower impact'],['amber','Medium impact'],['red','Higher impact']]) {const item=add(legend,'span');add(item,'i','','dot '+color);add(item,'span',label);}
+        const wrap=add(forecast,'div','','table-wrap');
+        const table=add(wrap,'table');add(table,'caption','Colours compare these six periods; they are not absolute impact ratings.');
+        const head=add(add(table,'thead'),'tr');
+        for(const label of ['Time','Carbon intensity','Saving vs now','SCI / total*','Energy']) add(head,'th',label).setAttribute('scope','col');
+        const body=add(table,'tbody');
+        for(const period of c.periods) {
+          const sorted=c.periods.map(p=>p.totalGCO2eApprox).sort((a,b)=>a-b);
+          const rank=sorted.indexOf(period.totalGCO2eApprox);
+          const level=rank<2?'green':rank>=4?'red':'medium';
+          const row=add(body,'tr','','slot-'+level);
+          const saving=best.currentGCO2eApprox ? 100*(best.currentGCO2eApprox-period.totalGCO2eApprox)/best.currentGCO2eApprox : 0;
+          const values=[time(period.start)+' – '+time(period.end),period.forecast+' gCO₂/kWh',saving.toFixed(2)+'%',number(period.totalGCO2eApprox)+' gCO₂e',number(c.energyWh)+' Wh'];
+          values.forEach((value,i)=>{const cell=add(row,'td');if(i===0){add(cell,'span',period.start===best.start?'Recommended':'Forecast',period.start===best.start?'slot-badge cfe-best':'slot-badge');}add(cell,'span',value);});
+        }
+      }
+      add(panel,'p','Estimates based on an EcoLogits hardware scenario and UK forecasts. Savings are not guaranteed.','length-help');
+      const method=add(panel,'details','','model-section');
+      add(method,'summary','How is this estimated?');
+      add(method,'p','SCI(prompt) = ((E × I) + M) / R. R is one request.','formula');
+      add(method,'p','PromptCarbon predicts visible output tokens with its Random Forest. EcoLogits estimates inference energy and allocated hardware emissions for a Qwen2.5-3B-Instruct reference scenario: H100, batch 64 and PUE 1.20.','calculation-note');
+      add(method,'p','The same energy is compared across six Great Britain electricity forecasts. These are estimates, not measured deployment emissions. Input-processing energy is not explicitly modeled; operational CO₂ is approximated as CO₂e when combined with embodied emissions.','calculation-note');
+    }
+    document.getElementById('carbonButton').addEventListener('click', () => runAction(
+      'Estimating carbon footprint and retrieving forecasts...', () => estimateOutputTokens('/api/estimate-carbon'),
+      'Reference carbon estimate completed. No LLM response was generated.'
+    ));
+  </script>
+</body>
+</html>
