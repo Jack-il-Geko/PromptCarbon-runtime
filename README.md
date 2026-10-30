@@ -1,58 +1,95 @@
 # PromptCarbon
 
-Local research prototype that counts input tokens, classifies the task and reasoning level, handles word limits, predicts visible output tokens and estimates a reference carbon footprint for Qwen2.5-3B-Instruct. Built with Qwen outputs for the experimental estimator (Improved using Qwen).
+PromptCarbon is a university research project. It analyses a prompt, estimates how many output tokens it may produce and estimates its carbon footprint. The results are shown in a local web page.
 
-## Installation
+This repository contains the version for running the application. It does not include training datasets or previous experiments.
 
-Tested target: macOS Apple Silicon, Python 3.12, 16 GB RAM. Other systems are untested. A clean environment installation using cached pip wheels and a local verified asset mirror took 22.7 seconds; public network download time has not been measured. Install Python 3.12 first; no Apple-specific path is required.
+## What you need
+
+- A Mac with Apple Silicon, such as M1, M2, M3 or M4. The application was tested on an M4 with 16 GB RAM. Windows, Linux and Intel Macs have not been tested.
+- Python **3.12**, installed before starting.
+- An Internet connection for installation and carbon-intensity forecasts.
+
+You can download the project from your browser. Installation and startup still require a few Terminal commands; opening `index.html` directly does not start the application.
+
+## 1. Download the project
+
+On this GitHub page, click **Code → Download ZIP**, then open the ZIP to extract the folder.
+
+Open Terminal in the extracted folder. On Mac, you can right-click the folder in Finder and look for **Services → New Terminal at Folder**. The menu name may differ with your system language.
+
+If you prefer Git, use these commands instead of downloading the ZIP:
 
 ```bash
 git clone --depth 1 https://github.com/Jack-il-Geko/PromptCarbon-runtime.git
 cd PromptCarbon-runtime
-python3.12 install.py
-.venv/bin/python run.py
 ```
 
-Open http://127.0.0.1:5500. Stop with Ctrl+C. After installation, only the last command is needed. The interface retains the existing buttons. Manual word limits are the default; BERT extraction remains optional.
+Choose one download method. You do not need to do both.
 
-To install the optional constraint checkpoint immediately:
+## 2. Install — only the first time
+
+From the project folder, run:
 
 ```bash
 python3.12 install.py --automatic-constraints
 ```
 
-Otherwise its files are downloaded when automatic extraction is first selected. The first installation needs Internet access. Models are cached in their local model folders and verified by SHA256; subsequent starts reuse them. A missing/unpublished release asset produces an explicit error; there is no substitute model.
+This installs the Python packages and downloads the models, including the optional automatic constraint extractor. It does not start the application. Wait until installation finishes before continuing.
 
-Runtime checkpoints and the official tokenizer are hosted as versioned assets in this repository’s runtime-v1 GitHub Release. The installer verifies their SHA256 checksums before use.
+The first installation downloads about **630 MB** and needs roughly **1.5 GB** of disk space. Download time depends on your connection. Only the Qwen tokenizer is downloaded, not the full Qwen language model.
 
-## What is downloaded
+For a smaller initial installation, you can use `python3.12 install.py` instead. This downloads about **480 MB**. The automatic constraint model will then be downloaded the first time you select that mode.
 
-Only the three fine-tuned BERT checkpoints actually used by the application are available as runtime assets: Task Classifier and Reasoning Level in the core installation; automatic Constraint Extractor optionally. The original RF is included in the source. Qwen files contain only its pinned official tokenizer, never generative weights. No MLX, alternative strategy, training dataset, generation, benchmark or Git LFS model download is required.
+## 3. Start PromptCarbon
 
-The runtime source ZIP is about 1.46 MB. Core assets are 311.54 MB compressed; automatic constraints add 152.91 MB. The tested Python wheels add about 166 MB, so a first install is approximately 480 MB (core) or 630 MB (all models), excluding the Python installer and small package metadata. Expanded files and the environment need roughly 1.5 GB disk space with all models. Exact compressed and expanded asset byte counts are in runtime_manifest.json. Installation also downloads Python dependencies, notably PyTorch; actual duration depends on network, Python version and existing package caches. install.py records elapsed time in .cache/install_metrics.json. Automatic downloads point to versioned GitHub Release assets, not an unversioned model alias.
+From the same project folder, run:
 
-## Use and limits
+```bash
+.venv/bin/python run.py
+```
 
-Models and algorithms are the selected project versions, with unchanged weights and preprocessing. English prompts are the main supported use. Quantitative preferences are in words. Reasoning is reported but does not change the RF estimate. Output estimation and CFE support Qwen2.5-3B-Instruct BF16 only. No Qwen response is generated.
+Open **http://127.0.0.1:5500** in your browser if the page does not open automatically.
 
-The CFE uses EcoLogits 0.11.3 on the local CPU, with a reference H100 scenario, batch 64, PUE 1.20 and three-year lifetime. It queries the Great Britain carbon-intensity API for six half-hour forecasts. It does not explicitly model prompt-processing energy and approximates operational CO2 as CO2e when combining impacts. These are scenario estimates, not measured deployment emissions. Forecast failures preserve the energy/embodied estimate, with no time recommendation.
+Keep the Terminal window open while using the application. To stop it, press **Ctrl+C** in that window.
 
-GPT-5 input counting remains optional and requires the user's own API key in a private local .env file containing OPENAI_API_KEY. It is not needed for Qwen or the CFE. Never commit that file. Unknown-model approximate counting uses tiktoken and may download its encoding on first use.
+## Next time
 
-## Technical checks
+Open Terminal in the project folder and run only:
+
+```bash
+.venv/bin/python run.py
+```
+
+You do not need to download or install everything again. The models are saved locally.
+
+## Using the application
+
+Enter an English prompt in the web page. You can enter a word limit manually or select automatic extraction with BERT. The page shows the prompt analysis, estimated output tokens and carbon-footprint results.
+
+Output-token and carbon-footprint estimates refer to **Qwen2.5-3B-Instruct BF16**. PromptCarbon does not execute that language model or generate its answer. The estimates may differ from actual output length and energy consumption. Reasoning level is shown but does not change the Random Forest estimate.
+
+The carbon calculation uses EcoLogits 0.11.3 and a reference H100 scenario, with batch size 64, PUE 1.2 and a three-year hardware lifetime. It uses Great Britain carbon-intensity forecasts for six 30-minute periods. These are estimates, not measured emissions from your Mac. Input-processing energy is not explicitly modelled. If forecasts are unavailable, the application cannot recommend a time period.
+
+No OpenAI API key is needed for Qwen token counting or the carbon estimator. The optional GPT-5 input-token counting feature needs your own key in a private `.env` file. Never upload that file to GitHub.
+
+## Optional technical tests
+
+**These tests do not start PromptCarbon and are not needed for normal use.** After installing with automatic constraints, you can run them with:
 
 ```bash
 .venv/bin/python -B -m unittest carbon_footprint_estimator.test_cfe input_tokenizer.test_tokenizer output_token_estimator.tests.test_estimator
 ```
 
-Forecasts and OpenAI calls are mocked in tests. No training or generative inference occurs. Optional Node checks can be skipped when Node is absent. Install the constraint checkpoint before running all tests. A change of installation path does not change the model outputs. Run from a writable directory because checkpoint downloads and caches are stored beside the application.
+External API calls are simulated during these tests. No model is trained and no Qwen answer is generated.
 
-## Files
+## Licenses and sources
 
-server.py and index.html provide local APIs and the interface; run.py starts the app; runtime_assets.py verifies/downloads pinned assets; install.py creates the environment. input_tokenizer/, analyser/, output_token_estimator/ and carbon_footprint_estimator/ contain the definitive components. requirements.txt fixes runtime dependencies. Tests are technical regressions, not a new independent statistical evaluation.
+The `licenses/` folder contains the original BERT and Qwen license texts. `THIRD_PARTY_NOTICES.md` explains which external components are used. BERT uses Apache 2.0; the Qwen tokenizer uses the Qwen Research License, with non-commercial terms. No separate license has yet been selected for the original application code.
 
-## Licenses and reference sources
+Improved using Qwen: Qwen-generated answers were used to train the experimental output-token estimator.
 
-The author's application licensing must be selected by the owner before offering a general open-source license. Publishing on GitHub does not automatically grant a permissive license. BERT derives from Google's Apache-2.0 model; the included Qwen tokenizer is subject to the Qwen Research License, including its non-commercial scope. Do not label the entire distribution MIT/Apache without resolving these terms. See THIRD_PARTY_NOTICES.md and licenses/.
-
-Sources: https://huggingface.co/google/bert_uncased_L-8_H-512_A-8 ; https://huggingface.co/Qwen/Qwen2.5-3B-Instruct ; https://ecologits.ai/latest/methodology/llm_inference/ ; https://api.carbonintensity.org.uk/ .
+- [BERT-Medium](https://huggingface.co/google/bert_uncased_L-8_H-512_A-8)
+- [Qwen2.5-3B-Instruct](https://huggingface.co/Qwen/Qwen2.5-3B-Instruct)
+- [EcoLogits methodology](https://ecologits.ai/latest/methodology/llm_inference/)
+- [Great Britain Carbon Intensity API](https://api.carbonintensity.org.uk/)
