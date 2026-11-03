@@ -35,11 +35,11 @@ From the project folder, run:
 python3.12 install.py --automatic-constraints
 ```
 
-This installs the Python packages and downloads the models, including the optional automatic constraint extractor. It does not start the application. Wait until installation finishes before continuing.
+This installs the Python packages and downloads the models, including the BERT constraint extractor used by the default automatic mode. It does not start the application. Wait until installation finishes before continuing.
 
 The first installation downloads about **630 MB** and needs roughly **1.5 GB** of disk space. Download time depends on your connection. Only the Qwen tokenizer is downloaded, not the full Qwen language model.
 
-For a smaller initial installation, you can use `python3.12 install.py` instead. This downloads about **480 MB**. The automatic constraint model will then be downloaded the first time you select that mode.
+For a smaller initial installation, you can use `python3.12 install.py` instead. This downloads about **480 MB**. The automatic constraint model will then be downloaded when you first run an estimate in automatic mode. Choose Manual before estimating if you do not want to download this optional model.
 
 ## 3. Start PromptCarbon
 
@@ -65,9 +65,15 @@ You do not need to download or install everything again. The models are saved lo
 
 ## Using the application
 
-Enter an English prompt in the web page. You can enter a word limit manually or select automatic extraction with BERT. The page shows the prompt analysis, estimated output tokens and carbon-footprint results.
+1. Enter your prompt in English and include the context needed to answer it. If you specify a word limit, make clear that it applies to the whole response. For best results in automatic mode, place it near the beginning or end.
+2. Under **How to set the response limit**, leave **Automatic** selected to detect word limits with BERT, or choose **Manual** to enter a word limit (or select **No word limit**).
+3. Click the green **Estimate environmental impact** button to see the carbon-footprint estimate and six coloured time periods. The grey **Estimate output tokens** button shows only the prompt analysis and output-token estimate.
 
-Output-token and carbon-footprint estimates refer to **Qwen2.5-3B-Instruct BF16**. PromptCarbon does not execute that language model or generate its answer. The estimates may differ from actual output length and energy consumption. Reasoning level is shown but does not change the Random Forest estimate.
+The **Task** card shows the selected category, “Selected from 33 categories” and the unchanged softmax value as **Model score**. This score is not a calibrated probability that the answer is correct.
+
+Times use UK local time (Europe/London). **How is this estimated?** at the bottom explains the calculation. Closing the browser tab does not stop the server: use **Ctrl+C** in Terminal.
+
+Output-token and carbon-footprint estimates refer to **Qwen2.5-3B-Instruct BF16**. PromptCarbon does not execute that language model or generate its answer. The estimates may differ from actual output length and energy consumption. Reasoning level is shown for information but does not change the Random Forest or carbon-footprint calculations. Automatic word-limit extraction can be wrong, especially with long or ambiguous prompts; use Manual if needed.
 
 The carbon calculation uses EcoLogits 0.11.3 and a reference H100 scenario, with batch size 64, PUE 1.2 and a three-year hardware lifetime. It uses Great Britain carbon-intensity forecasts for six 30-minute periods. These are estimates, not measured emissions from your Mac. Input-processing energy is not explicitly modelled. If forecasts are unavailable, the application cannot recommend a time period.
 

@@ -504,6 +504,7 @@
       .recommendation-stats strong { overflow-wrap: anywhere; }
       .recommendation-stats #taskStat, .recommendation-stats #reasoningStat { font-size: clamp(1rem, 1.7vw, 1.35rem); }
       .recommendation-stats small { display: block; margin-top: 7px; color: var(--muted); line-height: 1.4; }
+      #taskNote { white-space: pre-line; overflow-wrap: anywhere; }
       .result-heading { display: flex; gap: 16px; justify-content: space-between; align-items: baseline; }
       .result-heading .label { margin: 0; }
       #timing { margin: 0; color: var(--muted); font-size: .84rem; white-space: nowrap; }
@@ -526,6 +527,38 @@
         .recommendation > strong { font-size: 2rem; }
       }
 
+      .prompt-guidance { flex: 1; max-width: 660px; }
+      .prompt-guidance label { margin-bottom: 8px; }
+      .prompt-guidance .length-help { margin: 0; color: var(--muted); }
+      .model-choice { flex-shrink: 0; }
+      #lengthForm { display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-end; }
+      #lengthForm .preference-field { flex: 1 1 180px; margin: 0; }
+      #lengthFields { flex: 2 1 360px; }
+      #lengthForm label { min-height: 24px; margin-bottom: 8px; display: flex; align-items: center; }
+      #lengthForm input, #lengthForm select { height: 44px; }
+      #estimateMethod[open] > summary { margin-bottom: 16px; }
+      #resultTitle:empty { display: none; }
+      #status[data-state="ready"] { background: none; padding: 0; color: var(--muted); font-weight: 400; }
+      #analysisPanel .output-metric { grid-column: span 2; }
+      #analysisPanel .output-metric > span { white-space: nowrap; }
+      @media (max-width: 560px) {
+        #analysisPanel .output-metric { grid-column: auto; }
+      }
+      #aboutHelp { flex-basis: 100%; margin-top: 0; }
+      #carbonPanel .recommendation .label,
+      #analysisPanel .label,
+      #estimateMethod summary { color: var(--accent); }
+      @media (max-width: 560px) {
+        .prompt-guidance { margin-bottom: 18px; }
+        #lengthFields { flex-basis: 100%; }
+      }
+      .constraint-settings { margin-top: 22px; }
+      .constraint-settings > select { max-width: 340px; }
+      #lengthForm { margin-top: 18px; }
+      #carbonButton { background: #237a46; }
+      #carbonButton:hover { background: #185b32; }
+      #outputButton { background: #e5e7eb; color: #28332e; }
+      #outputButton:hover { background: #d5d9dd; }
       #carbonPanel caption { text-align:left; color:var(--muted); padding:0 0 14px; font-size:.85rem; }
       #carbonPanel td > span { display:block; }
       #carbonPanel .slot-badge { font-size:.75rem; color:var(--muted); margin-bottom:6px; }
@@ -544,7 +577,10 @@
       <section class="workspace" aria-label="Prompt workspace">
         <div class="prompt-panel">
           <div class="prompt-heading">
-            <label for="userPrompt">Your prompt</label>
+            <div class="prompt-guidance">
+              <label for="userPrompt">Your prompt</label>
+              <p id="promptHelp" class="length-help">Write your prompt in English. Write clear instructions and include all necessary context. If you specify a word limit, make clear that it applies to the whole response. For best results in automatic mode, place it near the beginning or end of the prompt.</p>
+            </div>
             <div class="model-choice">
               <label for="targetModel">Target model</label>
               <select id="targetModel">
@@ -554,22 +590,14 @@
               </select>
             </div>
           </div>
-          <textarea id="userPrompt" name="prompt" rows="8" lang="en" spellcheck="true" placeholder="Paste the prompt you want to analyze..."></textarea>
-          <div class="form-actions">
-            <button id="carbonButton" type="button">Update estimate</button>
-            <button id="tokenizeButton" class="secondary" type="button">Count input tokens</button>
-            <button id="classifyButton" class="secondary" type="button">Classify task</button>
-            <button id="reasoningButton" class="secondary" type="button">Estimate reasoning level</button>
-            <button id="outputButton" class="secondary" type="button">Estimate output tokens</button>
-          </div>
-        </div>
-      </section>
-      <section class="model-section" aria-labelledby="lengthHeading">
-        <div class="section-heading">
-          <div><p class="kicker">Output length</p><h2 id="lengthHeading">Set a word limit</h2></div>
-        </div>
-        <p class="calculation-note">Choose a word limit, or use automatic extraction below.</p>
-        <form id="lengthForm">
+          <textarea id="userPrompt" name="prompt" aria-describedby="promptHelp" rows="8" lang="en" spellcheck="true" placeholder="Paste the prompt you want to analyze..."></textarea>
+          <div class="constraint-settings">
+            <label for="constraintMode">How to set the response limit</label>
+            <select id="constraintMode">
+              <option value="automatic" selected>Automatic</option>
+              <option value="manual">Manual</option>
+            </select>
+        <form id="lengthForm" hidden>
           <div class="preference-field">
             <label for="lengthType">Word limit</label>
             <select id="lengthType">
@@ -592,15 +620,13 @@
             </div>
           </div>
           <p id="aboutHelp" class="length-help" hidden>A desired approximate word count, not a strict limit.</p>
-          <div class="form-actions"><button id="lengthButton" type="submit">Check word limit</button></div>
         </form>
-        <details class="automatic-option">
-          <summary>Automatic constraint extraction (optional)</summary>
-          <label for="constraintMode">Constraints for output estimation</label>
-          <select id="constraintMode"><option value="manual">Use manual settings (default)</option><option value="automatic">Extract from prompt with BERT</option></select>
-          <p class="length-help">BERT detects word limits in English prompts. Check its suggestion before using it.</p>
-          <button id="extractButton" type="button" class="secondary">Suggest constraints with BERT</button>
-        </details>
+          </div>
+          <div class="form-actions">
+            <button id="carbonButton" type="button">Estimate environmental impact</button>
+            <button id="outputButton" class="secondary" type="button">Estimate output tokens</button>
+          </div>
+        </div>
       </section>
       <section id="carbonPanel" hidden aria-live="polite"></section>
       <section class="summary-grid" aria-label="Analysis results">
@@ -609,75 +635,30 @@
             <span class="label">Prompt analysis</span>
             <p id="timing"></p>
           </div>
-          <strong id="resultTitle">Ready when you are</strong>
-          <p id="status" class="status" role="status" data-state="ready">Choose an action to analyze your prompt.</p>
+          <strong id="resultTitle"></strong>
+          <p id="status" class="status" role="status" data-state="ready">Run your prompt analysis to see its features.</p>
           <div class="recommendation-stats">
             <div><span>Input tokens</span><strong id="inputStat">—</strong><small id="inputNote" hidden></small></div>
-            <div><span>Estimated output tokens</span><strong id="outputStat">—</strong><small id="outputNote" hidden></small></div>
             <div><span>Task</span><strong id="taskStat">—</strong><small id="taskNote" hidden></small></div>
             <div><span>Reasoning level</span><strong id="reasoningStat">—</strong><small id="reasoningNote" hidden></small></div>
             <div><span>Length constraint</span><strong id="lengthStat">—</strong><small id="lengthNote" hidden></small></div>
+            <div class="output-metric"><span>Estimated output tokens</span><strong id="outputStat">—</strong><small id="outputNote" hidden></small></div>
           </div>
           <p id="outputWarnings" class="length-help" hidden></p>
           <pre id="result" aria-live="polite" hidden></pre>
         </article>
       </section>
+      <details id="estimateMethod" class="model-section">
+        <summary>How is this estimated?</summary>
+        <p class="calculation-note">PromptCarbon analyses your prompt and estimates visible output tokens using Random Forest models. Automatic mode detects word limits with BERT; manual mode uses the limit you enter. Limits are requests, so the actual response may differ.</p>
+        <p class="calculation-note">EcoLogits uses the output-token estimate to calculate energy and allocated hardware emissions for a reference Qwen2.5-3B-Instruct scenario: H100 GPUs, batch size 64 and PUE 1.20. This is not a measurement of your computer.</p>
+        <p class="formula">SCI = energy × carbon intensity + allocated hardware emissions</p>
+        <p class="calculation-note">SCI represents the estimated footprint of one request. The same energy and hardware emissions are used for all six periods; only the Great Britain electricity forecast changes. Operational CO₂ is treated as CO₂e when combined with hardware emissions.</p>
+        <p class="calculation-note">Input-processing energy is not explicitly modelled. Reasoning level is shown for information and does not adjust the energy estimate. Forecasts and model estimates are uncertain; savings are not guaranteed.</p>
+      </details>
     </main>
 <script type="module">
     
-/* The Python server uses a local tokenizer or OpenAI's token-counting API. */
-async function countInputTokens(prompt, targetModel) {
-  const response = await fetch('/api/tokenize', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ prompt, targetModel })
-  });
-  const result = await response.json();
-  if (!response.ok) throw new Error(result.error || 'Token count unavailable.');
-  if (!Number.isInteger(result.inputTokens) || result.inputTokens <= 0)
-    throw new Error('Invalid server response.');
-  const hasFallbackMetadata = 'accuracy' in result || 'tokenizer' in result;
-  if (
-    hasFallbackMetadata &&
-    (result.accuracy !== 'APPROXIMATE' || !result.tokenizer)
-  ) throw new Error('Invalid fallback metadata in the server response.');
-  return result;
-}
-
-async function classifyTask(prompt) {
-  const response = await fetch('/api/classify-task', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ prompt })
-  });
-  const result = await response.json();
-  if (!response.ok) throw new Error(result.error || 'Task classification unavailable.');
-  if (!result.task || !/^\d+\.\d{2}%$/.test(result.confidence))
-    throw new Error('Invalid server response.');
-  return result;
-}
-
-async function extractConstraints(prompt) {
-  const response = await fetch('/api/extract-constraints', {
-    method: 'POST', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ prompt })
-  });
-  const output = await response.json();
-  if (!response.ok) throw new Error(output.error || 'Constraint extraction unavailable.');
-  if (Object.keys(output).length !== 1 || !('lengthConstraint' in output))
-    throw new Error('Invalid constraint response.');
-  const constraints = output.lengthConstraint === null ? []
-    : Array.isArray(output.lengthConstraint) ? output.lengthConstraint : [output.lengthConstraint];
-  for (const item of constraints) {
-    if (!item || Object.keys(item).sort().join(',') !== 'type,unit,value' ||
-        !['exact', 'max', 'min', 'approx'].includes(item.type) ||
-        item.unit !== 'words' ||
-        !Number.isInteger(item.value) || item.value <= 0)
-      throw new Error('Invalid constraint response.');
-  }
-  return output;
-}
-
 // These settings are separate from the original prompt and its input token count.
 const lengthType = document.getElementById('lengthType');
 const lengthValue = document.getElementById('lengthValue');
@@ -704,31 +685,8 @@ function readLengthPreference() {
     throw new Error('The minimum cannot exceed the maximum.');
   return { type: lengthType.value, value, unit: 'words' };
 }
-async function checkOutputLength() {
-  const response = await fetch('/api/output-length', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ lengthConstraint: readLengthPreference() })
-  });
-  const output = await response.json();
-  if (!response.ok) throw new Error(output.error || 'Invalid length preference.');
-  return output;
-}
 lengthType.addEventListener('change', updateLengthFields);
 updateLengthFields();
-
-async function estimateReasoningLevel(prompt) {
-  const response = await fetch('/api/estimate-reasoning-level', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({prompt})
-  });
-  const output = await response.json();
-  if (!response.ok) throw new Error(output.error || 'Reasoning estimation unavailable.');
-  if (Object.keys(output).length !== 1 || !['low', 'medium', 'high'].includes(output.reasoningLevel))
-    throw new Error('Invalid reasoning level response.');
-  return output;
-}
 
 async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
   const constraintSource = document.getElementById('constraintMode').value;
@@ -744,11 +702,6 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
   return output;
 }
     const outputButton = document.getElementById('outputButton');
-    const lengthButton = document.getElementById('lengthButton');
-    const tokenizeButton = document.getElementById('tokenizeButton');
-    const classifyButton = document.getElementById('classifyButton');
-    const reasoningButton = document.getElementById('reasoningButton');
-    const extractButton = document.getElementById('extractButton');
     const status = document.getElementById('status');
     const result = document.getElementById('result');
     const timing = document.getElementById('timing');
@@ -774,23 +727,17 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
         showSummary({reasoningLevel: output.reasoningLevel});
         showSummary({lengthConstraint: output.lengthConstraint});
         document.getElementById('outputStat').textContent = output.outputTokens.toLocaleString('en-US');
-        showNote('outputNote', 'Experimental · Qwen2.5-3B-Instruct BF16');
-        showNote('inputNote', 'Full request, including any appended manual preference');
-        document.getElementById('resultTitle').textContent = 'Output tokens estimated';
-        const warning = document.getElementById('outputWarnings');
-        warning.textContent = 'Experimental estimate of visible output tokens. Length preferences are requests, not guaranteed output sizes. Automatic constraints should be checked.';
-        warning.hidden = false;
+        document.getElementById('resultTitle').textContent = '';
       } else if ('inputTokens' in output) {
         document.getElementById('inputStat').textContent = output.inputTokens.toLocaleString('en-US');
-        showNote('inputNote', output.accuracy === 'APPROXIMATE' ? 'Approximate count' : '');
         document.getElementById('resultTitle').textContent = 'Input tokens counted';
       } else if ('task' in output) {
         document.getElementById('taskStat').textContent = output.task;
-        showNote('taskNote', `Confidence: ${output.confidence}`);
+        showNote('taskNote', `Selected from 33 categories\nModel score: ${output.confidence}`);
         document.getElementById('resultTitle').textContent = 'Task classified';
       } else if ('reasoningLevel' in output) {
         document.getElementById('reasoningStat').textContent = output.reasoningLevel;
-        showNote('reasoningNote', 'Estimated reasoning required, not measured energy use.');
+        showNote('reasoningNote', 'Does not affect calculations.');
         document.getElementById('resultTitle').textContent = 'Reasoning level estimated';
       } else if ('lengthConstraint' in output) {
         const value = output.lengthConstraint;
@@ -800,7 +747,6 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
           : values.map(item => item.type === 'range'
             ? `${item.value[0]}–${item.value[1]} ${item.unit}`
             : `${labels[item.type]} ${item.value} ${item.unit}`).join(' · ');
-        showNote('lengthNote', 'See the complete result below.');
         document.getElementById('resultTitle').textContent = 'Length constraint checked';
       }
     }
@@ -819,9 +765,9 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
       result.hidden = true;
       result.textContent = '';
       timing.textContent = '';
-      document.getElementById('resultTitle').textContent = 'Analysis needs updating';
+      document.getElementById('resultTitle').textContent = '';
       status.dataset.state = 'ready';
-      status.textContent = 'Inputs changed. Run the analysis again.';
+      status.textContent = 'Run your prompt analysis to see its features.';
     }
 
     async function runAction(message, action, completion = 'Analysis completed.') {
@@ -831,11 +777,6 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
       const isCurrent = () => run === currentRun && revision === inputRevision && snapshot === inputSnapshot();
       document.getElementById('carbonButton').disabled = true;
       outputButton.disabled = true;
-      lengthButton.disabled = true;
-      tokenizeButton.disabled = true;
-      classifyButton.disabled = true;
-      reasoningButton.disabled = true;
-      extractButton.disabled = true;
       clearSummary();
       result.hidden = true;
       result.textContent = '';
@@ -867,12 +808,7 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
         document.getElementById('analysisPanel').setAttribute('aria-busy', 'false');
         document.getElementById('carbonButton').disabled = false;
         outputButton.disabled = false;
-        lengthButton.disabled = false;
-        tokenizeButton.disabled = false;
-        classifyButton.disabled = false;
-        reasoningButton.disabled = false;
-        extractButton.disabled = false;
-      }
+                }
     }
 
     for (const id of watchedInputs) {
@@ -881,39 +817,15 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
       }
     }
 
-    document.getElementById('lengthForm').addEventListener('submit', event => {
-      event.preventDefault();
-      runAction('Checking output length...', checkOutputLength);
-    });
-
-    tokenizeButton.addEventListener('click', () => runAction(
-      'Counting tokens...',
-      () => countInputTokens(
-        document.getElementById('userPrompt').value,
-        document.getElementById('targetModel').value
-      )
-    ));
-
-    extractButton.addEventListener('click', () => runAction(
-      'Extracting global length constraints... The first request loads the model.',
-      () => extractConstraints(document.getElementById('userPrompt').value),
-      'Automatic suggestion completed. Check the detected constraints; manual settings have not changed.'
-    ));
-
-    reasoningButton.addEventListener('click', () => runAction(
-      'Estimating reasoning level... The first request loads the model.',
-      () => estimateReasoningLevel(document.getElementById('userPrompt').value),
-      'Reasoning level estimated. Long prompts use the beginning and end of the text.'
-    ));
-
+    document.getElementById('lengthForm').addEventListener('submit', event => event.preventDefault());
+    function updateConstraintMode() {
+      document.getElementById('lengthForm').hidden = document.getElementById('constraintMode').value !== 'manual';
+    }
+    document.getElementById('constraintMode').addEventListener('change', updateConstraintMode);
+    updateConstraintMode();
     outputButton.addEventListener('click', () => runAction(
-      'Estimating output tokens with the current analyser...', () => estimateOutputTokens(),
-      'Experimental output estimate completed. No response was generated.'
-    ));
-
-    classifyButton.addEventListener('click', () => runAction(
-      'Classifying task... The first classification may take a little longer.',
-      () => classifyTask(document.getElementById('userPrompt').value)
+      'Estimating output tokens...', () => estimateOutputTokens(),
+      'No LLM response is generated.'
     ));
 
     function showCarbon(c) {
@@ -925,7 +837,10 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
         parent.appendChild(node); return node;
       }
       const number = x => Number(x).toPrecision(4);
-      const time = x => new Intl.DateTimeFormat('en-GB', {timeZone:'Europe/London',month:'short',day:'2-digit',hour:'2-digit',minute:'2-digit',timeZoneName:'short'}).format(new Date(x));
+      const time = x => new Intl.DateTimeFormat('en-GB', {timeZone:'Europe/London',month:'short',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(x));
+      const shortDate = x => new Intl.DateTimeFormat('en-GB', {timeZone:'Europe/London', day:'2-digit', month:'short'}).format(new Date(x));
+      const clockTime = x => new Intl.DateTimeFormat('en-GB', {timeZone:'Europe/London', hour:'2-digit', minute:'2-digit', hourCycle:'h23'}).format(new Date(x));
+      const slotTime = (start, end) => `${shortDate(start)}, ${clockTime(start)}–${shortDate(start) === shortDate(end) ? '' : shortDate(end) + ', '}${clockTime(end)}`;
       const summary = add(panel, 'section', '', 'summary-grid');
       const card = add(summary, 'article', '', 'metric-panel recommendation');
       add(card, 'span', 'Recommendation', 'label');
@@ -935,23 +850,21 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
       const stats = add(card, 'div', '', 'recommendation-stats');
       for (const [label, value] of [
         ['CO₂e reduction', best ? `${best.reductionPercent.toFixed(2)}%` : 'Unavailable'],
-        ['Prompt SCI · recommended', best ? `${number(best.bestGCO2eApprox)} gCO₂e/request*` : 'Unavailable'],
-        ['Compared with now', best ? `${number(best.currentGCO2eApprox)} gCO₂e/request*` : 'Unavailable']
+        ['CO₂e at the recommended time', best ? `${number(best.bestGCO2eApprox)} gCO₂e` : 'Unavailable'],
+        ['CO₂e now', best ? `${number(best.currentGCO2eApprox)} gCO₂e` : 'Unavailable']
       ]) {const box=add(stats,'div');add(box,'span',label);add(box,'strong',value);}
-      add(card, 'p', `Estimated energy: ${number(c.energyWh)} Wh · Hardware footprint: ${number(c.embodiedGCO2e)} gCO₂e`, 'calculation-note');
       if (best) {
 
         const forecast = add(panel,'section','','data-section');
         const heading=add(forecast,'div','','section-heading');
         const title=add(heading,'div');add(title,'p','Next 3 hours','kicker');
         add(title,'h2','Estimated SCI by half-hour slot');
-        add(forecast,'div','Estimated impact per request · UK local time','status');
         const legend=add(forecast,'div','','legend');
         for(const [color,label] of [['green','Lower impact'],['amber','Medium impact'],['red','Higher impact']]) {const item=add(legend,'span');add(item,'i','','dot '+color);add(item,'span',label);}
         const wrap=add(forecast,'div','','table-wrap');
-        const table=add(wrap,'table');add(table,'caption','Colours compare these six periods; they are not absolute impact ratings.');
+        const table=add(wrap,'table');
         const head=add(add(table,'thead'),'tr');
-        for(const label of ['Time','Carbon intensity','Saving vs now','SCI / total*','Energy']) add(head,'th',label).setAttribute('scope','col');
+        for(const label of ['Time','Carbon intensity','Saving vs now','SCI','Energy']) add(head,'th',label).setAttribute('scope','col');
         const body=add(table,'tbody');
         for(const period of c.periods) {
           const sorted=c.periods.map(p=>p.totalGCO2eApprox).sort((a,b)=>a-b);
@@ -959,20 +872,15 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
           const level=rank<2?'green':rank>=4?'red':'medium';
           const row=add(body,'tr','','slot-'+level);
           const saving=best.currentGCO2eApprox ? 100*(best.currentGCO2eApprox-period.totalGCO2eApprox)/best.currentGCO2eApprox : 0;
-          const values=[time(period.start)+' – '+time(period.end),period.forecast+' gCO₂/kWh',saving.toFixed(2)+'%',number(period.totalGCO2eApprox)+' gCO₂e',number(c.energyWh)+' Wh'];
+          const values=[slotTime(period.start, period.end),period.forecast+' gCO₂/kWh',saving.toFixed(2)+'%',number(period.totalGCO2eApprox)+' gCO₂e',number(c.energyWh)+' Wh'];
           values.forEach((value,i)=>{const cell=add(row,'td');if(i===0){add(cell,'span',period.start===best.start?'Recommended':'Forecast',period.start===best.start?'slot-badge cfe-best':'slot-badge');}add(cell,'span',value);});
         }
+        add(panel, 'p', 'Times use UK local time (Europe/London). Values refer to this request and a reference hardware scenario.', 'calculation-note');
       }
-      add(panel,'p','Estimates based on an EcoLogits hardware scenario and UK forecasts. Savings are not guaranteed.','length-help');
-      const method=add(panel,'details','','model-section');
-      add(method,'summary','How is this estimated?');
-      add(method,'p','SCI(prompt) = ((E × I) + M) / R. R is one request.','formula');
-      add(method,'p','PromptCarbon predicts visible output tokens with its Random Forest. EcoLogits estimates inference energy and allocated hardware emissions for a Qwen2.5-3B-Instruct reference scenario: H100, batch 64 and PUE 1.20.','calculation-note');
-      add(method,'p','The same energy is compared across six Great Britain electricity forecasts. These are estimates, not measured deployment emissions. Input-processing energy is not explicitly modeled; operational CO₂ is approximated as CO₂e when combined with embodied emissions.','calculation-note');
     }
     document.getElementById('carbonButton').addEventListener('click', () => runAction(
       'Estimating carbon footprint and retrieving forecasts...', () => estimateOutputTokens('/api/estimate-carbon'),
-      'Reference carbon estimate completed. No LLM response was generated.'
+      'No LLM response is generated.'
     ));
   </script>
 </body>
