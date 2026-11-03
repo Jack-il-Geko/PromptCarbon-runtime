@@ -20,6 +20,41 @@ def payload(now=NOW, values=(200,150,100,100,180,220)):
 
 
 class CarbonTests(unittest.TestCase):
+    def test_free_port(self):
+        """Keep the requested port when available; leave its listener untouched otherwise."""
+        import server
+        with server.create_local_server(0) as occupied:
+            port = occupied.server_port
+            with server.create_local_server(port) as fallback:
+                self.assertNotEqual(fallback.server_port, port)
+                self.assertEqual(fallback.server_address[0], "127.0.0.1")
+            self.assertEqual(occupied.fileno() >= 0, True)
+        with server.create_local_server(port) as preferred:
+            self.assertEqual(preferred.server_port, port)
+
+    def test_bind_error(self):
+        """Do not hide permission or other errors as port conflicts."""
+        import errno
+        import server
+        with patch.object(server, "HTTPServer", side_effect=OSError(errno.EACCES, "denied")) as bind:
+            with self.assertRaises(OSError):
+                server.create_local_server()
+            self.assertEqual(bind.call_count, 1)
+
+    def test_browser_port(self):
+        """Open the browser at the port actually selected, without loading models."""
+        import server
+        from unittest.mock import MagicMock
+        listener = MagicMock()
+        listener.__enter__.return_value = listener
+        listener.server_port = 54321
+        listener.serve_forever.side_effect = KeyboardInterrupt
+        with patch.object(server, "load_tokenizer"), patch.object(server, "get_task_classifier"), patch.object(server, "create_local_server", return_value=listener), patch.object(server.threading, "Timer") as timer:
+            server.run()
+            self.assertEqual(timer.call_args.kwargs["args"], ("http://127.0.0.1:54321",))
+            timer.return_value.start.assert_called_once()
+            timer.return_value.cancel.assert_called_once()
+
     def test_units(self):
         self.assertAlmostEqual(operational(2/1000,200),.4)
         self.assertAlmostEqual(sci(.4,.1),.5)

@@ -1,4 +1,5 @@
 """Local HTTP server for the PromptCarbon interface."""
+import errno
 import json
 import os
 import threading
@@ -265,10 +266,19 @@ def estimate_output_tokens(payload):
     return result
 
 
+def create_local_server(preferred_port: int = 5500) -> HTTPServer:
+    """Prefer port 5500; let the OS choose a free port if it is occupied."""
+    try:
+        return HTTPServer(("127.0.0.1", preferred_port), Handler)
+    except OSError as exc:
+        if exc.errno != errno.EADDRINUSE:
+            raise
+        print(f"Port {preferred_port} is in use; choosing a free local port.", flush=True)
+        return HTTPServer(("127.0.0.1", 0), Handler)
+
+
 def run() -> None:
     """Load the components, start the server, and open the browser."""
-    url = "http://127.0.0.1:5500"
-
     print("Loading the official Qwen tokenizer...", flush=True)
     try:
         load_tokenizer(QWEN_TOKENIZER.config)
@@ -282,7 +292,8 @@ def run() -> None:
     except (ImportError, OSError, RuntimeError, ValueError) as exc:
         raise SystemExit(f"Startup failed: {exc}") from exc
 
-    with HTTPServer(("127.0.0.1", 5500), Handler) as server:
+    with create_local_server() as server:
+        url = f"http://127.0.0.1:{server.server_port}"
         print(f"PromptCarbon is running at {url}", flush=True)
         browser_timer = threading.Timer(0.5, webbrowser.open, args=(url,))
         browser_timer.daemon = True
@@ -292,6 +303,8 @@ def run() -> None:
             server.serve_forever()
         except KeyboardInterrupt:
             print("\nServer stopped.")
+        finally:
+            browser_timer.cancel()
 
 
 if __name__ == "__main__":
