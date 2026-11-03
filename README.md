@@ -66,18 +66,6 @@ Keep Terminal open. To stop PromptCarbon, press **Ctrl+C** there. Closing the br
 - **Download failed**: check Internet and retry the install command.
 - **Time comparison unavailable**: forecasts could not be retrieved; check Internet and retry the estimate. HTTPS certificates are verified using `certifi`.
 
-<details>
-<summary>Optional technical tests</summary>
-
-After installation, run:
-
-```bash
-.venv/bin/python -B -m unittest carbon_footprint_estimator.test_cfe input_tokenizer.test_tokenizer output_token_estimator.tests.test_estimator
-```
-
-These checks simulate external APIs and do not train models or generate Qwen responses. They are not needed for normal use.
-
-</details>
 
 ## Licenses and sources
 
