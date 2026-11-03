@@ -1,7 +1,6 @@
 """Use official EcoLogits calculation functions without provider instrumentation."""
 import json
 import math
-import subprocess
 import sys
 from pathlib import Path
 
@@ -34,20 +33,8 @@ def calculate_local(input_tokens: int, output_tokens: int) -> dict:
 
 
 def estimate_energy(input_tokens: int, output_tokens: int) -> dict:
-    """Isolate Python 3.10+ EcoLogits from the existing Python 3.9 ML environment."""
-    from importlib.util import find_spec
-    if sys.version_info >= (3, 10) and find_spec("ecologits") is not None:
-        python = Path(sys.executable)
-    else:
-        relative = ".venv-cfe/Scripts/python.exe" if sys.platform == "win32" else ".venv-cfe/bin/python"
-        python = ROOT / relative
-    if not python.exists():
-        raise RuntimeError("Install the CFE environment described in README.md.")
-    try:
-        result = subprocess.run([str(python), str(Path(__file__).resolve())], input=json.dumps([input_tokens, output_tokens]), text=True, capture_output=True, timeout=20, check=True)
-        return json.loads(result.stdout)
-    except (subprocess.SubprocessError, ValueError) as exc:
-        raise RuntimeError("EcoLogits calculation unavailable: " + str(exc)) from exc
+    """Calculate impacts in the application's shared Python 3.12 environment."""
+    return calculate_local(input_tokens, output_tokens)
 
 
 if __name__ == "__main__":

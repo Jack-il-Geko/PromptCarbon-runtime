@@ -75,6 +75,17 @@ class CarbonTests(unittest.TestCase):
         p=payload();p["data"][0]["from"]="2026-10-29T10:00:00"
         with self.assertRaises(ForecastError):parse_forecast(p,NOW)
 
+    def test_current_local_slot(self):
+        """Keep the half-hour containing now, regardless of the user's timezone."""
+        for zone in ("Europe/Rome", "Asia/Shanghai", "America/New_York"):
+            local = datetime(2026, 11, 3, 15, 15, tzinfo=ZoneInfo(zone))
+            rows = parse_forecast(payload(local), local)
+            start = datetime.fromisoformat(rows[0]["start"]).astimezone(ZoneInfo(zone))
+            end = datetime.fromisoformat(rows[0]["end"]).astimezone(ZoneInfo(zone))
+            self.assertEqual((start.hour, start.minute), (15, 0))
+            self.assertEqual((end.hour, end.minute), (15, 30))
+            self.assertEqual(len(rows), 6)
+
     def test_network_errors(self):
         for error in (TimeoutError("timeout"),URLError("offline")):
             with patch("carbon_footprint_estimator.carbon_intensity.urlopen",side_effect=error):
@@ -93,6 +104,12 @@ class CarbonTests(unittest.TestCase):
         self.assertEqual(r["energyKWh"],.001)
         self.assertIsNone(r["recommendation"])
         self.assertEqual(r["forecastError"],"offline")
+
+    def test_shared_environment(self):
+        """Use EcoLogits directly, without starting another Python interpreter."""
+        with patch("carbon_footprint_estimator.ecologits_adapter.calculate_local", return_value={"energyWh": 0}) as calculate:
+            self.assertEqual(estimate_energy(10, 20), {"energyWh": 0})
+            calculate.assert_called_once_with(10, 20)
 
     def test_ecologits_real(self):
         r=estimate_energy(142,152)
@@ -133,7 +150,8 @@ rows.forEach((p,i)=>p.totalGCO2eApprox=(i+1)/100);
 ctx.showCarbon({inputTokens:10,outputTokens:20,energyWh:.1,embodiedGCO2e:.01,periods:rows,recommendation:{...rows[0],runNow:true,reductionGCO2eApprox:0,reductionPercent:0}});
 const painted=descendants(element('carbonPanel')).find(x=>x.tag==='tbody').children;
 for(const color of ['green','medium','red']) assert.equal(painted.filter(x=>x.className==='slot-'+color).length,2);
-assert(descendants(element('carbonPanel')).some(x=>x.tag==='details'));
+assert(ids.has('estimateMethod'));
+assert(!descendants(element('carbonPanel')).some(x=>x.tag==='details'));
 ctx.showCarbon({inputTokens:10,outputTokens:20,energyWh:.1,embodiedGCO2e:.01,forecastError:'offline'});
 assert(!descendants(element('carbonPanel')).some(x=>x.tag==='table'));
 assert(descendants(element('carbonPanel')).some(x=>x.textContent==='offline'));

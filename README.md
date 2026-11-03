@@ -2,6 +2,8 @@
 
 PromptCarbon is a university research project. It analyses a prompt, estimates how many output tokens it may produce and estimates its carbon footprint. The results are shown in a local web page.
 
+All active components, including EcoLogits, run in one Python 3.12 virtual environment (`.venv`).
+
 This repository contains the version for running the application. It does not include training datasets or previous experiments.
 
 ## What you need
@@ -71,7 +73,7 @@ You do not need to download or install everything again. The models are saved lo
 
 The **Task** card shows the selected category, “Selected from 33 categories” and the unchanged softmax value as **Model score**. This score is not a calibrated probability that the answer is correct.
 
-Times use UK local time (Europe/London). **How is this estimated?** at the bottom explains the calculation. Closing the browser tab does not stop the server: use **Ctrl+C** in Terminal.
+Times use your browser’s local time zone. The first slot contains the current time (for example, 15:00–15:30 at 15:15). Electricity forecasts still refer to Great Britain, not your location. **How is this estimated?** at the bottom explains the calculation. Closing the browser tab does not stop the server: use **Ctrl+C** in Terminal.
 
 Output-token and carbon-footprint estimates refer to **Qwen2.5-3B-Instruct BF16**. PromptCarbon does not execute that language model or generate its answer. The estimates may differ from actual output length and energy consumption. Reasoning level is shown for information but does not change the Random Forest or carbon-footprint calculations. Automatic word-limit extraction can be wrong, especially with long or ambiguous prompts; use Manual if needed.
 

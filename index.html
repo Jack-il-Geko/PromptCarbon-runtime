@@ -837,16 +837,17 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
         parent.appendChild(node); return node;
       }
       const number = x => Number(x).toPrecision(4);
-      const time = x => new Intl.DateTimeFormat('en-GB', {timeZone:'Europe/London',month:'short',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(x));
-      const shortDate = x => new Intl.DateTimeFormat('en-GB', {timeZone:'Europe/London', day:'2-digit', month:'short'}).format(new Date(x));
-      const clockTime = x => new Intl.DateTimeFormat('en-GB', {timeZone:'Europe/London', hour:'2-digit', minute:'2-digit', hourCycle:'h23'}).format(new Date(x));
+      const localZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      const time = x => new Intl.DateTimeFormat('en-GB', {timeZone:localZone,month:'short',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(x));
+      const shortDate = x => new Intl.DateTimeFormat('en-GB', {timeZone:localZone, day:'2-digit', month:'short'}).format(new Date(x));
+      const clockTime = x => new Intl.DateTimeFormat('en-GB', {timeZone:localZone, hour:'2-digit', minute:'2-digit', hourCycle:'h23'}).format(new Date(x));
       const slotTime = (start, end) => `${shortDate(start)}, ${clockTime(start)}–${shortDate(start) === shortDate(end) ? '' : shortDate(end) + ', '}${clockTime(end)}`;
       const summary = add(panel, 'section', '', 'summary-grid');
       const card = add(summary, 'article', '', 'metric-panel recommendation');
       add(card, 'span', 'Recommendation', 'label');
       const best = c.recommendation;
       add(card, 'strong', best ? (best.runNow ? 'Now is the best time' : time(best.start)) : 'Time comparison unavailable');
-      add(card, 'p', best ? `Suggested window: ${time(best.start)} – ${time(best.end)}.` : c.forecastError);
+      add(card, 'p', best ? `Suggested window: ${best.runNow ? 'Now' : time(best.start)} – ${time(best.end)}.` : c.forecastError);
       const stats = add(card, 'div', '', 'recommendation-stats');
       for (const [label, value] of [
         ['CO₂e reduction', best ? `${best.reductionPercent.toFixed(2)}%` : 'Unavailable'],
@@ -875,7 +876,7 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
           const values=[slotTime(period.start, period.end),period.forecast+' gCO₂/kWh',saving.toFixed(2)+'%',number(period.totalGCO2eApprox)+' gCO₂e',number(c.energyWh)+' Wh'];
           values.forEach((value,i)=>{const cell=add(row,'td');if(i===0){add(cell,'span',period.start===best.start?'Recommended':'Forecast',period.start===best.start?'slot-badge cfe-best':'slot-badge');}add(cell,'span',value);});
         }
-        add(panel, 'p', 'Times use UK local time (Europe/London). Values refer to this request and a reference hardware scenario.', 'calculation-note');
+        add(panel, 'p', `Times use your local time (${localZone}). Electricity forecasts refer to Great Britain. Values refer to this request and a reference hardware scenario.`, 'calculation-note');
       }
     }
     document.getElementById('carbonButton').addEventListener('click', () => runAction(

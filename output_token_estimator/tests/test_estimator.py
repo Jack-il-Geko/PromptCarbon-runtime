@@ -313,7 +313,7 @@ class Integration(unittest.TestCase):
             html = r.read().decode()
             self.assertIn("outputButton", html)
             self.assertIn("/api/estimate-output-tokens", html)
-            self.assertIn("Set a word limit", html)
+            self.assertIn("How to set the response limit", html)
             self.assertNotIn('id="lengthUnit"', html)
             self.assertNotIn("lengthUnit.value", html)
 
