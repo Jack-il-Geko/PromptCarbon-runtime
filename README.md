@@ -107,6 +107,7 @@ No OpenAI API key is needed for Qwen token counting or the carbon estimator. The
 - **`can't open file ... install.py`**: Terminal is not in the extracted project folder. Run `ls` and check that `install.py` is listed.
 - **Package or model download error**: keep an Internet connection and retry the install command. Copy the error if it keeps failing. Installation needs access to the Python package index and GitHub Releases.
 - **No browser window**: use the exact local address printed in Terminal. An occupied port 5500 is handled automatically.
+- **HTTPS certificates**: forecast and model downloads use the trusted certificates bundled with `certifi`; certificate verification stays enabled.
 - **No time recommendation**: the carbon-intensity forecast service may be unreachable. Installation and forecast availability are separate issues.
 
 ## Optional technical tests

@@ -121,6 +121,16 @@ class CarbonTests(unittest.TestCase):
             self.assertEqual((end.hour, end.minute), (15, 30))
             self.assertEqual(len(rows), 6)
 
+    def test_verified_https(self):
+        """Use bundled trusted certificates with hostname verification enabled."""
+        import ssl
+        with patch("carbon_footprint_estimator.carbon_intensity.urlopen", return_value=io.BytesIO(json.dumps(payload()).encode())) as call:
+            self.assertEqual(len(fetch_forecast(NOW)), 6)
+        context = call.call_args.kwargs["context"]
+        self.assertEqual(context.verify_mode, ssl.CERT_REQUIRED)
+        self.assertTrue(context.check_hostname)
+        self.assertGreater(context.cert_store_stats()["x509_ca"], 0)
+
     def test_network_errors(self):
         for error in (TimeoutError("timeout"),URLError("offline")):
             with patch("carbon_footprint_estimator.carbon_intensity.urlopen",side_effect=error):

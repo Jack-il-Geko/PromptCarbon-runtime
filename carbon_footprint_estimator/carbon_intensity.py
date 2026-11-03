@@ -1,6 +1,8 @@
 """Fetch six contiguous national GB forecast intervals, using UTC boundaries."""
 import json
 import math
+import ssl
+import certifi
 from datetime import datetime, timedelta, timezone
 from urllib.request import Request, urlopen
 from urllib.error import URLError
@@ -58,7 +60,7 @@ def fetch_forecast(now=None):
     fmt = lambda d: d.strftime("%Y-%m-%dT%H:%MZ")
     request = Request(API_URL+"/"+fmt(start)+"/"+fmt(finish), headers={"Accept":"application/json", "User-Agent":"PromptCarbon-CFE/1.0"})
     try:
-        with urlopen(request, timeout=TIMEOUT_SECONDS) as response:
+        with urlopen(request, timeout=TIMEOUT_SECONDS, context=ssl.create_default_context(cafile=certifi.where())) as response:
             payload = json.load(response)
         return parse_forecast(payload, now)
     except (URLError, OSError, ValueError) as exc:
