@@ -6,7 +6,7 @@ PromptCarbon analyses an English prompt, estimates its output tokens and compare
 
 - **Mac with Apple Silicon** (M1 or later). Tested on MacBook Air M4 with 16 GB RAM; other platforms have not been tested.
 - **Python 3.12**.
-- Internet for installation and electricity forecasts.
+- Internet for installation and electricity forecasts. GPT token counting also needs Internet and your own OpenAI API key.
 - About **1.5 GB of disk space**, plus room for temporary downloads.
 
 ## 1. Check Python
@@ -44,8 +44,11 @@ The download is about **630 MB**, excluding Python. One installation without pip
 The browser opens automatically. If it does not, open the address printed after **PromptCarbon is running at**. Port 5500 is used when free; otherwise another local port is selected.
 
 1. Enter your prompt **in English**.
-2. Choose **Automatic** to detect a word limit with BERT, or **Manual** to enter one or select **No word limit**.
-3. Click **Estimate environmental impact** for the full result, or **Estimate output tokens** for prompt analysis and the output-token estimate.
+2. Select **Qwen2.5-3B-Instruct** or **GPT-6-Sol** as the target model.
+3. Choose **Automatic** to detect a word limit with BERT, or **Manual** to enter one or select **No word limit**.
+4. Click **Update estimate** to see the analysis and environmental estimate.
+
+The refresh button above the forecast table updates the carbon comparison using the saved token counts. **Run in ChatGPT** opens ChatGPT with your prompt; it does not run the local Qwen model or guarantee the selected target model in ChatGPT.
 
 Keep Terminal open. To stop PromptCarbon, press **Ctrl+C** there. Closing the browser tab does not stop it.
 
@@ -53,11 +56,18 @@ Keep Terminal open. To stop PromptCarbon, press **Ctrl+C** there. Closing the br
 
 ## Important limits
 
-- Estimates refer to **Qwen2.5-3B-Instruct BF16** and a reference H100 hardware scenario, not measured consumption of your Mac.
+- **Qwen2.5-3B-Instruct BF16** is the target used to train and evaluate the output-token predictor. The CFE uses a reference H100 scenario, not the measured consumption of your Mac.
+- **GPT-6-Sol is experimental.** Its visible output length is transferred from the Qwen-trained RF and has not been validated on GPT responses. The CFE uses the installed EcoLogits catalog's estimated GPT architecture and latency parameters, displaying the midpoint of its architecture range. These are not confirmed proprietary hardware details; additional hidden reasoning tokens are outside the estimate.
 - Times use your browser's local timezone. Electricity forecasts refer to **Great Britain**, regardless of your location. The first slot contains the current time.
 - Automatic constraints can be wrong; use Manual if needed. Reasoning level is displayed but does not change the calculations. Model score is the task classifier's uncalibrated softmax score.
 - The CFE uses EcoLogits 0.11.3, batch size 64, PUE 1.2 and a three-year hardware lifetime. Input-processing energy is not explicitly modelled; operational CO₂ is approximated as CO₂e when combined with hardware emissions. Savings are estimates, not guarantees.
-- Qwen analysis needs no API key. Optional GPT-5 input-token counting requires your own key in a private `.env` file; never upload it.
+- Qwen analysis needs no API key. GPT-6-Sol uses OpenAI's input-token counting endpoint without generating a response. It requires your own API key and access to the requested model. Create a local `.env` file in this folder containing `OPENAI_API_KEY=your_key_here`. Never commit or share this file. API errors are reported rather than replaced with a claimed exact local count.
+
+## Evaluation data
+
+Open [evaluation/](evaluation/README.md) for readable CSV files with prompts, expected or observed results and predictions. The folders are `task_classifier`, `constraint_extractor`, `output_tokens` and `energy`.
+
+These files are optional evidence for the thesis; the application does not load them. They contain no training dataset or full generative-model checkpoint. The documentation distinguishes test, reused validation and the small local energy case study.
 
 ## Problems
 

@@ -1,0 +1,2 @@
+# CSV fields may contain meaningful whitespace from source prompts.
+*.csv whitespace=-blank-at-eol,-blank-at-eof

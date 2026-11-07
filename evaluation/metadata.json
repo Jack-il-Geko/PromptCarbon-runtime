@@ -1,0 +1,44 @@
+{
+  "export_date": "2026-11-07",
+  "selection": "Complete component evaluation samples, not selected by prediction error. The curated 100-example CFE demonstration workbook is not included.",
+  "components": {
+    "task_classifier": {
+      "split": "test_v2",
+      "n": 330,
+      "correct": 311,
+      "accuracy": 0.9424242424242424,
+      "model": "Current BERT-Medium classifier including the opening summary-instruction check",
+      "scope": "Previously used revised test set; export is not a new independent holdout."
+    },
+    "constraint_extractor": {
+      "split": "historical_test",
+      "n": 200,
+      "correct": 190,
+      "accuracy": 0.95,
+      "scope": "Current decoder projected to word constraints, including null matches. This is decoder extraction, not the server acceptance policy. Historical synthetic sample already examined."
+    },
+    "output_tokens": {
+      "split": "validation",
+      "n": 260,
+      "mae": 101.81153846153846,
+      "scope": "All complete no-preference/word-preference validation records. Predicted task, saved manual preference, browser-normalized line endings; reused development data, not an independent final test."
+    }
+  },
+  "source_files_sha256": {
+    "analyser/task_classifier/strategia_BERT_Medium/bert_medium.py": "fb0030fdfb42436c567970f43bad0b68731fc8bfd87ea0b6baeed7f8d01aed93",
+    "analyser/task_classifier/strategia_BERT_Medium/model/model.safetensors": "9d66f7e55431840a1ce9179bd0a5357f4de68caa4cbd7320883753b0ff78c67a",
+    "analyser/constraint_extractor/automatic/extractor.py": "977d29db30f132451182cc6136edab8582c2624c18f31b9bc710fa6754c35790",
+    "analyser/constraint_extractor/automatic/model/model.safetensors": "a417cc09fc4c29502ec28867bbe60f42b971e751833281ae8eb6c0467026ba09",
+    "output_token_estimator/random_forest/estimator.py": "c4ad40e71b68c18742e0843a2c3d0753c563b0a8086609a7c59aac25a6d05890",
+    "output_token_estimator/random_forest/model/model.joblib": "0b9f0d5b118499ed19883f25d1bf8c551d3f5e53551a85131cb64e5045030ff1"
+  },
+  "exported_files_sha256": {
+    "task_classifier/results.csv": "3fc0e29a340802f4f37772f6767b004780baaa2f218247d753ec034b9dd01a08",
+    "constraint_extractor/results.csv": "dd5cf8be25043d545afc3769a0b690e663710b735f06fc12be031c5ce1c33159",
+    "output_tokens/results.csv": "13282b55213c030be5e7e477f9be1dbe6c89e05d6f85ce77d585d27398661a94",
+    "energy/summary.csv": "8025a32e2ce64432e5778e7e19e84f353dec59e9534c39f0d5a6f4b5c4012cc1",
+    "energy/runs.csv": "2f0d817f68cae1596124dfb4d802ba777dd28b671bf956ca231cdcadab6b7e99",
+    "energy/prompts.csv": "dd6d244dad15784a62271bc97499ba3f3bf8281bd9919c05017cda3a84b04473",
+    "energy/protocol.json": "5c9742db085736298e6a96b03e8687086d002976a5daabe64751c2dd3707b698"
+  }
+}

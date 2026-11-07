@@ -126,7 +126,7 @@
   "required_files_sha256": {
     "output_token_estimator/random_forest/model/model.joblib": "0b9f0d5b118499ed19883f25d1bf8c551d3f5e53551a85131cb64e5045030ff1",
     "output_token_estimator/random_forest/estimator.py": "c4ad40e71b68c18742e0843a2c3d0753c563b0a8086609a7c59aac25a6d05890",
-    "analyser/task_classifier/strategia_BERT_Medium/bert_medium.py": "f9529ddfe1c713a5653dbfb4809e48c2b82a72ca22a517f74ee4dbf800ddc32e",
+    "analyser/task_classifier/strategia_BERT_Medium/bert_medium.py": "fb0030fdfb42436c567970f43bad0b68731fc8bfd87ea0b6baeed7f8d01aed93",
     "analyser/task_classifier/taxonomy.json": "32c13e01072b0ff043cd10f3f2bc86a82a83836b490d4ad41aef9e9d240fd7d8",
     "analyser/task_classifier/strategia_BERT_Medium/info_model.json": "ce8c0335cf699c1d222d43a613491dbbd8e29e667921eb5cb6f3582a94ddff86",
     "analyser/task_classifier/strategia_BERT_Medium/model/model.safetensors": "9d66f7e55431840a1ce9179bd0a5357f4de68caa4cbd7320883753b0ff78c67a",

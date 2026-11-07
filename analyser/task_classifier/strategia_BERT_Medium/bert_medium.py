@@ -1,12 +1,13 @@
 """Classify a prompt with the trained BERT-Medium model.
 
 Use the saved model from seed 43, epoch 3. Return one task and its confidence.
-Do not train the model or use a confidence threshold.
+Apply a narrow check for explicit opening summary instructions.
 """
 
 from dataclasses import dataclass
 import hashlib
 import json
+import re
 from pathlib import Path
 
 import torch
@@ -25,6 +26,28 @@ MAX_LENGTH = 256
 class TaskClassification:
     task: str
     confidence: float
+
+
+def explicit_summary(prompt: str) -> bool:
+    """Recognise a direct opening summary request about a document or text."""
+    instruction = prompt.lstrip().split("\n\n", 1)[0]
+
+    # Leave competing tasks, negations and replacement instructions to BERT.
+    if re.search(
+        r"\b(?:do not|don't|never|instead|translate|classify|implement|explain|compare)\b",
+        instruction,
+        re.IGNORECASE,
+    ):
+        return False
+
+    # Anchoring the request avoids matching mentions inside source text or code.
+    return bool(re.match(
+        r"(?:please\s+)?summari[sz]e\s+(?:the\s+|this\s+)?"
+        r"(?:(?:following|provided|attached)\s+)?"
+        r"(?:report|text|article|document|project update|update|meeting notes|passage)\b",
+        instruction,
+        re.IGNORECASE,
+    ))
 
 
 def encode_prompt(tokenizer, prompt: str) -> dict:
@@ -121,7 +144,7 @@ class BertMediumTaskClassifier:
         torch.set_num_threads(4)
 
     def classify(self, prompt: str) -> TaskClassification:
-        """Check the prompt, run BERT and return the chosen task and Softmax confidence."""
+        """Run BERT, check explicit summary requests and return the original label score."""
 
         if not isinstance(prompt, str):
             raise TypeError("The prompt must be a string.")
@@ -141,6 +164,10 @@ class BertMediumTaskClassifier:
         with torch.inference_mode():
             logits = self.model(**batch).logits[0]
             prediction = int(torch.argmax(logits))
+            if explicit_summary(prompt):
+                prediction = self.labels.index("Summarization:Text Summarization")
+
+            # Report the selected label's original score, even after the context check.
             confidence = float(torch.softmax(logits, dim=-1)[prediction])
 
         return TaskClassification(task=self.labels[prediction], confidence=confidence)

@@ -1,0 +1,11 @@
+id,task,prompt
+P-e1,simple,Why does ice float on liquid water? Answer in two short sentences.
+P-e2,programming,"Implement a Python function merge_totals(records) that sums non-negative integer amounts by category. Strip whitespace and lowercase category names. Reject missing fields, empty names, negative amounts and booleans with ValueError. Do not modify the input. Include three executable assertions and return only Python code."
+P-e3,complex,"Prepare a factual briefing for the director of a community transport service.
+Write about 150 words. Separate observed results, uncertain explanations and approved actions. Do not invent recommendations. Return only the briefing.
+
+Report:
+The service tested a shared booking desk for eight weeks. Completed trips increased from 410 to 452, but two volunteer drivers joined halfway through the trial and one hospital cancelled fewer appointments than usual. These changes prevent attributing the increase entirely to the booking desk.
+Recorded late departures fell from 38 to 26. However, staff changed the definition of a late departure during week three, so the figures are not directly comparable. Telephone waiting times were measured consistently and fell from a median of six minutes to four minutes.
+Nine passengers requested wheelchair-accessible vehicles. Seven requests were met; the service has not established whether the other two passengers found alternatives. No passenger satisfaction survey was conducted.
+The committee approved a four-week extension, a single definition of lateness and systematic recording of accessibility requests. Purchasing a vehicle and increasing fares were discussed but not approved."

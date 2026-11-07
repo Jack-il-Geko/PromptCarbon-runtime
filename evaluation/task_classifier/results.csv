@@ -1,0 +1,978 @@
+id,prompt,expected_task,predicted_task,correct,source_id
+P-tc1,"Decide whether the writer expresses a positive or negative sentiment.
+
+The whole mess boils down to a transparently hypocritical work that feels as though it 's trying to set the women 's liberation movement back 20 years . '",Classification:Sentiment Analysis,Classification:Sentiment Analysis,True,pc-tc-final-v2-0000
+P-tc2,"Classify the sentiment expressed in the following text.
+
+I've never been to Buffalo, never ridden a buffalo, never had a Buffalo style pizza, but I can sure say I can make this place my home on the range. Located inside the dive bar that is Moon Doggies. So, right off the bat, if you are looking for a cute frou frou type place, it ain't happening here. This is about the pizza. So, \""""The Fatboy\"""" was ordered--half sheet. Thanks to Pete's speedy review and pics, I was able to call in the order, giddy up. As is the protocol, if you want to eat inside Moon Doggies, you pick up your \""""to go\"""" order, and pull up a table to enjoy your pie, that skirts the smoking law, yes smoking takes place here. You have 2 options, deal with it, or really take it to go. As soon as we cracked open the square box, the aroma of tomatoes and fresh basil completely infiltrated our mind, body and soul. OMFG, the pizza was astonishing. It seems to me NY pizza is kind of favored here in Vegas. This is not the same thing at all. The crust is thicker, a little soft with slightly crispy edges. It is all loaded with plenty of groceries, and I mean quality items too. WOW! Perfect ratio of crust, to sauce, to toppings. Check this out, we did not ask for, nor did we need any extra parmesan or red pepper flakes. The sauce is zesty, with a welcome kick. Daily doses of \""""The Fatboy\"""" could keep me from being slim. The pizza itself is 5 star!",Classification:Sentiment Analysis,Classification:Sentiment Analysis,True,pc-tc-final-v2-0001
+P-tc3,"Identify the dominant emotion or evaluative attitude in this message.
+
+i feeling dangerous at wimbledon width",Classification:Sentiment Analysis,Classification:Sentiment Analysis,True,pc-tc-final-v2-0002
+P-tc4,"Classify the sentiment expressed in the following text.
+
+Director Shekhar Kapur and screenwriters Michael Schiffer and Hossein Amini have tried hard to modernize and reconceptualize things , but the barriers finally prove to be too great .",Classification:Sentiment Analysis,Classification:Sentiment Analysis,True,pc-tc-final-v2-0003
+P-tc5,"Identify the dominant emotion or evaluative attitude in this message.
+
+i truly feel but its somehow not enough for me to hate him or to get mad",Classification:Sentiment Analysis,Classification:Sentiment Analysis,True,pc-tc-final-v2-0004
+P-tc6,"Identify the dominant emotion or evaluative attitude in this message.
+
+Confessions may not be a straightforward bio , nor does it offer much in the way of Barris ' motivations , but the film is an oddly fascinating depiction of an architect of pop culture .",Classification:Sentiment Analysis,Classification:Sentiment Analysis,True,pc-tc-final-v2-0005
+P-tc7,"Decide whether the writer expresses a positive or negative sentiment.
+
+@ashizbadd lmao I know my own bf don't wanna touch me  his bday is 2mar! the big 1-8",Classification:Sentiment Analysis,Classification:Sentiment Analysis,True,pc-tc-final-v2-0006
+P-tc8,"Identify the dominant emotion or evaluative attitude in this message.
+
+But its storytelling prowess and special effects are both listless .",Classification:Sentiment Analysis,Classification:Sentiment Analysis,True,pc-tc-final-v2-0007
+P-tc9,"Classify the sentiment expressed in the following text.
+
+This is the kind of movie where the big scene is a man shot out of a cannon into a vat of ice cream .",Classification:Sentiment Analysis,Classification:Sentiment Analysis,True,pc-tc-final-v2-0008
+P-tc10,"Decide whether the writer expresses a positive or negative sentiment.
+
+First off, best fries pickles ever. Sweet potato fries are pretty good but not amazing. I had the tree hugger salad (my favorite kind of salad) with spinach, fruit and nuts, definitely wortg ordering again. Also have had the frenchie, but with a beef patty instead of Turkey- and the build your own is good- bleu cheese is strong! Very small parking lot but in well lit, safe area.",Classification:Sentiment Analysis,Classification:Sentiment Analysis,True,pc-tc-final-v2-0009
+P-tc11,"Choose the single domain that best describes the following content.
+
+Internet Explorer Loses More Market Share (Ziff Davis) Ziff Davis - New data shows Web site visitors paying more attention to alternative browsers, as Microsoft's share drops to 93.7 percent of the market.",Classification:Topic Classification,Classification:Topic Classification,True,pc-tc-final-v2-0010
+P-tc12,"Classify the main topic of this text, ignoring incidental details.
+
+This man ""and the Creation of a Superpower"" and ""Memories of"" this man form the titles of two of his biographies written by his son. He opened up new land in the Altay region for farming during his Virgin Lands Campaign, and created regional Economic Councils in an effort to decentralize. After secretly giving a report entitled On the Personality Cult and Its Consequences to the so-called Congress of Victors, he advocated breaking the ice during his namesake thaw. He also oversaw the military intervention during the Hungarian Revolution and formed the Warsaw Pact. Also famous for overseeing the launch of Sputnik I, stationing nuclear weapons in Cuba, banging his shoe on a desk during a Security Council meeting, and holding the Kitchen Debate with Richard Nixon, this is, FTP, which Soviet leader who was overthrown by Brezhnev and succeeded Stalin",Classification:Topic Classification,Classification:Topic Classification,True,pc-tc-final-v2-0011
+P-tc13,"Classify the main topic of this text, ignoring incidental details.
+
+This economist posited an early form of the Quantity Theory of Money in Tract on Monetary Reform. He proposed that recessions can get worse in the presence of near-zero nominal interest due to liquidity traps, and that an increase in GDP can result from initial investment through the multiplier effect. He argued against reparations in a work critical of the Treaty of Versailles, The Economic Consequences of the Peace, and in another work for increased government spending to combat recessions. For 10 points, name this writer of The General Theory of Employment, Interest and Money.",Classification:Topic Classification,Classification:Topic Classification,True,pc-tc-final-v2-0012
+P-tc14,"Classify the main topic of this text, ignoring incidental details.
+
+Giant pandas in China reserve get Wi-Fi Giant pandas may well prefer bamboo to laptops, but wireless technology is helping researchers in China in their efforts to protect the engandered animals living in the remote Wolong Nature Reserve.",Classification:Topic Classification,Classification:Topic Classification,True,pc-tc-final-v2-0013
+P-tc15,"Assign the following item to its most appropriate subject category.
+
+Wi-Fi Adapters Turn Inward Those wireless LAN cards that insert into a laptop, Tablet PC or PDA have just gone on the endangered species list, according to a new report published this week.",Classification:Topic Classification,Classification:Topic Classification,True,pc-tc-final-v2-0014
+P-tc16,"Choose the single domain that best describes the following content.
+
+One work by this thinker asserts that physical and mental facts are independent, and it supports the title concepts with ""truisms"" like ""my body existed yesterday"". This thinker argued that blue are not equal to the sensations of objects in an that refuted both Descartes and McTaggart. In another work, this philosopher posited that good is a ""simple concept"" with an ""opened ended"" definition that cannot be determined through the naturalistic fallacy. For 10 points, name this English analytic philosopher who wrote ""A Defence of Common Sense"", ""The Refutation of Idealism"" and Principia Ethica.",Classification:Topic Classification,Classification:Topic Classification,True,pc-tc-final-v2-0015
+P-tc17,"Assign the following item to its most appropriate subject category.
+
+Nice Day for a Wireless Wedding (washingtonpost.com) washingtonpost.com - The courtship was public, and now they're engaged. Even though we knew it was coming, journalists seem to have plenty to write about now that underdogs Sprint and Nextel have announced their  #36;35 billion nuptial plans, including a rumor that one of the wireless industry's big dogs would try to spoil the party.",Classification:Topic Classification,Classification:Topic Classification,True,pc-tc-final-v2-0016
+P-tc18,"Classify the main topic of this text, ignoring incidental details.
+
+Is there a good reference for California Landlord-Tenant Law?",Classification:Topic Classification,Classification:Topic Classification,True,pc-tc-final-v2-0017
+P-tc19,"Classify the main topic of this text, ignoring incidental details.
+
+IMF Sees Robust U.S. Growth &lt;p&gt;\&lt;/p&gt;&lt;p&gt; OUAGADOUGOU (Reuters) - Robust U.S. economic growth will\likely continue into 2005, but authorities should cut the\budget deficit to reduce the risk to growth, International\Monetary Fund Managing Director Rodrigo Rato said.&lt;/p&gt;",Classification:Topic Classification,Classification:Topic Classification,True,pc-tc-final-v2-0018
+P-tc20,"Classify the main topic of this text, ignoring incidental details.
+
+What is the difference between Notepad and WordPad?",Classification:Topic Classification,Classification:Topic Classification,True,pc-tc-final-v2-0019
+P-tc21,"Review the message below and classify it as acceptable, insulting, hateful, or threatening. Do not infer toxicity merely from criticism.
+
+Message: I hope your family gets hurt because you rejected my request.",Classification:Toxicity Detection,Classification:Toxicity Detection,True,pc-tc-final-v2-0020
+P-tc22,"Review the message below and classify it as acceptable, insulting, hateful, or threatening. Do not infer toxicity merely from criticism.
+
+Message: You are completely useless and everyone on this team would be better off without you.",Classification:Toxicity Detection,Classification:Toxicity Detection,True,pc-tc-final-v2-0021
+P-tc23,"Review the message below and classify it as acceptable, insulting, hateful, or threatening. Do not infer toxicity merely from criticism.
+
+Message: She should be excluded solely because of her religion.",Classification:Toxicity Detection,Classification:Toxicity Detection,True,pc-tc-final-v2-0022
+P-tc24,"Review the message below and classify it as acceptable, insulting, hateful, or threatening. Do not infer toxicity merely from criticism.
+
+Message: Women are too irrational to manage technical teams.",Classification:Toxicity Detection,Classification:Toxicity Detection,True,pc-tc-final-v2-0023
+P-tc25,"Review the message below and classify it as acceptable, insulting, hateful, or threatening. Do not infer toxicity merely from criticism.
+
+Message: Stop talking, idiot; nobody asked for your pathetic opinion.",Classification:Toxicity Detection,Classification:Toxicity Detection,True,pc-tc-final-v2-0024
+P-tc26,"Review the message below and classify it as acceptable, insulting, hateful, or threatening. Do not infer toxicity merely from criticism.
+
+Message: All members of that ethnic group are criminals.",Classification:Toxicity Detection,Classification:Toxicity Detection,True,pc-tc-final-v2-0025
+P-tc27,"Review the message below and classify it as acceptable, insulting, hateful, or threatening. Do not infer toxicity merely from criticism.
+
+Message: The referee made several poor decisions in the second half.",Classification:Toxicity Detection,Classification:Toxicity Detection,True,pc-tc-final-v2-0026
+P-tc28,"Review the message below and classify it as acceptable, insulting, hateful, or threatening. Do not infer toxicity merely from criticism.
+
+Message: That design is ugly and whoever made it has no talent at all.",Classification:Toxicity Detection,Classification:Toxicity Detection,True,pc-tc-final-v2-0027
+P-tc29,"Review the message below and classify it as acceptable, insulting, hateful, or threatening. Do not infer toxicity merely from criticism.
+
+Message: If you publish that article, I will find you and make you regret it.",Classification:Toxicity Detection,Classification:Toxicity Detection,True,pc-tc-final-v2-0028
+P-tc30,"Review the message below and classify it as acceptable, insulting, hateful, or threatening. Do not infer toxicity merely from criticism.
+
+Message: You deserve to be publicly humiliated for making that mistake.",Classification:Toxicity Detection,Classification:Toxicity Detection,True,pc-tc-final-v2-0029
+P-tc31,"Using only the predefined labels [venue, catering, speakers, registration, publicity], assign every applicable label to this event plan; more than one may apply.
+
+Confirm the auditorium and order vegetarian lunches for registered guests.",Classification:Multi-label Classification,Classification:Multi-label Classification,True,pc-tc-final-v2-0030
+P-tc32,"Using only the predefined labels [billing, login, delivery, cancellation], assign every applicable label to this support ticket; more than one may apply.
+
+I was charged twice and now the mobile app rejects my password.",Classification:Multi-label Classification,Classification:Multi-label Classification,True,pc-tc-final-v2-0031
+P-tc33,"Using only the predefined labels [comedy, drama, science fiction, romance, mystery], assign every applicable label to this film synopsis; more than one may apply.
+
+Two astronauts investigate a disappearance while gradually falling in love.",Classification:Multi-label Classification,Classification:Multi-label Classification,True,pc-tc-final-v2-0032
+P-tc34,"Using only the predefined labels [security, privacy, availability, data loss, compliance], assign every applicable label to this incident report; more than one may apply.
+
+An exposed backup contained customer addresses and the service was offline for two hours.",Classification:Multi-label Classification,Classification:Multi-label Classification,True,pc-tc-final-v2-0033
+P-tc35,"Using only the predefined labels [transport, accommodation, food, accessibility, activities], assign every applicable label to this travel request; more than one may apply.
+
+Book a wheelchair-accessible hotel and arrange a train from the airport.",Classification:Multi-label Classification,Classification:Multi-label Classification,True,pc-tc-final-v2-0034
+P-tc36,"Using only the predefined labels [injury, transfer, tactics, result, finance], assign every applicable label to this sports article; more than one may apply.
+
+The injured striker will miss the final after the club changed its formation.",Classification:Multi-label Classification,Classification:Multi-label Classification,True,pc-tc-final-v2-0035
+P-tc37,"Using only the predefined labels [biology, statistics, ethics, medicine, computing], assign every applicable label to this research abstract; more than one may apply.
+
+A neural model predicts protein folding from patient-derived genomic sequences.",Classification:Multi-label Classification,Classification:Multi-label Classification,True,pc-tc-final-v2-0036
+P-tc38,"Using only the predefined labels [refund, defective item, account access, warranty, feedback], assign every applicable label to this customer email; more than one may apply.
+
+My new keyboard repeats keys, so I want a replacement under warranty.",Classification:Multi-label Classification,Classification:Multi-label Classification,True,pc-tc-final-v2-0037
+P-tc39,"Using only the predefined labels [programming, mathematics, writing, design, business], assign every applicable label to this course description; more than one may apply.
+
+Students build simulations and use calculus to analyse their stability.",Classification:Multi-label Classification,Classification:Multi-label Classification,True,pc-tc-final-v2-0038
+P-tc40,"Using only the predefined labels [income, expense, tax, investment, debt], assign every applicable label to this financial transaction; more than one may apply.
+
+Record dividend earnings and the fee charged by the broker.",Classification:Multi-label Classification,Classification:Multi-label Classification,True,pc-tc-final-v2-0039
+P-tc41,"Classify the item by language register. Return exactly one label from [academic, journalistic, conversational].
+
+Item: The findings indicate a statistically significant interaction between the variables.",Classification:Others,Classification:Others,True,pc-tc-final-v2-0040
+P-tc42,"Classify the item by message purpose. Return exactly one label from [inform, persuade, entertain].
+
+Item: Vote for the proposal because it will reduce household bills.",Classification:Others,Classification:Others,True,pc-tc-final-v2-0041
+P-tc43,"Classify the item by review helpfulness. Return exactly one label from [helpful, partly helpful, unhelpful].
+
+Item: Great product!",Classification:Others,Classification:Others,True,pc-tc-final-v2-0042
+P-tc44,"Classify the item by email priority. Return exactly one label from [routine, time-sensitive, emergency].
+
+Item: Please approve the venue by noon so the reservation is not released.",Classification:Others,Classification:Others,True,pc-tc-final-v2-0043
+P-tc45,"Classify the item by reading level. Return exactly one label from [beginner, intermediate, expert].
+
+Item: Assume familiarity with eigenvalue perturbation theory.",Classification:Others,Classification:Others,True,pc-tc-final-v2-0044
+P-tc46,"Classify the item by stance. Return exactly one label from [support, oppose, undecided].
+
+Item: The plan has benefits, but I need cost figures before endorsing it.",Classification:Others,Classification:Others,True,pc-tc-final-v2-0045
+P-tc47,"Classify the item by review verdict. Return exactly one label from [accept, revise, reject].
+
+Item: The method is sound, but the evaluation lacks two essential baselines.",Classification:Others,Classification:Others,True,pc-tc-final-v2-0046
+P-tc48,"Classify the item by intent. Return exactly one label from [request, complaint, apology, gratitude].
+
+Item: I am sorry that I submitted the report after the deadline.",Classification:Others,Classification:Others,True,pc-tc-final-v2-0047
+P-tc49,"Classify the item by claim status. Return exactly one label from [fact, opinion, mixed].
+
+Item: The train arrived at nine, and the station is beautifully designed.",Classification:Others,Classification:Others,True,pc-tc-final-v2-0048
+P-tc50,"Classify the item by urgency. Return exactly one label from [low, medium, critical].
+
+Item: Production payments are failing for every customer.",Classification:Others,Classification:Others,True,pc-tc-final-v2-0049
+P-tc51,"Use the following passage as the sole evidence for your answer.
+
+Article: What would it be like to take a walk on the surface of Mars? If you could design the tallest building in the world, what would it look like? Do you dream of being the next J.K. Rowling? This summer, you can experience all of these things, and more. All you need is an Internet connection and your imagination. A recent study by the Kaiser Family Foundation found that kids spend an average of 1 hour and 29 minutes online each day. Many kids like to use that time to chat with friends, play games or check emails. But the next time you get on the Web, try exploring the world instead. ""With the Internet, you can go back 11,000 years in time, or go 11,000 kilometers across the planet."" said Russell, Web search expert of Google. ""The whole scope of history and the world is open to you."" There is a wealth of information to be found online. For example, if your family is going on vacation somewhere,do a quick online search on the area before you even get in the car. ""What's the background of the place; what's the history?"" says Russell. ""I like to tell my kids, 'Whenever you have a question, whenever you have a doubt, search it out.'"" Ready to launch a virtual journey of your own? Here are a few starting points to get you thinking and to help you on your way. You can invite your parents along for the ride, too. Always ask for permission before downloading programs and software onto your computer. And check with a parent or an adult before visiting a new Web site. Navigate the world in 3D with Google Earth. Begin in outer space and zoom  into the streets of any city, from Hong Kong to San Francisco. Or visit ancient monuments, watch the changing rainforests over time, and dive underwater to explore tropical reef. With the Moon in Google Earth tool, you can walk in Neil Armstrong's famous footsteps. Take a guided tour of the moon's surface with Armstrong's fellow shuttle mate astronaut Buzz Aldrin. When you're exploring that part of the solar system, hop on over to the Red Planet with Google Mars. There, you can move very quickly around the surface and see images from the Mars Rovers. 
+ Question: The author uses questions in the first passage to   _  . 
+ Options: (A) introduce the topic of the paragraph (B) question the possibility of realizing the dream (C) attract the readers' attention (D) let the readers answer it",Open Book QA:Reading Comprehension,Open Book QA:Reading Comprehension,True,pc-tc-final-v2-0050
+P-tc52,"Answer the question by interpreting the context below.
+
+Article: One Saturday morning we were on our way home and decided to stop at a local gas station to get something to eat since it was a good hour and a half before we got home. We noticed a man standing outside in front of the building. You could tell that he was a homeless man. His clothes were worn and dirty, and not enough on this terrible cold day of the year. He must have not had enough money to get something to eat. The next thing I remember is a dog that walked up to the front of the building. Being a dog lover, I noticed she was part wolf and probably part German shepherd  . I could tell she had been feeding puppies  . She was terribly in need of something to eat and I felt so bad for her.     I knew if she didn't eat soon, she and her puppies would not make it. We noticed people walked by and didn't even care for her. She might not have been as pretty and clean as most, but she still deserved better. We still did not do anything. But someone did. The homeless man, who I thought did not buy himself anything to eat, went into the store in front of him. Any what he did brought tears to me and my wife. He brought a can of dog food with what money he may have had and fed that dog. I was so moved and walked to him and gave him all my pocket money.     I know this story isn't as moving as most stories, but it plays a great part in our lives. You see, that day was Mother's Day. And a lot of people forget that some animals are parents too. And animals as well as we are God's creations. The homeless man showed me what I should have done. He made a decision to be a better man in future. 
+ Question: Where did the author notice the homeless man stand? 
+ Options: (A) In a grand restaurant. (B) At the gate of a station. (C) In front of a store. (D) At a local bus station.",Open Book QA:Reading Comprehension,Open Book QA:Reading Comprehension,True,pc-tc-final-v2-0051
+P-tc53,"Use the following passage as the sole evidence for your answer.
+
+passage: Power steering fluid is a sub type of hydraulic fluid. Most are mineral oil or silicone based fluids, while some use automatic transmission fluid, made from synthetic base oil.
+ question: is hydraulic oil the same as power steering fluid?",Open Book QA:Reading Comprehension,Open Book QA:Reading Comprehension,True,pc-tc-final-v2-0052
+P-tc54,"Use the following passage as the sole evidence for your answer.
+
+Passage: QB Joey Harrington had 414 yards off a record 62 attempts (33 of them were complete), but he also threw 3 INT's (one returned for a TD).  Packers RB Ahman Green rushed for about 100 yards, including a 70 yd TD. Packers QB Brett Favre had 206 yards throwing and two 2 TD's and is closing on Dan Marino's all-time completions and touchdown records.  Meanwhile, Favre's favorite WR Donald Driver had 10 receptions for 93 yards and a touchdown.  With the Dolphins, RB Ronnie Brown was limited to just 59 yards rushing on 15 carries and 63 yards receiving on 5 receptions.  The leading receiver for Miami was WR Marty Booker, who had 7 receptions for 110 yards and a touchdown.  With the loss, the Dolphins fell to 1-6. 
+Question: How many more receiving yards did Booker have than Driver? 
+Answer type: Number",Open Book QA:Reading Comprehension,Open Book QA:Reading Comprehension,True,pc-tc-final-v2-0053
+P-tc55,"Answer the question by interpreting the context below.
+
+Passage: Yesterday , my family and I went to Iguana Joe ’s . It is a TexMex restaurant with a playground for children as well as good food and drinks . \ \ nWe did n’t make a reservation , but when we arrived at 5 pm we only had to wait about 5 minutes for them to get us a table by the playground . \ \ nFirst , they asked if we wanted drinks . This was the main reason we came ; Iguana Joes is known for creative and tasty drinks . We ordered milk for our kids and I got a peach Margarita with a splash of soda ; they call this a Margatini . \ \ nThe service is very good here and they brought out the drinks really fast . Like always , they were huge and delicious and look pretty enough to take a picture of . The bartenders always put the drinks in giant stemmed glasses and add things like paper umbrellas and cherries to the top . Also the drinks are very colorful . \ \ nWhile drinking , we placed our order of pizza for the kids and fish tacos for us . The food arrived after about 20 minutes and we enjoyed talking and watching the kids play . The kids came back as needed for bites of their pizza and to drink their milk , but mostly they were on the monkey bars and slide . \ \ nAfter awhile we had finished and the waiter took our food and asked if we wanted more drinks . We ordered a second round ; this time I got a Raspberry Margarita and my husband got a Pina Colada . Once again the drinks were served beautifully and were quite colorful . \ \ nFinally we paid the bill , got the kids and headed to the car to go home . We love Iguana Joes for it ’s family friendly atmosphere . Question: What flavor was the Margarita? Option1: Pina Colada Option2: the first was peach and the second was raspberry",Open Book QA:Reading Comprehension,Open Book QA:Reading Comprehension,True,pc-tc-final-v2-0054
+P-tc56,"Answer the question by interpreting the context below.
+
+Passage: Lennon first met Yoko Ono on 9 November 1966 at the Indica Gallery in London, where Ono was preparing her conceptual art exhibit. They were introduced by gallery owner John Dunbar. Lennon was intrigued by Ono's ""Hammer A Nail"": patrons hammered a nail into a wooden board, creating the art piece. Although the exhibition had not yet begun, Lennon wanted to hammer a nail into the clean board, but Ono stopped him. Dunbar asked her, ""Don't you know who this is? He's a millionaire! He might buy it."" Ono had supposedly not heard of the Beatles, but relented on condition that Lennon pay her five shillings, to which Lennon replied, ""I'll give you an imaginary five shillings and hammer an imaginary nail in."" Ono subsequently related that Lennon had taken a bite out of the apple on display in her work Apple, much to her fury.Ono began to telephone and visit Lennon at his home. When Cynthia asked him for an explanation, Lennon explained that Ono was only trying to obtain money for her ""avant-garde bullshit"". While his wife was on holiday in Greece in May 1968, Lennon invited Ono to visit. They spent the night recording what would become the Two Virgins album, after which, he said, they ""made love at dawn"". When Lennon's wife returned home she found Ono wearing her bathrobe and drinking tea with Lennon who simply said, ""Oh, hi."" Ono became pregnant in 1968 and miscarried a male child on 21 November 1968, a few weeks after Lennon's divorce from Cynthia was granted.Two years before the Beatles disbanded, Lennon and Ono began public protests against the Vietnam War. They were married in Gibraltar on 20 March 1969, and spent their honeymoon at the Hilton Amsterdam, campaigning with a week-long Bed-In for Peace. They planned another Bed-In in the United States but were denied entry, so they held one instead at the Queen Elizabeth Hotel in Montreal, where they recorded ""Give Peace a Chance"". They often combined advocacy with performance art, as in their ""Bagism"", first introduced during a Vienna press conference. Lennon detailed this period in the Beatles song ""The Ballad of John and Yoko"". Lennon changed his name by deed poll on 22 April 1969, adding ""Ono"" as a middle name. The brief ceremony took place on the roof of the Apple Corps building, where the Beatles had performed their rooftop concert three months earlier. Although he used the name John Ono Lennon thereafter, official documents referred to him as John Winston Ono Lennon, since he was not permitted to revoke a name given at birth. The couple settled at Tittenhurst Park at Sunninghill in Berkshire. After Ono was injured in a car accident, Lennon arranged for a king-size bed to be brought to the recording studio as he worked on the Beatles' last album, Abbey Road.Ono and Lennon moved to New York, to a flat on Bank Street, Greenwich Village. Looking for somewhere with better security, they relocated in 1973 to the more secure Dakota overlooking Central Park at 1 West 72nd Street. 
+Question: What is the last name of the person who said that he and Yoko Ono ""made love at dawn"" after spending the night recording what would become the Two Virgins album?",Open Book QA:Reading Comprehension,Open Book QA:Reading Comprehension,True,pc-tc-final-v2-0055
+P-tc57,"Read the supplied passage and answer its question using only that passage.
+
+passage: The Orthodox Presbyterian Church, the Reformed Presbyterian Church, the American Presbyterian Church the Reformed Seventh-day Adventist Church, Exclusive Brethren, the Apostolic Christian Church, the Church of the Brethren, Mennonites, Amish, some Anglicans, the Church of God in Christ, the Church of God of Prophecy, and some other churches in the Reformed tradition such as Calvinists also practice closed communion. Jehovah's Witnesses hold that only the 144,000 should receive communion. Other nontrinitarian Christians that practice closed communion include the Church of God (Seventh Day), Christadelphians, and Oneness Pentecostals such as the True Jesus Church.
+ question: can a roman catholic take communion in an anglican church?",Open Book QA:Reading Comprehension,Open Book QA:Reading Comprehension,True,pc-tc-final-v2-0056
+P-tc58,"Use the following passage as the sole evidence for your answer.
+
+Passage: In 1955, Paul Hindemith revised the work to achieve more clarity. According to Wolfgang Rathert, Hindemith ""sought to moderate Reger's 'uncontrolled invention'"", while Kirshnit described Reger's original scoring as ""gloriously polychromatic"". Hindemith ""thinned"" the orchestra, especially the horns. In Reger's scoring, the organ reinforced the voices throughout the piece, resulting in a lack of clarity for the polyphonic passages. Hindemith used the organ only for climaxes. In the double fugue, he assigned one theme to a voice, but the other simultaneous theme to the orchestra. Hindemith's approach, which enables more analytical listening, seems justified by Reger's own scoring of later compositions which were more refined and focused. It is probably due to his version that Der 100. Psalm enjoyed continuous presence in concert halls, while other works by Reger were neglected.François Callebout wrote an organ version that was published in 2004 by Dr. J. Butz. Gabriel Dessauer explains in the preface that Reger's work was conceived for oratorio choirs of up to 500 singers at the beginning of the 20th century. The organ version enables smaller choirs to perform the music. This version was premiered in 2003 by the Reger-Chor in St. Bonifatius, Wiesbaden, the parish to which the composer belonged during his studies in Wiesbaden. The organ was played by Ignace Michiels, organist at the St. Salvator Cathedral in Bruges.Hanns-Friedrich Kaiser, KMD (director of church music) in Weiden, where Reger grew up, wrote a version for choir and organ, which he conducted at the opening of the festival Reger-Tage at the church St. Michael on 16 September 2012, with organist Michael Schöch. 
+Question: What is the full name of the person who conducted at the opening of the festival?",Open Book QA:Reading Comprehension,Open Book QA:Reading Comprehension,True,pc-tc-final-v2-0057
+P-tc59,"Read the supplied passage and answer its question using only that passage.
+
+Passage: L'Orfeo (SV 318) (Italian pronunciation: [lorˈfɛːo]), sometimes called La favola d'Orfeo [la ˈfaːvola dorˈfɛːo], is a late Renaissance/early Baroque favola in musica, or opera, by Claudio Monteverdi, with a libretto by Alessandro Striggio. It is based on the Greek legend of Orpheus, and tells the story of his descent to Hades and his fruitless attempt to bring his dead bride Eurydice back to the living world. It was written in 1607 for a court performance during the annual Carnival at Mantua. While Jacopo Peri's Dafne is generally recognised as the first work in the opera genre, and the earliest surviving opera is Peri's Euridice, L'Orfeo is the earliest that is still regularly performed.
+By the early 17th century the traditional intermedio—a musical sequence between the acts of a straight play—was evolving into the form of a complete musical drama or ""opera"". Monteverdi's L'Orfeo moved this process out of its experimental era and provided the first fully developed example of the new genre. After its initial performance the work was staged again in Mantua, and possibly in other Italian centres in the next few years. Its score was published by Monteverdi in 1609 and again in 1615. After the composer's death in 1643 the opera went unperformed for many years, and was largely forgotten until a revival of interest in the late 19th century led to a spate of modern editions and performances. At first these performances tended to be concert (unstaged) versions within institutes and music societies, but following the first modern dramatised performance in Paris, in 1911, the work began to be seen in theatres. After the Second World War many recordings were issued, and the opera was increasingly staged in opera houses, although some leading venues resisted it. In 2007, the quatercentenary of the premiere was celebrated by performances throughout the world.
+In his published score Monteverdi lists around 41 instruments to be deployed, with distinct groups of instruments used to depict particular scenes and characters. Thus strings, harpsichords and recorders represent the pastoral fields of Thrace with their nymphs and shepherds, while heavy brass illustrates the underworld and its denizens. Composed at the point of transition from the Renaissance era to the Baroque, L'Orfeo employs all the resources then known within the art of music, with particularly daring use of polyphony. The work is not orchestrated as such; in the Renaissance tradition instrumentalists followed the composer's general instructions but were given considerable freedom to improvise. 
+Question: In what city was the first modern dramatised performance of L'Orfeo?",Open Book QA:Reading Comprehension,Open Book QA:Reading Comprehension,True,pc-tc-final-v2-0058
+P-tc60,"Answer the question by interpreting the context below.
+
+Article: Zhu Haoyu, 18, a history major, wears his iPod everywhere on campus. The freshman has it going out for a walk, visiting the library or lying in bed. However, he found that his habit is like displaying a big ""Do not disturb ""sign for himself. As time slips away, he has begun to regret not having conversed much with his peers around . ""As I put the little buds   into my ears, I'm in a universe of my own, forgetting all troubles in the real world,"" said Li. The MP3 player is one of a number of gadgets  --starting with the Sony Walkman, which led to the iPod, iPhone and iPad --that give people the ability to shut themselves off from world around them. Youngsters delight in handset   technology. In public, students chat on their cell phones, stopping only to talk briefly to friends. On buses or trains it's common to see youngsters with PlayStations instead of playing poker or sharing jokes or games. And during airline flights, people watch episodes   of US TV dramas on their iPads, rather than talking. The recently published an article saying that headphone wearing culture is making us anti-social. ""Half of humankind is wired to a parallel universe that leaves them ignoring their surroundings and fellows,"" wrote Tom de Castella. Actually, it's a decade since Apple unveiled the iPod, which promised ""1,000 songs in your pocket"". In 2007 more than half of Western residents were using an iPod or MP3 player. Entertainment is on offer in all surroundings, not just at home. But in the meantime, it has created barriers between us. Many people subscribe to the view that the headphone culture is creating a ""spoilt, selfish generation that lacks civic culture"". However, many users of portable MP3 players argue that the device, as a mind drug, helps them relieve stress by escaping for a while. It is also said to be able to help some students concentrate on work or study. ""If you want to get away from the hucksters   on the way, just start listening to your player,"" said Liu, a freshman. ""They do not approach people with headphones on."" This might also mean he's blocking those who want to ask him for the directions. Experts, however, say that short contacts or mini conversations with strangers are helpful to our mind. Many experts warn that it is dangerous to lose touch with people in our lives. 
+ Question: Zhu Haoyu found that his wearing the iPod    _    . 
+ Options: (A) disturbed others (B) made it easy for him to keep in touch with others (C) made it easy for him to visit the library (D) made others unwilling to talk to him",Open Book QA:Reading Comprehension,Open Book QA:Reading Comprehension,True,pc-tc-final-v2-0059
+P-tc61,"Consult the supplied document excerpt and answer the question from its contents.
+
+In general, the model transforms the segments into object-pairs by the TC-CNN and passes sentence through bi-GRU to obtain the global representation. Then we integrate object-pairs with global representation and make a pair-wise inference to detect the relationship among the segments. Ablation studies show that the proposed SCRN at the segment level has the capacity for relational reasoning and promotes the result significantly. 
+ Question: How is Relation network used to infer causality at segment level?",Open Book QA:Document-based QA,Open Book QA:Document-based QA,True,pc-tc-final-v2-0060
+P-tc62,"Use only the following operations manual to answer the question after it.
+
+ALDER MUSEUM — ORGANIC COLLECTIONS ROOM
+Controlled document AM-OC-17, revision 4, issued 6 February 2026
+
+1. Scope
+This manual covers the room containing wooden instruments and woven baskets. It does not cover the metal-object vault. The duty conservator records decisions in the room log; the facilities desk may acknowledge an alarm but cannot approve opening a display case.
+
+2. Humidity alerts
+A reading outside 45–55 percent relative humidity starts an observation period. A second reading must be taken with the independent handheld sensor. A single out-of-range reading from the wall sensor is not enough to open a case. If both sensors remain outside the band for thirty continuous minutes, the conservator must move unglazed wooden objects to the buffer cabinet before requesting an equipment inspection.
+
+3. Loaned objects
+An instrument carrying a blue lender tag must remain in its closed case. For these objects, staff should contact the lender's named conservation officer. The general relocation rule in section 2 does not override this condition.
+
+4. Record keeping
+Record both readings, the start and end of observation, the tag colour and the person authorising any movement. Photographs supplement this record; they do not replace sensor readings.
+
+Question: According to the manual, what must staff do for a blue-tagged instrument after both sensors have remained outside the humidity band for thirty minutes? Identify the section that takes precedence.",Open Book QA:Document-based QA,Open Book QA:Document-based QA,True,pc-tc-final-v2-0061
+P-tc63,"Find the answer in the document evidence below and preserve any qualification it states.
+
+JOINT FILING AGREEMENT
+
+Pursuant to and in accordance with the Securities Exchange Act of 1934, as amended (the Exchange Act), and the rules and regulations thereunder, each party hereto hereby agrees to the joint filing, on behalf of each of them, of any filing required by such party under Section 13 or Section 16 of the Exchange Act or any rule or regulation thereunder (including any amendment, restatement, supplement, and/or exhibit thereto) with the Securities and Exchange Commission (and, if such security is registered on a national securities exchange, also with the exchange), and further agrees to the filing, furnishing, and/or incorporation by reference of this agreement as an exhibit thereto. This agreement shall remain in full force and effect until revoked by any party hereto in a signed writing provided to each other party hereto, and then only with respect to such revoking party.
+
+IN WITNESS WHEREOF, each party hereto, being duly authorized, has caused this agreement to be executed and effective as of the date set forth below.
+
+Date: April 7, 2020 BANK OF AMERICA CORPORATION
+
+By: Ally Pecarro Name: Ally Pecarro Title: Attorney-in-fact
+
+BANC OF AMERICA PREFERRED FUNDING CORPORATION
+
+By: Michael Jentis Name: Michael Jentis Title: Authorized Signatory 
+Question: Highlight the parts (if any) of this contract related to Effective Date that should be reviewed by a lawyer. Details: The date when the contract is effective",Open Book QA:Document-based QA,Open Book QA:Document-based QA,True,pc-tc-final-v2-0062
+P-tc64,"Answer the question using this supplied university archive policy, not general university practice.
+
+WILLOW AUDIO ARCHIVE — ACCESS POLICY WA-8
+Effective 12 January 2026
+
+Purpose. The archive preserves oral-history recordings. An accession is a recording deposited with a signed donor form. A transcript is a separately catalogued item and may have different access conditions.
+
+A. Access tiers. Green accessions may be played in the supervised listening room. Amber accessions require written permission from the archive director. Red accessions cannot be played until the embargo date stated in their donor form. A researcher's university affiliation does not change an accession's tier.
+
+B. Copies. Staff may supply a digital copy of a green recording only when the donor form expressly permits copying. Permission to listen is not permission to copy. The archive director may approve listening to amber material but cannot waive a donor's prohibition on copying.
+
+C. Transcript exception. A transcript marked public in its own catalogue entry can be consulted even if the associated recording remains under embargo. This exception permits access to the transcript only.
+
+D. Requests. Each request must name an accession or transcript identifier and the intended use. Staff log the decision and its policy basis. Appeals about catalogue errors go to the records officer, not to the donor.
+
+Question: A researcher is allowed to listen to an amber recording, but its donor form prohibits copies. Does section B permit the director to authorise a digital copy? State the policy basis.",Open Book QA:Document-based QA,Open Book QA:Document-based QA,True,pc-tc-final-v2-0063
+P-tc65,"Consult the supplied document excerpt and answer the question from its contents.
+
+Exhibit 8    SUPPLIER/SUBCONTRACTOR CONTRACT
+
+1. By execution of this Supplier/Subcontractor Contract (Contract), _______________ (Supplier)  agrees and  acknowledges that: (i) all images and/or trademarks, including, but not limited to PLAYBOY, (the Playboy Properties)  applied at the request of _______________ (Purchaser)  to merchandise covered by this Contract are owned by  Playboy Enterprises International, Inc. (Playboy), and when used upon merchandise means that such merchandise is  sponsored, approved, recommended or sold by Playboy or its licensees; (ii) Supplier will not sell, ship or otherwise  dispose of any such merchandise except upon the order of Purchaser or Playboy; (iii) Supplier will never make, cause others to make or assist others in making, any claim whatsoever to any or all of the Playboy Properties or any trademark,  copyright, designation, name, phrase, design or symbol similar thereto in connection with the manufacture, advertising,  promotion, sale or distribution of merchandise; and (iv) Supplier will defend, indemnify and hold harmless Purchaser and Playboy and the distributors and dealers and the officers and employees of each of the foregoing against all liability  whatsoever which may be incurred by them or any of them as a result of any alleged defects in material or workmanship  in the merchandise covered by this Contract.
+
+2. Supplier agrees that no production or manufacture of any merchandise covered by this Contract will commence until this  Contract has been signed, dated and returned by Supplier to Purchaser. Supplier further agrees that it will not produce,  cause to be produced or assist in the production of more units than are specified by Purchaser nor will Supplier produce, cause to be produced or assist in the production of any product or item not specifically requested by Purchaser using any  or all of the Playboy Properties or any trademark, copyright, designations, names, phrases, designs or symbols similar to  any or all of the Playboy Properties during or at any time after the completion of merchandise requested by this Contract.
+
+3. Supplier will, upon request from Purchaser or Playboy, deliver to Purchaser or will destroy in the presence of Purchaser  or its representative(s), all molds, designs or any other elements used in reproducing any or all of the Playboy Properties.
+
+4. Playboy is an intended third-party beneficiary of this Contract.
+
+5. This Contract, when attached to a purchase order, shall consist of the entire agreement between the parties and shall  supersede any conflicting or contrary terms and conditions of any purchase order or other order form whether supplied  by Purchaser or Supplier.
+
+6. This Contract may not be modified or terminated except in writing, and no claimed modification, termination or waiver  shall be binding unless also signed by an authorized representative of Playboy.
+
+40
+
+Source: PLAYBOY ENTERPRISES INC, 10-Q/A, 2/20/2009
+
+7. VIOLATION OF THIS AGREEMENT BY SUPPLIER MAY RESULT IN PROSECUTION FOR PLAYBOY PROPERTIES INFRINGEMENT, UNFAIR COMPETITION AND OTHER CAUSES OF ACTION AND THE  IMPOSITION OF FINES AND/OR CRIMINAL PENALTIES.
+
+SUPPLIER PURCHASER  (Name of Company - Please Print)  By: By:  Title: Title:  Date: Date:  SUPPLIER INFORMATION PLAYBOY  Name: Name: PLAYBOY.COM, INC.  Address: Address: 730 Fifth Avenue  New York, NY 10019  Contact: Contact:  Telephone: Telephone: 212-261-5000  Facsimile: Facsimile: 212-957-2950
+
+41
+
+Source: PLAYBOY ENTERPRISES INC, 10-Q/A, 2/20/2009 
+Question: Highlight the parts (if any) of this contract related to Third Party Beneficiary that should be reviewed by a lawyer. Details: Is there a non-contracting party who is a beneficiary to some or all of the clauses in the contract and therefore can enforce its rights against a contracting party?",Open Book QA:Document-based QA,Open Book QA:Document-based QA,True,pc-tc-final-v2-0064
+P-tc66,"Consult the supplied technical service bulletin and answer the final question.
+
+MEADOW OPTICS — SERVICE BULLETIN MO-SB-26
+Subject: Reference filter replacement for the Luma bench photometer
+Revision B; applies to serial numbers 4100–4199
+
+1. Approved parts
+Filter F-81 is the normal replacement. Filter F-81R has the same optical response but includes a retaining ring for benches with the revised carrier. Neither part is approved for the portable field meter.
+
+2. Identification
+A carrier stamped C2 takes F-81R. An unstamped carrier takes F-81. The instrument's purchase date is not a reliable way to identify the carrier because older instruments may have received a carrier replacement.
+
+3. Installation record
+Record the instrument serial number, carrier stamp, filter lot and technician initials. Record a blank-reference reading before and after installation. Do not erase the earlier reading if the new reading is better.
+
+4. Release criterion
+An instrument can return to service when the new blank-reference reading is within the acceptance band printed on its calibration card. If that card is missing, quarantine the instrument until the metrology team supplies a replacement card. A reference reading from a neighbouring bench cannot substitute for the missing card.
+
+Question: For instrument 4148, which has a C2 carrier but no calibration card, which filter is specified and what prevents release to service after installation? Cite the relevant sections.",Open Book QA:Document-based QA,Open Book QA:Document-based QA,True,pc-tc-final-v2-0065
+P-tc67,"Use the following theatre administration memo as the sole source for your answer.
+
+CEDAR PLAYHOUSE — HOUSE SEAT MEMO CP-HS-3
+Production: The Lantern Keeper; performances 7–19 April 2026
+Issued jointly by the box-office manager and company manager
+
+I. Allocation
+For every performance, seats A1–A4 are held for access companions and seats K9–K12 are company holds. Neither group is part of the public allocation when sales open. Press tickets are allocated separately and are not included in this memo.
+
+II. Release of company holds
+The company manager may release unused company holds at 14:00 on the day before a performance. The box office records that approval before offering the seats for sale. A telephone request from a performer alone does not constitute approval.
+
+III. Access companion seats
+Access companion seats remain reserved until ninety minutes before curtain. At that time the duty access coordinator may release unused seats individually. The company manager's authority in section II applies only to company holds and cannot release A1–A4 early.
+
+IV. Cancellations
+A cancelled companion booking returns to the access hold pool until the section III deadline. A cancelled company booking returns to the company hold pool until an approved section II release. No cancellation automatically turns either kind of seat into a public seat.
+
+Question: Who can release an unused seat A2, and at what earliest time? Explain why the day-before company-hold release does not apply.",Open Book QA:Document-based QA,Open Book QA:Document-based QA,True,pc-tc-final-v2-0066
+P-tc68,"Read this internal quality document and answer from its provisions.
+
+RIVER SEED BANK — INTAKE AND QUARANTINE STANDARD RS-Q-12
+Version 2.1, authorised 3 March 2026
+
+Scope. This standard governs donated seed lots before entry into the cold store. A lot is a single species collected at one site on one date. Mixed-species donations must receive separate lot identifiers before inspection.
+
+1. Intake record
+Record the donor, collection site, collection date and declared species. Missing site coordinates may be resolved from the signed field sheet. A donor's recollection by telephone is not accepted as a substitute for that sheet.
+
+2. Packaging inspection
+Dry, sealed paper packets proceed to the visual inspection bench. Damp packaging goes directly to the quarantine cabinet, even if no mould is visible. Quarantined packets must not be dried in the shared germination room.
+
+3. Release from quarantine
+The plant-health officer must document a clearance decision. The intake volunteer may record an inspection but cannot release a lot. A species specialist may correct an identification; this does not provide plant-health clearance.
+
+4. Cold-store entry
+Both a complete intake record and documented clearance are required. If one is absent, a cold-store label may be prepared but must not be attached to a storage drawer.
+
+Question: Does a species specialist's corrected identification authorise a volunteer to move a damp-packaged lot into the cold store? Identify the required clearance and who issues it.",Open Book QA:Document-based QA,Open Book QA:Document-based QA,True,pc-tc-final-v2-0067
+P-tc69,"Find the answer in the document evidence below and preserve any qualification it states.
+
+Second, we compute three metrics on the extracted information:
+
+$\bullet $ Relation Generation (RG) estimates how well the system is able to generate text containing factual (i.e., correct) records. We measure the precision and absolute number (denoted respectively RG-P% and RG-#) of unique relations $r$ extracted from $\hat{y}_{1:T}$ that also appear in $s$.
+
+$\bullet $ Content Selection (CS) measures how well the generated document matches the gold document in terms of mentioned records. We measure the precision and recall (denoted respectively CS-P% and CS-R%) of unique relations $r$ extracted from $\hat{y}_{1:T}$ that are also extracted from $y_{1:T}$.
+
+$\bullet $ Content Ordering (CO) analyzes how well the system orders the records discussed in the description. We measure the normalized Damerau-Levenshtein distance BIBREF36 between the sequences of records extracted from $\hat{y}_{1:T}$ that are also extracted from $y_{1:T}$. 
+ Question: Which qualitative metric are used for evaluation?",Open Book QA:Document-based QA,Open Book QA:Document-based QA,True,pc-tc-final-v2-0068
+P-tc70,"Use this structured document as the evidence base for the requested answer.
+
+Yet, we noticed a common misbehavior for all our multimodal models: if the attention loose track of the objects in the picture and ""gets lost"", the model still takes it into account and somehow overrides the information brought by the text-based annotations. The translation is then totally mislead.  
+ Question: What misbehavior is identified?",Open Book QA:Document-based QA,Open Book QA:Document-based QA,True,pc-tc-final-v2-0069
+P-tc71,"Use both the main context and the additional source information; neither should be treated as background knowledge.
+
+Passage: On April 3, 2014, Houston hired Kelvin Sampson as the new Cougars head coach. Sampson had just become eligible to be a college coach again after receiving a five-year show cause penalty in 2008 for sanctions against him during his time as Indiana head coach. In 2014–15, Houston struggled again, finishing with a 13–19 record and 4–14 in the AAC. The 2015–16 team led a resurgence, finishing 22–10, 12–6, but lost in the AAC Tournament and in the first round of the NIT. In 2017–18, the Cougars compiled a 27–8 record, reaching the finals of the AAC Tournament and winning a game in the NCAA Tournament for the first time since 1984. In 2018–19, the Cougars' success continued as they set a program record for wins with a 33–4 mark. They were AAC regular-season champions but fell in the finals of the conference tournament. They proceeded to the NCAA Tournament, where they reached the Sweet Sixteen for the first time in 35 years.
+ Link Information: Kelvin Dale Sampson (born October 5, 1955) Question: How old was Kelvin Sampson when he was hired by Houston as their head coach?",Open Book QA:Multi-document QA,Open Book QA:Multi-document QA,True,pc-tc-final-v2-0070
+P-tc72,"Resolve the question by connecting evidence from the separate supplied sources.
+
+Passage: Forman and Bishop William Elphinstone of Aberdeen were the principal envoys who brokered a seven-year truce with King Henry VII of England at Aytoun in September 1497. They were assisted by the Spanish ambassador Pedro de Ayala, who recommended in May 1498 that diplomatic correspondence to Scotland should be copied to Forman, his influential friend. The search for a queen for James began in 1499 when negotiators were appointed to treat with King Henry for the marriage of his eldest daughter, Princess Margaret. Dispensation from the pope for the marriage was received as both James and Margaret were cousins, descended from John Beaufort, Marquess of Dorset. On 8 October 1501, Forman, now postulate to the see of Moray, was commissioned along with Robert Blackadder, Archbishop of Glasgow and Patrick Hepburn, 1st Earl of Bothwell to conclude the treaty of marriage. In that same year, King Henry, in gratitude for his services required that Thomas Savage, Archbishop of York institute Forman as Rector of the parish church of Cottingham. On 26 November 1501, Pope Alexander VI provided Forman to the bishopric of Moray and then only a few months later in 1502, Bishop Forman concluded the Treaty of Perpetual Peace with England at Richmond Palace. The formal proceedings that finally concluded the marriage terms of King James and Margaret Tudor were conducted in Glasgow Cathedral on 10 December 1502 where Forman was a signatory. He was then appointed as a commissioner to oversee the exchange of the ratified marriage treaties at the courts of Henry and James. James designated Forman to conduct Margaret to Scotland but while in England, gave King Henry an undertaking that the King of Scots would not renew the league with France unless Henry was first consulted. The procession to Scotland took them to Fast Castle near Berwick where they stayed with Forman's sister Isabel and her husband Alexander Oliphant of Kellie. In 1509, Forman became commendator of Dryburgh Abbey and tried unsuccessfully to obtain the commendatorship of the wealthy abbey of Kelso in 1511. The lands and possessions of the parson of Boleskin, south of Inverness were given to Forman (as bishop of Moray) in 1511 and then in 1512 he became the Keeper of the castle of Darnaway, near Forres, Chamberlain of Moray and Custumar north of the River Spey.
+ Link Information: none Question: In what country did King Henry VII's seven year truce originate?",Open Book QA:Reading Comprehension,Open Book QA:Multi-document QA,False,pc-tc-final-v2-0071
+P-tc73,"Use both the main context and the additional source information; neither should be treated as background knowledge.
+
+Passage: On 27 January 2010, Terry defeated Eric Young at a house show in Cardiff, Wales, to win the TNA Global Championship. Terry's win also made him the first Welshman to hold a championship in a major wrestling organisation. On the following night's edition of Impact! the British Invasion attacked Amazing Red, but as Terry went to cash in his ""Feast or Fired"" contract he was ordered by Magnus to hand it over to Williams, who then instead faced Red and quickly defeated him for the X Division Championship. On the edition of 18 February of Impact! Terry finally grew tired of Magnus' abuse and attacked him, thus ending his alliance with the British Invasion and turning face. On the edition of 25 February of Impact! Terry made his first Global Championship title defence, when he defeated Mr. Anderson, after interference from Kurt Angle. Since then, Terry went on to defend the Global Championship in quick squash matches against his former British Invasion team-mate Doug Williams, as well as Magnus at Destination X. The very next day on Impact!, Terry again successfully defended the championship, squashing Tomko in a mere 65 seconds. On the edition of 5 April of Impact! Terry adopted the nickname ""The Freak"". On the edition of 19 April of Impact! Terry joined Team Hogan and teamed with Abyss, Jeff Jarrett and Samoa Joe to defeat Team Flair (Sting, Desmond Wolfe, Robert Roode and James Storm) in an eight-man tag team match. During this time, Terry was being built as an unstoppable monster and was asked and agreed to take an unprotected chair shot to the head during a match with Homicide. Several wrestling news outlets reported on the incident, which caused Terry to legitimately bleed heavily from the top of his head. Dave Meltzer of The Wrestling Observer Online called it ""completely disgusting and unnecessary."" Later, he started a feud with newcomer Orlando Jordan. After weeks of stalking Terry, Jordan debuted his new interview segment, ""The O-Zone"" on the edition of 3 May of Impact!, attacking Terry during the segment and beginning a feud. On the next edition of Impact! Jordan attacked Terry with a lead pipe as Terry was preparing to defend his title against Abyss. At Sacrifice Terry defeated Jordan to retain the Global Championship. On 20 June, Terry became the longest reigning Global Champion in history, beating Booker T's reign of 143 days as champion. On 13 July at the tapings of the edition of 22 July of Impact!, Terry lost the Global Championship to A.J. Styles, ending his reign at 167 days. Terry received a rematch for the title, now renamed the TNA Television Championship, on the edition of 5 August of Impact!, but was defeated by Styles after a low blow.
+ Link Information: Eric Young holds the record for most reigns, with three, and is the only wrestler to hold the title under all four of its incarnations Question: How long was Eric Young's reign as TNA Global Champion before he was defeated by Rob Terry?",Open Book QA:Multi-document QA,Open Book QA:Multi-document QA,True,pc-tc-final-v2-0072
+P-tc74,"Combine the passage and linked information below to answer the question.
+
+Passage: In the 1998 championship, led by Mayo-born manager John O'Mahony, Galway won their first round encounter with Mayo, before overcoming Leitrim by 1-16 to 0-05 in the semi-final. The first final ended as a draw, 11 points apiece with Roscommon, but Galway won the replay in Hyde Park. In the semis, Galway came up against Ulster champions Derry, and won by 0-16 to 1-09. In the final the team faced a Kildare team that had just beaten the previous year's champions, Kerry, and were coached by 8 time All-Ireland winning manager Mick O'Dwyer. Galway went into the final as underdogs, but outstanding performances from Ja Fallon and Michael Donnellan in that match, along with a superbly taken goal from a young Padraig Joyce, helped Galway overcome the Lilywhites by 1-14 to 1-10. Captain Ray Silke lifted the Sam Maguire, and Galway became the first Connacht team in 32 years to win an All-Ireland title.
+ Link Information: The championship began on 3 May 1998 Question: On what date did the 1998 championship led by John O'Mahony begin?",Open Book QA:Multi-document QA,Open Book QA:Multi-document QA,True,pc-tc-final-v2-0073
+P-tc75,"Use both the main context and the additional source information; neither should be treated as background knowledge.
+
+Passage: The idea of a national cathedral first emerged following the Romanian War of Independence (1877–1878), which was mainly fought between the Russian and Ottoman Empires. The church was to symbolise the victory of Orthodox Christians over the Ottoman Muslims. The idea was shelved for lack of consensus on design, location and funding. The Unification of the Romanian Principalities in 1859, entailed a unitary organization of church structures in Moldavia and Wallachia within the Holy Synod (1872), thus the assembly of hierarchs increased to 12 members, including: the Primate Metropolitan (chairman), the Metropolitan of Moldavia and their suffragan bishops of Râmnic, Buzău, Argeș, Roman, Huși and Lower Danube (Galați) and one auxiliary vicar-bishop for every diocese. The old Metropolitan Cathedral had proved overcrowded, especially during the national holidays, such as the Proclamation of the Kingdom of Romania and the crowning of the First King Carol I (10 May 1881), when none of the over one hundred churches in Bucharest were able to receive those who would have wanted to participate in the official service. Therefore, at King Carol I's desire, Romania's Assembly of Deputies and the Senate voted in favour of the Law no.1750 on the construction of the Cathedral Church in Bucharest, promulgated by King Carol I on 5 June 1884.
+ Link Information: Carol I (20 April 1839 – 27 September (O.S.) / 10 October (N.S.) 1914) Question: How old was First King Carol when the Romanian War of Independence began?",Open Book QA:Multi-document QA,Open Book QA:Multi-document QA,True,pc-tc-final-v2-0074
+P-tc76,"Resolve the question by connecting evidence from the separate supplied sources.
+
+Context: When the PRI candidate in the 1994 elections, Luis Donaldo Colosio was assassinated in March 1994, Link Information: Luis Donaldo Colosio Murrieta (; 10 February 1950 – 23 March 1994) Question: How old was The PRI candidate for the 1994 elections when he died?",Open Book QA:Multi-document QA,Open Book QA:Multi-document QA,True,pc-tc-final-v2-0075
+P-tc77,"Resolve the question by connecting evidence from the separate supplied sources.
+
+Passage: She was born in Yazıhan and studied cartography and land surveying in Mersin University, before beginning her political career through the Women's Branch of the Party of People's Democracy (HADEP) in 1998. She was vice co-chairperson and Istanbul deputy of the Democratic Society Party (DTP), which she helped to found. She has also worked with international organizations such as UNDP and Amnesty International. She was arrested on 5 November 2006 for alleged membership in the PKK But after she ran as an independent candidate within the Thousand Hopes alliance for the parliamentary elections from prison and after winning a seat in Istanbul with 93,000 votes, was released from custody in July 2007. She was elected to the Turkish Parliament from prison to the surprise of many. In 2013 she was elected Co-Chair of the HDP together with Ertuğrul Kürkçü. In May 2016 she was elected Co-Chair of the Democratic Regions Party (DBP) together with Kamuran Yüksek. On 4 October 2016 she was taken into custody and arrested in November 2016. According to the International Law Bureau the prosecution demands 130 years of imprisonment for terror related charges due to her membership in the legal party Democratic Society Party and 16 statements and speeches she made during meetings and press conferences she held before meetings of the DBP. On the 5 January 2018 she got sentenced to 2 years and three months in prison. On 1 December 2018 she joined Leyla Güven in her hunger strike. In February 2019 she got sentenced to 15 years in prison for being a member of a terrorist organization and making propaganda for a terrorist organization.
+ Link Information: none Question: What year was the university where Tuncel studied cartography established?",Open Book QA:Multi-document QA,Open Book QA:Multi-document QA,True,pc-tc-final-v2-0076
+P-tc78,"Resolve the question by connecting evidence from the separate supplied sources.
+
+Context: Heimburg Castle, built about 1170 by King Henry IV Link Information: none Question: How old was King Henry IV when Heimburg Castle was built?",Open Book QA:Multi-document QA,Open Book QA:Multi-document QA,True,pc-tc-final-v2-0077
+P-tc79,"Combine the passage and linked information below to answer the question.
+
+Context: Seeded sixth, she reached the quarterfinals of the St. Petersburg Ladies' Trophy, Link Information: none Question: Who was the winner of the tournament where Alexandrova reachd the quarterfinals?",Open Book QA:Multi-document QA,Open Book QA:Multi-document QA,True,pc-tc-final-v2-0078
+P-tc80,"Use both the main context and the additional source information; neither should be treated as background knowledge.
+
+Context: pursued classical studies and graduated from the University of North Carolina at Chapel Hill Link Information:  After being chartered in 1789, the university first began enrolling students in 1795 Question: When was the university where William Alexander Graham graduated from established?",Open Book QA:Multi-document QA,Open Book QA:Multi-document QA,True,pc-tc-final-v2-0079
+P-tc81,"Use only the local information given here to answer the question.
+
+Workshop schedule: data ethics at 09:00, visualization at 11:30, lunch at 13:00, and security at 14:15. Each session lasts 75 minutes.
+
+Question: Which session ends immediately before lunch?",Open Book QA:Context-specific Questions,Open Book QA:Context-specific Questions,True,pc-tc-final-v2-0080
+P-tc82,"Use only the local information given here to answer the question.
+
+Warranty: batteries are covered for one year and screens for two years. Accidental damage is excluded. A screen stopped working after 18 months without being dropped.
+
+Question: Is the screen fault still covered?",Open Book QA:Context-specific Questions,Open Book QA:Context-specific Questions,True,pc-tc-final-v2-0081
+P-tc83,"Use only the local information given here to answer the question.
+
+Grant rules: applicants need two references and a budget. International applicants also need proof of language proficiency. Priya is applying internationally with references and a budget.
+
+Question: Which additional document must Priya submit?",Open Book QA:Context-specific Questions,Open Book QA:Context-specific Questions,True,pc-tc-final-v2-0082
+P-tc84,"Use only the local information given here to answer the question.
+
+Lease clause: pets under 10 kg are allowed with written notice. Larger pets require prior consent. The tenant plans to keep a 14 kg dog.
+
+Question: What must the tenant obtain first?",Open Book QA:Context-specific Questions,Open Book QA:Context-specific Questions,True,pc-tc-final-v2-0083
+P-tc85,"Use only the local information given here to answer the question.
+
+Conversation: Ana: “I left the keys with Ben.” Ben: “I put them in the top desk drawer before lunch.” Cara: “The drawer was still locked at noon.”
+
+Question: Where did Ben say he put the keys?",Open Book QA:Context-specific Questions,Open Book QA:Context-specific Questions,True,pc-tc-final-v2-0084
+P-tc86,"Use only the local information given here to answer the question.
+
+Library rule: reserved books are held for 3 days; public holidays do not count. Mia was notified on Friday and Monday is a holiday.
+
+Question: Until which day can Mia collect the book?",Open Book QA:Context-specific Questions,Open Book QA:Context-specific Questions,True,pc-tc-final-v2-0085
+P-tc87,"Use only the local information given here to answer the question.
+
+Menu: lentil soup is vegan; pesto pasta contains dairy; garden salad is vegan unless cheese is added; fish pie contains gluten.
+
+Question: Which two dishes can be ordered vegan as described?",Open Book QA:Context-specific Questions,Open Book QA:Context-specific Questions,True,pc-tc-final-v2-0086
+P-tc88,"Use only the local information given here to answer the question.
+
+Course rule: a distinction requires an average of 70 and no module below 60. Imani has scores 74, 71, 68, and 77.
+
+Question: Does Imani qualify for a distinction?",Open Book QA:Context-specific Questions,Open Book QA:Context-specific Questions,True,pc-tc-final-v2-0087
+P-tc89,"Use only the local information given here to answer the question.
+
+Train board: A12 departs 16:20 platform 4; B07 departs 16:35 platform 2; C11 is delayed from 16:10 to 16:45 platform 4.
+
+Question: Which listed train is now scheduled to leave last?",Open Book QA:Context-specific Questions,Open Book QA:Context-specific Questions,True,pc-tc-final-v2-0088
+P-tc90,"Use only the local information given here to answer the question.
+
+Recipe note: bake for 25 minutes in a fan oven or 30 in a conventional oven. The cook uses a conventional oven and starts at 18:10.
+
+Question: At what time should the dish be removed?",Open Book QA:Context-specific Questions,Open Book QA:Context-specific Questions,True,pc-tc-final-v2-0089
+P-tc91,"Answer the question using the supplied non-prose evidence.
+
+Weather symbols: sun = clear, cloud with one drop = light rain, cloud with three drops = heavy rain. Tuesday shows three drops.
+
+Question: What weather is indicated for Tuesday?",Open Book QA:Others,Open Book QA:Others,True,pc-tc-final-v2-0090
+P-tc92,"Answer the question using the supplied non-prose evidence.
+
+A bar chart is described as follows: North 18, South 12, East 21, West 9.
+
+Question: Which region has a value exactly twice West?",Open Book QA:Others,Open Book QA:Others,True,pc-tc-final-v2-0091
+P-tc93,"Answer the question using the supplied non-prose evidence.
+
+Network diagram: Server A sends to B; B sends to C; C cannot send back to A.
+
+Question: Which server receives data indirectly from A?",Open Book QA:Others,Open Book QA:Others,True,pc-tc-final-v2-0092
+P-tc94,"Answer the question using the supplied non-prose evidence.
+
+Chess position description: white king g1, white rook a1, black king g8, black queen a5.
+
+Question: Which black piece is on the fifth rank?",Open Book QA:Others,Open Book QA:Others,True,pc-tc-final-v2-0093
+P-tc95,"Answer the question using the supplied non-prose evidence.
+
+Log excerpt: 10:01 login success; 10:03 permission denied; 10:04 token refreshed; 10:05 request success.
+
+Question: What event immediately preceded the successful request?",Open Book QA:Others,Open Book QA:Others,True,pc-tc-final-v2-0094
+P-tc96,"Answer the question using the supplied non-prose evidence.
+
+State machine: idle + start → running; running + pause → paused; paused + resume → running. Initial state idle; inputs are start, pause.
+
+Question: What state is reached after both inputs?",Open Book QA:Others,Open Book QA:Others,True,pc-tc-final-v2-0095
+P-tc97,"Answer the question using the supplied non-prose evidence.
+
+Graph edges: A connects to B and C; B connects to D; C connects to D and E.
+
+Question: Which nodes can be reached from A in exactly two steps?",Open Book QA:Others,Open Book QA:Others,True,pc-tc-final-v2-0096
+P-tc98,"Answer the question using the supplied non-prose evidence.
+
+Pedigree legend: filled symbols indicate the trait. Alex is unfilled; Jo and Ren are filled.
+
+Question: Which named individuals display the trait?",Open Book QA:Others,Open Book QA:Others,True,pc-tc-final-v2-0097
+P-tc99,"Answer the question using the supplied non-prose evidence.
+
+Family diagram: Rosa is the parent of Eli and Noor; Noor is the parent of Sam.
+
+Question: What relationship does Rosa have to Sam?",Open Book QA:Others,Open Book QA:Others,True,pc-tc-final-v2-0098
+P-tc100,"Answer the question using the supplied non-prose evidence.
+
+Process trace: queued → validated → rejected. The transition to approved never appears.
+
+Question: What is the final recorded state?",Open Book QA:Others,Open Book QA:Others,True,pc-tc-final-v2-0099
+P-tc101,"Answer the following factual question from your knowledge.
+
+Category: YOU ARE SO OUTTA HERE 
+Clue: It was no ""Divine Comedy"" for this Italian author when the Guelphs banished him from Florence in 1302",Closed Book QA:Factual QA,Closed Book QA:Factual QA,True,pc-tc-final-v2-0100
+P-tc102,"Give a concise factual answer to this question.
+
+Category: U.S. GEOGRAPHY 
+Clue: Rivers flowing into this bay include the Susquehanna, James, & Rappahannock",Closed Book QA:Factual QA,Closed Book QA:Factual QA,True,pc-tc-final-v2-0101
+P-tc103,"Provide the specific fact requested below; no source passage is supplied.
+
+Category: ESPAÑOL 
+Clue: The Spanish ""calabozo"" & the cowboy variation calaboose both mean thse",Closed Book QA:Factual QA,Closed Book QA:Factual QA,True,pc-tc-final-v2-0102
+P-tc104,"Answer the following factual question from your knowledge.
+
+Category: PEOPLE 
+Clue: The books ""In God's Name"" & ""A Thief in the Night"" investigated his 1978 death",Closed Book QA:Factual QA,Closed Book QA:Factual QA,True,pc-tc-final-v2-0103
+P-tc105,"Give a concise factual answer to this question.
+
+Category: THE U.S. CONSTITUTION 
+Clue: When the Constitutional Convention met in May 1787, this man was chosen its presiding officer",Closed Book QA:Factual QA,Closed Book QA:Factual QA,True,pc-tc-final-v2-0104
+P-tc106,"Give a concise factual answer to this question.
+
+Question:What are fairy rings made of?",Closed Book QA:Factual QA,Open Book QA:Reading Comprehension,False,pc-tc-final-v2-0105
+P-tc107,"Provide the specific fact requested below; no source passage is supplied.
+
+Category: STATE CAPITALS 
+Clue: Chartered in 1781, it's the only state capital named for a French city",Closed Book QA:Factual QA,Closed Book QA:Factual QA,True,pc-tc-final-v2-0106
+P-tc108,"Give a concise factual answer to this question.
+
+Category: LEGENDS OF SPORTS 
+Clue: One of the first baseball players elected to the Hall of Fame, his lifetime batting average was .366",Closed Book QA:Factual QA,Closed Book QA:Factual QA,True,pc-tc-final-v2-0107
+P-tc109,"Give a concise factual answer to this question.
+
+Category: THE MOVIES 
+Clue: (Alex)  Parts of this 1985 movie were filmed right here in Karen, a suburb of Nairobi",Closed Book QA:Factual QA,Closed Book QA:Factual QA,True,pc-tc-final-v2-0108
+P-tc110,"Give a concise factual answer to this question.
+
+Category: THE HINDU RELIGION 
+Clue: The word ""Hindu"" comes from an old Sanskrit word meaning this, perhaps a sacred one",Closed Book QA:Factual QA,Closed Book QA:Factual QA,True,pc-tc-final-v2-0109
+P-tc111,"Use general common knowledge to answer the question below.
+
+name sport that does not use a ball.",Closed Book QA:Common Knowledge Questions,Closed Book QA:Common Knowledge Questions,True,pc-tc-final-v2-0110
+P-tc112,"Answer this everyday commonsense question.
+
+name a type of tv program people watch in the afternoon.",Closed Book QA:Common Knowledge Questions,Others,False,pc-tc-final-v2-0111
+P-tc113,"Choose the answer that follows from ordinary practical knowledge.
+
+name something you see a lot of in the summer.",Closed Book QA:Common Knowledge Questions,Closed Book QA:Common Knowledge Questions,True,pc-tc-final-v2-0112
+P-tc114,You have just lifted a hot baking tray from the oven and need to put it on a wooden dining table. Which ordinary household item would you normally place between the tray and the table to protect the surface?,Closed Book QA:Common Knowledge Questions,Closed Book QA:Common Knowledge Questions,True,pc-tc-final-v2-0113
+P-tc115,"Choose the answer that follows from ordinary practical knowledge.
+
+Where would you get some wood if you do not have any?
+(A)carpet (B)boat (C)river (D)lumberyard (E)synagogue",Closed Book QA:Common Knowledge Questions,Closed Book QA:Common Knowledge Questions,True,pc-tc-final-v2-0114
+P-tc116,"Answer this everyday commonsense question.
+
+if santa got the flu on christmas eve who might he ask to fill in for him?",Closed Book QA:Common Knowledge Questions,Closed Book QA:Common Knowledge Questions,True,pc-tc-final-v2-0115
+P-tc117,"Use general common knowledge to answer the question below.
+
+Joe's cat smelled something delicious and jumped into this, causing him to panic and fear for its life. Where might it have jumped?
+(A)meat loaf (B)bedroom (C)microwave (D)living room (E)floor",Closed Book QA:Common Knowledge Questions,Closed Book QA:Common Knowledge Questions,True,pc-tc-final-v2-0116
+P-tc118,"Use general common knowledge to answer the question below.
+
+He wanted lodging in the actual what, so that he was already where he needed to be?
+(A)a yurt (B)resort area (C)big city (D)michigan (E)going on vacation",Closed Book QA:Common Knowledge Questions,Closed Book QA:Common Knowledge Questions,True,pc-tc-final-v2-0117
+P-tc119,"Answer this everyday commonsense question.
+
+The victim was to take stand today, they were going to do what?
+(A)testify (B)runaway (C)witness (D)tell truth (E)go home",Closed Book QA:Common Knowledge Questions,Closed Book QA:Common Knowledge Questions,True,pc-tc-final-v2-0118
+P-tc120,"Choose the answer that follows from ordinary practical knowledge.
+
+what breed of dog do you think eats the most?",Closed Book QA:Common Knowledge Questions,Closed Book QA:Common Knowledge Questions,True,pc-tc-final-v2-0119
+P-tc121,"Select the correct answer to the following specialist question.
+
+Which of the following is most important in producing the seasons on Earth?  
+ (A) Earth's gravitational attraction to the Sun (B) the Moon's revolution around Earth (C) the distance of Earth from the Sun (D) the tilt of Earth's axis as it revolves around the Sun",Closed Book QA:Others,Closed Book QA:Others,True,pc-tc-final-v2-0120
+P-tc122,"Select the correct answer to the following specialist question.
+
+How are the stem of a tree and the stem of a flower most similar?  
+ (A) Both are soft. (B) Both have thorns. (C) Both support the plant. (D) Both have woody bark.",Closed Book QA:Others,Closed Book QA:Others,True,pc-tc-final-v2-0121
+P-tc123,"Answer this question without a supporting passage, using the relevant learned concepts.
+
+Where in the cell does glycolysis occur?  
+ (A) cytoplasm (B) nucleus (C) ribosome (D) chromatin",Closed Book QA:Others,Closed Book QA:Others,True,pc-tc-final-v2-0122
+P-tc124,"Select the correct answer to the following specialist question.
+
+In what way can soil nutrients in agricultural ground be depleted?  
+ (A) overgrazing (B) wind erosion (C) increased irrigating (D) increased fertilization",Closed Book QA:Others,Closed Book QA:Others,True,pc-tc-final-v2-0123
+P-tc125,"Solve the following closed-book science question.
+
+Matter is defined as anything that takes up space and has  
+ (A) mass (B) texture (C) odor (D) color",Closed Book QA:Others,Closed Book QA:Others,True,pc-tc-final-v2-0124
+P-tc126,"Solve the following closed-book science question.
+
+A medical research team is trying to determine whether a cream that is rubbed on the chest will help reduce the coughing associated with a particular illness. The team conducts the research using several groups of people. Which step will most likely result in producing a dependent (responding) variable that will help validate their research?  
+ (A) using a different amount of people in each trial (B) writing down the names of the people in the study (C) monitoring the reaction of each person in the study (D) applying the same amount of cream to each person",Closed Book QA:Others,Closed Book QA:Others,True,pc-tc-final-v2-0125
+P-tc127,"Solve the following closed-book science question.
+
+All the ponds in an area dried up during a drought. The population of which of the following animals that live in the area is most affected by the drought?  
+ (A) deer (B) frog (C) hawk (D) squirrel",Closed Book QA:Others,Closed Book QA:Others,True,pc-tc-final-v2-0126
+P-tc128,"Solve the following closed-book science question.
+
+A pharmaceutical company published experimental data showing that a new medication improved cholesterol levels in the people who participated in the study. Which professional most likely did not contribute to developing this medication?  
+ (A) a chemist (B) a biologist (C) a geologist (D) a physician",Closed Book QA:Others,Closed Book QA:Others,True,pc-tc-final-v2-0127
+P-tc129,"Solve the following closed-book science question.
+
+What type of inheritance controls blood types in humans?  
+ (A) incomplete dominance (B) polygenic inheritance (C) multiple alleles (D) recessive genes",Closed Book QA:Others,Closed Book QA:Others,True,pc-tc-final-v2-0128
+P-tc130,"Answer this question without a supporting passage, using the relevant learned concepts.
+
+A student reads the following description of a region: ""It has warm summers, moderate winters, and frequent rainfall."" What information does this description best provide?  
+ (A) current weather (B) weather forecast (C) general climate (D) climate changes",Closed Book QA:Others,Closed Book QA:Others,True,pc-tc-final-v2-0129
+P-tc131,Implement stable counting sort in Python. The function receives records with non-negative integer keys and must return records ordered by key while preserving ties. Include complexity analysis and handle the algorithm’s natural edge cases.,Coding:Algorithm Implementation,Coding:Algorithm Implementation,True,pc-tc-final-v2-0130
+P-tc132,Implement reservoir sampling in Python. The function receives an iterator of unknown length and integer k and must return a uniform sample of k items. Include complexity analysis and handle the algorithm’s natural edge cases.,Coding:Algorithm Implementation,Coding:Algorithm Implementation,True,pc-tc-final-v2-0131
+P-tc133,"Implement Huffman coding in Python for a supplied dictionary of symbol frequencies. Construct a binary tree by repeatedly merging the two lowest-frequency nodes, then return a dictionary mapping each symbol to its bit string. Use a monotonically increasing insertion counter to break heap ties so symbols are never compared with internal nodes. Reject nonpositive frequencies, return an empty dictionary for an empty input, and assign ""0"" when there is only one symbol. Include a small demonstration with frequencies {""p"": 3, ""q"": 7, ""r"": 8, ""s"": 12}. The deliverable is an executable implementation of the named coding algorithm, not an explanation of an existing program.",Coding:Algorithm Implementation,Coding:Algorithm Implementation,True,pc-tc-final-v2-0132
+P-tc134,Implement Levenshtein distance dynamic programming in Python. The function receives two strings and must return their minimum edit distance. Include complexity analysis and handle the algorithm’s natural edge cases.,Coding:Algorithm Implementation,Coding:Algorithm Implementation,True,pc-tc-final-v2-0133
+P-tc135,Implement Tarjan’s algorithm for strongly connected components in Python. The function receives a directed graph and must return the component partition. Include complexity analysis and handle the algorithm’s natural edge cases.,Coding:Algorithm Implementation,Coding:Algorithm Implementation,True,pc-tc-final-v2-0134
+P-tc136,"Write a Python implementation of Manacher's algorithm to find the longest palindromic substring in a string in linear time. Use a transformed sequence with separator objects or an equivalent odd/even radius formulation; do not rely on a sentinel character that could also occur in the input. Preserve case and spaces, return an empty string for empty input, and choose the leftmost occurrence when longest lengths tie. Demonstrate the implementation on ""abacdfgdcaba"" and ""noonabbad"" and briefly state how the radius information avoids repeated comparisons. Do not substitute the quadratic expand-around-centre algorithm.",Coding:Algorithm Implementation,Coding:Algorithm Implementation,True,pc-tc-final-v2-0135
+P-tc137,"Implement the Boyer–Moore majority-vote algorithm in Python for a finite list of hashable values. Use a candidate and cancellation counter for the first pass, then verify the candidate in a second pass because a majority is not guaranteed to exist. A majority means strictly more than half the entries. Return a pair (found, value), using (False, None) for an empty list or no majority; the representation must still allow None itself to be a majority value. Show results for [""x"", ""y"", ""x"", ""x""] and [None, None, ""z""]. Do not solve this by sorting or building a frequency dictionary.",Coding:Algorithm Implementation,Coding:Algorithm Implementation,True,pc-tc-final-v2-0136
+P-tc138,"Implement an in-place Fisher–Yates shuffle in Python. Accept a mutable list and a random.Random instance supplied by the caller. Starting at the final index and moving backwards, draw a uniform integer j from 0 through i inclusive and exchange positions i and j. Empty and single-element lists must remain valid. Show a reproducible demonstration using a fresh random.Random(81) with [""elm"", ""ash"", ""yew"", ""fir""]. Do not seed the global generator and do not call random.shuffle, sorted, or a random-key sort. Explain briefly why choosing j only from 0 through i is essential to this algorithm.",Coding:Algorithm Implementation,Coding:Algorithm Implementation,True,pc-tc-final-v2-0137
+P-tc139,"Implement the linear-time Z algorithm in Python. For each position i in a string, Z[i] must be the length of the longest substring beginning at i that matches a prefix of the entire string; define Z[0] as zero. Maintain the rightmost matching interval and reuse previously computed Z values inside it rather than comparing every suffix from scratch. Return the Z array itself, not pattern-match positions and not an LCS. Support empty strings and Unicode characters. Include demonstrations for ""aabcaabxaaaz"" and ""ééxéé"" and explain the interval update in a short comment.",Coding:Algorithm Implementation,Coding:Algorithm Implementation,True,pc-tc-final-v2-0138
+P-tc140,"Implement de Casteljau's algorithm in Python to evaluate a Bezier curve at a parameter t. The input is a nonempty sequence of two-dimensional control points and a value 0 <= t <= 1. Repeatedly replace each adjacent pair by its linear interpolation until a single point remains. Work on a copy so the control points are not changed. Handle a single control point, reject an empty sequence and an out-of-range t, and use floating-point coordinates in the result. Demonstrate a quadratic curve with control points (0, 0), (2, 3), (5, 0) at t=0.25. Provide executable code for this named algorithm, not a symbolic polynomial derivation.",Coding:Algorithm Implementation,Coding:Algorithm Implementation,True,pc-tc-final-v2-0139
+P-tc141,Debug the following existing behavior. A recursive tree traversal works for shallow trees but raises an error on a missing child because it accesses child.value before checking for null. Correct the base case.,Coding:Debugging,Coding:Debugging,True,pc-tc-final-v2-0140
+P-tc142,Debug the following existing behavior. A database transaction commits even after inventory reservation fails because the exception is caught and not re-raised. Ensure the whole operation rolls back.,Coding:Debugging,Coding:Debugging,True,pc-tc-final-v2-0141
+P-tc143,"Debug the following existing behavior. A CSV parser splits every line on commas and breaks quoted addresses such as ""Rome, Italy"". Replace the faulty parsing approach while retaining the output columns.",Coding:Debugging,Coding:Debugging,True,pc-tc-final-v2-0142
+P-tc144,Debug the following existing behavior. A cache continues serving an old profile after an update because the invalidation key uses an email while the cache key uses a numeric user id. Locate and repair the mismatch.,Coding:Debugging,Coding:Debugging,True,pc-tc-final-v2-0143
+P-tc145,Debug the following existing behavior. A pagination loop requests page 1 forever because the page counter is reassigned inside a local callback. Identify the scope error and correct it.,Coding:Debugging,Coding:Debugging,True,pc-tc-final-v2-0144
+P-tc146,Debug the following existing behavior. An API client retries HTTP 400 responses indefinitely although only temporary server errors should be retried. Correct the retry condition and cap attempts.,Coding:Debugging,Function calling:API Integration,False,pc-tc-final-v2-0145
+P-tc147,Debug the following existing behavior. A binary search sometimes hangs when two elements remain because the lower bound is assigned mid rather than mid + 1. Correct the update rule.,Coding:Debugging,Coding:Debugging,True,pc-tc-final-v2-0146
+P-tc148,"Debug the following existing behavior. A Python loop that should inspect every list item starts at index 1, so the first value is never considered. Find and fix the defect without changing the return type.",Coding:Debugging,Coding:Debugging,True,pc-tc-final-v2-0147
+P-tc149,Debug the following existing behavior. A file reader corrupts accented characters because it decodes UTF-8 bytes as Latin-1. Fix the decoding path and preserve error reporting.,Coding:Debugging,Coding:Debugging,True,pc-tc-final-v2-0148
+P-tc150,Debug the following existing behavior. A JavaScript total becomes a concatenated string after reading values from an HTML input. Explain the cause and correct the existing code so addition remains numeric.,Coding:Debugging,Coding:Debugging,True,pc-tc-final-v2-0149
+P-tc151,"Write a Node.js webhook receiver that verifies signatures, rejects replays, and stores accepted event ids in memory.",Coding:Code Generation,Coding:Code Generation,True,pc-tc-final-v2-0150
+P-tc152,"Generate the files for a browser-based quiz with ten questions, score tracking, and a restart control.",Coding:Code Generation,Coding:Code Generation,True,pc-tc-final-v2-0151
+P-tc153,Build a Java console application for borrowing and returning library items with a simple menu.,Coding:Code Generation,Coding:Code Generation,True,pc-tc-final-v2-0152
+P-tc154,"Build a small Flask service with health, create-note, and list-note endpoints and in-memory storage.",Coding:Code Generation,Coding:Code Generation,True,pc-tc-final-v2-0153
+P-tc155,"Write a complete Bash backup utility with dated archives, retention of the newest seven backups, and meaningful exit codes.",Coding:Code Generation,Coding:Code Generation,True,pc-tc-final-v2-0154
+P-tc156,"Create a static portfolio page with responsive navigation, project cards, and an accessible contact form.",Coding:Code Generation,Coding:Code Generation,True,pc-tc-final-v2-0155
+P-tc157,"Build a small offline pixel-art editor with Python's standard-library tkinter. Supply a runnable application, not only a drawing function. The window must show a 16-by-16 cell canvas, a palette of six fixed colours, a clear button, and Save/Load controls. Clicking or dragging paints cells with the selected colour. Store drawings as UTF-8 JSON containing width, height, palette and a rectangular array of palette indices; validate loaded dimensions and indices before replacing the current drawing. Start with a blank canvas, show file errors in a dialog, and ask before discarding unsaved changes. Keep model state separate from widget callbacks and include launch instructions. No image assets, network access, third-party packages or pre-existing files are required.",Coding:Code Generation,Coding:Code Generation,True,pc-tc-final-v2-0156
+P-tc158,Create a Rust command-line tool that recursively reports duplicate files by content hash.,Coding:Code Generation,Coding:Code Generation,True,pc-tc-final-v2-0157
+P-tc159,"Write a complete SQL migration that creates customers and subscriptions tables with keys, constraints, and useful indexes.",Coding:Code Generation,Coding:Code Generation,True,pc-tc-final-v2-0158
+P-tc160,Write a complete Python log-analysis program that groups errors by service and exports a Markdown report.,Coding:Code Generation,Coding:Others,False,pc-tc-final-v2-0159
+P-tc161,Explain what values the caller receives from the supplied generator function across three calls to next().,Coding:Code Explanation,Coding:Code Explanation,True,pc-tc-final-v2-0160
+P-tc162,"Explain why the provided regular expression `^(?=.*[A-Z])(?=.*\d).{8,}$` accepts or rejects a password.",Coding:Code Explanation,Coding:Debugging,False,pc-tc-final-v2-0161
+P-tc163,Explain the lifecycle of the provided React component from its initial render through the cleanup function in useEffect.,Coding:Code Explanation,Coding:Code Explanation,True,pc-tc-final-v2-0162
+P-tc164,Explain how the supplied CSS grid declarations determine column widths at the two media-query breakpoints.,Coding:Code Explanation,Coding:Code Explanation,True,pc-tc-final-v2-0163
+P-tc165,"Explain what the current validation function does for an empty list, a valid list, and a list containing null; do not modify it.",Coding:Code Explanation,Coding:Code Explanation,True,pc-tc-final-v2-0164
+P-tc166,Describe what the existing Dockerfile stages produce and which files end up in the final image; do not change the file.,Coding:Code Explanation,Coding:Code Explanation,True,pc-tc-final-v2-0165
+P-tc167,Trace the supplied asynchronous JavaScript function and state the order in which its log messages appear.,Coding:Code Explanation,Coding:Code Explanation,True,pc-tc-final-v2-0166
+P-tc168,Read the existing C pointer arithmetic and explain which array elements `*(p + 2)` and `p[3]` reference.,Coding:Code Explanation,Coding:Function Implementation,False,pc-tc-final-v2-0167
+P-tc169,Walk through an existing loop that keeps `slow` and `fast` pointers in a linked list and explain why their meeting indicates a cycle. Do not rewrite it.,Coding:Code Explanation,Coding:Debugging,False,pc-tc-final-v2-0168
+P-tc170,Explain what the shown Git rebase diagram means and how commits C and D were replayed; no commands are requested.,Coding:Code Explanation,Coding:Code Explanation,True,pc-tc-final-v2-0169
+P-tc171,Implement the single Python function `format_bytes(count)`. It must produce a human-readable binary-unit string through TiB with two decimal places. Return the completed function with a short complexity note.,Coding:Function Implementation,Coding:Function Implementation,True,pc-tc-final-v2-0170
+P-tc172,"Implement the single Python function `apply_discount(price, percent)`. It must return a Decimal rounded to cents and validate that percent is between 0 and 100. Return the completed function with a short complexity note.",Coding:Function Implementation,Coding:Function Implementation,True,pc-tc-final-v2-0171
+P-tc173,Implement the single Python function `group_totals(transactions)`. It must return a dictionary summing `amount` by `customer_id` in one pass; an empty list returns `{}`. Return the completed function with a short complexity note.,Coding:Function Implementation,Coding:Function Implementation,True,pc-tc-final-v2-0172
+P-tc174,"Implement the single Python function `parse_duration(value: str) -> int`. It must accept strings such as `2h 15m` and return total minutes, rejecting malformed input. Return the completed function with a short complexity note.",Coding:Function Implementation,Coding:Function Implementation,True,pc-tc-final-v2-0173
+P-tc175,"Implement the single Python function `is_balanced(text: str) -> bool`. It must check matching parentheses, brackets, and braces while ignoring other characters. Return the completed function with a short complexity note.",Coding:Function Implementation,Coding:Function Implementation,True,pc-tc-final-v2-0174
+P-tc176,Implement the single Python function `merge_intervals(intervals)`. It must merge overlapping closed intervals and return them sorted by start. Return the completed function with a short complexity note.,Coding:Function Implementation,Coding:Function Implementation,True,pc-tc-final-v2-0175
+P-tc177,"Implement the single Python function `top_customers(orders, n=5)`. It must return the n customer ids with highest total spend, breaking ties alphabetically. Return the completed function with a short complexity note.",Coding:Function Implementation,Coding:Function Implementation,True,pc-tc-final-v2-0176
+P-tc178,"Implement the single Python function `slugify(title: str) -> str`. It must lowercase text, replace runs of non-alphanumeric characters with one hyphen, and trim edge hyphens. Return the completed function with a short complexity note.",Coding:Function Implementation,Coding:Function Implementation,True,pc-tc-final-v2-0177
+P-tc179,Implement the single Python function `flatten_once(items)`. It must flatten exactly one nesting level while treating strings as scalar values. Return the completed function with a short complexity note.,Coding:Function Implementation,Coding:Function Implementation,True,pc-tc-final-v2-0178
+P-tc180,"Implement the single Python function `safe_filename(name, max_length=80)`. It must remove reserved characters, collapse whitespace, preserve an extension, and enforce the length limit. Return the completed function with a short complexity note.",Coding:Function Implementation,Coding:Function Implementation,True,pc-tc-final-v2-0179
+P-tc181,"Design a test strategy for a parser that accepts three file formats, including property tests and malformed-input cases.",Coding:Others,Coding:Others,True,pc-tc-final-v2-0180
+P-tc182,Compare PostgreSQL JSONB with normalized tables for storing a stable customer profile schema and recommend one for this use case.,Coding:Others,Coding:Others,True,pc-tc-final-v2-0181
+P-tc183,"Compare unit, integration, and contract tests for this payment adapter and decide what belongs in each layer.",Coding:Others,Coding:Others,True,pc-tc-final-v2-0182
+P-tc184,Assess whether an LRU cache is appropriate for these read-heavy product records and explain eviction and invalidation trade-offs.,Coding:Others,Coding:Others,True,pc-tc-final-v2-0183
+P-tc185,"Review this proposed localisation design for a desktop music notation application. Resource strings are stored under semantic keys. The current proposal builds the label for selected bars by concatenating the translated word for ""selected"", an integer, and the translated word for ""bars"". Another string embeds a formatted date before translation. Users may switch language without restarting, and the application must support languages with several plural forms and right-to-left text. Recommend a resource-message design and ownership rules between the UI and localisation layer that can support those requirements. Discuss translator context and fallback behaviour. This is a software design review: do not implement code, translate the sample words, or debug a supplied program.",Coding:Others,Coding:Others,True,pc-tc-final-v2-0184
+P-tc186,Describe a safe strategy for introducing static type checking gradually into an existing untyped Python codebase.,Coding:Others,Coding:Others,True,pc-tc-final-v2-0185
+P-tc187,"Review this pull-request diff for maintainability, security, and backward-compatibility risks; report findings by severity.",Coding:Others,Coding:Others,True,pc-tc-final-v2-0186
+P-tc188,Plan how to split a monolithic reporting module into components without changing observable behavior.,Coding:Others,Coding:Others,True,pc-tc-final-v2-0187
+P-tc189,"A desktop application team wants independently reproducible release artefacts. Its proposed build downloads dependencies from floating version tags, writes the current wall-clock time into a generated source file, and includes absolute checkout paths in debug metadata. Two developers building the same commit consequently get different archive hashes. Review the release-build design and propose a concise reproducibility policy covering dependency identity, timestamp handling, path remapping and verification by a second builder. Explain what evidence should accompany an artefact. Do not write build scripts or fix an existing source-code fragment; the requested deliverable is an engineering policy for producing verifiable builds.",Coding:Others,Coding:Others,True,pc-tc-final-v2-0188
+P-tc190,"Explain how to profile this slow service and which measurements would distinguish CPU, database, and network bottlenecks.",Coding:Others,Coding:Others,True,pc-tc-final-v2-0189
+P-tc191,"Some poets are translators, and every translator in the group speaks French. Does it follow that some poets speak French?",Reasoning:Logical Reasoning,Reasoning:Logical Reasoning,True,pc-tc-final-v2-0190
+P-tc192,Three witnesses say: the blue backpack arrived before eight; arrivals before eight used the side door; Emma used the main door. Emma had the blue backpack. Are the statements consistent?,Reasoning:Logical Reasoning,Reasoning:Logical Reasoning,True,pc-tc-final-v2-0191
+P-tc193,All copper keys open the red door. Key K does not open the red door. Can K be copper? Explain using only the premises.,Reasoning:Logical Reasoning,Reasoning:Logical Reasoning,True,pc-tc-final-v2-0192
+P-tc194,"Every analyst with clearance may enter the archive. Nia is an analyst with clearance. Omar is an analyst, but nothing is known about his clearance. Determine what follows about each person.",Reasoning:Logical Reasoning,Reasoning:Logical Reasoning,True,pc-tc-final-v2-0193
+P-tc195,Every member of team X attended training. Jo did not attend training. Can Jo belong to team X?,Reasoning:Logical Reasoning,Reasoning:Logical Reasoning,True,pc-tc-final-v2-0194
+P-tc196,Every red package is inspected. Fragile packages are red. Package B is inspected. Is it valid to infer that B is fragile?,Reasoning:Logical Reasoning,Reasoning:Logical Reasoning,True,pc-tc-final-v2-0195
+P-tc197,"Exactly two switches are on. Switch A is off and B is on. If C and D have the same state, determine their possible states.",Reasoning:Logical Reasoning,Reasoning:Logical Reasoning,True,pc-tc-final-v2-0196
+P-tc198,"Mara is older than Ben, Ben is older than Sol, and Kai is younger than Mara but older than Ben. Order all four by age.",Reasoning:Logical Reasoning,Reasoning:Logical Reasoning,True,pc-tc-final-v2-0197
+P-tc199,No vegetarian dish contains meat. Some specials contain meat. Can all specials be vegetarian?,Reasoning:Logical Reasoning,Reasoning:Logical Reasoning,True,pc-tc-final-v2-0198
+P-tc200,Statement 1 says the meeting is Monday. Statement 2 says it is after Tuesday. Determine whether both can be true under the same weekly schedule.,Reasoning:Logical Reasoning,Reasoning:Logical Reasoning,True,pc-tc-final-v2-0199
+P-tc201,"Solve the following mathematical problem and show the essential calculation.
+
+Four letters picked without replacement from ppppbbuppbhxpbb. What is prob of sequence hbxp?",Reasoning:Mathematical Problem Solving,Reasoning:Mathematical Problem Solving,True,pc-tc-final-v2-0200
+P-tc202,"Calculate the requested quantity from the information below.
+
+[284, 258, 241, 432, 149, 489, 30, 88, 213, 182, 353, 388, 299, 449, 215, 272, 328, 281, 107, 438, 380, 139, 127, 123, 417]",Reasoning:Mathematical Problem Solving,Reasoning:Mathematical Problem Solving,True,pc-tc-final-v2-0201
+P-tc203,"Work out this quantitative problem rather than merely describing a method.
+
+In base 9, what is -6 + 4568?",Reasoning:Mathematical Problem Solving,Reasoning:Mathematical Problem Solving,True,pc-tc-final-v2-0202
+P-tc204,"Solve the following mathematical problem and show the essential calculation.
+
+How many micrograms are there in 3.887588mg?",Reasoning:Mathematical Problem Solving,Reasoning:Mathematical Problem Solving,True,pc-tc-final-v2-0203
+P-tc205,"Work out this quantitative problem rather than merely describing a method.
+
+There are 5 scissors and 3 pencils in the drawer. Jason placed 4scissors in the drawer. How many scissors are now there in total?",Reasoning:Mathematical Problem Solving,Reasoning:Mathematical Problem Solving,True,pc-tc-final-v2-0204
+P-tc206,"Solve the following mathematical problem and show the essential calculation.
+
+[454, 78, 189, 387, 354, 482, 403, 174, 89, 435, 359, 115, 224, 203, 355, 327, 45, 40, 313, 310, 321, 178, 187, 136, 375]",Reasoning:Mathematical Problem Solving,Reasoning:Mathematical Problem Solving,True,pc-tc-final-v2-0205
+P-tc207,"Calculate the requested quantity from the information below.
+
+Dan had 14 peaches and 10 pears at his roadside fruit dish. He wentto the orchard and picked peaches to stock up. There are now 85peaches. how many did he pick?",Reasoning:Mathematical Problem Solving,Reasoning:Mathematical Problem Solving,True,pc-tc-final-v2-0206
+P-tc208,"Calculate the requested quantity from the information below.
+
+What is 2514 divided by -1257?",Reasoning:Mathematical Problem Solving,Reasoning:Mathematical Problem Solving,True,pc-tc-final-v2-0207
+P-tc209,"Calculate the requested quantity from the information below.
+
+A company painted some houses in Hancock County white and blueusing a total of 6689 gallons of paint. If they used 660 gallons ofwhite paint, how many gallons of blue paint did the company use?",Reasoning:Mathematical Problem Solving,Reasoning:Mathematical Problem Solving,True,pc-tc-final-v2-0208
+P-tc210,"Solve the following mathematical problem and show the essential calculation.
+
+Eve ran 0.7 mile and walked 0.6 mile. How much farther did Eve runthan walk?",Reasoning:Mathematical Problem Solving,Reasoning:Mathematical Problem Solving,True,pc-tc-final-v2-0209
+P-tc211,"A river cleared after a plant closed, but rainfall also diluted pollutants. State what measurements could distinguish the explanations.",Reasoning:Causal Reasoning,Reasoning:Causal Reasoning,True,pc-tc-final-v2-0210
+P-tc212,"A policy took effect nationally and unemployment later fell, but the wider economy expanded. Explain what regional or temporal comparison would support a causal claim.",Reasoning:Causal Reasoning,Reasoning:Causal Reasoning,True,pc-tc-final-v2-0211
+P-tc213,"An email campaign preceded increased donations, but the organization was also featured on television. Explain why timing alone is insufficient.",Reasoning:Causal Reasoning,Reasoning:Causal Reasoning,True,pc-tc-final-v2-0212
+P-tc214,"Crime reports increased after street lighting was installed, although surveys show residents became more willing to report incidents. Distinguish actual incidence from measurement effects.",Reasoning:Causal Reasoning,Reasoning:Causal Reasoning,True,pc-tc-final-v2-0213
+P-tc215,"A town’s weekend visitors declined during roadworks and a parking-fee increase, then remained low after the weather improved. Evaluate the competing causal explanations.",Reasoning:Causal Reasoning,Reasoning:Causal Reasoning,True,pc-tc-final-v2-0214
+P-tc216,Factory defects dropped after worker training and replacement of a worn machine in the same week. What evidence could separate their contributions?,Reasoning:Causal Reasoning,Reasoning:Causal Reasoning,True,pc-tc-final-v2-0215
+P-tc217,A hospital introduced a registration form while patient arrivals rose and staffing stayed fixed; waiting times then increased. Decide whether the form can yet be called the cause and what comparison is missing.,Reasoning:Causal Reasoning,Reasoning:Causal Reasoning,True,pc-tc-final-v2-0216
+P-tc218,"A school banned phones and attendance improved, but bus routes changed simultaneously. Compare plausible mechanisms and useful counterfactual data.",Reasoning:Causal Reasoning,Reasoning:Causal Reasoning,True,pc-tc-final-v2-0217
+P-tc219,"Plants near a window grew faster than those at the back, but the window group also received more water. Explain why the study cannot isolate the effect of light.",Reasoning:Causal Reasoning,Reasoning:Causal Reasoning,True,pc-tc-final-v2-0218
+P-tc220,"A medication group recovered faster, but its patients were younger and had milder symptoms. Explain which confounders prevent a causal conclusion.",Reasoning:Causal Reasoning,Reasoning:Causal Reasoning,True,pc-tc-final-v2-0219
+P-tc221,"Plan how to pack items of given sizes into the fewest boxes without exceeding capacity, and show the allocation.",Reasoning:Others,Reasoning:Others,True,pc-tc-final-v2-0220
+P-tc222,Determine which of four proposed schedules satisfies all staff availability and room-capacity constraints.,Reasoning:Others,Reasoning:Others,True,pc-tc-final-v2-0221
+P-tc223,"Evaluate an analogy rather than proving a proposition. A community oral-history archive is described as ""a seed library, not a warehouse"". Its recordings are not consumed when played; contributors can withdraw permission; and hearing one recording often encourages a visitor to contribute a related memory. Map the useful relationships in the seed-library comparison onto the archive, then identify two places where the comparison breaks down. Finally suggest a refinement that preserves the idea of contributions growing through use without implying that stories must be returned or replaced. Focus on how the comparison shapes a reader's understanding of the archive.",Reasoning:Others,Reasoning:Others,True,pc-tc-final-v2-0222
+P-tc224,Determine whether a traveller can complete all errands before closing times given walking durations between locations.,Reasoning:Others,Reasoning:Others,True,pc-tc-final-v2-0223
+P-tc225,Arrange the workshop sessions so no participant has overlapping required sessions and every room’s capacity is respected.,Reasoning:Others,Reasoning:Others,True,pc-tc-final-v2-0224
+P-tc226,"Choose the next symbol in a visual sequence that alternates rotation with an increasing number of dots, and explain the pattern.",Reasoning:Others,Reasoning:Others,True,pc-tc-final-v2-0225
+P-tc227,Compare two chess continuations three moves deep and choose the line that avoids material loss.,Reasoning:Others,Reasoning:Others,True,pc-tc-final-v2-0226
+P-tc228,Find a seating arrangement that keeps specified pairs together while separating two conflicting attendees.,Reasoning:Others,Reasoning:Others,True,pc-tc-final-v2-0227
+P-tc229,"Consider a design trade-off for a tactile exhibition. Plan A uses one large relief map with every landmark labelled; visitors can understand the whole district but labels become crowded. Plan B uses several small maps; labels are clear, but visitors must mentally join the fragments. Plan C keeps one uncluttered map and provides detachable landmark tiles; it allows exploration but loose pieces can be misplaced. The gallery values independent exploration and clear touch-reading more than covering every landmark, and a volunteer can check materials between sessions but cannot guide each visitor. Compare the compromises and recommend a defensible design, including one modification to address its weakness. Make the reasons for your recommendation explicit, including the disadvantage you are accepting.",Reasoning:Others,Coding:Others,False,pc-tc-final-v2-0228
+P-tc230,"Develop a practical negotiation strategy for this situation. A neighbourhood choir and a pottery group share one community room. The choir wants two uninterrupted rehearsals before a concert; the potters need equipment left to dry and cannot clear the room after every short session. Both groups can move one regular meeting, but neither wants to permanently lose its usual evening. The caretaker can provide lockable shelving but cannot add another room. Propose a phased agreement that addresses the underlying interests, includes a trial period and specifies how disagreements will be reviewed. Explain how your proposal could earn acceptance from both groups without assuming that either group is at fault. Do not draft a legal contract.",Reasoning:Others,Reasoning:Logical Reasoning,False,pc-tc-final-v2-0229
+P-tc231,"Summarize the following single text while retaining its central information.
+
+Text: i was in the restroom on my phone reading tifu, the one with a person interviewing a prospect who came two hours earlier and used a notepad with something along the lines of ""let's go out on a date, beautiful.' unbeknownst to the interviewer as it was on the opposite side. i started laughing, and yep you guessed it my phone went up in the air and fell into the toilet full of piss. at least i didn't take a crap. :/ i immediately turned it off and when i pulled it out of the toilet, the silent notification was buzzing on and off. i then dried it and used a chlorox wipe to clean my case and phone. i haven't turned it on and on another positive note, i tried to peek into where the sim card is where there is a liquid damage litmus paper and it was not glowing pink to the best of my knowledge.",Summarization:Text Summarization,Summarization:Text Summarization,True,pc-tc-final-v2-0230
+P-tc232,"Condense the supplied text into a shorter account of its main points.
+
+Text: p.e. class. morning.  
+it's tennis time. i have my racket in my hand practicing. suddenly, a group of hot girls' ball rolls over. me, being a pimp, attempted to hit it back (like a boss). it went into the complete opposite direction. they just looked at me. i turned my head and started laughing out of embarrasment.",Summarization:Text Summarization,Summarization:Text Summarization,True,pc-tc-final-v2-0231
+P-tc233,"Produce a concise summary of this passage.
+
+Text: obligatory this actually happened earlier today. i had about a dozen meetings around my city and was taking the subway from location to location. at each meeting, i was taking meticulous notes in a nice black notebook i'd received from a conference, to the point my hand was tired from trying to keep up with what people said after i'd made it through about 7 or 8 of them. 
+struggling to keep up my energy, i'd just grabbed an iced coffee on the way to another train, when my mom texted me about her upcoming birthday. i was running late and moving fast but thought it'd be nice to be a responsive son for a change and text her back right away, while quickly tossing out my now-drained beverage in the subway trash. 
+i didn't realize i fucked up for about 20 feet, when still feeling all proud of myself, i passed another trash can and instinctively tossed out the empty cup in my hand. after a double take that made me wonder if i were in elon musk's simulation after all, i realized my mistake. back in the first trash can, anchored firmly and out of reach and now covered in a dark goo, was my notebook with all my day's notes, and weeks of meetings before. the text didn't go through anyway.",Summarization:Text Summarization,Summarization:Text Summarization,True,pc-tc-final-v2-0232
+P-tc234,"Produce a concise summary of this passage.
+
+'Vishing' - where criminals persuade victims to transfer money over the telephone - was used. Police are now urging members of the public to be on their guard. Det Insp Iain McPhail, from the economic crime and financial investigation unit, described the scams as ""completely sickening."" Techniques for vishing can include: Det Insp McPhail said the criminal at the other end of the phone had no regard for their victim or the ""devastation"" their actions would cause. He said: ""In the majority of these cases, since the money has been transferred abroad, the chances of getting the money back is fairly slim. ""The majority of the victims in this phase of vishing frauds have been elderly, retired individuals."" Mr McPhail said the cases had involved callers pretending to be from a bank and who told their victims that their money was in imminent danger. He added: ""They ask their victim to move substantial amounts of money into foreign accounts for safe-keeping and request that they do not report the call for fear of ruining the investigation."" 'Matter of minutes' He explained: ""Pension pots and retirement funds can be stolen within a matter of minutes, with hard-earned savings wiped out without warning. ""They prey on people's good nature and use scare tactics. It is cruel, it is callous and it is beyond comprehension. ""Let me be clear that banks will never make phone calls like this asking you to move money, in particular into a foreign account. ""If you do receive such a call, hang up and call the police immediately.""",Summarization:Text Summarization,Summarization:Text Summarization,True,pc-tc-final-v2-0233
+P-tc235,"Produce a concise summary of this passage.
+
+The Scottish Item Club had predicted economic expansion of 1.1% in 2012. But in its latest summer update, the Ernst & Young-sponsored forecaster said it now expected growth to reach just 0.3%. It said the country's recovery continued to be hampered by uncertainty abroad and reluctance by businesses to invest at home. Its latest forecast is slightly below the rate of growth forecast for the UK as a whole, and marginally down on the 0.4% growth achieved in 2011. Growth next year is forecast at 1.1% although the Item Club said it believed employment levels would remain flat well into 2013. Its report described export success as a ""key component"" of economic recovery, but noted that a narrow export base was acting as an impediment to Scottish growth. It said exports had been boosted by the fall in the value of Sterling, while the success of the whisky industry had ""proved to be a boon"". But the report added that the ""narrowness of recent successes"" suggested that the ability of Scottish businesses to capitalise on export opportunities was weaker than that of the UK as a whole. 'Dangerous phase' Dougie Adams, from the Scottish Item Club, said: ""There are fears that the world is stumbling deeper into crisis. ""The eurozone dilemma has entered a dangerous new phase, questions are being asked of China's ability to avoid a property-driven hard landing and the US recovery can be described as lacklustre at best. ""The resultant consternation means cash-rich corporates are showing little or no intention of putting their cash piles to work. ""Growth prospects will remain poor unless this money begins to flow into our economy, while the caution exercised by the corporate sector means that the public sector deficit is unlikely to narrow any time soon."" The economic forecaster said it expected overall manufacturing output to stagnate in Scotland in 2012, while construction was forecast to grow in line with the economy at 0.6%. The businesses services sector is expected to enjoy output growth of around 2%, a little below its pace of growth in 2011 and well down on it pre-crisis trend rate of growth. The report argued a number of associated risks continued to cloud the forecast. ""The eurozone crisis is the most pressing risk to the Scottish economy,"" said Mr Adams. ""Our forecast is predicated on policymakers containing the crisis and averting a Greek exit from the single currency. ""The opposite scenario could trigger a chain of events that results in the collapse of the eurozone and leads to significant falls in output and employment in Scotland."" A Scottish government spokesman said: ""This report highlights that companies are sitting on cash and not investing. In such times it is therefore vital that government does all that it can to support the economy. ""It is clear that the Westminster Coalition government's austerity approach is failing. ""The Scottish Government has repeatedly called on the UK Government to follow a growth agenda to improve economic confidence, support businesses through improved access to finance and invest in the country's infrastructure. ""We continue to press the UK Government to fund a list of more than 30 'shovel ready' construction projects in communities across Scotland which would boost economic activity and jobs.""",Summarization:Text Summarization,Summarization:Text Summarization,True,pc-tc-final-v2-0234
+P-tc236,"Condense the supplied text into a shorter account of its main points.
+
+Text: so like many others this happened a bit of time ago.. but this happened at night and i was leaving a parking lot with a few of my friends in the car. as i exit this truck pulls in and bright lights me! this happened to me a lot, i guess my dims were brighter than most? anyway.. i immediately make a u-turn get behind this son-of-a-bitch and start honking and bright-lighting the hell out of this dude. i follow him all through the parking lot until he parks and i continue my tirade! when i feel i have sufficiently made my point i pull away back to the exit once more.. all of this to realize as i pull out ... that my headlights were off... so i'm like, ""oh.. my lights are off"" to which one of my friends responds.. ""you're a fucking dumb ass"" i have never felt more ashamed in my life and still do to this day.. this poor old man had been trying to warn me.. uhg!
+
+&nbsp;",Summarization:Text Summarization,Summarization:Text Summarization,True,pc-tc-final-v2-0235
+P-tc237,"Summarize the following single text while retaining its central information.
+
+Damian: How are you guys? Any news?, Alice: I'm good, but Miranda has great news really, Damian: sounds interesting! what is it Miranda?, Miranda: Haha, ok, it's not a secret anymore, Miranda: I'll have a baby, Damian: wow! that's nice!, Miranda: was not an easy decision though, but Max convinced me, Damian: great! , Miranda: yes, Max is a nice guy really, he calmed me down, Miranda: at first I panicked completely , Miranda: freaked out, Damian: but I hope he didn't impose anything on you, it's a big decision, Miranda: no, he was actually very understanding and told me he would support me whatever i decide , Damian: I'm really happy to read that, Damian: you deserve a nice guy after all this crazy stories with Josh, Miranda: god yes. Btw, he keeps writing me, Alice: what a bastard! can't believe, Miranda: but I'm really over it :)",Summarization:Text Summarization,Summarization:Text Summarization,True,pc-tc-final-v2-0236
+P-tc238,"Summarize the following single text while retaining its central information.
+
+People are due to gather at Portobello Beach in Edinburgh to see the 149-metre-tall towers brought down at noon on Saturday. A second controlled explosion will then demolish the turbine hall. Cockenzie, which generated 150 terawatt hours of electricity in its lifetime, was decommissioned in March 2013. Its towers have been a landmark in the area for almost 50 years. Scottish Power project manager George Camps said 150 holes had been drilled in each tower, then filled with explosives. ""The drill holes weaken the structure when the charges go off,"" he explained. ""They are on one side, which causes the chimneys to come in towards each other."" The ""button press"", which will start demolition of both chimneys, will be carried out by East Lothian resident Donald McCulloch, who won a charity raffle. An exclusion zone will be in place from 09:00 to ensure that the demolition can be carried out safely. The safety restrictions will cover the Greenhills, sections of Edinburgh Road and the John Muir Way, as well as extending into the Firth of Forth. There will also be traffic restrictions around the power station from 07:00. Scottish Power said viewing locations in the immediate vicinity of the power station would be very limited. The twin chimney stacks were constructed in time for the coal station opening in 1967. The turbine hall structure is predominantly made of steel. Craig Yorkston, who worked at Cockenzie Power Station for 30 years, said: ""I think its quite a pretty power station. ""I've seen many power stations, and Cockenzie seemed to be designed and built to try and fit as much as possible into the local surroundings.""",Summarization:Text Summarization,Summarization:Text Summarization,True,pc-tc-final-v2-0237
+P-tc239,"Condense the supplied text into a shorter account of its main points.
+
+Text: so today i woke up with a really big stomach ache. last night i was up until the wee hours of the am battling the ss diarrhea in my stomach. seriously. torpedo after torpedo of wet, juicy chinese take-out was erupting from the abyss within like mt. vesuvius on poor, poor pompeii. i finally got to bed, and all was done. i debated on staying home from school today, but i realized the end of the first quarter was upon me, and i had a fairly large government test i couldn't afford to miss. i manned up and took some pills for the ever-churning cauldron of shit still remaining in my stomach. fast forward- i'm sitting at my desk filling out my scantron when all of a sudden, it hits me. i have to fart. bad. i sat for what felt like 20 minutes debating on what to do. it then got to a point where if it didnt come out, i would probably die. i lifted my right butt cheek to allow minimum sound, and felt the cool air escaping my ass. following the air flow was a very wet sensation on the cusp of my bootyhole. i clenched. i clenched harder then i ever clenched before. i clenched so hard, i threw up. all over the test. turns out, the side effects of the pill i took this morning was nausea... which apparently i was ignoring due to extreme focus on hellfart.",Summarization:Text Summarization,Summarization:Text Summarization,True,pc-tc-final-v2-0238
+P-tc240,"Produce a concise summary of this passage.
+
+The classic general knowledge show was recently broadcast as a one-off celebrity special as part of Channel 4's 80s nostalgia night in September. Sandi Toksvig will host the new 20-part daytime series when it airs in the spring, with comic Adam Hills fronting four celebrity editions. The original show, hosted by William G Stewart, ran from 1988 to 2003. ""I'm thrilled to be taking up the mantle of hosting Fifteen To One,"" Toksvig said. ""It is a legendary quiz show with tough questions. I'm glad I'll be asking not answering."" 'New generation' Hills, who hosts comedy show The Last Leg, also fronted the September special which was watched by an average 1.8 million viewers. ""I am thrilled to be part of the ongoing institution that is Fifteen To One,"" he said. He added he enjoyed watching celebrities trying not to make fools of themselves while answering general knowledge questions. Tom Blakeson, from Remedy Productions, which produces the show, said: ""It's fantastic to be making more Fifteen To One for Channel 4 following the success of the celebrity special earlier this year. ""We're really looking forward to introducing a whole new generation to this compelling format and, with Adam and Sandi, we're delighted to have two brilliant and very funny hosts on board."" The quiz show will stick to its original format with three rounds and 15 contestants trying to avoid elimination by answering questions correctly. Subsequent rounds then see contestants nominate who should answer the next question, in a battle to knock each other out.",Summarization:Text Summarization,Summarization:Text Summarization,True,pc-tc-final-v2-0239
+P-tc241,"Produce one concise, integrated overview of the evidence about coastal adaptation. Combine shared and conflicting findings rather than listing the sources separately.
+
+Brief A projects higher coastal flood risk. Brief B estimates the cost of sea walls. Brief C evaluates wetland restoration as cheaper but less protective during extreme storms.",Summarization:Multi-document Summarization,Summarization:Multi-document Summarization,True,pc-tc-final-v2-0240
+P-tc242,"Produce one concise, integrated overview of the evidence about reading intervention. Combine shared and conflicting findings rather than listing the sources separately.
+
+Paper A reports gains from a reading intervention. Paper B finds benefits only with trained tutors. Paper C observes that effects weakened six months after tutoring ended.",Summarization:Multi-document Summarization,Summarization:Multi-document Summarization,True,pc-tc-final-v2-0241
+P-tc243,"Produce one concise, integrated overview of the evidence about irrigation policy. Combine shared and conflicting findings rather than listing the sources separately.
+
+Agronomy report A shows irrigation raised yields. Water report B documents falling groundwater. Farm survey C finds drip systems cut consumption but require unaffordable initial investment for small farms.",Summarization:Multi-document Summarization,Summarization:Multi-document Summarization,True,pc-tc-final-v2-0242
+P-tc244,"Produce one concise, integrated overview of the evidence about four-day work weeks. Combine shared and conflicting findings rather than listing the sources separately.
+
+Report A finds four-day weeks improve satisfaction. Report B records stable output in office teams but delays in customer support. Report C attributes success to staffing changes made before the trial.",Summarization:Multi-document Summarization,Summarization:Multi-document Summarization,True,pc-tc-final-v2-0243
+P-tc245,"Produce one concise, integrated overview of the evidence about cycling infrastructure. Combine shared and conflicting findings rather than listing the sources separately.
+
+Review A documents more urban cycling after protected lanes opened. Review B records fewer cyclist injuries. Business survey C reports mixed effects on shop visits during construction.",Summarization:Multi-document Summarization,Summarization:Multi-document Summarization,True,pc-tc-final-v2-0244
+P-tc246,"Produce one concise, integrated overview of the evidence about diet programme. Combine shared and conflicting findings rather than listing the sources separately.
+
+Trial A finds the diet lowers blood pressure. Trial B reports poor long-term adherence. Cost review C says coaching improves adherence but substantially raises programme expense.",Summarization:Multi-document Summarization,Summarization:Multi-document Summarization,True,pc-tc-final-v2-0245
+P-tc247,"Produce one concise, integrated overview of the evidence about electric vehicles. Combine shared and conflicting findings rather than listing the sources separately.
+
+Study A records faster electric-vehicle charging and cheaper batteries. Study B describes limited rural charging and cold-weather degradation. Study C warns about mining impacts while noting falling lifecycle emissions.",Summarization:Multi-document Summarization,Summarization:Multi-document Summarization,True,pc-tc-final-v2-0246
+P-tc248,"Produce one concise, integrated overview of the evidence about recorded lectures. Combine shared and conflicting findings rather than listing the sources separately.
+
+Survey A finds students value recorded lectures. Survey B reports lower live attendance but unchanged exam results. Survey C notes that students with poor internet cannot reliably stream recordings.",Summarization:Multi-document Summarization,Summarization:Multi-document Summarization,True,pc-tc-final-v2-0247
+P-tc249,"Produce one concise, integrated overview of the evidence about release performance. Combine shared and conflicting findings rather than listing the sources separately.
+
+Audit A finds software releases became more frequent. Audit B reports more rollback events but shorter outages. Interviews in Report C say automated tests improved confidence while monitoring remains weak.",Summarization:Multi-document Summarization,Summarization:Multi-document Summarization,True,pc-tc-final-v2-0248
+P-tc250,"Produce one concise, integrated overview of the evidence about hospital delays. Combine shared and conflicting findings rather than listing the sources separately.
+
+Memo A links emergency delays to a new registration procedure. Memo B records a simultaneous 25% rise in patients with unchanged staffing. Memo C finds no delay at a hospital using the same form but higher staffing.",Summarization:Multi-document Summarization,Summarization:Multi-document Summarization,True,pc-tc-final-v2-0249
+P-tc251,"Rewrite the text as a single headline-length statement.
+
+Even though electronic espionage may cost U.S. firms billions of dollars a year, most aren't yet taking precautions, the experts said.",Summarization:Others,Summarization:Others,True,pc-tc-final-v2-0250
+P-tc252,"Compress the following sentence as much as possible without losing its central meaning.
+
+Text: well, i was passing through heathrow airport and really needed a pre-boarding poo, as did most of the population in the airport as well apparently.
+
+stood in a queue in the toilet, for at least 10 mins waiting for a cubicle. get to the front of the queue and then a phone drops from inside the cubicle and rolls out...
+
+there's a pause and then a hand reaches out quickly and grabs the phone,  the 10 people in the queue start laughing, myself included. 
+
+5 seconds later the door opens up and a huge 1 armed man walks out the cubicle giving me a deadly stare, needless to say, i was pretty lubed up and ready for the toilet then...",Summarization:Others,Summarization:Others,True,pc-tc-final-v2-0251
+P-tc253,"Compress the following sentence as much as possible without losing its central meaning.
+
+Text: so this is going to be quite long so let me give you some background first.
+about 4/5 years ago my parents divorced, my mother is happy and engaged my father was in a relationship which ended and is now in his second were he seems the happiest i have seen him in a relationship. him and his partner and a strong bond and all seemed to be going well.
+me and the girl are both 16.
+
+so 2 days ago now, the daughter of my dads partner secured an apprenticeship. to celebrate we went out to a restaurant. all was going well, we were sharing some banter and what not, everyone was laughing.  
+this is were the fuck up begins
+then she said i would be a 40 year old virgin, to which i replied, at least i am not a sket.
+
+she went quiet and sat on her phone for about 5 minutes, i apologized which was firstly ignored, i apologized again to which she said she accepted and we shook hands and everything seemed to go back to how it was before.  
+
+lets be clear, i didn't mean what i said to be offensive, it was just meant to be a bit of banter. which was definitely was not taken that way. 
+
+we went back to my house and watched tv and all seemed to be forgiven and forgotten.
+they left and all seemed cool.
+
+i woke up the next morning (yesterday) and helped my dad with some jobs, we were in the car and he said, ""you shouldn't have said what you said last night"" i said, i know, it was just meant to be a bit of a joke.
+anyway the day went on and my dad called me downstairs, he said  that i needed to apologise again, to which i said i said i was sorry last night and everything looked like it had blown over.
+he said it was affecting his and his partners relationship.
+
+i sent the girl some messages over facebook which you can read here: https://imgur.com/gallery/iccwa/new m is me, h is her
+
+i tried to aplogise but it seems like it makes no affect.
+
+it may just be because i am a man but, i take much worse shit, much more frequently at school and to me this seems like such an over reaction to one word. 
+
+i don't see the reason to ruin other peoples relationships just because 1 word offended you, there is a big world out there and there is no point in getting hung up and being offended over words.
+that's just my point of view.
+
+anyway that is where we are right now, there is still a bit of tension between my and my father, which sucks because i have to live him, and the thing is he works very long hours so he is very tired and easily irritated so i don't want the time we are together to be wasted due to this.
+i know i have done my side and this is basically on her now, i am the one who started this, but it is down to her to finish it.
+
+i would like to hear your comments on this.",Summarization:Others,Summarization:Others,True,pc-tc-final-v2-0252
+P-tc254,"Create a short title that captures the supplied account.
+
+Text: this actually happened only a few hours ago. i was laying on the couch watching wedding crashers  this afternoon. taking a well deserved break after my last final yesterday. 
+
+when i watch movies i have a habit of putting my wedding ring in my mouth and flipping it between my lips and teeth with my tongue. i rarely even realize that i'm doing it. i let out a thunderous laugh during the ""notch on your belt"" line. 
+
+my ring slid down into my throat and playing a dangerous game between my trachea and esophagus. and it chose my trachea. i sat up rapidly and coughed to clear it from my windpipe. it only moved enough to clear out of my trachea. but the ring was still sitting in the back of my throat. so when i reflexively swallowed the ring travelled down my esophagus and ended up nestling itself deep in my stomach. 
+
+immediately i realized my fuck up. which was reiterated by the doctor at the hospital. ""don't put anything in your mouth that you don't intend on consuming."" thanks doc. 
+
+well now i have to poop sift. 
+
+and tell my wife. 
+
+marriage is indeed a hard pill to swallow. 
+
+ 
+
+edit: i posted a comment down below with a link to the x-ray. 
+
+edit 2: for all who are interested. i have not told my wife yet. she is out of town. will update when i tell her. 
+
+edit 3: for clarity.",Summarization:Others,Summarization:Others,True,pc-tc-final-v2-0253
+P-tc255,"Create a short title that captures the supplied account.
+
+Text: so i'm a longtime retail worker, but i've always been a bit reserved at the job. i'm not one of those mindless drones that communicate through grunts while tapping on a cellphone, i've always given excellent customer service, but having idle unrelated conversation with strangers is not my forte.
+
+anyway, today an older lady comes up to my register. the interactions, as i've had a thousand times before, proceeded as thus:
+
+me: ""hi, how are you?""
+
+customer: ""i'm quite well, and yourself?""
+
+""i'm doing alright. did you find everything okay?""
+
+""yes, i did.""
+
+""great. your total comes to $8,000,000.12.""
+
+""alright.""  *pulls out a $8,000,000 bill* ""now i know i have the 12 cents in here somewhere...""
+
+this part, as i've seen before, involves the customer upending her change purse on my counter to search for the dime and two pennies. only a problem if there's a line, and on this day there was not. she slowly put surely locates a penny, and shifts it towards me. she spots a dime, and does the same. her eyesight, faded but still useful, hones in on the final copper piece, yet her fingers betray her. she accidentally presses down on a small blister packet of medicine, which she begins to push towards her destination before realizing her mistake.
+
+""oops, that's my medicine. you don't want that, i don't think.""
+
+on a normal day, i would say ""no, not really"" in a gentle tone that conveyed a serious response without being disrespectful. perhaps i would just say ""nah"" or a small grunt, as we both knew the answer and a response would frankly be useless. but not today. today i decided to play the ""yes, and"" game, to take the worthless conversation further. today i was going to try to be a real person.
+
+""hah, well it depends, is it anything good?"" i replied, hoping to make the joking stance that i would gladly accept oxycontin or vicodin in lieu of a penny. i've never used a recreational drug in my life, but today, just today, i would play the part for the sake of brightening up an old lady's day. i expected a smiling ""no"" in response, or perhaps an ""it's mine!""
+
+but instead of this so-far pleasant foray into prattling continuing, this customer decided to inform me was the medication truly was. she told me it was immodium, the popular anti-diarrheal medication. she proceeded to talk at length, with sentences i shall not repeat, about exactly what causes her to need immodium, and why she carries a dose around everywhere. minute after minute went by, as i silently prayed to the god i lost faith in for something, anything, to distract us. a customer, a robber, a deadly asteroid, please let this onslaught of aural torture end. and end it did, a solid 5 minutes later, with the last remaining wisps of my innocence gone, and my affability dead before it was born.
+
+never again.",Summarization:Others,Summarization:Others,True,pc-tc-final-v2-0254
+P-tc256,"Create a short title that captures the supplied account.
+
+Text: in english class today, we're starting hamlet. teacher gave each of us a line and we went around in a circle saying it accompanied by an action. i got ""alas, poor yorick! i knew him, horatio"" and i thought ""oh this is so easy i don't even have to look at the paper.""
+
+my turn to say my line came, and i walked to the middle of the circle, holding my hands up as if i was holding yorick's skull. i proudly delivered: ""to be or not to be, that is the oh shit i said the wrong line."" standing there in front of the class reciting 16th century literature is embarrassing enough, but i fucked it up even worse.",Summarization:Others,Summarization:Others,True,pc-tc-final-v2-0255
+P-tc257,"Compress the following sentence as much as possible without losing its central meaning.
+
+This concept was picked up in the Clean Air Act: Polluters who reduce their toxic output beyond requirements can sell the right to molest the environment to others less willing or less able to control emissions.",Summarization:Others,Summarization:Others,True,pc-tc-final-v2-0256
+P-tc258,"Create a short title that captures the supplied account.
+
+Babysitter for Hewlett Packard not only announces but also illustrates that HP has a photo-quality color-printer solution so effective that it's accessible even to computer-phobes, those modern-day Luddites who cling to their yellow legal pads.",Summarization:Others,Summarization:Others,True,pc-tc-final-v2-0257
+P-tc259,"Compress the following sentence as much as possible without losing its central meaning.
+
+Text: i work construction and leave for work at around 5am every day and have to take two trains to get there. as a result of physical labor and working 10 hour days, my appetite by lunchtime can be pretty impressive. that said, i take great care in packing a hefty lunchpail. (read: my girlfriend takes great care in packing me a hefty lunchpail). it is a 7 quart cooler and it is always brimming. to save money, we get energy drinks from costco, but everything else is homemade. today it was 4 chicken enchiladas, a bag of grapes, a bag of mixed raw veggies (broccoli, cauliflower, edamame, carrots), a pack of belvita breakfast cookies, a york peppermint patty, an 8.4oz red bull, a 16oz monster, a 5 hour energy and i think that was it. oh and a thing of this mediterranean garbanzo bean salad. 
+anyway, i'm at the second station waiting for the second leg of my trip and i am sitting on my lunch box because i know right about where the door to the train ends up and there is no bench there, plus i am reading the paper. as the train rolls in, a guy working at the same site who i see once in a while walks over to say good morning and to get on the train with me. we make small talk getting aboard and as the train lurches, i glance out the window to see my precious lunchbox sitting on the platform. 
+by the time i doubled back, someone had definitely hit the lunchbox jackpot and i was already late as shit for work. feeling pretty defeated and not up for buying lunch (plus the stupid  amount of caffeine i've grown dependent on) i ended up calling in and spending all afternoon watching horror movies on netflix.",Summarization:Others,Summarization:Others,True,pc-tc-final-v2-0258
+P-tc260,"Rewrite the text as a single headline-length statement.
+
+Text: hi! before i tell you guys this story, i will write some background information. i am a 18 y/o boy from norway. i am very sorry if it is any typos in my text, i am not that good in english. i have a long ''career'' of dressing up as santa claus and having a show for my dad's friends children. this year was not any different. my mom works at a school and works together with a rather attractive, young women which had been my teacher when i went to the same school. it also happens to be that this attractive female teacher had two, young kids. since she is divorced and her children were going to his house on christmas eve, she asked my mom if it was ok for me if i could help her out by acting as santa claus on a ''mom-christmas'' earlier in december. since i was very fond of this pretty, single mom i said it was totally ok for me. 
+
+and this is where it begins..
+
+while i was pulling up my car some houses from hers, i was a little bit insecure of which house that belonged to her (she lives in a townhouse). she had told me on beforehand that her apartment had a red, shiny star in the window. i told her that i would find it. while i was walking up to her door, a women in a car meets up. she looks at me with a strange look but as stupid as i am, i thought it was the childrens grandmother because she seemed to be a little old. i turn back to the frontdoor and knock three times. i walk in and say as we usual say in norwegian: ''ho ho ho, er det noen snille barn her i dag?'' which means: ''ho ho ho, are there any kind children here tonight?'' the kids screams of joy and the father looks at me with a big smile. i walked in and start my show, telling funny jokes and tried to be the best santa i could be. but after a short while, i could not see this attractive woman anywhere, so i asked the man of the house where she was. he replied to me that this was not her house and i had been going to the completely wrong house.. i was so happy that i had a mask that hid away my blushing face!
+
+this story enden well, even though i had managed to visit the wrong house. i still have a bad conscience for the kids in the house that didn't got any present from santa.. but when i finally found the right door i got a kiss on my cheek and some couple of beers in return for my kind performance for her and her kids. totally worth it.",Summarization:Others,Summarization:Others,True,pc-tc-final-v2-0259
+P-tc261,Use the available `shipment_track` operation to retrieve latest location and estimated delivery for shipment SH-8820. Return only those stored fields and do not modify anything.,Function calling:Data Retrieval,Function calling:Data Retrieval,True,pc-tc-final-v2-0260
+P-tc262,"Use the available `asset_lookup` operation to retrieve location, custodian, and maintenance date for asset A-4402. Return only those stored fields and do not modify anything.",Function calling:Data Retrieval,Function calling:Data Retrieval,True,pc-tc-final-v2-0261
+P-tc263,Use the available `course_enrolment` operation to retrieve enrolment status and final grade for student S-229 in course CS204. Return only those stored fields and do not modify anything.,Function calling:Data Retrieval,Function calling:Data Retrieval,True,pc-tc-final-v2-0262
+P-tc264,"Use the available catalogue tool to fetch one stored specimen record. Tool: herbarium_accession_read(accession_id: string, fields: list[string]); it reads the internal herbarium catalogue without changing it. Available fields are taxon_name, collector, collection_date, locality and storage_cabinet. Retrieve accession HBR-67042 and return only taxon_name, collector and locality. Do not infer the plant from the identifier, search the web, change the record or call any other operation. The requested values must come from the tool result.",Function calling:Data Retrieval,Function calling:Data Retrieval,True,pc-tc-final-v2-0263
+P-tc265,Use the available `room_availability` operation to retrieve availability only for meeting room Atlas on 14 October at 15:00. Return only those stored fields and do not modify anything.,Function calling:Data Retrieval,Function calling:Data Retrieval,True,pc-tc-final-v2-0264
+P-tc266,"Use the available `lab_result_fetch` operation to retrieve test name, result, and validation state for specimen L-998. Return only those stored fields and do not modify anything.",Function calling:Data Retrieval,Function calling:Data Retrieval,True,pc-tc-final-v2-0265
+P-tc267,Use the available `device_status` operation to retrieve assigned user and warranty expiry for device DEV-44. Return only those stored fields and do not modify anything.,Function calling:Data Retrieval,Function calling:Data Retrieval,True,pc-tc-final-v2-0266
+P-tc268,"Use the available `payment_find` operation to retrieve amount, timestamp, and settlement state for transaction TX-77501. Return only those stored fields and do not modify anything.",Function calling:Data Retrieval,Function calling:Data Retrieval,True,pc-tc-final-v2-0267
+P-tc269,"Use the available `invoice_fetch` operation to retrieve total, currency, due date, and payment status for invoice INV-9031. Return only those stored fields and do not modify anything.",Function calling:Data Retrieval,Function calling:Data Retrieval,True,pc-tc-final-v2-0268
+P-tc270,Use the available `employee_record` operation to retrieve department and active status for employee E-117. Return only those stored fields and do not modify anything.,Function calling:Data Retrieval,Function calling:Data Retrieval,True,pc-tc-final-v2-0269
+P-tc271,Call the available `backup_verify` system operation for backup snapshot snap-771 and report whether verification passed. Do not change system state.,Function calling:System Operations,Function calling:System Operations,True,pc-tc-final-v2-0270
+P-tc272,Call the available `service_status` system operation for the payments service and report whether it is running and its last restart time. Do not change system state.,Function calling:System Operations,Function calling:System Operations,True,pc-tc-final-v2-0271
+P-tc273,"Call the available `host_health` system operation for host app-07 and report CPU, memory, and health state. Do not change system state.",Function calling:System Operations,Function calling:System Operations,True,pc-tc-final-v2-0272
+P-tc274,Call the available `process_check` system operation for process id 4201 and state whether it is alive and report its start time. Do not change system state.,Function calling:System Operations,Function calling:System Operations,True,pc-tc-final-v2-0273
+P-tc275,Call the available `queue_health` system operation for the image-processing worker queue and report depth and oldest-message age. Do not change system state.,Function calling:System Operations,Function calling:System Operations,True,pc-tc-final-v2-0274
+P-tc276,Call the available `disk_usage` system operation for the `/var/data` volume and return used and available space. Do not change system state.,Function calling:System Operations,Function calling:System Operations,True,pc-tc-final-v2-0275
+P-tc277,Call the available `certificate_check` system operation for the TLS certificate for the internal gateway and report validity and days remaining. Do not change system state.,Function calling:System Operations,Function calling:System Operations,True,pc-tc-final-v2-0276
+P-tc278,Call the available `deployment_status` system operation for deployment release-204 and return rollout state and healthy replica count. Do not change system state.,Function calling:System Operations,Function calling:System Operations,True,pc-tc-final-v2-0277
+P-tc279,Call the available `feature_flag_status` system operation for feature flag new-checkout and report its current state in production. Do not change system state.,Function calling:System Operations,Function calling:System Operations,True,pc-tc-final-v2-0278
+P-tc280,Call the available `dns_check` system operation for internal name api.service.local and return the currently resolved address. Do not change system state.,Function calling:System Operations,Function calling:System Operations,True,pc-tc-final-v2-0279
+P-tc281,Use the external `maps_route_api` service to obtain a public-transit route from Termini station to EUR. Return duration and transfers; do not substitute an internal database lookup.,Function calling:API Integration,Function calling:API Integration,True,pc-tc-final-v2-0280
+P-tc282,Use the external `payment_provider_api` service to obtain payment intent pi_8301. Return provider status and decline reason if present; do not substitute an internal database lookup.,Function calling:API Integration,Function calling:API Integration,True,pc-tc-final-v2-0281
+P-tc283,Use the external `energy_market_api` service to obtain today’s hourly electricity prices for zone NORD. Return hour and price pairs; do not substitute an internal database lookup.,Function calling:API Integration,Function calling:API Integration,True,pc-tc-final-v2-0282
+P-tc284,Use the external `calendar_api` service to obtain free time in the shared team calendar next Tuesday. Return available one-hour windows; do not substitute an internal database lookup.,Function calling:API Integration,Function calling:API Integration,True,pc-tc-final-v2-0283
+P-tc285,Use the external `public_transit_api` service to obtain departures from stop 1802 in the next 20 minutes. Return route and departure time; do not substitute an internal database lookup.,Function calling:API Integration,Function calling:API Integration,True,pc-tc-final-v2-0284
+P-tc286,Use the external `translation_api` service to obtain the supplied Italian sentence into English. Return translated text; do not substitute an internal database lookup.,Function calling:API Integration,Function calling:API Integration,True,pc-tc-final-v2-0285
+P-tc287,Use the external `address_validation_api` service to obtain the provided delivery address. Return normalized address and deliverability; do not substitute an internal database lookup.,Function calling:API Integration,Function calling:API Integration,True,pc-tc-final-v2-0286
+P-tc288,Use the external `document_signing_api` service to obtain envelope env-290. Return signature completion status; do not substitute an internal database lookup.,Function calling:API Integration,Function calling:API Integration,True,pc-tc-final-v2-0287
+P-tc289,Use the external `tax_rate_api` service to obtain the sales-tax rate for the supplied postal code. Return applicable combined rate; do not substitute an internal database lookup.,Function calling:API Integration,Function calling:API Integration,True,pc-tc-final-v2-0288
+P-tc290,Use the external `crm_api` service to obtain organization Acme North. Return external CRM id and account owner; do not substitute an internal database lookup.,Function calling:API Integration,Function calling:API Integration,True,pc-tc-final-v2-0289
+P-tc291,"Invoke the available function run_length_encode(values: list[string]) on the supplied sequence [""amber"", ""amber"", ""blue"", ""blue"", ""blue"", ""amber""]. Its output is an ordered list of objects with keys value and count; it combines only adjacent equal values, not equal values separated by another run. Request that transformation and return the tool's result. The sequence is complete and no stored information should be retrieved. Do not write an implementation of the function or change the ordering of the runs.",Function calling:Data Transformation,Coding:Function Implementation,False,pc-tc-final-v2-0290
+P-tc292,"Use the provided tool text_escape(input: string, target: string) with target=""json_string"" to escape this exact text as one JSON string literal:
+She said ""leave the key"".
+Then she wrote C:\notes\draft.txt on the card.
+The line break between the two sentences is part of the input. Return the transformed string produced by the tool, preserving the characters and line break through valid JSON escapes. Do not translate, summarise, fetch another document or write a custom escaping routine.",Function calling:Data Transformation,Open Book QA:Document-based QA,False,pc-tc-final-v2-0291
+P-tc293,Use the available `redact_record` operation to transform the supplied support record into the same record with emails and phone numbers masked. Preserve its semantic information and do not retrieve external data.,Function calling:Data Transformation,Function calling:Data Retrieval,False,pc-tc-final-v2-0292
+P-tc294,Use the available `markdown_to_html` operation to transform the supplied Markdown paragraph and list into sanitized HTML. Preserve its semantic information and do not retrieve external data.,Function calling:Data Transformation,Function calling:Data Transformation,True,pc-tc-final-v2-0293
+P-tc295,"Use the available `normalize_customer_record` operation to transform date `31/08/2026`, amount `€1.240,50`, name `  Ada Rossi ` into ISO date, dot-decimal amount without currency, and trimmed name. Preserve its semantic information and do not retrieve external data.",Function calling:Data Transformation,Function calling:Data Transformation,True,pc-tc-final-v2-0294
+P-tc296,"Call the available tool interval_notation(intervals) to represent the following supplied bounds in mathematical interval notation: [{""lower"": -2, ""upper"": 5, ""lower_inclusive"": true, ""upper_inclusive"": false}, {""lower"": 8, ""upper"": null, ""lower_inclusive"": false, ""upper_inclusive"": false}]. A null upper bound means positive infinity. Preserve the two separate intervals and their order; do not combine or solve them. Return the representation supplied by the tool. This is a formatting operation on given bounds, not a request for a proof or external data.",Function calling:Data Transformation,Coding:Function Implementation,False,pc-tc-final-v2-0295
+P-tc297,Use the available `convert_units` operation to transform 86 °F and 12.5 miles into Celsius and kilometres with two decimals. Preserve its semantic information and do not retrieve external data.,Function calling:Data Transformation,Function calling:Data Transformation,True,pc-tc-final-v2-0296
+P-tc298,Use the available `compress_image` operation to transform photo P-81 into JPEG under 500 KB while retaining its dimensions. Preserve its semantic information and do not retrieve external data.,Function calling:Data Transformation,Function calling:Data Transformation,True,pc-tc-final-v2-0297
+P-tc299,Use the available `deduplicate_contacts` operation to transform the supplied contact list into one record per normalized email. Preserve its semantic information and do not retrieve external data.,Function calling:Data Transformation,Function calling:Data Transformation,True,pc-tc-final-v2-0298
+P-tc300,Use the available `format_phone` operation to transform phone `(020) 7946 0958` with country GB into E.164 representation. Preserve its semantic information and do not retrieve external data.,Function calling:Data Transformation,Function calling:Data Transformation,True,pc-tc-final-v2-0299
+P-tc301,"Use the available operations `device_get`, `warranty_check`, and `repair_book` in dependency order for device D-181: retrieve purchase data, verify warranty, and book a covered repair only when valid. Stop before any state-changing call if the preceding check fails.",Function calling:Multi-function Chain,Function calling:Multi-function Chain,True,pc-tc-final-v2-0300
+P-tc302,"Use the available operations `document_get`, `signature_validate`, and `document_publish` in dependency order for document DOC-70: load the current version, validate all required signatures, and publish only if complete. Stop before any state-changing call if the preceding check fails.",Function calling:Multi-function Chain,Function calling:Multi-function Chain,True,pc-tc-final-v2-0301
+P-tc303,"Use the available operations `ticket_get`, `engineer_availability`, and `ticket_assign` in dependency order for ticket T-51: read the required skill, find an available engineer with it, and assign the ticket. Stop before any state-changing call if the preceding check fails.",Function calling:Multi-function Chain,Function calling:Multi-function Chain,True,pc-tc-final-v2-0302
+P-tc304,"Use the available operations `reservation_get`, `cancellation_policy`, and `reservation_cancel` in dependency order for reservation RZ-18472: retrieve booking details, determine the applicable policy, and cancel only if no fee applies. Stop before any state-changing call if the preceding check fails.",Function calling:Multi-function Chain,Function calling:Multi-function Chain,True,pc-tc-final-v2-0303
+P-tc305,"Use the available operations `inventory_lookup`, `shipping_quote`, and `order_create` in dependency order for product PX-4: check stock, obtain a quote for the supplied address, and create the order only when stock is sufficient. Stop before any state-changing call if the preceding check fails.",Function calling:Multi-function Chain,Function calling:Multi-function Chain,True,pc-tc-final-v2-0304
+P-tc306,"Use the available operations `sensor_get`, `threshold_evaluate`, and `alert_create` in dependency order for sensor SN-11: retrieve its reading and configured threshold, evaluate the breach, and create an alert only when exceeded. Stop before any state-changing call if the preceding check fails.",Function calling:Multi-function Chain,Function calling:Multi-function Chain,True,pc-tc-final-v2-0305
+P-tc307,"Use the available operations `user_get`, `permission_check`, and `role_assign` in dependency order for user U-49: retrieve the organization, verify the requester may administer it, then assign the role. Stop before any state-changing call if the preceding check fails.",Function calling:Multi-function Chain,Function calling:Multi-function Chain,True,pc-tc-final-v2-0306
+P-tc308,"Use the available operations `invoice_get`, `payment_authorize`, and `invoice_mark_paid` in dependency order for invoice I-771: load the outstanding total, authorize that amount, and mark paid only if authorization succeeds. Stop before any state-changing call if the preceding check fails.",Function calling:Multi-function Chain,Function calling:Multi-function Chain,True,pc-tc-final-v2-0307
+P-tc309,"Use the available operations `report_get`, `format_convert`, and `archive_store` in dependency order for report R-220: retrieve the report, convert it to PDF, and store the converted result in the archive. Stop before any state-changing call if the preceding check fails.",Function calling:Multi-function Chain,Function calling:Multi-function Chain,True,pc-tc-final-v2-0308
+P-tc310,"Use the available operations `employee_get`, `leave_balance`, and `leave_create` in dependency order for employee E-22: retrieve employment status, check available leave, and submit the request only if enough remains. Stop before any state-changing call if the preceding check fails.",Function calling:Multi-function Chain,Function calling:Multi-function Chain,True,pc-tc-final-v2-0309
+P-tc311,"A local assembly application exposes ballot_cast(ballot_id: string, choice_id: string). This action records the authorised participant's selection; it does not retrieve results or verify eligibility. The active ballot is BLT-406 and its valid choices are CEDAR and MAPLE. I have already reviewed the choices and authorise my vote for MAPLE. Invoke ballot_cast once with those arguments. Do not open a poll, query results, change the choice or perform any eligibility checks.",Function calling:Others,Function calling:Multi-function Chain,False,pc-tc-final-v2-0310
+P-tc312,"In the local chess-study workspace, the available action study_variation_add(study_id: string, parent_node: string, moves_san: list[string]) adds a preapproved variation to an existing study. I have already checked the moves. For study CST-52 and parent node ROOT, add exactly [""d4"", ""Nf6"", ""c4"", ""e6""]. Invoke that one action; do not analyse the position, generate a better line, retrieve a game or change the main line. All arguments needed for the call are included here.",Function calling:Others,Function calling:Others,True,pc-tc-final-v2-0311
+P-tc313,"The exhibition kiosk provides exhibit_bookmark_add(visitor_session: string, exhibit_id: string, collection: string). It places the selected exhibit in the visitor's personal saved collection and does not contact an external service. For session VST-208, add exhibit EXH-ORRERY to collection ""Return visits"". I have selected that exhibit and confirm the action. Use this function once without fetching recommendations, modifying the exhibit record or creating a different collection.",Function calling:Others,Function calling:Others,True,pc-tc-final-v2-0312
+P-tc314,"Use the rehearsal workspace action cue_annotation_add(cue_id: string, author: string, text: string). It attaches an annotation to a cue that already exists. Add the following exact annotation to cue Q-086 as author ""Mina"": ""Hold the amber wash until the final bell; keep the front spots unchanged."" Make one tool call. Do not rewrite the annotation, operate the lighting console, retrieve the cue or send notifications. The instruction is to attach this approved content, not explain stage lighting.",Function calling:Others,Function calling:Others,True,pc-tc-final-v2-0313
+P-tc315,"The local training workspace offers course_badge_award(learner_id: string, badge_id: string, note: string). The instructor has already checked completion and authorises this award. Invoke it for learner LRN-742, badge FIELD-NOTES, with note ""Completed the observation notebook review"". Do not run a completion check, fetch learner details, create a certificate file or publish a message. The action arguments are final and should not be inferred from other records.",Function calling:Others,Function calling:Data Retrieval,False,pc-tc-final-v2-0314
+P-tc316,Invoke `secret_rotate` for credential APP-STAGING because the user has explicitly requested rotation.,Function calling:Others,Function calling:Others,True,pc-tc-final-v2-0315
+P-tc317,"The gallery's in-house silent-auction workspace provides auction_bid_place(auction_id: string, lot_id: string, amount_eur: int, bidder_alias: string). It records an authorised offer; no payment or external API is involved. I have inspected lot LOT-POT-24 in auction AUC-AUTUMN and authorise a bid of 65 euros under alias ""North Finch"". Invoke auction_bid_place once with those arguments. Do not retrieve other bids, recommend a price, raise the amount automatically or call a payment function. The sole requested action is recording this approved bid.",Function calling:Others,Function calling:Multi-function Chain,False,pc-tc-final-v2-0316
+P-tc318,"The discussion workspace provides thread_pin(thread_id: string, board_id: string). It pins an existing discussion thread to the top of its board. The moderator authorises pinning thread THR-918 on board CERAMICS-BEGINNERS. Invoke thread_pin exactly once. Do not edit, summarise or retrieve the thread, send a notification, or change access permissions. No other action is needed.",Function calling:Others,Function calling:Multi-function Chain,False,pc-tc-final-v2-0317
+P-tc319,"An offline composition workspace exposes score_rehearsal_mark_add(score_id: string, measure: int, mark: string). This action places an editorial rehearsal mark in the open score; it does not render or play audio. The composer has approved mark ""D"" at measure 57 of score SCR-120. Invoke the action with those values. Do not search for a score, infer a measure number, transcribe music or alter the notes. The sole requested operation is adding the approved mark.",Function calling:Others,Function calling:Others,True,pc-tc-final-v2-0318
+P-tc320,"The workshop application offers session_topic_nominate(session_id: string, title: string, proposer: string). It adds a participant's already agreed topic to the session agenda; it does not submit an application form or contact an external API. Nominate title ""Repairing hand tools with replaceable parts"" for session WKS-612, proposer ""Ari"". Make that tool call once. Do not create a new session, fetch participants or generate a different topic.",Function calling:Others,Classification:Topic Classification,False,pc-tc-final-v2-0319
+P-tc321,Turn these rough notes into a professional but concise meeting invitation.,Others,Others,True,pc-tc-final-v2-0320
+P-tc322,Improve the grammar and punctuation of the supplied personal statement while preserving my voice.,Others,Others,True,pc-tc-final-v2-0321
+P-tc323,Create a memorable slogan for a campaign encouraging reusable water bottles.,Others,Others,True,pc-tc-final-v2-0322
+P-tc324,Create a short poem about the first rain after a long summer.,Others,Others,True,pc-tc-final-v2-0323
+P-tc325,"Write an original dramatic monologue of about 180 words spoken by a lighthouse keeper on the evening the lighthouse is automated. The keeper should address an empty coat hanging beside the door as if it were an old colleague. Let pride in the work and relief at leaving both be present, without ending in a moral or explaining the symbolism. Use spoken prose, not verse, and do not describe the scene outside the character's speech.",Others,Others,True,pc-tc-final-v2-0324
+P-tc326,Draft an agenda for a 30-minute project kickoff with designers and researchers.,Others,Others,True,pc-tc-final-v2-0325
+P-tc327,Suggest five names for a community garden that emphasizes local cooperation.,Others,Others,True,pc-tc-final-v2-0326
+P-tc328,Write a two-paragraph fictional scene in which a lost letter is returned after twenty years.,Others,Others,True,pc-tc-final-v2-0327
+P-tc329,Rewrite this sentence to sound clearer and less formal without changing its meaning.,Others,Others,True,pc-tc-final-v2-0328
+P-tc330,Rewrite the supplied product description so it is factual and avoids exaggerated claims.,Others,Others,True,pc-tc-final-v2-0329

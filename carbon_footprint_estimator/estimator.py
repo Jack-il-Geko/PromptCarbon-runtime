@@ -38,10 +38,18 @@ def compare_periods(energy_kwh, embodied_g, periods):
     return dict(periods=rows, recommendation=dict(start=rows[best]["start"], end=rows[best]["end"], runNow=best==0, currentGCO2eApprox=current, bestGCO2eApprox=chosen, reductionGCO2eApprox=current-chosen, reductionPercent=100*(current-chosen)/current if current else 0))
 
 
-def estimate(input_tokens, output_tokens, *, now=None, energy_fn=estimate_energy, forecast_fn=fetch_forecast):
+def estimate(input_tokens, output_tokens, *, now=None, energy_fn=estimate_energy, forecast_fn=fetch_forecast, target_model=None):
     """Preserve energy and embodied estimates when the external forecast fails."""
-    result = energy_fn(input_tokens, output_tokens)
+    result = energy_fn(input_tokens, output_tokens) if target_model is None else energy_fn(input_tokens, output_tokens, target_model=target_model)
     result.update(limitations=list(LIMITATIONS), periods=[], recommendation=None, forecastError=None)
+    if result.get("scenario", {}).get("model") == "gpt-6-sol":
+        result["limitations"][0] = "EcoLogits GPT-6 Sol architecture assumptions; reference H100 infrastructure."
+        result["limitations"][2] = "Latency uses the GPT catalog throughput and time-to-first-token assumptions."
+        result["limitations"] += [
+            "Output length is transferred from a Qwen-trained predictor and is unvalidated for GPT.",
+            "Only visible output is estimated; additional hidden reasoning tokens are not included.",
+            "Displayed values use the midpoint of the EcoLogits architecture range; this is not a statistical confidence interval.",
+        ]
     try:
         result.update(compare_periods(result["energyKWh"], result["embodiedGCO2e"], forecast_fn(now)))
     except ForecastError as exc:

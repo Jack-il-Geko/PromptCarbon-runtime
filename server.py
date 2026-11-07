@@ -10,6 +10,7 @@ from pathlib import Path
 from input_tokenizer.tokenizer import (
     InputTokenizer,
     QWEN_MODEL_ID,
+    GPT_MODEL_ID,
     TokenCountResult,
     TokenizerError,
     load_tokenizer,
@@ -83,7 +84,7 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self) -> None:
         """Process the prompt using the selected PromptCarbon component."""
-        if self.path not in {"/api/tokenize", "/api/classify-task", "/api/output-length", "/api/extract-constraints", "/api/estimate-reasoning-level", "/api/estimate-output-tokens", "/api/estimate-carbon"}:
+        if self.path not in {"/api/refresh-carbon", "/api/tokenize", "/api/classify-task", "/api/output-length", "/api/extract-constraints", "/api/estimate-reasoning-level", "/api/estimate-output-tokens", "/api/estimate-carbon"}:
             self.send_error(404)
             return
 
@@ -97,10 +98,17 @@ class Handler(BaseHTTPRequestHandler):
                 raise ValueError("The request must be a JSON object.")
 
             prompt = payload.get("prompt")
-            if self.path == "/api/estimate-carbon":
+            if self.path == "/api/refresh-carbon":
+                from carbon_footprint_estimator.estimator import estimate
+                target_model = payload.get("targetModel", QWEN_MODEL_ID)
+                if target_model not in {QWEN_MODEL_ID, GPT_MODEL_ID}:
+                    raise ValueError("Unsupported carbon-estimation model.")
+                response = estimate(payload.get("inputTokens"), payload.get("outputTokens"),
+                                    target_model=target_model)
+            elif self.path == "/api/estimate-carbon":
                 from carbon_footprint_estimator.estimator import estimate
                 response = public_output_response(estimate_output_tokens(payload))
-                response["carbonFootprint"] = estimate(response["inputTokens"], response["outputTokens"])
+                response["carbonFootprint"] = estimate(response["inputTokens"], response["outputTokens"], target_model=payload.get("targetModel", QWEN_MODEL_ID))
             elif self.path == "/api/estimate-output-tokens":
                 response = public_output_response(estimate_output_tokens(payload))
             elif self.path == "/api/output-length":
@@ -157,7 +165,7 @@ def get_reasoning_estimator():
 
 
 def get_task_classifier():
-    """Load the definitive BERT-Medium classifier once."""
+    """Load only the definitive BERT-Medium task classifier."""
     global TASK_CLASSIFIER
     if TASK_CLASSIFIER is None:
         with TASK_CLASSIFIER_LOCK:
@@ -168,13 +176,13 @@ def get_task_classifier():
 
 
 def public_output_response(result):
-    """Espone solo le caratteristiche richieste, senza prompt e metadati tecnici."""
+    """Return only the requested features, without prompt or internal metadata."""
     fields = ('inputTokens', 'outputTokens', 'task', 'confidence', 'reasoningLevel', 'lengthConstraint')
     return {field: result[field] for field in fields}
 
 
 def get_output_estimator():
-    """Carica una sola RF verificata; non allena e non carica modelli generativi."""
+    """Load the verified RF once, without training or generative model weights."""
     global OUTPUT_ESTIMATOR
     if OUTPUT_ESTIMATOR is None:
         with OUTPUT_ESTIMATOR_LOCK:
@@ -210,8 +218,9 @@ def automatic_preference(constraints):
 def estimate_output_tokens(payload):
     """Esegue i componenti sullo stesso prompt, evitando risultati del browser obsoleti."""
     from output_token_estimator.random_forest.estimator import QWEN, render_request
-    if payload.get('targetModel', QWEN) != QWEN:
-        raise ValueError('Output estimation is available only for Qwen2.5-3B-Instruct BF16.')
+    target_model = payload.get('targetModel', QWEN)
+    if target_model not in {QWEN, GPT_MODEL_ID}:
+        raise ValueError('Output estimation supports Qwen2.5-3B-Instruct and GPT-6 Sol.')
     if TASK_CLASSIFIER_STRATEGY not in {'bert_medium', 'bert'}:
         raise ValueError('This RF requires the active BERT-Medium Task Classifier.')
     prompt = payload.get('prompt')
@@ -246,7 +255,7 @@ def estimate_output_tokens(payload):
         warnings.append('Automatic constraints are suggestions and may be incorrect, especially on long prompts.')
     else:
         raise ValueError('Choose manual or automatic constraint mode.')
-    input_tokens = InputTokenizer(QWEN).count(request).input_tokens
+    input_tokens = InputTokenizer(target_model).count(request).input_tokens
     classification = get_task_classifier().classify(prompt)
     reasoning = get_reasoning_estimator().estimate(prompt)['reasoningLevel']
     estimator = get_output_estimator()
@@ -260,8 +269,8 @@ def estimate_output_tokens(payload):
     result.update(inputTokens=input_tokens, **build_task_response(classification),
                   taskFamily=classification.task.split(':',1)[0], reasoningLevel=reasoning,
                   lengthConstraint=constraint, constraintSource=source,
-                  targetModel=QWEN, preparedPrompt=request,
-                  estimator=dict(variant=manifest['selected'],usesLengthPreference=manifest['uses_preferences'],usesReasoningLevel=manifest['uses_reasoning'],generationPrecision='BF16',temperature=0),
+                  targetModel=target_model, preparedPrompt=request,
+                  estimator=dict(variant=manifest['selected'],usesLengthPreference=manifest['uses_preferences'],usesReasoningLevel=manifest['uses_reasoning'],generationPrecision='BF16' if target_model == QWEN else 'EcoLogits 16-bit reference',temperature=0 if target_model == QWEN else None),
                   warnings=warnings)
     return result
 

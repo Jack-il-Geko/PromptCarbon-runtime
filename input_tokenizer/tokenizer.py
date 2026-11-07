@@ -14,7 +14,7 @@ from transformers import AutoTokenizer, PreTrainedTokenizerBase
 
 
 QWEN_MODEL_ID = "Qwen/Qwen2.5-3B-Instruct"
-GPT_MODEL_ID = "gpt-5"
+GPT_MODEL_ID = "gpt-6-sol"
 OPENAI_TOKEN_COUNT_URL = "https://api.openai.com/v1/responses/input_tokens"
 FALLBACK_ENCODING = "o200k_base"
 TIKTOKEN_CACHE_DIRECTORY = Path(__file__).resolve().parents[1] / ".venv" / "tiktoken"
@@ -110,7 +110,7 @@ def count_openai_input(prompt: str, model: str) -> int:
     api_key = load_openai_api_key()
     if not api_key:
         raise TokenizerError(
-            "GPT-5 requires OPENAI_API_KEY in the project .env file."
+            "GPT-6 Sol requires OPENAI_API_KEY in the project .env file."
         )
     try:
         response = requests.post(

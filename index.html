@@ -498,7 +498,27 @@
       .model-choice label, .length-fields label { font-size: .84rem; margin-bottom: 8px; }
       input, select { width: 100%; min-height: 44px; border: 1px solid #cfd8d4; border-radius: 8px; padding: 10px 12px; background: #fbfcfb; color: var(--ink); font: inherit; }
       input:focus, select:focus, button:focus-visible, summary:focus-visible { outline: 3px solid rgba(11,122,117,.18); outline-offset: 2px; border-color: var(--accent); }
-      .form-actions { flex-wrap: wrap; }
+      .form-actions { flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+      #carbonButton, #chatgptLink {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 20px;
+        border-radius: 9px;
+        font-family: inherit;
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 1.2;
+      }
+      #carbonButton { background: #087f7b; color: #fff; }
+      #carbonButton:hover { background: #075653; }
+      #chatgptLink { background: #16211f; color: #fff; }
+      #chatgptLink:hover { background: #2d3b38; }
+      @media (max-width: 560px) {
+        .form-actions { gap: 12px; margin-top: 22px; }
+        #carbonButton, #chatgptLink { min-height: 44px; padding: 0 16px; font-size: 15px; }
+      }
       button:disabled { cursor: wait; opacity: .55; }
       .recommendation-stats > div { min-width: 0; }
       .recommendation-stats strong { overflow-wrap: anywhere; }
@@ -565,6 +585,46 @@
       #carbonPanel .cfe-best { color:var(--green-ink); font-weight:800; }
       #carbonPanel .legend span span { border:0; padding:0; min-height:0; }
       #carbonPanel .recommendation-stats strong { overflow-wrap:anywhere; }
+
+      /* Keep the initial recommendation and result table aligned with the reference. */
+      [hidden] { display: none !important; }
+      #waitingPanel .recommendation-stats,
+      #carbonPanel .recommendation-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      #waitingPanel .metric-panel { padding: 28px; }
+      #waitingPanel .recommendation-stats { margin-top: 28px; }
+      #waitingPanel .recommendation-stats > div { min-height: 108px; padding: 18px; }
+      #waitingPanel .recommendation > p { color: var(--muted); font-size: 1.15rem; }
+      #carbonPanel td { padding: 20px 14px; }
+      #carbonPanel td > span { display: inline; }
+      #carbonPanel td > .slot-pill { display: inline-flex; min-width: 96px; margin-right: 14px; }
+      .saving-negative { color: var(--red-ink); font-weight: 900; }
+      @media (max-width: 560px) {
+        #waitingPanel .recommendation-stats,
+        #carbonPanel .recommendation-stats { grid-template-columns: 1fr; }
+        #waitingPanel .metric-panel { padding: 20px; }
+      }
+      .form-actions { flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+      #carbonButton, #chatgptLink {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 20px;
+        border-radius: 9px;
+        font-family: inherit;
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 1.2;
+      }
+      #carbonButton { background: #087f7b; color: #fff; }
+      #carbonButton:hover { background: #075653; }
+      #chatgptLink { background: #16211f; color: #fff; }
+      #chatgptLink:hover { background: #2d3b38; }
+      @media (max-width: 560px) {
+        .form-actions { gap: 12px; margin-top: 22px; }
+        #carbonButton, #chatgptLink { min-height: 44px; padding: 0 16px; font-size: 15px; }
+      }
+      .icon-button { flex-shrink: 0; font-size: 1.6rem; }
 </style>
 </head>
 
@@ -579,13 +639,13 @@
           <div class="prompt-heading">
             <div class="prompt-guidance">
               <label for="userPrompt">Your prompt</label>
-              <p id="promptHelp" class="length-help">Write your prompt in English. Write clear instructions and include all necessary context. If you specify a word limit, make clear that it applies to the whole response. For best results in automatic mode, place it near the beginning or end of the prompt.</p>
+              <p id="promptHelp" class="length-help">Write your prompt in English with clear instructions and context. For automatic detection, place any whole-response word limit near the beginning or end.</p>
             </div>
             <div class="model-choice">
               <label for="targetModel">Target model</label>
               <select id="targetModel">
                 <option value="Qwen/Qwen2.5-3B-Instruct">Qwen2.5-3B-Instruct</option>
-                <option value="gpt-5">GPT-5</option>
+                <option value="gpt-6-sol">GPT-6 Sol</option>
                 <option value="other">Other</option>
               </select>
             </div>
@@ -623,13 +683,25 @@
         </form>
           </div>
           <div class="form-actions">
-            <button id="carbonButton" type="button">Estimate environmental impact</button>
-            <button id="outputButton" class="secondary" type="button">Estimate output tokens</button>
+            <button id="carbonButton" type="button">Update estimate</button>
+            <a id="chatgptLink" class="run-link disabled" target="_blank" rel="noopener noreferrer" aria-disabled="true">Run in ChatGPT</a>
           </div>
         </div>
       </section>
       <section id="carbonPanel" hidden aria-live="polite"></section>
-      <section class="summary-grid" aria-label="Analysis results">
+      <section id="waitingPanel" class="summary-grid" aria-label="Waiting for a prompt">
+        <article class="metric-panel recommendation">
+          <span class="label">Recommendation</span>
+          <strong>Waiting for a prompt</strong>
+          <p>Write a prompt to calculate the best half-hour slot.</p>
+          <div class="recommendation-stats">
+            <div><span>CO₂e reduction</span><strong>-</strong></div>
+            <div><span>CO₂e at the recommended time</span><strong>-</strong></div>
+            <div><span>Compared with now</span><strong>-</strong></div>
+          </div>
+        </article>
+      </section>
+      <section id="analysisResults" class="summary-grid" aria-label="Analysis results" hidden>
         <article class="metric-panel recommendation" id="analysisPanel" aria-busy="false">
           <div class="result-heading">
             <span class="label">Prompt analysis</span>
@@ -651,7 +723,8 @@
       <details id="estimateMethod" class="model-section">
         <summary>How is this estimated?</summary>
         <p class="calculation-note">PromptCarbon analyses your prompt and estimates visible output tokens using Random Forest models. Automatic mode detects word limits with BERT; manual mode uses the limit you enter. Limits are requests, so the actual response may differ.</p>
-        <p class="calculation-note">EcoLogits uses the output-token estimate to calculate energy and allocated hardware emissions for a reference Qwen2.5-3B-Instruct scenario: H100 GPUs, batch size 64 and PUE 1.20. This is not a measurement of your computer.</p>
+        <p class="calculation-note">EcoLogits uses the output-token estimate to calculate energy and allocated hardware emissions for a reference scenario for the selected target model: H100 GPUs, batch size 64 and PUE 1.20. This is not a measurement of your computer.</p>
+        <p class="calculation-note">For GPT, energy uses EcoLogits architecture assumptions. Displayed values use the midpoint of the architecture range. Additional hidden reasoning tokens are outside this estimate.</p>
         <p class="formula">SCI = energy × carbon intensity + allocated hardware emissions</p>
         <p class="calculation-note">SCI represents the estimated footprint of one request. The same energy and hardware emissions are used for all six periods; only the Great Britain electricity forecast changes. Operational CO₂ is treated as CO₂e when combined with hardware emissions.</p>
         <p class="calculation-note">Input-processing energy is not explicitly modelled. Reasoning level is shown for information and does not adjust the energy estimate. Forecasts and model estimates are uncertain; savings are not guaranteed.</p>
@@ -701,12 +774,25 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
   if (!Number.isInteger(output.outputTokens) || output.outputTokens < 0) throw new Error('Invalid output estimate.');
   return output;
 }
-    const outputButton = document.getElementById('outputButton');
+    const chatgptLink = document.getElementById('chatgptLink');
+    let lastEstimate = null;
+    function updateChatLink() {
+      const prompt = document.getElementById('userPrompt').value;
+      const empty = !prompt.trim();
+      chatgptLink.classList.toggle('disabled', empty);
+      chatgptLink.setAttribute('aria-disabled', String(empty));
+      if (empty) chatgptLink.removeAttribute('href');
+      else chatgptLink.href = 'https://chatgpt.com/?q=' + encodeURIComponent(prompt);
+    }
+    document.getElementById('userPrompt').addEventListener('input', updateChatLink);
+    updateChatLink();
     const status = document.getElementById('status');
     const result = document.getElementById('result');
     const timing = document.getElementById('timing');
 
     function clearSummary() {
+      document.getElementById('waitingPanel').hidden = false;
+      document.getElementById('analysisResults').hidden = true;
       document.getElementById("carbonPanel").hidden = true;
       document.getElementById('outputWarnings').hidden = true;
       for (const id of ['inputStat', 'outputStat', 'taskStat', 'reasoningStat', 'lengthStat']) document.getElementById(id).textContent = '—';
@@ -761,6 +847,7 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
 
     function invalidateResults() {
       inputRevision += 1;
+      lastEstimate = null;
       clearSummary();
       result.hidden = true;
       result.textContent = '';
@@ -776,8 +863,10 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
       const run = ++currentRun;
       const isCurrent = () => run === currentRun && revision === inputRevision && snapshot === inputSnapshot();
       document.getElementById('carbonButton').disabled = true;
-      outputButton.disabled = true;
+
       clearSummary();
+      document.getElementById('waitingPanel').hidden = true;
+      document.getElementById('analysisResults').hidden = false;
       result.hidden = true;
       result.textContent = '';
       document.getElementById('analysisPanel').setAttribute('aria-busy', 'true');
@@ -792,6 +881,7 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
         result.textContent = JSON.stringify(Object.fromEntries(Object.entries(output).filter(([key]) => key !== "carbonFootprint")), null, 2);
         result.hidden = false;
         showSummary(output);
+        lastEstimate = output;
         if (output.carbonFootprint) showCarbon(output.carbonFootprint);
         status.dataset.state = 'complete';
         status.textContent = typeof output.taskCategory === 'string'
@@ -807,7 +897,7 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
         if (run !== currentRun) return;
         document.getElementById('analysisPanel').setAttribute('aria-busy', 'false');
         document.getElementById('carbonButton').disabled = false;
-        outputButton.disabled = false;
+
                 }
     }
 
@@ -823,10 +913,6 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
     }
     document.getElementById('constraintMode').addEventListener('change', updateConstraintMode);
     updateConstraintMode();
-    outputButton.addEventListener('click', () => runAction(
-      'Estimating output tokens...', () => estimateOutputTokens(),
-      'No LLM response is generated.'
-    ));
 
     function showCarbon(c) {
       const panel = document.getElementById('carbonPanel');
@@ -852,7 +938,7 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
       for (const [label, value] of [
         ['CO₂e reduction', best ? `${best.reductionPercent.toFixed(2)}%` : 'Unavailable'],
         ['CO₂e at the recommended time', best ? `${number(best.bestGCO2eApprox)} gCO₂e` : 'Unavailable'],
-        ['CO₂e now', best ? `${number(best.currentGCO2eApprox)} gCO₂e` : 'Unavailable']
+        ['Compared with now', best ? `${number(best.currentGCO2eApprox)} gCO₂e` : 'Unavailable']
       ]) {const box=add(stats,'div');add(box,'span',label);add(box,'strong',value);}
       if (best) {
 
@@ -860,21 +946,73 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
         const heading=add(forecast,'div','','section-heading');
         const title=add(heading,'div');add(title,'p','Next 3 hours','kicker');
         add(title,'h2','Estimated SCI by half-hour slot');
+        const refresh = add(heading, 'button', '↻', 'icon-button');
+        refresh.type = 'button';
+        refresh.title = 'Refresh carbon estimates';
+        refresh.setAttribute('aria-label', 'Refresh carbon estimates');
+        refresh.addEventListener('click', async () => {
+          if (!lastEstimate) return;
+          const previous = lastEstimate;
+          const revision = inputRevision;
+          const run = ++currentRun;
+          const snapshot = inputSnapshot();
+          const isCurrent = () => run === currentRun && revision === inputRevision && snapshot === inputSnapshot();
+          const refreshStatus = add(forecast, 'p', 'Updating electricity forecasts...', 'calculation-note');
+          refreshStatus.setAttribute('role', 'status');
+          refresh.disabled = true;
+          document.getElementById('carbonButton').disabled = true;
+          panel.setAttribute('aria-busy', 'true');
+          try {
+            const response = await fetch('/api/refresh-carbon', {
+              method: 'POST', cache: 'no-store', headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify({inputTokens: previous.inputTokens,
+                outputTokens: previous.outputTokens,
+                targetModel: document.getElementById('targetModel').value})
+            });
+            if (!response.headers.get('content-type')?.includes('application/json')) {
+              throw new Error('Restart PromptCarbon from Terminal, then reload this page to enable forecast refresh.');
+            }
+            const carbon = await response.json();
+            if (!response.ok) throw new Error(carbon.error || 'Carbon estimate unavailable.');
+            if (carbon.forecastError) throw new Error(carbon.forecastError);
+            if (!isCurrent()) return;
+            lastEstimate = {...previous, carbonFootprint: carbon};
+            showCarbon(carbon);
+          } catch (error) {
+            if (isCurrent()) refreshStatus.textContent = 'Forecasts could not be updated. The table still shows the previous forecast. ' + error.message;
+          } finally {
+            if (run === currentRun) {
+              refresh.disabled = false;
+              document.getElementById('carbonButton').disabled = false;
+              panel.setAttribute('aria-busy', 'false');
+            }
+          }
+        });
         const legend=add(forecast,'div','','legend');
-        for(const [color,label] of [['green','Lower impact'],['amber','Medium impact'],['red','Higher impact']]) {const item=add(legend,'span');add(item,'i','','dot '+color);add(item,'span',label);}
+        for(const [color,label] of [['green','Greener'],['amber','Medium'],['red','Least green']]) {const item=add(legend,'span');add(item,'i','','dot '+color);add(item,'span',label);}
         const wrap=add(forecast,'div','','table-wrap');
         const table=add(wrap,'table');
         const head=add(add(table,'thead'),'tr');
-        for(const label of ['Time','Carbon intensity','Saving vs now','SCI','Energy']) add(head,'th',label).setAttribute('scope','col');
+        for(const label of ['Time','Carbon intensity','Saving vs now','SCI','Energy consumption']) add(head,'th',label).setAttribute('scope','col');
         const body=add(table,'tbody');
-        for(const period of c.periods) {
-          const sorted=c.periods.map(p=>p.totalGCO2eApprox).sort((a,b)=>a-b);
-          const rank=sorted.indexOf(period.totalGCO2eApprox);
-          const level=rank<2?'green':rank>=4?'red':'medium';
-          const row=add(body,'tr','','slot-'+level);
-          const saving=best.currentGCO2eApprox ? 100*(best.currentGCO2eApprox-period.totalGCO2eApprox)/best.currentGCO2eApprox : 0;
-          const values=[slotTime(period.start, period.end),period.forecast+' gCO₂/kWh',saving.toFixed(2)+'%',number(period.totalGCO2eApprox)+' gCO₂e',number(c.energyWh)+' Wh'];
-          values.forEach((value,i)=>{const cell=add(row,'td');if(i===0){add(cell,'span',period.start===best.start?'Recommended':'Forecast',period.start===best.start?'slot-badge cfe-best':'slot-badge');}add(cell,'span',value);});
+        const sorted = c.periods.map(p => p.totalGCO2eApprox).sort((a, b) => a - b);
+        for (const [index, period] of c.periods.entries()) {
+          const rank = sorted.indexOf(period.totalGCO2eApprox);
+          const level = rank < 2 ? 'green' : rank >= 4 ? 'red' : 'medium';
+          const row = add(body, 'tr', '', 'slot-' + level);
+          const saving = best.currentGCO2eApprox
+            ? 100 * (best.currentGCO2eApprox - period.totalGCO2eApprox) / best.currentGCO2eApprox : 0;
+          add(add(row, 'td'), 'span', slotTime(period.start, period.end));
+          const intensityCell = add(row, 'td');
+          add(intensityCell, 'span', {green: 'Greener', medium: 'Medium', red: 'Least green'}[level], 'slot-pill ' + level);
+          add(intensityCell, 'span', period.forecast + ' gCO₂/kWh');
+          const savingText = index === 0 ? 'Baseline' : saving > 0
+            ? saving.toFixed(1) + '% less' : saving < 0
+            ? Math.abs(saving).toFixed(1) + '% more' : '0.0%';
+          add(row, 'td', savingText, saving > 0 ? 'saving-positive' : saving < 0 ? 'saving-negative' : 'saving-neutral');
+          const isBest = period.start === best.start;
+          add(row, 'td', number(period.totalGCO2eApprox) + ' gCO₂e', isBest ? 'best' : '');
+          add(row, 'td', number(c.energyWh) + ' Wh');
         }
         add(panel, 'p', `Times use your local time (${localZone}). Electricity forecasts refer to Great Britain. Values refer to this request and a reference hardware scenario.`, 'calculation-note');
       }

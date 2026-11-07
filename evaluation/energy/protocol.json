@@ -1,0 +1,29 @@
+{
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "precision": "BF16",
+  "temperature": 0,
+  "seed": 42,
+  "max_tokens": 4096,
+  "repetitions": 3,
+  "promptcarbon_operations_per_block": 50,
+  "qwen_operations_per_block": 1,
+  "power_sampling_ms": 100,
+  "measurement": "powermetrics estimated CPU+GPU+ANE energy, not whole-computer or application-only energy",
+  "idle_subtraction": false,
+  "models_loaded_before_measurement": true,
+  "execution_order": [
+    "promptcarbon",
+    "qwen"
+  ],
+  "same_device": true,
+  "carbon_intensity_gco2_per_kwh": 200,
+  "all_responses_complete": true,
+  "answer_quality_note": "Completion was checked, not answer correctness. The programming response did not satisfy all requested requirements.",
+  "source_directory": "benchmarks/results/direct_execution_20261107_183301",
+  "source_sha256": {
+    "execution_comparison.py": "c9e93343620286dc2815fcfd413de1cdf390e4b9d555c523989ff79cae4ea1e9",
+    "power_comparison.py": "7b330a27eb2457c0d8d3058ac36fe7015b3e6ad87da81fcdd33e929658462136",
+    "energy_comparison.py": "a6628bfff2fd7edf67319828c5e3c8bc0d96df1e12771a03d42d01687340e64e"
+  }
+}
