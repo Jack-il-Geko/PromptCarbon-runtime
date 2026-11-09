@@ -11,6 +11,15 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 
 
+def prepare_env():
+    """Create the optional API-key file without replacing existing settings."""
+    try:
+        with (ROOT / '.env').open('x', encoding='utf-8') as file:
+            file.write('OPENAI_API_KEY=your_key_here\n')
+    except FileExistsError:
+        pass
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--automatic-constraints',action='store_true')
@@ -30,6 +39,7 @@ def main():
     groups=['task','reasoning','tokenizer']+(['constraint'] if args.automatic_constraints else [])
     command='from runtime_assets import ensure_assets; ensure_assets('+repr(tuple(groups))+')'
     subprocess.run([str(python),'-c',command],cwd=ROOT,check=True)
+    prepare_env()
     result=dict(seconds=time.perf_counter()-started,platform=platform.platform(),python=sys.version,automatic_constraints=args.automatic_constraints)
     (ROOT/'.cache').mkdir(exist_ok=True)
     (ROOT/'.cache/install_metrics.json').write_text(json.dumps(result,indent=2))

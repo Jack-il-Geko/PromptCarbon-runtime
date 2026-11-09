@@ -33,7 +33,7 @@ Run `ls`: you should see `install.py`. **Run all the following commands in this 
 python3.12 install.py --automatic-constraints
 ```
 
-Wait for **Installed. Start with:**. This command installs the application; it does not open it. It creates `.venv` and downloads the required Python packages, BERT models and Qwen tokenizer. **No existing cache is needed.** It does not download the full Qwen language model.
+Wait for **Installed. Start with:**. This command installs the application; it does not open it. It creates `.venv` and downloads the required Python packages, BERT models and Qwen tokenizer. It also creates `.env` with a placeholder for the optional OpenAI key; an existing `.env` is kept unchanged. **No existing cache is needed.** It does not download the full Qwen language model.
 
 The `--automatic-constraints` option installs the model for automatic word-limit detection. Manual mode remains available.
 
@@ -66,20 +66,16 @@ Qwen works without an API key. GPT-6-Sol needs your own OpenAI API key and acces
 
 1. Open [OpenAI API keys](https://platform.openai.com/api-keys) and sign in or create an account.
 2. Create a new secret key for your project, give it a name such as `PromptCarbon`, and copy it. Keep it private.
-3. In Terminal, open the extracted PromptCarbon folder, as in step 2 above, and run:
-
-   ```bash
-   nano .env
-   ```
-
-4. Enter the following line, replacing `your_key_here` with the key you copied. If the line already exists, replace its value instead of adding another line.
+3. Open the PromptCarbon folder in VS Code. The installer has already created a file named `.env` beside `run.py`. Open it.
+4. Replace `your_key_here` with the key you copied, keeping `OPENAI_API_KEY=` unchanged, then save the file:
 
    ```text
    OPENAI_API_KEY=your_key_here
    ```
 
-5. Press **Ctrl+O**, then **Enter** to save, and **Ctrl+X** to close the editor. The file must be named exactly `.env`, not `.env.txt`, and must be beside `run.py`. Files starting with a dot are normally hidden in Finder.
-6. Start PromptCarbon with `.venv/bin/python run.py`, select **GPT-6-Sol**, enter your prompt and click **Update estimate**. If the application is already running, try the estimate again; no reinstall is needed.
+5. Start PromptCarbon with `.venv/bin/python run.py`, select **GPT-6-Sol**, enter your prompt and click **Update estimate**. If the application is already running, try the estimate again; no restart is needed.
+
+The installer creates `.env` only if it is missing and never replaces an existing file. For a copy installed before this feature, create `.env` in VS Code beside `run.py` and add the line above. The name must be exactly `.env`, not `.env.txt`. The file is normally hidden in Finder; press **Command+Shift+.** to show hidden files.
 
 PromptCarbon sends the request text to OpenAI only to count input tokens; it does not generate a GPT response. Energy and emissions are estimated using EcoLogits. Do not share the key or upload `.env` to GitHub. See the [official OpenAI setup guide](https://developers.openai.com/api/docs/quickstart).
 
