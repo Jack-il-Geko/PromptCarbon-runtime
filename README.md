@@ -23,7 +23,9 @@ It must show `Python 3.12.x`. If you see `command not found`, install Python 3.1
 
 Click **Code → Download ZIP** on this page and extract the ZIP.
 
-Open Terminal, type `cd` followed by a space, drag the extracted folder into Terminal and press Enter. Run `ls`: you should see `install.py`.
+Open Terminal, type `cd` followed by a space, drag the extracted folder into Terminal and press Enter.
+
+Run `ls`: you should see `install.py`. **Run all the following commands in this folder.**
 
 ## 3. Install — only the first time
 
@@ -31,11 +33,15 @@ Open Terminal, type `cd` followed by a space, drag the extracted folder into Ter
 python3.12 install.py --automatic-constraints
 ```
 
-Wait for **Installed. Start with:**. The installer creates `.venv` and downloads all required packages, BERT models and the Qwen tokenizer. **No existing cache is needed.** It does not download the full Qwen language model.
+Wait for **Installed. Start with:**. This command installs the application; it does not open it. It creates `.venv` and downloads the required Python packages, BERT models and Qwen tokenizer. **No existing cache is needed.** It does not download the full Qwen language model.
+
+The `--automatic-constraints` option installs the model for automatic word-limit detection. Manual mode remains available.
 
 The download is about **630 MB**, excluding Python. One installation without pip cache or preinstalled model assets took **67.54 seconds** on the author's M4; your time depends on the connection and computer. If interrupted, run the same command again.
 
 ## 4. Start and use
+
+After installation, run:
 
 ```bash
 .venv/bin/python run.py
@@ -44,7 +50,7 @@ The download is about **630 MB**, excluding Python. One installation without pip
 The browser opens automatically. If it does not, open the address printed after **PromptCarbon is running at**. Port 5500 is used when free; otherwise another local port is selected.
 
 1. Enter your prompt **in English**.
-2. Select **Qwen2.5-3B-Instruct** or **GPT-6-Sol** as the target model.
+2. Select **Qwen2.5-3B-Instruct** to start without an API key. **GPT-6-Sol** requires the optional setup below.
 3. Choose **Automatic** to detect a word limit with BERT, or **Manual** to enter one or select **No word limit**.
 4. Click **Update estimate** to see the analysis and environmental estimate.
 
@@ -54,6 +60,16 @@ Keep Terminal open. To stop PromptCarbon, press **Ctrl+C** there. Closing the br
 
 **Next time:** open Terminal in the same folder and run only `.venv/bin/python run.py`. Do not install again.
 
+## Optional: use GPT-6-Sol
+
+Qwen works without an API key. To select GPT-6-Sol, you need your own OpenAI API key and access to the model. Create a plain-text file named `.env` in the same folder as `run.py`, containing:
+
+```text
+OPENAI_API_KEY=your_key_here
+```
+
+Replace `your_key_here` with your key. Do not share or commit this file. GPT token counting sends the request text to OpenAI; PromptCarbon does not ask the model to generate a response. An API error is shown if the key or model access is not accepted.
+
 ## Important limits
 
 - **Qwen2.5-3B-Instruct BF16** is the target used to train and evaluate the output-token predictor. The CFE uses a reference H100 scenario, not the measured consumption of your Mac.
@@ -61,7 +77,6 @@ Keep Terminal open. To stop PromptCarbon, press **Ctrl+C** there. Closing the br
 - Times use your browser's local timezone. Electricity forecasts refer to **Great Britain**, regardless of your location. The first slot contains the current time.
 - Automatic constraints can be wrong; use Manual if needed. Reasoning level is displayed but does not change the calculations. Model score is the task classifier's uncalibrated softmax score.
 - The CFE uses EcoLogits 0.11.3, batch size 64, PUE 1.2 and a three-year hardware lifetime. Input-processing energy is not explicitly modelled; operational CO₂ is approximated as CO₂e when combined with hardware emissions. Savings are estimates, not guarantees.
-- Qwen analysis needs no API key. GPT-6-Sol uses OpenAI's input-token counting endpoint without generating a response. It requires your own API key and access to the requested model. Create a local `.env` file in this folder containing `OPENAI_API_KEY=your_key_here`. Never commit or share this file. API errors are reported rather than replaced with a claimed exact local count.
 
 ## Evaluation data
 
