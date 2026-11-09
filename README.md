@@ -93,7 +93,7 @@ Open [evaluation/](evaluation/README.md) and download one of the three workbooks
 - [energy_comparison.xlsx](evaluation/energy_comparison.xlsx): the nine-prompt comparison between PromptCarbon analysis and direct Qwen execution.
 - [ecologits_comparison.xlsx](evaluation/ecologits_comparison.xlsx): original and separately labelled demonstration comparisons with EcoLogits.
 
-The workbooks are optional material for the thesis; the application does not load them. Component and energy data are also available as CSV. The evaluation guide explains reused validation, selected demonstrations and the measurement limits. Training datasets and full Qwen weights are not included.
+Component and energy data are also available as CSV.
 
 ## Problems
 
