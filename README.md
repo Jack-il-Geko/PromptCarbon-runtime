@@ -62,13 +62,28 @@ Keep Terminal open. To stop PromptCarbon, press **Ctrl+C** there. Closing the br
 
 ## Optional: use GPT-6-Sol
 
-Qwen works without an API key. To select GPT-6-Sol, you need your own OpenAI API key and access to the model. Create a plain-text file named `.env` in the same folder as `run.py`, containing:
+Qwen works without an API key. GPT-6-Sol needs your own OpenAI API key and access to the model. A key is created in your OpenAI account; it is not included in the download.
 
-```text
-OPENAI_API_KEY=your_key_here
-```
+1. Open [OpenAI API keys](https://platform.openai.com/api-keys) and sign in or create an account.
+2. Create a new secret key for your project, give it a name such as `PromptCarbon`, and copy it. Keep it private.
+3. In Terminal, open the extracted PromptCarbon folder, as in step 2 above, and run:
 
-Replace `your_key_here` with your key. Do not share or commit this file. GPT token counting sends the request text to OpenAI; PromptCarbon does not ask the model to generate a response. An API error is shown if the key or model access is not accepted.
+   ```bash
+   nano .env
+   ```
+
+4. Enter the following line, replacing `your_key_here` with the key you copied. If the line already exists, replace its value instead of adding another line.
+
+   ```text
+   OPENAI_API_KEY=your_key_here
+   ```
+
+5. Press **Ctrl+O**, then **Enter** to save, and **Ctrl+X** to close the editor. The file must be named exactly `.env`, not `.env.txt`, and must be beside `run.py`. Files starting with a dot are normally hidden in Finder.
+6. Start PromptCarbon with `.venv/bin/python run.py`, select **GPT-6-Sol**, enter your prompt and click **Update estimate**. If the application is already running, try the estimate again; no reinstall is needed.
+
+PromptCarbon sends the request text to OpenAI only to count input tokens; it does not generate a GPT response. Energy and emissions are estimated using EcoLogits. Do not share the key or upload `.env` to GitHub. See the [official OpenAI setup guide](https://developers.openai.com/api/docs/quickstart).
+
+If an API error appears, check the key, its Responses permissions and your account's model access or quota. Creating a key does not by itself grant access to every model. Qwen remains available without this setup.
 
 ## Important limits
 
