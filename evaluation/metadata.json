@@ -1,6 +1,6 @@
 {
-  "export_date": "2026-11-07",
-  "selection": "Complete component evaluation samples, not selected by prediction error. The curated 100-example CFE demonstration workbook is not included.",
+  "export_date": "2026-11-09",
+  "selection": "Component CSVs and workbook contain complete evaluation samples. EcoLogits workbook separately labels original and error-selected demonstration samples. Energy files contain the nine-prompt direct-execution case study.",
   "components": {
     "task_classifier": {
       "split": "test_v2",
@@ -33,12 +33,56 @@
     "output_token_estimator/random_forest/model/model.joblib": "0b9f0d5b118499ed19883f25d1bf8c551d3f5e53551a85131cb64e5045030ff1"
   },
   "exported_files_sha256": {
-    "task_classifier/results.csv": "3fc0e29a340802f4f37772f6767b004780baaa2f218247d753ec034b9dd01a08",
+    "component_results.xlsx": "ae65072e6e10911031ad19133d89f88422cf715320dd3bd4efdc3b56709feae0",
+    "ecologits_comparison.xlsx": "ce15773274938419180a4882b0a0d6cf6b593db4040c7292eea675f9644fef2d",
+    "energy_comparison.xlsx": "c07ede45bbaa95de85abf4c597d187f0b2cf832a8f37163bae57743740a30506",
     "constraint_extractor/results.csv": "dd5cf8be25043d545afc3769a0b690e663710b735f06fc12be031c5ce1c33159",
+    "energy/per_prompt.csv": "b1b5d1f394c6b6038818f0b164854610c178da6cff3ce1f2a1087fcc02ae41ad",
+    "energy/summary.csv": "8fad9719f6dc51692086316ebf1027cb6b6c2569525af7f8c07b79c3fc87c9bf",
+    "energy/runs.csv": "889e18ca7a87f7b9e7ad5e3c9b1ad696fb0d94d4e69052d2d35bc7aa9de3d71e",
+    "energy/prompts.csv": "bf26f376be6934737ecadddec5e09ebfe6f0493cb5efc2956cf2836d682d69b5",
+    "energy/protocol.json": "42744d35b5bb311d74d8935de335266531c79e70658d501b82a05abf6ca0310d",
     "output_tokens/results.csv": "13282b55213c030be5e7e477f9be1dbe6c89e05d6f85ce77d585d27398661a94",
-    "energy/summary.csv": "8025a32e2ce64432e5778e7e19e84f353dec59e9534c39f0d5a6f4b5c4012cc1",
-    "energy/runs.csv": "2f0d817f68cae1596124dfb4d802ba777dd28b671bf956ca231cdcadab6b7e99",
-    "energy/prompts.csv": "dd6d244dad15784a62271bc97499ba3f3bf8281bd9919c05017cda3a84b04473",
-    "energy/protocol.json": "5c9742db085736298e6a96b03e8687086d002976a5daabe64751c2dd3707b698"
+    "task_classifier/results.csv": "3fc0e29a340802f4f37772f6767b004780baaa2f218247d753ec034b9dd01a08"
+  },
+  "workbooks": {
+    "component_results.xlsx": {
+      "sheets": {
+        "Task Classifier": 330,
+        "Constraint Extractor": 200,
+        "Output Token Estimator": 260
+      },
+      "original_workbook_sha256": "0e4795dd8668f6dbc8b64d037845876645756c2d356bef0664336d8a320d6ab4",
+      "publication_note": "Embedded local-folder metadata removed. Cell values, formulas, formatting, row heights and column widths preserved."
+    },
+    "energy_comparison.xlsx": {
+      "prompts": 9,
+      "promptcarbon_blocks": 9,
+      "qwen_blocks": 18,
+      "operations_per_promptcarbon_block": 10,
+      "original_workbook_sha256": "c07ede45bbaa95de85abf4c597d187f0b2cf832a8f37163bae57743740a30506"
+    },
+    "ecologits_comparison.xlsx": {
+      "original": {
+        "n": 100,
+        "energy_mae_wh": 0.009355920293145761,
+        "emissions_mae_gco2e": 0.003164428467613018,
+        "selection": "Selected without using prediction errors; reused development data."
+      },
+      "demonstration": {
+        "n": 100,
+        "energy_mae_wh": 0.004045767040867302,
+        "emissions_mae_gco2e": 0.0013685045371415573,
+        "selection": "Selected after observing output-length errors; demonstration only."
+      },
+      "original_workbook_sha256": "ce15773274938419180a4882b0a0d6cf6b593db4040c7292eea675f9644fef2d"
+    }
+  },
+  "energy": {
+    "prompts": 9,
+    "prompts_per_category": 3,
+    "measurement_blocks": 27,
+    "source_directory": "benchmarks/results/direct_execution9_20261108_173032",
+    "all_qwen_responses_complete": true
   }
 }

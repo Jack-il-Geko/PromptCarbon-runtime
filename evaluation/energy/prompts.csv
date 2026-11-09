@@ -1,7 +1,11 @@
-id,task,prompt
-P-e1,simple,Why does ice float on liquid water? Answer in two short sentences.
-P-e2,programming,"Implement a Python function merge_totals(records) that sums non-negative integer amounts by category. Strip whitespace and lowercase category names. Reject missing fields, empty names, negative amounts and booleans with ValueError. Do not modify the input. Include three executable assertions and return only Python code."
-P-e3,complex,"Prepare a factual briefing for the director of a community transport service.
+id,source_id,category,prompt
+P1,simple_1,simple,Why does ice float on liquid water? Answer in two short sentences.
+P2,simple_2,simple,A metal spoon and a wooden spoon have been left in the same room overnight. Why does the metal spoon feel colder when touched? Answer in two short sentences without using equations.
+P3,simple_3,simple,"What is the difference between a web browser and a search engine? Give a clear explanation for someone who rarely uses computers, in two short sentences."
+P4,programming_1,programming,"Implement a Python function merge_totals(records) that sums non-negative integer amounts by category. Strip whitespace and lowercase category names. Reject missing fields, empty names, negative amounts and booleans with ValueError. Do not modify the input. Include three executable assertions and return only Python code."
+P5,programming_2,programming,"Implement a Python function unique_codes(codes). Accept a list of strings, strip whitespace, convert each code to uppercase and return the distinct codes in their original order. Raise ValueError for a non-list input, a non-string element or a code that becomes empty after stripping. Do not modify the input list and do not sort the result. Include three executable assertions covering duplicates, whitespace and an empty input list. Return only Python code."
+P6,programming_3,programming,"Implement a Python function longest_streak(values, threshold). Given a list of finite real numbers and a finite numeric threshold, return the length of the longest consecutive sequence of values greater than or equal to the threshold. Return zero for an empty list. Reject booleans, non-numeric values, infinity and NaN with ValueError. Do not modify the input. Include three executable assertions covering an empty list, a streak at the end and values exactly equal to the threshold. Return only Python code."
+P7,complex_1,complex,"Prepare a factual briefing for the director of a community transport service.
 Write about 150 words. Separate observed results, uncertain explanations and approved actions. Do not invent recommendations. Return only the briefing.
 
 Report:
@@ -9,3 +13,19 @@ The service tested a shared booking desk for eight weeks. Completed trips increa
 Recorded late departures fell from 38 to 26. However, staff changed the definition of a late departure during week three, so the figures are not directly comparable. Telephone waiting times were measured consistently and fell from a median of six minutes to four minutes.
 Nine passengers requested wheelchair-accessible vehicles. Seven requests were met; the service has not established whether the other two passengers found alternatives. No passenger satisfaction survey was conducted.
 The committee approved a four-week extension, a single definition of lateness and systematic recording of accessibility requests. Purchasing a vehicle and increasing fares were discussed but not approved."
+P8,complex_2,complex,"Prepare a factual briefing for the manager of a public library network.
+Write about 150 words. Distinguish observed results, uncertain explanations and decisions already approved. Preserve limitations in the evidence and do not add recommendations. Return only the briefing.
+
+Report:
+Three branches tested a shared online reservation system for six weeks. Completed reservations increased from 280 in the previous six weeks to 346 during the trial. A school reading campaign started in the second week and two branches received new stock, so the network cannot attribute the increase entirely to the reservation system.
+Staff recorded fewer telephone enquiries about reservation status. However, two branches changed their call-recording procedure during the trial, preventing a reliable numerical comparison with the earlier period. Of 24 surveyed users who needed accessibility support, 19 completed a reservation without assistance and five requested staff help. No comparable survey was conducted before the trial.
+Reported website interruptions fell from nine to four, but monitoring was unavailable for two days. The technical team has not completed an assessment of service availability.
+The committee approved a further four-week trial, a common method for recording enquiries and an accessibility review. Extending the system to school libraries and reducing telephone support were discussed but not approved."
+P9,complex_3,complex,"Prepare a factual briefing for the committee of a bicycle repair cooperative.
+Write about 150 words. Clearly distinguish measured outcomes, possible explanations and approved actions. Do not claim causation where the report does not establish it, and do not invent decisions. Return only the briefing.
+
+Report:
+The cooperative tested an appointment system for routine repairs over seven weeks. Completed routine repairs increased from 196 in the preceding seven weeks to 224 during the trial. One experienced mechanic joined during the trial, while a neighbouring workshop closed temporarily. The cooperative therefore cannot separate the effect of appointments from these other changes.
+The number of customers recorded as waiting more than thirty minutes fell from 41 to 23. The earlier records included customers waiting to collect completed repairs, whereas the trial records counted only customers waiting for an initial assessment. The two totals are not directly comparable.
+Eleven customers missed an appointment. Seven later booked another date; the cooperative does not know why the remaining four did not return. Parts expenditure rose, but the types of repair also changed, and no cost-per-repair analysis has been completed.
+The committee approved a three-week extension, a consistent definition of waiting time and reminder messages for appointments. Hiring another mechanic and introducing cancellation charges were considered but not approved."

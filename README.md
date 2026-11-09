@@ -65,9 +65,13 @@ Keep Terminal open. To stop PromptCarbon, press **Ctrl+C** there. Closing the br
 
 ## Evaluation data
 
-Open [evaluation/](evaluation/README.md) for readable CSV files with prompts, expected or observed results and predictions. The folders are `task_classifier`, `constraint_extractor`, `output_tokens` and `energy`.
+Open [evaluation/](evaluation/README.md) and download one of the three workbooks:
 
-These files are optional evidence for the thesis; the application does not load them. They contain no training dataset or full generative-model checkpoint. The documentation distinguishes test, reused validation and the small local energy case study.
+- [component_results.xlsx](evaluation/component_results.xlsx): expected and predicted results for task classification, word constraints and output tokens.
+- [energy_comparison.xlsx](evaluation/energy_comparison.xlsx): the nine-prompt comparison between PromptCarbon analysis and direct Qwen execution.
+- [ecologits_comparison.xlsx](evaluation/ecologits_comparison.xlsx): original and separately labelled demonstration comparisons with EcoLogits.
+
+The workbooks are optional material for the thesis; the application does not load them. Component and energy data are also available as CSV. The evaluation guide explains reused validation, selected demonstrations and the measurement limits. Training datasets and full Qwen weights are not included.
 
 ## Problems
 

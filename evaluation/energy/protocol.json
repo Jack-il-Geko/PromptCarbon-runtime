@@ -5,11 +5,20 @@
   "temperature": 0,
   "seed": 42,
   "max_tokens": 4096,
-  "repetitions": 3,
-  "promptcarbon_operations_per_block": 50,
+  "prompts": 9,
+  "categories": 3,
+  "prompts_per_category": 3,
+  "repetitions_by_system": {
+    "promptcarbon": 1,
+    "qwen": 2
+  },
+  "promptcarbon_operations_per_block": 10,
   "qwen_operations_per_block": 1,
-  "power_sampling_ms": 100,
-  "measurement": "powermetrics estimated CPU+GPU+ANE energy, not whole-computer or application-only energy",
+  "measurement_blocks": 27,
+  "promptcarbon_analyses": 90,
+  "qwen_responses": 18,
+  "power_sampling_ms": 20,
+  "measurement": "powermetrics estimated CPU+GPU+ANE power integrated over the sampled window",
   "idle_subtraction": false,
   "models_loaded_before_measurement": true,
   "execution_order": [
@@ -18,12 +27,31 @@
   ],
   "same_device": true,
   "carbon_intensity_gco2_per_kwh": 200,
+  "forecast_sequence": [
+    200,
+    150,
+    100,
+    100,
+    180,
+    220
+  ],
   "all_responses_complete": true,
-  "answer_quality_note": "Completion was checked, not answer correctness. The programming response did not satisfy all requested requirements.",
-  "source_directory": "benchmarks/results/direct_execution_20261107_183301",
+  "answer_quality_note": "Natural completion was verified; answer correctness was not scored.",
+  "source_directory": "benchmarks/results/direct_execution9_20261108_173032",
   "source_sha256": {
-    "execution_comparison.py": "c9e93343620286dc2815fcfd413de1cdf390e4b9d555c523989ff79cae4ea1e9",
-    "power_comparison.py": "7b330a27eb2457c0d8d3058ac36fe7015b3e6ad87da81fcdd33e929658462136",
-    "energy_comparison.py": "a6628bfff2fd7edf67319828c5e3c8bc0d96df1e12771a03d42d01687340e64e"
-  }
+    "execution_comparison.py": "98b36fcd39b89937820d60f4f3748d9d6f525e44a372d9989250c1bf1c3f1888",
+    "power_comparison.py": "8b08c8926b3769c77d4f8e337c41163f25f944630fd0b8aef57f374e762b9775",
+    "energy_comparison.py": "a6628bfff2fd7edf67319828c5e3c8bc0d96df1e12771a03d42d01687340e64e",
+    "prompts_9.json": "b50140d05eeb020dfadcf9822cca5ee451a292a09c952a6a05f461e237e22041"
+  },
+  "category_aggregation": "Equal weight per prompt: average Qwen repetitions per prompt first, then average the three prompts in each category.",
+  "sampling_note": "20 ms samples requested for both systems because ten PromptCarbon analyses produce short blocks. Blocks with fewer than ten samples or invalid coverage are rejected.",
+  "limitations": [
+    "Not whole-Mac energy.",
+    "No idle-power subtraction.",
+    "9 prompts are a small case study.",
+    "Different functions: analysis versus response generation.",
+    "The comparison is not an automatic saving when both systems are subsequently used.",
+    "Operational carbon uses fixed reference intensity 200 gCO2/kWh; it is not measured carbon."
+  ]
 }

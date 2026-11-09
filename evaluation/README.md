@@ -1,41 +1,50 @@
-# Evaluation data
+# Evaluation results
 
-Open a folder below, then open its CSV file. Each row contains one prompt and its expected or observed result alongside the model prediction. CSV files use UTF-8 and can also be opened in Excel.
+## Open the Excel files
 
-| Folder | Data | Sample | Result |
-| --- | --- | --- | --- |
-| [task_classifier](task_classifier/results.csv) | Expected and predicted task, with correctness | Complete Test Set v2, 330 prompts | 311 correct, 94.24% accuracy |
-| [constraint_extractor](constraint_extractor/results.csv) | Expected and extracted word constraints, with correctness | Complete historical test, 200 prompts | 190 correct, 95.00% exact match |
-| [output_tokens](output_tokens/results.csv) | Actual Qwen tokens, estimated tokens and absolute error | Complete supported validation sample, 260 prompts | MAE 101.81 tokens |
-| [energy](energy/) | Time and energy of PromptCarbon analysis versus actual Qwen response generation | Three prompts, three blocks per system and prompt | Individual measurements and means |
+| File | Contents |
+| --- | --- |
+| [component_results.xlsx](component_results.xlsx) | Three sheets: Task Classifier (330 prompts), Constraint Extractor (200 prompts), and Output Token Estimator (260 prompts). Each record contains the prompt, expected or observed result, and prediction. |
+| [energy_comparison.xlsx](energy_comparison.xlsx) | Nine prompts, three per category. Includes summary results, all 27 measurement blocks, the protocol and the exact prompts. |
+| [ecologits_comparison.xlsx](ecologits_comparison.xlsx) | Original 100-prompt comparison and a separate 100-prompt demonstration selected after observing errors. Both samples and their Qwen responses are retained and labelled. |
 
-## Reading the component files
+Download an Excel file to open it locally. GitHub does not display workbook sheets directly.
 
-- `id` is the short display ID. `source_id` identifies the original project record.
-- `correct` and `incorrect` are Boolean values. Both successful and unsuccessful predictions are retained.
-- Task Classifier uses the current BERT-Medium implementation, including its narrow opening summary-instruction check.
-- Constraint Extractor compares the current decoder's **word-only** output. JSON `null` means no word-based constraint. Sentence and paragraph constraints are outside this comparison. Lists are compared without depending on their order. These are extraction results, not the server's decision to accept a prediction or ask for manual input.
-- Output Token Estimator uses the actual visible lengths of saved, complete Qwen2.5-3B-Instruct responses. Predictions use the current RF, predicted task and recorded manual word preference. Prompts include the corresponding length instruction when applicable. Minor outer whitespace and line-ending normalization can occur in the workbook/browser export. `source_id` preserves the link to the original record.
+## CSV files
 
-## What these results establish
+The same component and energy records are also provided as CSV for automated analysis. These files are optional evaluation material; the application does not load them.
 
-The component samples are complete and were not selected by prediction error. The revised task test and historical synthetic constraint test had already been used or examined during development. The RF sample is reused validation, not an independent final test. This export adds no training or Qwen generations.
+| Folder | Sample | Result |
+| --- | --- | --- |
+| [task_classifier](task_classifier/results.csv) | Complete revised Test Set v2: 330 prompts | 311 correct, 94.24% accuracy |
+| [constraint_extractor](constraint_extractor/results.csv) | Complete historical synthetic sample: 200 prompts | 190 correct word-only extractions, 95.00% exact match |
+| [output_tokens](output_tokens/results.csv) | Complete supported validation sample: 260 responses | MAE 101.81 tokens in this export |
+| [energy](energy/) | Nine prompts: three simple, three programming and three complex | 9 PromptCarbon blocks of 10 analyses and 18 Qwen responses |
 
-These files do **not** include the separate 100-example CFE demonstration selected for low prediction error. They do not validate environmental estimates against physical inference emissions. Source and exported-file hashes, sample definitions and metrics are in [metadata.json](metadata.json).
+## Interpretation
 
-## Energy files
+Component samples include successful and unsuccessful predictions and were not selected by prediction error. The task test was revised and already used during development. Constraint extraction uses a previously examined synthetic sample. RF results use development validation, not a new independent final test. The export preserves browser-normalized prompt records; the historical RF report retains its original-record MAE of 101.82 tokens.
 
-- [summary.csv](energy/summary.csv): three means for time, estimated energy and the percentage difference.
-- [runs.csv](energy/runs.csv): all 18 measurement blocks, including power, sample coverage and per-operation values.
-- [prompts.csv](energy/prompts.csv): the three exact prompts submitted to both systems.
-- [protocol.json](energy/protocol.json): model settings and measurement scope.
+Constraint results evaluate decoder word constraints, including correct empty results. They do not score the server's decision to request manual input. Reasoning is not an input to either RF or the CFE.
 
-Qwen executes the prompt itself. It is not asked to estimate its impact. PromptCarbon performs its complete analysis and CFE calculation with fixed forecasts. Both use the same Mac, with models already loaded and the systems running separately. Each PromptCarbon block contains 50 analyses; dividing its totals by 50 gives one analysis. Each Qwen block contains one response.
+The EcoLogits workbook keeps two distinct samples. The original sample was selected without prediction-error filtering. The demonstration sample was chosen after inspecting errors and cannot establish general prediction accuracy. Both reuse development records. The reference calculation uses observed visible Qwen output length, while PromptCarbon uses predicted length under the same environmental assumptions. This is not a comparison with measured physical emissions.
 
-`powermetrics` samples estimated CPU + GPU + ANE power approximately every 100 ms. Energy is the sum of power times sample duration, divided by 3600. This is estimated component energy during the sampled window, not whole-Mac or application-only energy. No idle consumption is subtracted. ANE means Apple Neural Engine.
+## Energy records
 
-Operational carbon is calculated using the same fixed reference intensity of 200 gCO2/kWh for both systems. It is not measured carbon and does not include embodied emissions. All nine Qwen responses ended naturally. Completion is not a correctness score: the programming answer did not satisfy every requested requirement. The small case study compares the cost of analysis with the cost of generation; running both adds the analysis cost.
+- [summary.csv](energy/summary.csv): category means, giving equal weight to each of the three prompts.
+- [per_prompt.csv](energy/per_prompt.csv): the nine prompt-level comparisons.
+- [runs.csv](energy/runs.csv): all 27 measurement blocks, including time, power, energy and sample coverage.
+- [prompts.csv](energy/prompts.csv): the nine exact prompts. IDs P1 to P9 match the workbook.
+- [protocol.json](energy/protocol.json): generation settings, sampling and measurement scope.
 
-## Sources and terms
+Qwen executes each original prompt directly. It is not asked to estimate environmental impact. PromptCarbon performs automatic analysis, output prediction and CFE calculations with fixed forecasts. Models were already loaded and warmed up, and the systems ran separately on the same device. Each PromptCarbon block contains ten analyses; block totals are divided by ten. Qwen generates two responses per prompt, which are averaged before calculating category means. All eighteen responses ended naturally; completion does not establish answer correctness.
 
-The project combines authored prompts and material from existing public datasets. The private research repository retains training data, generation records, protocols and source annotations. Original identifiers are preserved here through `source_id`; these files do not grant a new blanket licence to third-party text. Model and software terms are listed in [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md).
+`powermetrics` samples estimated CPU + GPU + ANE (Apple Neural Engine) power at requested intervals of 20 ms. Energy integrates power over recorded sample durations. It is sampled component energy, not whole-computer or application-only electricity. No idle-power subtraction is applied. Short blocks retain sampling-boundary uncertainty.
+
+Operational carbon uses the same fixed reference intensity of 200 gCO2/kWh for both systems and excludes embodied emissions. These are calculated emissions, not direct carbon measurements. Analysis and response generation are different operations; running both adds the analysis cost.
+
+## Sources
+
+The private research repository retains original datasets, source annotations and experimental records, including the earlier three-prompt energy experiment. Source identifiers are retained where available. This publication adds no training or Qwen generations. Published workbooks preserve the reviewed cell values, formulas and formatting. The component workbook omits embedded local-folder metadata. Original workbook hashes, publication hashes and sample scopes are recorded in [metadata.json](metadata.json).
+
+Third-party dataset text retains its original terms. See [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md).
