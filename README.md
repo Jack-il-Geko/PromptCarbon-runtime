@@ -75,11 +75,7 @@ Qwen works without an API key. GPT-6-Sol needs your own OpenAI API key and acces
 
 5. Start PromptCarbon with `.venv/bin/python run.py`, select **GPT-6-Sol**, enter your prompt and click **Update estimate**. If the application is already running, try the estimate again; no restart is needed.
 
-The installer creates `.env` only if it is missing and never replaces an existing file. For a copy installed before this feature, create `.env` in VS Code beside `run.py` and add the line above. The name must be exactly `.env`, not `.env.txt`. The file is normally hidden in Finder; press **Command+Shift+.** to show hidden files.
-
 PromptCarbon sends the request text to OpenAI only to count input tokens; it does not generate a GPT response. Energy and emissions are estimated using EcoLogits. Do not share the key or upload `.env` to GitHub. See the [official OpenAI setup guide](https://developers.openai.com/api/docs/quickstart).
-
-If an API error appears, check the key, its Responses permissions and your account's model access or quota. Creating a key does not by itself grant access to every model. Qwen remains available without this setup.
 
 ## Important limits
 
