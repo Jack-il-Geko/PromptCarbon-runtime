@@ -4,7 +4,7 @@
 
 | File | Contents |
 | --- | --- |
-| [component_results.xlsx](component_results.xlsx) | Historical sheets: Task Classifier (330 prompts), Constraint Extractor (200 prompts), and Output Token Estimator (260 prompts). A fourth sheet adds the new 100-prompt Constraint Extractor evaluation. Each record contains the prompt, expected or observed result, and prediction. |
+| [component_results.xlsx](component_results.xlsx) | Three sheets: Task Classifier (330 prompts), Constraint Extractor (100 prompts), and Output Token Estimator (260 prompts). Each record contains the prompt, expected or observed result, and prediction. |
 | [energy_comparison.xlsx](energy_comparison.xlsx) | Nine prompts, three per category. Includes summary results, all 27 measurement blocks, the protocol and the exact prompts. |
 | [ecologits_comparison.xlsx](ecologits_comparison.xlsx) | Original 100-prompt comparison and a separate 100-prompt demonstration selected after observing errors. Both samples and their Qwen responses are retained and labelled. |
 
@@ -17,14 +17,13 @@ The same component and energy records are also provided as CSV for automated ana
 | Folder | Sample | Result |
 | --- | --- | --- |
 | [task_classifier](task_classifier/results.csv) | Complete revised Test Set v2: 330 prompts | 311 correct, 94.24% accuracy |
-| [constraint_extractor: historical](constraint_extractor/results.csv) | Previously examined synthetic sample: 200 prompts | 190 correct word-only extractions, 95.00% exact match |
-| [constraint_extractor: new](constraint_extractor/README.md) | 100 new synthetic short, clear requests; labels fixed before inference | 97 exact matches; 60/60 with global constraints, 37/40 without. Not a real-user or long-document test. |
+| [constraint_extractor](constraint_extractor/README.md) | 100 synthetic requests: 50 short and 50 long (over 512 BERT content tokens) | 98 exact extractions; 94 automatic results accepted, 93 correct. |
 | [output_tokens](output_tokens/results.csv) | Complete supported validation sample: 260 responses | MAE 101.81 tokens in this export |
 | [energy](energy/) | Nine prompts: three simple, three programming and three complex | 9 PromptCarbon blocks of 10 analyses and 18 Qwen responses |
 
 ## Interpretation
 
-Component samples include successful and unsuccessful predictions and were not selected by prediction error. The task test was revised and already used during development. Constraint extraction uses a previously examined synthetic sample. RF results use development validation, not a new independent final test. The export preserves browser-normalized prompt records; the historical RF report retains its original-record MAE of 101.82 tokens.
+Component samples include successful and unsuccessful predictions and were not selected by prediction error. The task test was revised and already used during development. Constraint extraction uses a revised synthetic sample, including 50 previously evaluated short prompts and 50 long variants of ten reports. It is not independent real-user validation. RF results use development validation, not a new independent final test. The export preserves browser-normalized prompt records; the historical RF report retains its original-record MAE of 101.82 tokens.
 
 Constraint results evaluate decoder word constraints, including correct empty results. They do not score the server's decision to request manual input.
 

@@ -1,0 +1,46 @@
+{
+  "created_utc": "2026-11-16T17:48:32.123316+00:00",
+  "n": 100,
+  "long_definition": "More than 512 BERT content tokens, excluding special tokens",
+  "long": 50,
+  "short": 50,
+  "source_documents": 10,
+  "requests_per_document": 5,
+  "categories": {
+    "irrelevant_numbers": 10,
+    "local_only": 10,
+    "max": 12,
+    "no_constraint": 10,
+    "exact": 12,
+    "approx": 12,
+    "source_numbers": 10,
+    "range": 12,
+    "min": 12
+  },
+  "source": "Assistant-authored synthetic clear requests. 50 short requests retained by category/order, without consulting errors; 50 long variants based on ten new reports.",
+  "independence": "50 short requests were already evaluated. Five long requests share each report. Labels are assistant-authored and wording templates are shared; not independently human-annotated real-user data.",
+  "selection": "The first half of each saved category was retained, irrespective of correctness. Long reports and expected labels fixed before frozen-model inference. No model tuning or prediction-error filtering.",
+  "dataset_sha256": "d8de0f93554c7c3ddfe94f7b7eee94a091e87aaa532a2f3dc3c30aa69f800e1a",
+  "protected_files_sha256": {
+    "analyser/constraint_extractor/automatic/extractor.py": "977d29db30f132451182cc6136edab8582c2624c18f31b9bc710fa6754c35790",
+    "analyser/constraint_extractor/automatic/model/model.safetensors": "a417cc09fc4c29502ec28867bbe60f42b971e751833281ae8eb6c0467026ba09"
+  },
+  "bert_content_tokens": {
+    "min": 16,
+    "max": 685
+  },
+  "exact_training_validation_overlap_count": 0,
+  "length_groups": {
+    "short": {
+      "n": 50,
+      "min_tokens": 16,
+      "max_tokens": 56
+    },
+    "long": {
+      "n": 50,
+      "min_tokens": 646,
+      "max_tokens": 685
+    }
+  },
+  "canonical_dataset_sha256": "5e100538d712b65c8f059f01103edabedb091fc59badc73a4f11c2ce7842baf1"
+}
