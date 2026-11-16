@@ -1,57 +1,194 @@
 {
-  "model": "Qwen/Qwen2.5-3B-Instruct",
-  "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
-  "precision": "BF16",
-  "temperature": 0,
-  "seed": 42,
-  "max_tokens": 4096,
-  "prompts": 9,
-  "categories": 3,
-  "prompts_per_category": 3,
-  "repetitions_by_system": {
-    "promptcarbon": 1,
-    "qwen": 2
+  "status": "measured; inspect summary and exclusions before reporting",
+  "created_utc": "2026-11-16T19:31:22.427100+00:00",
+  "objective": "Energy and time to analyse a request versus generate its answer",
+  "selection": {
+    "source": "evaluation/output_tokens/results.csv",
+    "source_sha256": "13282b55213c030be5e7e477f9be1dbe6c89e05d6f85ce77d585d27398661a94",
+    "pool_size": 260,
+    "selected": 100,
+    "seed": 20261116,
+    "method": "Simple random sample without replacement after sorting by source evaluation ID",
+    "excluded_selection_criteria": [
+      "Prediction error",
+      "Estimated or observed output length",
+      "Measured energy"
+    ],
+    "scope": "Existing 260-request development-validation pool; not representative of all user requests. Related source texts may occur."
   },
-  "promptcarbon_operations_per_block": 10,
-  "qwen_operations_per_block": 1,
-  "measurement_blocks": 27,
-  "promptcarbon_analyses": 90,
-  "qwen_responses": 18,
-  "power_sampling_ms": 20,
-  "measurement": "powermetrics estimated CPU+GPU+ANE power integrated over the sampled window",
-  "idle_subtraction": false,
-  "models_loaded_before_measurement": true,
-  "execution_order": [
-    "promptcarbon",
-    "qwen"
-  ],
-  "same_device": true,
-  "carbon_intensity_gco2_per_kwh": 200,
-  "forecast_sequence": [
-    200,
-    150,
-    100,
-    100,
-    180,
-    220
-  ],
-  "all_responses_complete": true,
-  "answer_quality_note": "Natural completion was verified; answer correctness was not scored.",
-  "source_directory": "benchmarks/results/direct_execution9_20261108_173032",
-  "source_sha256": {
-    "execution_comparison.py": "98b36fcd39b89937820d60f4f3748d9d6f525e44a372d9989250c1bf1c3f1888",
-    "power_comparison.py": "8b08c8926b3769c77d4f8e337c41163f25f944630fd0b8aef57f374e762b9775",
+  "prompt_sha256": "2ad6bdaeb025ee81f63888b880796a9593aca2f6c8cc74a18b6949c1e37feac9",
+  "public_commit": "f647b377847de64b0854a1465113a2628c383fe3",
+  "runtime_sha256": {
+    "analyser/constraint_extractor/automatic/extractor.py": "8a02fe6f5d6c0c2354d5b7f10f83370c976f275a2b6c702691f8c9cbc4f8979f",
+    "analyser/constraint_extractor/automatic/info_model.json": "d21283fafe1eb1fb136acd4d4347171d26f07bb6632a353c3a62f8f0d35bad5f",
+    "analyser/constraint_extractor/manual/length_preference.py": "f592afdd9d33dfa30e98d5fbf7270df35cb1842394b0bdce703a6fcc6b66695b",
+    "analyser/task_classifier/strategia_BERT_Medium/bert_medium.py": "fb0030fdfb42436c567970f43bad0b68731fc8bfd87ea0b6baeed7f8d01aed93",
+    "analyser/task_classifier/strategia_BERT_Medium/info_model.json": "ce8c0335cf699c1d222d43a613491dbbd8e29e667921eb5cb6f3582a94ddff86",
+    "analyser/task_classifier/taxonomy.json": "32c13e01072b0ff043cd10f3f2bc86a82a83836b490d4ad41aef9e9d240fd7d8",
+    "carbon_footprint_estimator/carbon_intensity.py": "d688db608369261afe2728e4c34344fba3a0560ae77a2eed1b082183ca4bf287",
+    "carbon_footprint_estimator/config.py": "1acc7ff63c3b0d6cce0c32e18c86138492ec5bbe09fd583bc7659b09f62a2f2e",
+    "carbon_footprint_estimator/ecologits_adapter.py": "6111859c147a8685ee0bbbb69dd08ce6292799d03947ec37f5218fdee4a3c363",
+    "carbon_footprint_estimator/estimator.py": "f3cdd73294d7387b3c543dc1ed11cbaf0facc397f1904d3bec6695bdcd00a7ed",
+    "input_tokenizer/tokenizer.py": "6e5226aef801f8ce9ffa3e21a246e519c56f035ea2710f4fd570c268f524ba0a",
+    "output_token_estimator/random_forest/estimator.py": "86f1d326a4b5af8179392351884062d093dd54c55546de832d9f6d410d06bc48",
+    "output_token_estimator/random_forest/info_model.json": "d1bac19ce87e496c6f51f9f71f4b33ee2f062596cd06ec4b558af43054f71b2b",
+    "output_token_estimator/random_forest/model/model.joblib": "0b9f0d5b118499ed19883f25d1bf8c551d3f5e53551a85131cb64e5045030ff1",
+    "output_token_estimator/random_forest/output_format_features.py": "d45094a5489fb407084b99fe582e8d1ddee5d2a0d84850a3d6c1bbfb6f8cd902",
+    "output_token_estimator/random_forest/request_features.py": "36a13b41b62dd3ccb5962928900c657654ff7d28acff5e95c5c72f13a3c77d02",
+    "output_token_estimator/random_forest/volume_features.py": "b8b738975002121ed303188c2d25eeca20e65d708118a62ec422d3f1e21de363",
+    "runtime_assets.py": "67a4af45a52bef8d58650425a824916e229ff078278b04209463f3630aad8bdc",
+    "server.py": "418e0f27ffae6e8d5aa72e3e795b47134b57b0ed8bda1cea26491c92e903c8be"
+  },
+  "linked_model_sha256": {
+    "analyser/task_classifier/strategia_BERT_Medium/model": {
+      "model.safetensors": "9d66f7e55431840a1ce9179bd0a5357f4de68caa4cbd7320883753b0ff78c67a",
+      "tokenizer_config.json": "e711904cac23112776b678356ccf702cf934babaa01125f698ac43bf9ad38e73",
+      "special_tokens_map.json": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+      "config.json": "13074c26656693ba32a903ecbedce26525d2da6ca02e4bfd959250b0599c8962",
+      "tokenizer.json": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+      "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+    },
+    "analyser/constraint_extractor/automatic/model": {
+      "model.safetensors": "a417cc09fc4c29502ec28867bbe60f42b971e751833281ae8eb6c0467026ba09",
+      "tokenizer_config.json": "e711904cac23112776b678356ccf702cf934babaa01125f698ac43bf9ad38e73",
+      "special_tokens_map.json": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+      "config.json": "caee8ca7b2ee3f876a4a48b939f4b836de05c158ea4620a7a244ea593b756ae8",
+      "tokenizer.json": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+      "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+    }
+  },
+  "benchmark_sha256": "3a4ff91cf0c2787c17722726bab217084dee4e1388bd3b1a9a379a4642cfa71e",
+  "promptcarbon": {
+    "blocks_per_prompt": 1,
+    "analyses_per_block": 3,
+    "total_analyses": 300,
+    "reasoning_included": false,
+    "mode": "automatic",
+    "forecasts": "fixed fixture; no network"
+  },
+  "qwen": {
+    "responses_per_prompt": 2,
+    "total_responses": 200,
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "precision": "original BF16",
+    "temperature": 0,
+    "seed": 42,
+    "max_generated_tokens": 4096,
+    "instruction": "Execute the exact original prompt with the official chat template; do not estimate environmental impact"
+  },
+  "measurement": {
+    "sampling_ms": 10,
+    "minimum_samples": 3,
+    "baseline_seconds": 30,
+    "idle": "30-second resting baseline before and after each system, with its models resident; arithmetic mean of their mean powers",
+    "gross": "Integral of powermetrics CPU+GPU+ANE samples, divided by operations",
+    "net": "Gross block Wh minus idle watts times measured block seconds / 3600; negative values are retained",
+    "limits": [
+      "Estimated component energy, not whole-computer or wall-socket energy.",
+      "Three-analysis blocks are short; sampling boundary uncertainty is recorded and invalid windows are excluded, not automatically repeated.",
+      "Two Qwen generations per prompt; fixed system order PromptCarbon then Qwen.",
+      "Idle subtraction does not isolate every background activity.",
+      "Analysis and response generation perform different functions.",
+      "Energy comparison does not validate the environmental estimates.",
+      "If both operations are performed, analysis adds energy rather than saving it."
+    ]
+  },
+  "reference_carbon_intensity_gco2_kwh": 200,
+  "environment": {
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "machine": "arm64"
+  },
+  "helper_sha256": {
     "energy_comparison.py": "a6628bfff2fd7edf67319828c5e3c8bc0d96df1e12771a03d42d01687340e64e",
-    "prompts_9.json": "b50140d05eeb020dfadcf9822cca5ee451a292a09c952a6a05f461e237e22041"
+    "power_comparison.py": "8b08c8926b3769c77d4f8e337c41163f25f944630fd0b8aef57f374e762b9775"
   },
-  "category_aggregation": "Equal weight per prompt: average Qwen repetitions per prompt first, then average the three prompts in each category.",
-  "sampling_note": "20 ms samples requested for both systems because ten PromptCarbon analyses produce short blocks. Blocks with fewer than ten samples or invalid coverage are rejected.",
-  "limitations": [
-    "Not whole-Mac energy.",
-    "No idle-power subtraction.",
-    "9 prompts are a small case study.",
-    "Different functions: analysis versus response generation.",
-    "The comparison is not an automatic saving when both systems are subsequently used.",
-    "Operational carbon uses fixed reference intensity 200 gCO2/kWh; it is not measured carbon."
-  ]
+  "manual_handling": "confirmed_fallback",
+  "confirmations_sha256": "ec0d459c72d26df0fa1ca597dff91c0588717b989fc9beed01224737bc2530b5",
+  "confirmation_protocol": {
+    "prompts": 16,
+    "maximum_word_preferences": 7,
+    "no_word_preference": 9,
+    "initial_automatic_attempts": 300,
+    "additional_manual_recalculations": 48,
+    "instructions": "For each affected workflow, time the failed automatic attempt and the subsequent manually configured recalculation together. The human time for reading/clicking is excluded.",
+    "matching": "Qwen receives exactly the final request prepared by the application. For seven maximum-word preferences, manual mode repeats the existing word instruction as the application normally does. Other requests remain unchanged.",
+    "labels": "Reviewed from request instructions before measuring; never chosen using prediction errors or energy results.",
+    "original_automatic_preflight_sha256": "9a3836dc9f05b781b04975fcdd07cad035524398cc4ab6de4b6038d89149d2c5"
+  },
+  "completed_utc": "2026-11-16T21:10:20.988716+00:00",
+  "executed_benchmark_sha256": "517fa2ffc67ad9d8fb4790849b1ca2c643c280895eb1381bb417a2250eb8831e",
+  "post_run_cleanup_fix": "Only cleanup of sudo keep-alive is changed after measurement. The exact executed source is retained in powermetrics_logs.zip; measurement and summary algorithms are unchanged.",
+  "raw_archive_sha256": "e74bb25962295c2237d87c0c01477b8c724360989ad8296480ad52f329dcb095",
+  "active_benchmark_path": "benchmarks/execution_comparison.py",
+  "executed_benchmark_path": "benchmarks/energy_100.py (exact executed source retained in the raw archive)",
+  "prompts": 100,
+  "valid_pairs": 94,
+  "invalid_measurement_pairs": 6,
+  "excluded_ids": [
+    "P-en2",
+    "P-en13",
+    "P-en26",
+    "P-en27",
+    "P-en40",
+    "P-en59"
+  ],
+  "measurement_blocks": 300,
+  "promptcarbon_analyses": 300,
+  "qwen_responses": 200,
+  "additional_manual_recalculations": 48,
+  "idle_subtraction": true,
+  "all_responses_complete": true,
+  "source_directory": "benchmarks/results/energy_100_20261116",
+  "energy_basis": "Idle-corrected energy in summary and workbook; gross observations also retained in CSV.",
+  "results_summary": {
+    "total_prompts": 100,
+    "complete_valid_pairs": 94,
+    "manual_confirmation": 0,
+    "completed_with_manual_fallback": 16,
+    "invalid_measurement_pairs": 6,
+    "incomplete_qwen_pairs": 0,
+    "baseline_power_w": {
+      "promptcarbon": 0.3194556285624013,
+      "qwen": 0.35706515188506543
+    },
+    "weighting": "Equal weight per prompt; Qwen repetitions averaged first",
+    "limitations": [
+      "Estimated component energy, not whole-computer or wall-socket energy.",
+      "Three-analysis blocks are short; sampling boundary uncertainty is recorded and invalid windows are excluded, not automatically repeated.",
+      "Two Qwen generations per prompt; fixed system order PromptCarbon then Qwen.",
+      "Idle subtraction does not isolate every background activity.",
+      "Analysis and response generation perform different functions.",
+      "Energy comparison does not validate the environmental estimates.",
+      "If both operations are performed, analysis adds energy rather than saving it."
+    ],
+    "mean_promptcarbon_seconds": 0.14253196276950666,
+    "mean_qwen_seconds": 25.706248416420205,
+    "mean_promptcarbon_gross_wh": 0.0003440713100472813,
+    "mean_qwen_gross_wh": 0.033469990501950354,
+    "mean_promptcarbon_idle_corrected_wh": 0.00033142335511484645,
+    "mean_qwen_idle_corrected_wh": 0.03092032230883805,
+    "lower_energy_percent_gross_wh": 98.97200057458268,
+    "lower_energy_percent_idle_corrected_wh": 98.92813745017102,
+    "by_workflow": {
+      "automatic": {
+        "prompts": 78,
+        "mean_promptcarbon_seconds": 0.12936105894872385,
+        "mean_promptcarbon_gross_wh": 0.0003097507055674264,
+        "mean_promptcarbon_idle_corrected_wh": 0.00029827150601243683,
+        "mean_qwen_seconds": 24.70115345537817,
+        "mean_qwen_gross_wh": 0.030062803968625356,
+        "mean_qwen_idle_corrected_wh": 0.02761282588243621
+      },
+      "automatic_then_manual": {
+        "prompts": 16,
+        "mean_promptcarbon_seconds": 0.2067401188958229,
+        "mean_promptcarbon_gross_wh": 0.0005113842568865741,
+        "mean_promptcarbon_idle_corrected_wh": 0.0004930386194890934,
+        "mean_qwen_seconds": 30.606086351500153,
+        "mean_qwen_gross_wh": 0.050080024851909724,
+        "mean_qwen_idle_corrected_wh": 0.04704436738754699
+      }
+    }
+  },
+  "post_measurement_error": "A permission error occurred only while stopping the sudo keep-alive process, after all observations and summaries were saved; the measurement audit reconstructed all 300 gross energies from their raw logs."
 }
