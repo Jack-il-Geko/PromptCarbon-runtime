@@ -1,25 +1,25 @@
 {
-  "created_utc": "2026-11-16T17:48:32.123316+00:00",
-  "n": 100,
+  "created_utc": "2026-11-16T18:00:55.830436+00:00",
+  "n": 200,
   "long_definition": "More than 512 BERT content tokens, excluding special tokens",
-  "long": 50,
-  "short": 50,
-  "source_documents": 10,
-  "requests_per_document": 5,
+  "long": 130,
+  "short": 70,
+  "source_documents": 20,
+  "requests_per_document": "Ten reports with five requests each, ten additional reports with eight requests each.",
   "categories": {
-    "irrelevant_numbers": 10,
-    "local_only": 10,
-    "max": 12,
-    "no_constraint": 10,
-    "exact": 12,
-    "approx": 12,
-    "source_numbers": 10,
-    "range": 12,
-    "min": 12
+    "irrelevant_numbers": 20,
+    "local_only": 20,
+    "max": 24,
+    "no_constraint": 20,
+    "exact": 24,
+    "approx": 24,
+    "source_numbers": 20,
+    "range": 24,
+    "min": 24
   },
-  "source": "Assistant-authored synthetic clear requests. 50 short requests retained by category/order, without consulting errors; 50 long variants based on ten new reports.",
-  "independence": "50 short requests were already evaluated. Five long requests share each report. Labels are assistant-authored and wording templates are shared; not independently human-annotated real-user data.",
-  "selection": "The first half of each saved category was retained, irrespective of correctness. Long reports and expected labels fixed before frozen-model inference. No model tuning or prediction-error filtering.",
+  "source": "Retained 100 requests unchanged plus 100 additions, 80 long and 20 short.",
+  "independence": "Assistant-authored synthetic data; fifty short requests were examined in the preceding initial evaluation. Report structures and instruction templates are shared. Long requests share twenty reports. Not an independent real-user sample.",
+  "selection": "All earlier 100 retained, regardless of correctness. All additional prompts and labels saved before inference; no post-result filtering or edits.",
   "dataset_sha256": "d8de0f93554c7c3ddfe94f7b7eee94a091e87aaa532a2f3dc3c30aa69f800e1a",
   "protected_files_sha256": {
     "analyser/constraint_extractor/automatic/extractor.py": "977d29db30f132451182cc6136edab8582c2624c18f31b9bc710fa6754c35790",
@@ -32,15 +32,39 @@
   "exact_training_validation_overlap_count": 0,
   "length_groups": {
     "short": {
-      "n": 50,
+      "n": 70,
       "min_tokens": 16,
       "max_tokens": 56
     },
     "long": {
-      "n": 50,
-      "min_tokens": 646,
+      "n": 130,
+      "min_tokens": 637,
       "max_tokens": 685
     }
   },
-  "canonical_dataset_sha256": "5e100538d712b65c8f059f01103edabedb091fc59badc73a4f11c2ce7842baf1"
+  "canonical_dataset_sha256": "4da037ab18d08f8a97b6efe9a3e26b28cd81dbdd395f4306e20dec0721580f90",
+  "addition_protocol": {
+    "created_utc": "2026-11-16T18:00:02.696118+00:00",
+    "n": 100,
+    "long": 80,
+    "short": 20,
+    "categories": {
+      "range": 12,
+      "source_numbers": 10,
+      "max": 12,
+      "local_only": 10,
+      "approx": 12,
+      "no_constraint": 10,
+      "min": 12,
+      "exact": 12,
+      "irrelevant_numbers": 10
+    },
+    "dataset_sha256": "3b572d04bffc85465463d211a0c799a010185a59661b962fe8c24805ecc7996b",
+    "protected_files_sha256": {
+      "analyser/constraint_extractor/automatic/extractor.py": "977d29db30f132451182cc6136edab8582c2624c18f31b9bc710fa6754c35790",
+      "analyser/constraint_extractor/automatic/model/model.safetensors": "a417cc09fc4c29502ec28867bbe60f42b971e751833281ae8eb6c0467026ba09"
+    },
+    "selection": "All 100 additions frozen before inference; no filtering by predictions. 80 long requests share ten new source reports (eight requests per report); twenty new short requests. Source-report structures and instruction templates are shared.",
+    "independence": "Synthetic assistant-authored data; related variants, not 100 independent real-user requests."
+  }
 }

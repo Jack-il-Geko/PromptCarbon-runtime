@@ -1,31 +1,31 @@
 # Constraint Extractor: current evaluation
 
-Date: 16 November 2026. One hundred synthetic clear English requests, evaluated with the frozen BERT-Medium checkpoint and decoder. No training or decoder modifications. This sample replaces the previous published evaluations; previous files remain in Git history.
+200 synthetic English requests, evaluated using the frozen model and decoder. No training or decoder changes. This replaces the previous current evaluation in the same files; prior versions remain in Git history.
 
-## Dataset
+## Sample
 
-50 short requests and 50 long requests. Long means more than 512 BERT content tokens, excluding special tokens. The long requests contain source reports and require multiple encoder windows. Ten source reports each support five requests, so the 50 long prompts are not 50 independent source documents. The 50 short requests were retained by saved category/order without consulting their prediction errors; they had already been evaluated. Long reports and labels were fixed before inference.
+70 short requests and 130 long requests. Long means over 512 BERT content tokens, excluding special tokens. The earlier 100 requests are unchanged; 100 additional requests were frozen before inference (80 long, 20 short). No examples were filtered or rewritten after inspecting predictions. The additions contain 60 global word requirements, 12 for each maximum/minimum/exact/approximate/range type, plus 40 without a global word requirement.
 
-60 prompts contain global word requirements: 12 maximum, 12 minimum, 12 exact, 12 approximate and 12 ranges. The other 40 have no global word constraint: 10 ordinary requests, 10 irrelevant numerical facts, 10 local-only requirements, and 10 source-number cases. There are no exact normalized prompt matches with the component's training or development-validation datasets. This exact-text audit does not rule out semantic similarity.
+The long requests use twenty source reports: ten reports with five requests and ten with eight requests. Report structure and instruction templates are shared. Some short requests were already examined. This is an assistant-authored synthetic sample, not independently annotated real-user data or 200 independent source documents.
 
 ## Results
 
 | Group | Correct exact extractions | Accuracy |
 | --- | ---: | ---: |
-| All prompts | 98/100 | 98.00% |
-| Short prompts | 49/50 | 98.00% |
-| Long prompts | 49/50 | 98.00% |
-| Global word constraint present | 59/60 | 98.33% |
-| No global word constraint | 39/40 | 97.50% |
+| Overall | 157/200 | 78.50% |
+| Short | 68/70 | 97.14% |
+| Long | 89/130 | 68.46% |
+| Earlier 100 retained | 98/100 | 98.00% |
+| Additional 100 | 59/100 | 59.00% |
 
-Individual-constraint precision: 97.30%; recall: 100.00%; F1: 98.63%. Two false constraints across two prompts; no expected global word constraint was missed. Exact comparison ignores the order of constraints, but requires matching type, value and unit.
+Individual-constraint precision: 97.03%; recall: 68.06%; F1: 80.00%. There were 98 correctly extracted constraints, three false constraints and 46 missing expected constraints. The added long requests expose failures to detect explicitly stated global word constraints. These errors must not be omitted or interpreted as evidence that the requests lacked constraints. The earlier 98% did not generalise to these additional formulations.
 
-## Application decisions
+## Automatic application behaviour
 
-Automatic results were accepted for 94/100 requests. Of those, 93 were correct (98.94% accepted accuracy). Six requests required manual input and are not counted as automatically successful. Thus the application returned a correct automatic result for 93/100 requests. For long requests, 44/50 were accepted automatically and all 44 were correct; six required manual input. Raw extraction accuracy and automatic coverage measure different things.
+188 results were accepted automatically; 146 were correct (77.66% accuracy among accepted results). Twelve requests required manual input. Correct automatic results cover 146/200 requests (73.00%). Long requests: 119 accepted, of which 79 correct; eleven require manual input. Short requests: 69 accepted, of which 67 correct; one requires manual input. Abstentions are not successful automatic answers, and the fallback does not catch every extraction error.
 
-## Scope
+## Files
 
-The prompts and labels were authored by an assistant, not independently annotated by real users. They have clear instructions, regular wording and shared templates. The short half was already examined. Multiple long prompts share source material and common report structure. The result is a controlled evaluation on the specified sample, not an independent estimate for arbitrary real users. The higher score does not prove the model improved: its weights and decoder are unchanged.
+`results.csv` contains every prompt, expected and extracted constraints, correctness and automatic/manual decisions. `metrics.json` contains counts; `protocol.json` records frozen selection, source relationships, code and model hashes. The existing `Constraint Extractor` sheet in `../component_results.xlsx` contains the same 200 requests. No additional workbook or worksheet is created. Prompt line breaks are compacted in the spreadsheet for readability; CSV and private source records preserve the input text.
 
-`results.csv` contains all prompts, expected constraints, predictions and automatic/manual decisions. `metrics.json` contains aggregate counts; `protocol.json` records selection, hashes and length scope. `../component_results.xlsx` has one `Constraint Extractor` sheet for the same 100 prompts. Superseded results are available in Git history rather than additional current files.
+The dataset remains synthetic and templated. The score describes the specified sample only. The code and model have not been tuned to the observed failures. Earlier evaluations are available in Git history.
