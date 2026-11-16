@@ -25,7 +25,7 @@ The same component and energy records are also provided as CSV for automated ana
 
 Component samples include successful and unsuccessful predictions and were not selected by prediction error. The task test was revised and already used during development. Constraint extraction uses a previously examined synthetic sample. RF results use development validation, not a new independent final test. The export preserves browser-normalized prompt records; the historical RF report retains its original-record MAE of 101.82 tokens.
 
-Constraint results evaluate decoder word constraints, including correct empty results. They do not score the server's decision to request manual input. Reasoning is not an input to either RF or the CFE.
+Constraint results evaluate decoder word constraints, including correct empty results. They do not score the server's decision to request manual input.
 
 The EcoLogits workbook keeps two distinct samples. The original sample was selected without prediction-error filtering. The demonstration sample was chosen after inspecting errors and cannot establish general prediction accuracy. Both reuse development records. The reference calculation uses observed visible Qwen output length, while PromptCarbon uses predicted length under the same environmental assumptions. This is not a comparison with measured physical emissions.
 
@@ -48,3 +48,5 @@ Operational carbon uses the same fixed reference intensity of 200 gCO2/kWh for b
 The private research repository retains original datasets, source annotations and experimental records, including the earlier three-prompt energy experiment. Source identifiers are retained where available. This publication adds no training or Qwen generations. Published workbooks preserve the reviewed cell values, formulas and formatting. The component workbook omits embedded local-folder metadata. Original workbook hashes, publication hashes and sample scopes are recorded in [metadata.json](metadata.json).
 
 Third-party dataset text retains its original terms. See [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md).
+
+The energy measurements describe the historical application version, which also calculated a descriptive reasoning label. The current public application omits that component; its execution time and energy have not been remeasured. Saved experimental results are unchanged.

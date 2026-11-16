@@ -26,8 +26,6 @@ TASK_CLASSIFIER = None
 TASK_CLASSIFIER_LOCK = threading.Lock()
 CONSTRAINT_EXTRACTOR = None
 CONSTRAINT_EXTRACTOR_LOCK = threading.Lock()
-REASONING_ESTIMATOR = None
-REASONING_ESTIMATOR_LOCK = threading.Lock()
 OUTPUT_ESTIMATOR = None
 OUTPUT_ESTIMATOR_LOCK = threading.Lock()
 TASK_CLASSIFIER_STRATEGY = "bert_medium"
@@ -84,7 +82,7 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self) -> None:
         """Process the prompt using the selected PromptCarbon component."""
-        if self.path not in {"/api/refresh-carbon", "/api/tokenize", "/api/classify-task", "/api/output-length", "/api/extract-constraints", "/api/estimate-reasoning-level", "/api/estimate-output-tokens", "/api/estimate-carbon"}:
+        if self.path not in {"/api/refresh-carbon", "/api/tokenize", "/api/classify-task", "/api/output-length", "/api/extract-constraints", "/api/estimate-output-tokens", "/api/estimate-carbon"}:
             self.send_error(404)
             return
 
@@ -119,8 +117,6 @@ class Handler(BaseHTTPRequestHandler):
                 response = {"lengthConstraint": word_constraints(
                     get_constraint_extractor().extract(prompt)["lengthConstraint"]
                 )}
-            elif self.path == "/api/estimate-reasoning-level":
-                response = get_reasoning_estimator().estimate(prompt)
             elif self.path == "/api/tokenize":
                 target_model = payload.get("targetModel", QWEN_MODEL_ID)
                 response = build_response(InputTokenizer(target_model).count(prompt))
@@ -153,17 +149,6 @@ def get_constraint_extractor():
     return CONSTRAINT_EXTRACTOR
 
 
-def get_reasoning_estimator():
-    """Load the selected, separate Reasoning Level BERT once, on first request."""
-    global REASONING_ESTIMATOR
-    if REASONING_ESTIMATOR is None:
-        with REASONING_ESTIMATOR_LOCK:
-            if REASONING_ESTIMATOR is None:
-                from analyser.reasoning_level_estimator.bert_medium.estimator import ReasoningLevelEstimator
-                REASONING_ESTIMATOR = ReasoningLevelEstimator()
-    return REASONING_ESTIMATOR
-
-
 def get_task_classifier():
     """Load only the definitive BERT-Medium task classifier."""
     global TASK_CLASSIFIER
@@ -177,7 +162,7 @@ def get_task_classifier():
 
 def public_output_response(result):
     """Return only the requested features, without prompt or internal metadata."""
-    fields = ('inputTokens', 'outputTokens', 'task', 'confidence', 'reasoningLevel', 'lengthConstraint')
+    fields = ('inputTokens', 'outputTokens', 'task', 'confidence', 'lengthConstraint')
     return {field: result[field] for field in fields}
 
 
@@ -257,20 +242,17 @@ def estimate_output_tokens(payload):
         raise ValueError('Choose manual or automatic constraint mode.')
     input_tokens = InputTokenizer(target_model).count(request).input_tokens
     classification = get_task_classifier().classify(prompt)
-    reasoning = get_reasoning_estimator().estimate(prompt)['reasoningLevel']
     estimator = get_output_estimator()
-    result = estimator.predict(input_tokens, classification.task, reasoning, preference, prompt=prompt)
+    result = estimator.predict(input_tokens, classification.task, preference, prompt=prompt)
     manifest = estimator.manifest
     if preference and not manifest['uses_preferences']:
         warnings.append('This RF does not use length preferences directly; their instruction is included in the request token count.')
-    if not manifest['uses_reasoning']:
-        warnings.append('Reasoning level is reported for downstream use but is not a feature of this RF.')
     warnings.append('Experimental estimate of visible output tokens; not a guarantee or an emissions measurement. Current RF evaluated on reused development data; no independent final confirmation of this version; automatic constraints are not independently validated end-to-end.')
     result.update(inputTokens=input_tokens, **build_task_response(classification),
-                  taskFamily=classification.task.split(':',1)[0], reasoningLevel=reasoning,
+                  taskFamily=classification.task.split(':',1)[0],
                   lengthConstraint=constraint, constraintSource=source,
                   targetModel=target_model, preparedPrompt=request,
-                  estimator=dict(variant=manifest['selected'],usesLengthPreference=manifest['uses_preferences'],usesReasoningLevel=manifest['uses_reasoning'],generationPrecision='BF16' if target_model == QWEN else 'EcoLogits 16-bit reference',temperature=0 if target_model == QWEN else None),
+                  estimator=dict(variant=manifest['selected'],usesLengthPreference=manifest['uses_preferences'],generationPrecision='BF16' if target_model == QWEN else 'EcoLogits 16-bit reference',temperature=0 if target_model == QWEN else None),
                   warnings=warnings)
     return result
 

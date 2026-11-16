@@ -36,7 +36,7 @@ def main():
     version=subprocess.check_output([str(python),'-c','import sys; print(str(sys.version_info.major)+"."+str(sys.version_info.minor))'],text=True).strip()
     if version!='3.12':parser.error('Existing .venv uses Python '+version+'. Use the clean runtime export; the research environment will not be modified.')
     subprocess.run([str(python),'-m','pip','install','-r',str(ROOT/'requirements.txt')],check=True)
-    groups=['task','reasoning','tokenizer']+(['constraint'] if args.automatic_constraints else [])
+    groups=['task','tokenizer']+(['constraint'] if args.automatic_constraints else [])
     command='from runtime_assets import ensure_assets; ensure_assets('+repr(tuple(groups))+')'
     subprocess.run([str(python),'-c',command],cwd=ROOT,check=True)
     prepare_env()

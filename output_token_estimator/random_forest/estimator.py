@@ -1,7 +1,6 @@
 """Estimate visible output tokens for Qwen using the saved Random Forest.
 
 Use input tokens, predicted task, length preferences and simple prompt features.
-Reasoning is reported by the server but is not a feature of either forest.
 Unit-based estimates describe expected visible tokens, not guaranteed compliance.
 """
 
@@ -61,8 +60,8 @@ def render_request(prompt, preference):
     )
 
 
-def feature_record(input_tokens, task, reasoning, preference):
-    """Turn input counts, task, reasoning and length preference into model features."""
+def feature_record(input_tokens, task, preference):
+    """Turn input counts, task and length preference into model features."""
 
     if (
         isinstance(input_tokens, bool)
@@ -71,15 +70,11 @@ def feature_record(input_tokens, task, reasoning, preference):
     ):
         raise ValueError("Invalid input token count.")
 
-    if reasoning not in ("low", "medium", "high"):
-        raise ValueError("Invalid reasoning level.")
-
     p = normalize_length_preference(preference)
     r = dict(
         input_tokens=float(input_tokens),
         predicted_task=task,
         predicted_family=task.split(":", 1)[0],
-        reasoning_level=reasoning,
         has_length_preference=float(p is not None),
         preference_type=p["type"] if p else "none",
         preference_unit=p["unit"] if p else "none",
@@ -151,7 +146,6 @@ class OutputTokenEstimator:
         self,
         input_tokens,
         task,
-        reasoning_level,
         length_preference=None,
         target_model=QWEN,
         *,
@@ -168,11 +162,11 @@ class OutputTokenEstimator:
             raise ValueError("Unknown task category.")
 
         # Combine analyser results with simple features from the original prompt.
-        row = feature_record(input_tokens, task, reasoning_level, length_preference)
+        row = feature_record(input_tokens, task, length_preference)
         row.update(extract_request_features(prompt))
         row.update(extract_volume_features(prompt))
         row["requested_output_format"] = requested_output_format(prompt)
-        # Both forests ignore reasoning. Maximum constraints also check content length.
+        # Maximum constraints also check expected content length.
         frame = pd.DataFrame([row])
 
         if length_preference is not None and row["has_length_preference"]:
@@ -186,7 +180,7 @@ class OutputTokenEstimator:
                 # Clear structured bounds, keeping the same prompt features and input count.
                 content_row = dict(row)
                 content_row.update(
-                    feature_record(input_tokens, task, reasoning_level, None)
+                    feature_record(input_tokens, task, None)
                 )
                 content = float(self.model.predict(pd.DataFrame([content_row]))[0])
                 if not math.isfinite(content):

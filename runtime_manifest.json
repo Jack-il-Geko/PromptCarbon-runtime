@@ -35,37 +35,6 @@
         }
       }
     },
-    "reasoning": {
-      "archive": "reasoning.zip",
-      "sha256": "cb9c2770e75f906430f7f82cda8ecce4da518a53b32b549c68b67947200d4ad3",
-      "bytes": 153859015,
-      "files": {
-        "analyser/reasoning_level_estimator/bert_medium/model/model.safetensors": {
-          "bytes": 165514780,
-          "sha256": "0b652c69ba9831656479b0f3235a11bb43be9e698dfaa1ac7bc3aefc864015df"
-        },
-        "analyser/reasoning_level_estimator/bert_medium/model/tokenizer_config.json": {
-          "bytes": 1300,
-          "sha256": "e711904cac23112776b678356ccf702cf934babaa01125f698ac43bf9ad38e73"
-        },
-        "analyser/reasoning_level_estimator/bert_medium/model/special_tokens_map.json": {
-          "bytes": 125,
-          "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3"
-        },
-        "analyser/reasoning_level_estimator/bert_medium/model/config.json": {
-          "bytes": 806,
-          "sha256": "74f9aebad5788d1d2851dcc3f2bcc6ad3affe3aa8384ad5c6516109e21aba372"
-        },
-        "analyser/reasoning_level_estimator/bert_medium/model/tokenizer.json": {
-          "bytes": 711396,
-          "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
-        },
-        "analyser/reasoning_level_estimator/bert_medium/model/vocab.txt": {
-          "bytes": 231508,
-          "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
-        }
-      }
-    },
     "constraint": {
       "archive": "constraint.zip",
       "sha256": "97d0df71ca944fba2d5bef34ea412f25ac6b96bb9f435d817f47a3aa2da206a5",

@@ -522,7 +522,7 @@
       button:disabled { cursor: wait; opacity: .55; }
       .recommendation-stats > div { min-width: 0; }
       .recommendation-stats strong { overflow-wrap: anywhere; }
-      .recommendation-stats #taskStat, .recommendation-stats #reasoningStat { font-size: clamp(1rem, 1.7vw, 1.35rem); }
+      .recommendation-stats #taskStat { font-size: clamp(1rem, 1.7vw, 1.35rem); }
       .recommendation-stats small { display: block; margin-top: 7px; color: var(--muted); line-height: 1.4; }
       #taskNote { white-space: pre-line; overflow-wrap: anywhere; }
       .result-heading { display: flex; gap: 16px; justify-content: space-between; align-items: baseline; }
@@ -712,7 +712,6 @@
           <div class="recommendation-stats">
             <div><span>Input tokens</span><strong id="inputStat">—</strong><small id="inputNote" hidden></small></div>
             <div><span>Task</span><strong id="taskStat">—</strong><small id="taskNote" hidden></small></div>
-            <div><span>Reasoning level</span><strong id="reasoningStat">—</strong><small id="reasoningNote" hidden></small></div>
             <div><span>Length constraint</span><strong id="lengthStat">—</strong><small id="lengthNote" hidden></small></div>
             <div class="output-metric"><span>Estimated output tokens</span><strong id="outputStat">—</strong><small id="outputNote" hidden></small></div>
           </div>
@@ -727,7 +726,7 @@
         <p class="calculation-note">For GPT, energy uses EcoLogits architecture assumptions. Displayed values use the midpoint of the architecture range. Additional hidden reasoning tokens are outside this estimate.</p>
         <p class="formula">SCI = energy × carbon intensity + allocated hardware emissions</p>
         <p class="calculation-note">SCI represents the estimated footprint of one request. The same energy and hardware emissions are used for all six periods; only the Great Britain electricity forecast changes. Operational CO₂ is treated as CO₂e when combined with hardware emissions.</p>
-        <p class="calculation-note">Input-processing energy is not explicitly modelled. Reasoning level is shown for information and does not adjust the energy estimate. Forecasts and model estimates are uncertain; savings are not guaranteed.</p>
+        <p class="calculation-note">Input-processing energy is not explicitly modelled. Forecasts and model estimates are uncertain; savings are not guaranteed.</p>
       </details>
     </main>
 <script type="module">
@@ -795,8 +794,8 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
       document.getElementById('analysisResults').hidden = true;
       document.getElementById("carbonPanel").hidden = true;
       document.getElementById('outputWarnings').hidden = true;
-      for (const id of ['inputStat', 'outputStat', 'taskStat', 'reasoningStat', 'lengthStat']) document.getElementById(id).textContent = '—';
-      for (const id of ['inputNote', 'outputNote', 'taskNote', 'reasoningNote', 'lengthNote']) {
+      for (const id of ['inputStat', 'outputStat', 'taskStat', 'lengthStat']) document.getElementById(id).textContent = '—';
+      for (const id of ['inputNote', 'outputNote', 'taskNote', 'lengthNote']) {
         document.getElementById(id).textContent = '';
         document.getElementById(id).hidden = true;
       }
@@ -810,7 +809,6 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
       if ('outputTokens' in output) {
         showSummary({inputTokens: output.inputTokens});
         showSummary({task: output.task, confidence: output.confidence});
-        showSummary({reasoningLevel: output.reasoningLevel});
         showSummary({lengthConstraint: output.lengthConstraint});
         document.getElementById('outputStat').textContent = output.outputTokens.toLocaleString('en-US');
         document.getElementById('resultTitle').textContent = '';
@@ -821,10 +819,6 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
         document.getElementById('taskStat').textContent = output.task;
         showNote('taskNote', `Selected from 33 categories\nModel score: ${output.confidence}`);
         document.getElementById('resultTitle').textContent = 'Task classified';
-      } else if ('reasoningLevel' in output) {
-        document.getElementById('reasoningStat').textContent = output.reasoningLevel;
-        showNote('reasoningNote', 'Does not affect calculations.');
-        document.getElementById('resultTitle').textContent = 'Reasoning level estimated';
       } else if ('lengthConstraint' in output) {
         const value = output.lengthConstraint;
         const labels = {exact: 'Exactly', maximum: 'At most', max: 'At most', minimum: 'At least', min: 'At least', about: 'About', approx: 'About'};

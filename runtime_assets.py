@@ -22,7 +22,7 @@ def digest(path):
     return h.hexdigest()
 
 
-def ensure_assets(groups=("task", "reasoning", "tokenizer")):
+def ensure_assets(groups=("task", "tokenizer")):
     """Keep existing checkpoints; fetch missing groups from the release or local mirror."""
     manifest_path=ROOT/'runtime_manifest.json'
     if not manifest_path.exists():

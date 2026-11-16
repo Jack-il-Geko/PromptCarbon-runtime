@@ -7,7 +7,7 @@ PromptCarbon analyses an English prompt, estimates its output tokens and compare
 - **Mac with Apple Silicon** (M1 or later). Tested on MacBook Air M4 with 16 GB RAM; other platforms have not been tested.
 - **Python 3.12**.
 - Internet for installation and electricity forecasts. GPT token counting also needs Internet and your own OpenAI API key.
-- About **1.5 GB of disk space**, plus room for temporary downloads.
+- Allow **1.5 GB of disk space**, plus room for temporary downloads; this is a conservative allowance.
 
 ## 1. Check Python
 
@@ -37,7 +37,7 @@ Wait for **Installed. Start with:**. This command installs the application; it d
 
 The `--automatic-constraints` option installs the model for automatic word-limit detection. Manual mode remains available.
 
-The download is about **630 MB**, excluding Python. One installation without pip cache or preinstalled model assets took **67.54 seconds** on the author's M4; your time depends on the connection and computer. If interrupted, run the same command again.
+The download is smaller than in the earlier version because the reasoning model is no longer installed (about 154 MB less in model downloads). Installation time depends on the connection and computer. If interrupted, run the same command again.
 
 ## 4. Start and use
 
@@ -82,7 +82,7 @@ PromptCarbon sends the request text to OpenAI only to count input tokens; it doe
 - **Qwen2.5-3B-Instruct BF16** is the target used to train and evaluate the output-token predictor. The CFE uses a reference H100 scenario, not the measured consumption of your Mac.
 - **GPT-6-Sol is experimental.** Its visible output length is transferred from the Qwen-trained RF and has not been validated on GPT responses. The CFE uses the installed EcoLogits catalog's estimated GPT architecture and latency parameters, displaying the midpoint of its architecture range. These are not confirmed proprietary hardware details; additional hidden reasoning tokens are outside the estimate.
 - Times use your browser's local timezone. Electricity forecasts refer to **Great Britain**, regardless of your location. The first slot contains the current time.
-- Automatic constraints can be wrong; use Manual if needed. Reasoning level is displayed but does not change the calculations. Model score is the task classifier's uncalibrated softmax score.
+- Automatic constraints can be wrong; use Manual if needed. Model score is the task classifier's uncalibrated softmax score.
 - The CFE uses EcoLogits 0.11.3, batch size 64, PUE 1.2 and a three-year hardware lifetime. Input-processing energy is not explicitly modelled; operational CO₂ is approximated as CO₂e when combined with hardware emissions. Savings are estimates, not guarantees.
 
 ## Evaluation data
