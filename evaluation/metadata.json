@@ -22,6 +22,30 @@
       "n": 260,
       "mae": 101.81153846153846,
       "scope": "All complete no-preference/word-preference validation records. Predicted task, saved manual preference, browser-normalized line endings; reused development data, not an independent final test."
+    },
+    "constraint_extractor_new": {
+      "split": "new_frozen_evaluation",
+      "n": 100,
+      "correct": 97,
+      "accuracy": 0.97,
+      "tp": 72,
+      "fp": 4,
+      "fn": 0,
+      "precision": 0.9473684210526315,
+      "recall": 1.0,
+      "f1": 0.972972972972973,
+      "accepted": 98,
+      "manual": 2,
+      "accepted_correct": 96,
+      "accepted_accuracy": 0.9795918367346939,
+      "coverage": 0.98,
+      "exceptions": 0,
+      "length_tokens": {
+        "min": 16,
+        "max": 56,
+        "over512": 0
+      },
+      "scope": "New synthetic short clear requests; assistant-authored labels, frozen before one inference run. Not independently human annotated or a long-document test."
     }
   },
   "source_files_sha256": {
@@ -33,7 +57,7 @@
     "output_token_estimator/random_forest/model/model.joblib": "0b9f0d5b118499ed19883f25d1bf8c551d3f5e53551a85131cb64e5045030ff1"
   },
   "exported_files_sha256": {
-    "component_results.xlsx": "ae65072e6e10911031ad19133d89f88422cf715320dd3bd4efdc3b56709feae0",
+    "component_results.xlsx": "77065f00798eeaf8844d9e9f4a8bec9080d782f9dc0c6199c2f78f3d847e84f9",
     "ecologits_comparison.xlsx": "ce15773274938419180a4882b0a0d6cf6b593db4040c7292eea675f9644fef2d",
     "energy_comparison.xlsx": "c07ede45bbaa95de85abf4c597d187f0b2cf832a8f37163bae57743740a30506",
     "constraint_extractor/results.csv": "dd5cf8be25043d545afc3769a0b690e663710b735f06fc12be031c5ce1c33159",
@@ -43,17 +67,23 @@
     "energy/prompts.csv": "bf26f376be6934737ecadddec5e09ebfe6f0493cb5efc2956cf2836d682d69b5",
     "energy/protocol.json": "42744d35b5bb311d74d8935de335266531c79e70658d501b82a05abf6ca0310d",
     "output_tokens/results.csv": "13282b55213c030be5e7e477f9be1dbe6c89e05d6f85ce77d585d27398661a94",
-    "task_classifier/results.csv": "3fc0e29a340802f4f37772f6767b004780baaa2f218247d753ec034b9dd01a08"
+    "task_classifier/results.csv": "3fc0e29a340802f4f37772f6767b004780baaa2f218247d753ec034b9dd01a08",
+    "constraint_extractor/new_prompts.jsonl": "b41c6a339ebe7fc4b5658958bf354f8326fb01357ab9fba63dbe6ad7126e08d1",
+    "constraint_extractor/new_results.csv": "3c22b36c2a2bf27e4ef562978bce860e3b00a2097eb5a1c72bedd03d7000415f",
+    "constraint_extractor/new_protocol.json": "9f276b67598b9d5a88cb1a0166b9828d8aee6939071e99dee1cbcd5dcd6be874",
+    "constraint_extractor/new_metrics.json": "81f2fe6fbb05c0a88f85a7e347e0f500a95422ae290db15066b03f1d25f5a785",
+    "constraint_extractor/README.md": "1a67e800c52d17b4230133b0b1c2f47a6f735cbada9a6f4fa56a4c34df11b369"
   },
   "workbooks": {
     "component_results.xlsx": {
       "sheets": {
         "Task Classifier": 330,
         "Constraint Extractor": 200,
-        "Output Token Estimator": 260
+        "Output Token Estimator": 260,
+        "Constraint Extractor New": 100
       },
       "original_workbook_sha256": "0e4795dd8668f6dbc8b64d037845876645756c2d356bef0664336d8a320d6ab4",
-      "publication_note": "Embedded local-folder metadata removed. Cell values, formulas, formatting, row heights and column widths preserved."
+      "publication_note": "Existing three sheets preserved; new frozen 100-prompt evaluation appended as a separate sheet."
     },
     "energy_comparison.xlsx": {
       "prompts": 9,
@@ -84,5 +114,6 @@
     "measurement_blocks": 27,
     "source_directory": "benchmarks/results/direct_execution9_20261108_173032",
     "all_qwen_responses_complete": true
-  }
+  },
+  "last_updated": "2026-11-16"
 }
