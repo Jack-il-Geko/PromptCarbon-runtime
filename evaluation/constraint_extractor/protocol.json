@@ -20,9 +20,9 @@
   "source": "Retained 100 requests unchanged plus 100 additions, 80 long and 20 short.",
   "independence": "Assistant-authored synthetic data; fifty short requests were examined in the preceding initial evaluation. Report structures and instruction templates are shared. Long requests share twenty reports. Not an independent real-user sample.",
   "selection": "All earlier 100 retained, regardless of correctness. All additional prompts and labels saved before inference; no post-result filtering or edits.",
-  "dataset_sha256": "d8de0f93554c7c3ddfe94f7b7eee94a091e87aaa532a2f3dc3c30aa69f800e1a",
+  "dataset_sha256": "4da037ab18d08f8a97b6efe9a3e26b28cd81dbdd395f4306e20dec0721580f90",
   "protected_files_sha256": {
-    "analyser/constraint_extractor/automatic/extractor.py": "977d29db30f132451182cc6136edab8582c2624c18f31b9bc710fa6754c35790",
+    "analyser/constraint_extractor/automatic/extractor.py": "8a02fe6f5d6c0c2354d5b7f10f83370c976f275a2b6c702691f8c9cbc4f8979f",
     "analyser/constraint_extractor/automatic/model/model.safetensors": "a417cc09fc4c29502ec28867bbe60f42b971e751833281ae8eb6c0467026ba09"
   },
   "bert_content_tokens": {
@@ -66,5 +66,137 @@
     },
     "selection": "All 100 additions frozen before inference; no filtering by predictions. 80 long requests share ten new source reports (eight requests per report); twenty new short requests. Source-report structures and instruction templates are shared.",
     "independence": "Synthetic assistant-authored data; related variants, not 100 independent real-user requests."
+  },
+  "heading_fix": {
+    "baseline_commit": "4991640",
+    "baseline_exact_correct": 157,
+    "baseline_n": 200,
+    "previous_decoder_sha256": "977d29db30f132451182cc6136edab8582c2624c18f31b9bc710fa6754c35790",
+    "scope": "Only two explicit instruction heading aliases added. Dataset unchanged. This sample informed the correction, so the rerun is development validation, not independent final testing.",
+    "targeted_checks": {
+      "inference": [
+        {
+          "name": "Response length",
+          "correct": true,
+          "expected": {
+            "type": "max",
+            "value": 90,
+            "unit": "words"
+          },
+          "actual": {
+            "type": "max",
+            "value": 90,
+            "unit": "words"
+          }
+        },
+        {
+          "name": "Response instruction",
+          "correct": true,
+          "expected": {
+            "type": "max",
+            "value": 90,
+            "unit": "words"
+          },
+          "actual": {
+            "type": "max",
+            "value": 90,
+            "unit": "words"
+          }
+        },
+        {
+          "name": "Response requirements",
+          "correct": true,
+          "expected": {
+            "type": "max",
+            "value": 90,
+            "unit": "words"
+          },
+          "actual": {
+            "type": "max",
+            "value": 90,
+            "unit": "words"
+          }
+        },
+        {
+          "name": "Final instructions",
+          "correct": true,
+          "expected": {
+            "type": "max",
+            "value": 90,
+            "unit": "words"
+          },
+          "actual": {
+            "type": "max",
+            "value": 90,
+            "unit": "words"
+          }
+        },
+        {
+          "name": "Response length short",
+          "correct": true,
+          "expected": {
+            "type": "exact",
+            "value": 75,
+            "unit": "words"
+          },
+          "actual": {
+            "type": "exact",
+            "value": 75,
+            "unit": "words"
+          }
+        },
+        {
+          "name": "Response instruction short",
+          "correct": true,
+          "expected": {
+            "type": "exact",
+            "value": 75,
+            "unit": "words"
+          },
+          "actual": {
+            "type": "exact",
+            "value": 75,
+            "unit": "words"
+          }
+        },
+        {
+          "name": "source only",
+          "correct": true,
+          "expected": null,
+          "actual": null
+        },
+        {
+          "name": "fenced instruction",
+          "correct": true,
+          "expected": null,
+          "actual": null
+        },
+        {
+          "name": "local title",
+          "correct": true,
+          "expected": null,
+          "actual": null
+        },
+        {
+          "name": "source after instructions",
+          "correct": true,
+          "expected": {
+            "type": "approx",
+            "value": 95,
+            "unit": "words"
+          },
+          "actual": {
+            "type": "approx",
+            "value": 95,
+            "unit": "words"
+          }
+        }
+      ],
+      "structural_fence_checks_passed": 2,
+      "scope": "Targeted regression fixtures; not an independent accuracy benchmark."
+    },
+    "updated_exact_correct": 187,
+    "regressions_on_200": 0,
+    "recovered_on_200": 30
   }
 }

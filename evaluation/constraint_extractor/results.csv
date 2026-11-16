@@ -1002,7 +1002,7 @@ he committee approved a clearer allergy information form, continued use of a com
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the school meals service throughout this review.
 
 Response length:
-For the whole response, use between 155 and 215 words.",range,"[{""type"": ""min"", ""value"": 155, ""unit"": ""words""}, {""type"": ""max"", ""value"": 215, ""unit"": ""words""}]",null,False,True,True,False,654,additional-report-5
+For the whole response, use between 155 and 215 words.",range,"[{""type"": ""min"", ""value"": 155, ""unit"": ""words""}, {""type"": ""max"", ""value"": 215, ""unit"": ""words""}]","[{""type"": ""min"", ""value"": 155, ""unit"": ""words""}, {""type"": ""max"", ""value"": 215, ""unit"": ""words""}]",True,False,True,False,654,additional-report-5
 P-ce102,"Explain the evidence to a service manager. Preserve uncertainty and distinguish approved actions from suggestions. The recorded totals are source facts, not response-length instructions.
 
 Report:
@@ -1071,7 +1071,7 @@ he committee approved a common unloading timetable, continued use of a common re
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the farmers market association throughout this review.
 
 Response length:
-For the whole response, use about 110 words.",approx,"{""type"": ""approx"", ""value"": 110, ""unit"": ""words""}",null,False,True,True,False,657,additional-report-2
+For the whole response, use about 110 words.",approx,"{""type"": ""approx"", ""value"": 110, ""unit"": ""words""}","{""type"": ""approx"", ""value"": 110, ""unit"": ""words""}",True,False,True,False,657,additional-report-2
 P-ce106,Write an invitation to a neighbourhood meeting about installing a drinking-water fountain. Make clear that the location has not been decided.,no_constraint,null,null,True,False,True,False,25,additional-short-2
 P-ce107,"For the whole response, use about 160 words.
 
@@ -1126,7 +1126,7 @@ he committee approved an interpreter booking checklist, continued use of a commo
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the community legal advice centre throughout this review.
 
 Response length:
-For the whole response, use between 170 and 230 words.",range,"[{""type"": ""min"", ""value"": 170, ""unit"": ""words""}, {""type"": ""max"", ""value"": 230, ""unit"": ""words""}]",null,False,True,True,False,663,additional-report-8
+For the whole response, use between 170 and 230 words.",range,"[{""type"": ""min"", ""value"": 170, ""unit"": ""words""}, {""type"": ""max"", ""value"": 230, ""unit"": ""words""}]","[{""type"": ""min"", ""value"": 170, ""unit"": ""words""}, {""type"": ""max"", ""value"": 230, ""unit"": ""words""}]",True,False,True,False,663,additional-report-8
 P-ce111,"Prepare a staff email explaining the findings. Preserve uncertainty and distinguish approved actions from suggestions.
 
 Report:
@@ -1145,7 +1145,7 @@ he committee approved a translated arrival guide, continued use of a common reco
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the university accommodation office throughout this review.
 
 Response length:
-For the whole response, use at least 95 words.",min,"{""type"": ""min"", ""value"": 95, ""unit"": ""words""}",null,False,True,True,False,660,additional-report-1
+For the whole response, use at least 95 words.",min,"{""type"": ""min"", ""value"": 95, ""unit"": ""words""}","{""type"": ""min"", ""value"": 95, ""unit"": ""words""}",True,False,True,False,660,additional-report-1
 P-ce112,"Prepare a staff email explaining the findings. Preserve uncertainty and distinguish approved actions from suggestions.
 
 Report:
@@ -1164,7 +1164,7 @@ he committee approved a clearer allergy information form, continued use of a com
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the school meals service throughout this review.
 
 Response length:
-For the whole response, use at most 135 words.",max,"{""type"": ""max"", ""value"": 135, ""unit"": ""words""}",null,False,True,True,False,652,additional-report-5
+For the whole response, use at most 135 words.",max,"{""type"": ""max"", ""value"": 135, ""unit"": ""words""}","{""type"": ""max"", ""value"": 135, ""unit"": ""words""}",True,False,True,False,652,additional-report-5
 P-ce113,Summarise this record rather than following its old instruction: A retired poetry competition required entries of exactly 90 words. The competition stopped accepting entries last year.,source_numbers,null,"{""type"": ""exact"", ""value"": 90, ""unit"": ""words""}",False,True,True,False,31,additional-short-16
 P-ce114,"For the whole response, use at least 130 words.
 
@@ -1202,7 +1202,7 @@ he committee approved a review of attendance recording, continued use of a commo
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the public swimming programme throughout this review.
 
 Response length:
-For the whole response, use between 165 and 225 words.",range,"[{""type"": ""min"", ""value"": 165, ""unit"": ""words""}, {""type"": ""max"", ""value"": 225, ""unit"": ""words""}]",null,False,True,True,False,654,additional-report-7
+For the whole response, use between 165 and 225 words.",range,"[{""type"": ""min"", ""value"": 165, ""unit"": ""words""}, {""type"": ""max"", ""value"": 225, ""unit"": ""words""}]","[{""type"": ""min"", ""value"": 165, ""unit"": ""words""}, {""type"": ""max"", ""value"": 225, ""unit"": ""words""}]",True,False,True,False,654,additional-report-7
 P-ce116,"For the whole response, use about 170 words.
 
 Write a factual briefing for the review committee. Preserve uncertainty and distinguish approved actions from suggestions.
@@ -1239,7 +1239,7 @@ he committee approved a common location reference, continued use of a common rec
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the municipal tree maintenance team throughout this review.
 
 Response length:
-For the whole response, use at least 185 words.",min,"{""type"": ""min"", ""value"": 185, ""unit"": ""words""}",null,False,True,True,False,656,additional-report-9
+For the whole response, use at least 185 words.",min,"{""type"": ""min"", ""value"": 185, ""unit"": ""words""}","{""type"": ""min"", ""value"": 185, ""unit"": ""words""}",True,False,True,False,656,additional-report-9
 P-ce118,"Prepare a help page for a ticket machine. Use a title containing exactly 6 words, followed by unrestricted instructions for requesting assistance.",local_only,null,null,True,False,False,True,26,additional-short-14
 P-ce119,"Summarise the report for a first-time visitor. Preserve uncertainty and distinguish approved actions from suggestions.
 
@@ -1259,7 +1259,7 @@ he committee approved a consistent retrieval status log, continued use of a comm
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the regional archive reading room throughout this review.
 
 Response length:
-For the whole response, use exactly 150 words.",exact,"{""type"": ""exact"", ""value"": 150, ""unit"": ""words""}",null,False,True,True,False,665,additional-report-6
+For the whole response, use exactly 150 words.",exact,"{""type"": ""exact"", ""value"": 150, ""unit"": ""words""}","{""type"": ""exact"", ""value"": 150, ""unit"": ""words""}",True,False,True,False,665,additional-report-6
 P-ce120,"Write a factual briefing for the review committee. Preserve uncertainty and distinguish approved actions from suggestions.
 
 Report:
@@ -1278,7 +1278,7 @@ he committee approved a common unloading timetable, continued use of a common re
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the farmers market association throughout this review.
 
 Response length:
-For the whole response, use at least 100 words.",min,"{""type"": ""min"", ""value"": 100, ""unit"": ""words""}",null,False,True,True,False,655,additional-report-2
+For the whole response, use at least 100 words.",min,"{""type"": ""min"", ""value"": 100, ""unit"": ""words""}","{""type"": ""min"", ""value"": 100, ""unit"": ""words""}",True,False,True,False,655,additional-report-2
 P-ce121,Explain how a person can prepare for their first video appointment with a librarian. Keep the advice practical and avoid assumptions about their computer skills.,no_constraint,null,null,True,False,True,False,27,additional-short-1
 P-ce122,"For the whole response, use between 130 and 190 words.
 
@@ -1350,7 +1350,7 @@ he committee approved an interpreter booking checklist, continued use of a commo
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the community legal advice centre throughout this review.
 
 Response length:
-For the whole response, use at least 180 words.",min,"{""type"": ""min"", ""value"": 180, ""unit"": ""words""}",null,False,True,True,False,656,additional-report-8
+For the whole response, use at least 180 words.",min,"{""type"": ""min"", ""value"": 180, ""unit"": ""words""}","{""type"": ""min"", ""value"": 180, ""unit"": ""words""}",True,False,True,False,656,additional-report-8
 P-ce126,"For the whole response, use about 150 words.
 
 Draft a neutral public update. Preserve uncertainty and distinguish approved actions from suggestions.
@@ -1387,7 +1387,7 @@ he committee approved an assisted collection option, continued use of a common r
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the town theatre box office throughout this review.
 
 Response length:
-For the whole response, use at most 125 words.",max,"{""type"": ""max"", ""value"": 125, ""unit"": ""words""}",null,False,True,True,False,651,additional-report-3
+For the whole response, use at most 125 words.",max,"{""type"": ""max"", ""value"": 125, ""unit"": ""words""}","{""type"": ""max"", ""value"": 125, ""unit"": ""words""}",True,False,True,False,651,additional-report-3
 P-ce128,"Explain the evidence to a service manager. Preserve uncertainty and distinguish approved actions from suggestions. Include the numerical comparisons without inferring causation.
 
 Report:
@@ -1423,7 +1423,7 @@ he committee approved an interpreter booking checklist, continued use of a commo
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the community legal advice centre throughout this review.
 
 Response length:
-For the whole response, use exactly 160 words.",exact,"{""type"": ""exact"", ""value"": 160, ""unit"": ""words""}",null,False,True,True,False,658,additional-report-8
+For the whole response, use exactly 160 words.",exact,"{""type"": ""exact"", ""value"": 160, ""unit"": ""words""}","{""type"": ""exact"", ""value"": 160, ""unit"": ""words""}",True,False,True,False,658,additional-report-8
 P-ce131,"For the whole response, use at least 140 words.
 
 Summarise the report for a first-time visitor. Preserve uncertainty and distinguish approved actions from suggestions.
@@ -1477,7 +1477,7 @@ he committee approved a common location reference, continued use of a common rec
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the municipal tree maintenance team throughout this review.
 
 Response length:
-For the whole response, use between 175 and 235 words.",range,"[{""type"": ""min"", ""value"": 175, ""unit"": ""words""}, {""type"": ""max"", ""value"": 235, ""unit"": ""words""}]",null,False,True,True,False,657,additional-report-9
+For the whole response, use between 175 and 235 words.",range,"[{""type"": ""min"", ""value"": 175, ""unit"": ""words""}, {""type"": ""max"", ""value"": 235, ""unit"": ""words""}]","[{""type"": ""min"", ""value"": 175, ""unit"": ""words""}, {""type"": ""max"", ""value"": 235, ""unit"": ""words""}]",True,False,True,False,657,additional-report-9
 P-ce135,"Draft a neutral public update. Preserve uncertainty and distinguish approved actions from suggestions.
 
 Report:
@@ -1496,7 +1496,7 @@ he committee approved a consistent retrieval status log, continued use of a comm
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the regional archive reading room throughout this review.
 
 Response length:
-For the whole response, use between 160 and 220 words.",range,"[{""type"": ""min"", ""value"": 160, ""unit"": ""words""}, {""type"": ""max"", ""value"": 220, ""unit"": ""words""}]",null,False,True,True,False,661,additional-report-6
+For the whole response, use between 160 and 220 words.",range,"[{""type"": ""min"", ""value"": 160, ""unit"": ""words""}, {""type"": ""max"", ""value"": 220, ""unit"": ""words""}]","[{""type"": ""min"", ""value"": 160, ""unit"": ""words""}, {""type"": ""max"", ""value"": 220, ""unit"": ""words""}]",True,False,True,False,661,additional-report-6
 P-ce136,"Draft a neutral public update. Preserve uncertainty and distinguish approved actions from suggestions.
 
 Report:
@@ -1515,7 +1515,7 @@ he committee approved a clearer loan condition record, continued use of a common
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the community music school throughout this review.
 
 Response length:
-For the whole response, use about 200 words.",approx,"{""type"": ""approx"", ""value"": 200, ""unit"": ""words""}",null,False,True,True,False,645,additional-report-10
+For the whole response, use about 200 words.",approx,"{""type"": ""approx"", ""value"": 200, ""unit"": ""words""}","{""type"": ""approx"", ""value"": 200, ""unit"": ""words""}",True,False,True,False,645,additional-report-10
 P-ce137,"Explain the evidence to a service manager. Preserve uncertainty and distinguish approved actions from suggestions. Include the numerical comparisons without inferring causation.
 
 Report:
@@ -1551,7 +1551,7 @@ he committee approved an assisted collection option, continued use of a common r
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the town theatre box office throughout this review.
 
 Response length:
-For the whole response, use about 115 words.",approx,"{""type"": ""approx"", ""value"": 115, ""unit"": ""words""}",null,False,True,True,False,650,additional-report-3
+For the whole response, use about 115 words.",approx,"{""type"": ""approx"", ""value"": 115, ""unit"": ""words""}","{""type"": ""approx"", ""value"": 115, ""unit"": ""words""}",True,False,True,False,650,additional-report-3
 P-ce140,"Explain the evidence to a service manager. Preserve uncertainty and distinguish approved actions from suggestions. Include the numerical comparisons without inferring causation.
 
 Report:
@@ -1622,7 +1622,7 @@ he committee approved a clearer loan condition record, continued use of a common
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the community music school throughout this review.
 
 Response length:
-For the whole response, use at least 190 words.",min,"{""type"": ""min"", ""value"": 190, ""unit"": ""words""}",null,False,True,True,False,652,additional-report-10
+For the whole response, use at least 190 words.",min,"{""type"": ""min"", ""value"": 190, ""unit"": ""words""}","{""type"": ""min"", ""value"": 190, ""unit"": ""words""}",True,False,True,False,652,additional-report-10
 P-ce144,"For the whole response, use between 205 and 265 words.
 
 Prepare a note for the next review meeting. Preserve uncertainty and distinguish approved actions from suggestions.
@@ -1729,7 +1729,7 @@ he committee approved a translated arrival guide, continued use of a common reco
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the university accommodation office throughout this review.
 
 Response length:
-For the whole response, use about 105 words.",approx,"{""type"": ""approx"", ""value"": 105, ""unit"": ""words""}",null,False,True,True,False,659,additional-report-1
+For the whole response, use about 105 words.",approx,"{""type"": ""approx"", ""value"": 105, ""unit"": ""words""}","{""type"": ""approx"", ""value"": 105, ""unit"": ""words""}",True,False,True,False,659,additional-report-1
 P-ce152,"Write an overview for a new volunteer. Preserve uncertainty and distinguish approved actions from suggestions.
 
 Report:
@@ -1798,7 +1798,7 @@ he committee approved a phone support session, continued use of a common record 
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the animal rescue charity throughout this review.
 
 Response length:
-For the whole response, use about 120 words.",approx,"{""type"": ""approx"", ""value"": 120, ""unit"": ""words""}",null,False,True,True,False,661,additional-report-4
+For the whole response, use about 120 words.",approx,"{""type"": ""approx"", ""value"": 120, ""unit"": ""words""}","{""type"": ""approx"", ""value"": 120, ""unit"": ""words""}",True,False,True,False,661,additional-report-4
 P-ce156,"For the whole response, use between 125 and 185 words.
 
 Prepare a staff email explaining the findings. Preserve uncertainty and distinguish approved actions from suggestions.
@@ -1835,7 +1835,7 @@ he committee approved a review of attendance recording, continued use of a commo
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the public swimming programme throughout this review.
 
 Response length:
-For the whole response, use at least 175 words.",min,"{""type"": ""min"", ""value"": 175, ""unit"": ""words""}",null,False,True,True,False,654,additional-report-7
+For the whole response, use at least 175 words.",min,"{""type"": ""min"", ""value"": 175, ""unit"": ""words""}","{""type"": ""min"", ""value"": 175, ""unit"": ""words""}",True,False,True,False,654,additional-report-7
 P-ce158,Explain the mismatch in this source report: The source file contains 420 words and the converted file contains 398 words. No word limit applies to your explanation.,source_numbers,null,null,True,False,True,False,33,additional-short-17
 P-ce159,"Explain the evidence to a service manager. Preserve uncertainty and distinguish approved actions from suggestions. Include the numerical comparisons without inferring causation.
 
@@ -2016,7 +2016,7 @@ he committee approved a review of attendance recording, continued use of a commo
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the public swimming programme throughout this review.
 
 Response length:
-For the whole response, use exactly 155 words.",exact,"{""type"": ""exact"", ""value"": 155, ""unit"": ""words""}",null,False,True,True,False,652,additional-report-7
+For the whole response, use exactly 155 words.",exact,"{""type"": ""exact"", ""value"": 155, ""unit"": ""words""}","{""type"": ""exact"", ""value"": 155, ""unit"": ""words""}",True,False,True,False,652,additional-report-7
 P-ce174,"Explain the evidence to a service manager. Preserve uncertainty and distinguish approved actions from suggestions. The recorded totals are source facts, not response-length instructions.
 
 Report:
@@ -2069,7 +2069,7 @@ he committee approved a clearer loan condition record, continued use of a common
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the community music school throughout this review.
 
 Response length:
-For the whole response, use between 180 and 240 words.",range,"[{""type"": ""min"", ""value"": 180, ""unit"": ""words""}, {""type"": ""max"", ""value"": 240, ""unit"": ""words""}]",null,False,True,True,False,650,additional-report-10
+For the whole response, use between 180 and 240 words.",range,"[{""type"": ""min"", ""value"": 180, ""unit"": ""words""}, {""type"": ""max"", ""value"": 240, ""unit"": ""words""}]","[{""type"": ""min"", ""value"": 180, ""unit"": ""words""}, {""type"": ""max"", ""value"": 240, ""unit"": ""words""}]",True,False,True,False,650,additional-report-10
 P-ce177,"Draft a neutral public update. Preserve uncertainty and distinguish approved actions from suggestions.
 
 Report:
@@ -2088,7 +2088,7 @@ he committee approved a common unloading timetable, continued use of a common re
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the farmers market association throughout this review.
 
 Response length:
-For the whole response, use at most 120 words.",max,"{""type"": ""max"", ""value"": 120, ""unit"": ""words""}",null,False,True,True,False,652,additional-report-2
+For the whole response, use at most 120 words.",max,"{""type"": ""max"", ""value"": 120, ""unit"": ""words""}","{""type"": ""max"", ""value"": 120, ""unit"": ""words""}",True,False,True,False,652,additional-report-2
 P-ce178,"For the whole response, use at most 165 words.
 
 Prepare a note for the next review meeting. Preserve uncertainty and distinguish approved actions from suggestions.
@@ -2125,7 +2125,7 @@ he committee approved a clearer allergy information form, continued use of a com
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the school meals service throughout this review.
 
 Response length:
-For the whole response, use exactly 145 words.",exact,"{""type"": ""exact"", ""value"": 145, ""unit"": ""words""}",null,False,True,True,False,651,additional-report-5
+For the whole response, use exactly 145 words.",exact,"{""type"": ""exact"", ""value"": 145, ""unit"": ""words""}","{""type"": ""exact"", ""value"": 145, ""unit"": ""words""}",True,False,True,False,651,additional-report-5
 P-ce180,Describe the update in this archive entry: The original notice had 130 words and the accessible version had 160 words because directions were added. Treat these as historical document lengths.,source_numbers,null,null,True,False,True,False,33,additional-short-19
 P-ce181,A group registered 27 participants but only 23 attended. Write an update that distinguishes registrations from attendance.,irrelevant_numbers,null,null,True,False,True,False,20,additional-short-6
 P-ce182,"Explain the evidence to a service manager. Preserve uncertainty and distinguish approved actions from suggestions. The recorded totals are source facts, not response-length instructions.
@@ -2178,7 +2178,7 @@ he committee approved a common location reference, continued use of a common rec
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the municipal tree maintenance team throughout this review.
 
 Response length:
-For the whole response, use about 195 words.",approx,"{""type"": ""approx"", ""value"": 195, ""unit"": ""words""}",null,False,True,True,False,656,additional-report-9
+For the whole response, use about 195 words.",approx,"{""type"": ""approx"", ""value"": 195, ""unit"": ""words""}","{""type"": ""approx"", ""value"": 195, ""unit"": ""words""}",True,False,True,False,656,additional-report-9
 P-ce185,"For the whole response, use about 145 words.
 
 Prepare a note for the next review meeting. Preserve uncertainty and distinguish approved actions from suggestions.
@@ -2252,7 +2252,7 @@ he committee approved an assisted collection option, continued use of a common r
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the town theatre box office throughout this review.
 
 Response length:
-For the whole response, use exactly 135 words.",exact,"{""type"": ""exact"", ""value"": 135, ""unit"": ""words""}",null,False,True,True,False,651,additional-report-3
+For the whole response, use exactly 135 words.",exact,"{""type"": ""exact"", ""value"": 135, ""unit"": ""words""}","{""type"": ""exact"", ""value"": 135, ""unit"": ""words""}",True,False,True,False,651,additional-report-3
 P-ce190,"Write an overview for a new volunteer. Preserve uncertainty and distinguish approved actions from suggestions.
 
 Report:
@@ -2303,7 +2303,7 @@ he committee approved a consistent retrieval status log, continued use of a comm
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the regional archive reading room throughout this review.
 
 Response length:
-For the whole response, use at most 140 words.",max,"{""type"": ""max"", ""value"": 140, ""unit"": ""words""}",null,False,True,True,False,663,additional-report-6
+For the whole response, use at most 140 words.",max,"{""type"": ""max"", ""value"": 140, ""unit"": ""words""}","{""type"": ""max"", ""value"": 140, ""unit"": ""words""}",True,False,True,False,663,additional-report-6
 P-ce193,"For the whole response, use at least 150 words.
 
 Write a factual briefing for the review committee. Preserve uncertainty and distinguish approved actions from suggestions.
@@ -2340,7 +2340,7 @@ he committee approved a phone support session, continued use of a common record 
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the animal rescue charity throughout this review.
 
 Response length:
-For the whole response, use exactly 140 words.",exact,"{""type"": ""exact"", ""value"": 140, ""unit"": ""words""}",null,False,True,True,False,658,additional-report-4
+For the whole response, use exactly 140 words.",exact,"{""type"": ""exact"", ""value"": 140, ""unit"": ""words""}","{""type"": ""exact"", ""value"": 140, ""unit"": ""words""}",True,False,True,False,658,additional-report-4
 P-ce195,"For the whole response, use exactly 100 words.
 
 Summarise the report for a first-time visitor. Preserve uncertainty and distinguish approved actions from suggestions.
@@ -2377,7 +2377,7 @@ he committee approved a translated arrival guide, continued use of a common reco
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the university accommodation office throughout this review.
 
 Response length:
-For the whole response, use at most 115 words.",max,"{""type"": ""max"", ""value"": 115, ""unit"": ""words""}",null,False,True,True,False,661,additional-report-1
+For the whole response, use at most 115 words.",max,"{""type"": ""max"", ""value"": 115, ""unit"": ""words""}","{""type"": ""max"", ""value"": 115, ""unit"": ""words""}",True,False,True,False,661,additional-report-1
 P-ce197,"For the whole response, use exactly 105 words.
 
 Prepare a staff email explaining the findings. Preserve uncertainty and distinguish approved actions from suggestions.
@@ -2432,5 +2432,5 @@ he committee approved a phone support session, continued use of a common record 
 The administrative team keeps a separate register of corrections to the underlying records. Each correction identifies the original entry, the reason for changing it and the person who authorised the change. Missing values remain marked as unknown rather than being treated as zero. Several entries are still awaiting clarification from staff who were absent during the review. The committee asked for these entries to be resolved before any external publication of performance figures. Its members also noted that a service can become easier to use without increasing its recorded activity, and that a higher activity total can result from additional resources rather than a more efficient procedure. These distinctions apply to the animal rescue charity throughout this review.
 
 Response length:
-For the whole response, use at most 130 words.",max,"{""type"": ""max"", ""value"": 130, ""unit"": ""words""}",null,False,True,True,False,665,additional-report-4
+For the whole response, use at most 130 words.",max,"{""type"": ""max"", ""value"": 130, ""unit"": ""words""}","{""type"": ""max"", ""value"": 130, ""unit"": ""words""}",True,False,True,False,665,additional-report-4
 P-ce200,Draft a friendly reminder to return borrowed camping equipment clean and dry. Do not introduce a fine or deadline.,no_constraint,null,null,True,False,True,False,21,additional-short-4

@@ -7,7 +7,7 @@
   "revision": "53b17ea0d90728ac770dfd13fcb3abdc75e4f4bf",
   "weights_sha256": "a417cc09fc4c29502ec28867bbe60f42b971e751833281ae8eb6c0467026ba09",
   "source_sha256": "3fa1fa202391c7dc981dce858942a96d91812ad9cfd3fd59f4609c546fd30ef4",
-  "runtime_sha256": "977d29db30f132451182cc6136edab8582c2624c18f31b9bc710fa6754c35790",
+  "runtime_sha256": "8a02fe6f5d6c0c2354d5b7f10f83370c976f275a2b6c702691f8c9cbc4f8979f",
   "runtime_changes": [
     "Selected binary Role fixed; removed experimental environment switches",
     "Chronological context fixed to evaluated configuration",
@@ -630,5 +630,6 @@
       "Only marked source headings are separated; unmarked or implicit scopes remain uncertain.",
       "Existing synthetic development validation is not a new independent test."
     ]
-  }
+  },
+  "section_boundary_fix": "Recognise Response length: and Response instruction: as explicit instruction headings after source sections. No new numeric candidate rules or BERT changes."
 }

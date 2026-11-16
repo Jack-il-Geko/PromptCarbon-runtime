@@ -17,7 +17,7 @@ The same component and energy records are also provided as CSV for automated ana
 | Folder | Sample | Result |
 | --- | --- | --- |
 | [task_classifier](task_classifier/results.csv) | Complete revised Test Set v2: 330 prompts | 311 correct, 94.24% accuracy |
-| [constraint_extractor](constraint_extractor/README.md) | 200 synthetic requests: 70 short and 130 long (over 512 BERT content tokens) | 157 exact extractions (78.50%); 188 automatic results accepted, 146 correct. |
+| [constraint_extractor](constraint_extractor/README.md) | 200 synthetic requests: 70 short and 130 long (over 512 BERT content tokens) | 187 exact extractions (93.50%); 188 automatic results accepted, 176 correct. |
 | [output_tokens](output_tokens/results.csv) | Complete supported validation sample: 260 responses | MAE 101.81 tokens in this export |
 | [energy](energy/) | Nine prompts: three simple, three programming and three complex | 9 PromptCarbon blocks of 10 analyses and 18 Qwen responses |
 

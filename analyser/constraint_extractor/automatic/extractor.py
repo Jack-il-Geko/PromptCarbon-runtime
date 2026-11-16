@@ -308,7 +308,7 @@ SECTION = re.compile(
     r"(?P<source>report|source(?: text| document)?|document|article|passage|"
     r"text to (?:summari[sz]e|translate)|input data|records|material|notes|message|case)|"
     r"(?P<instructions>final instructions|output requirements|response requirements|"
-    r"output format|instructions|task))\s*:[ \t]*"
+    r"response length|response instruction|output format|instructions|task))\s*:[ \t]*"
 )
 COMMAND = re.compile(
     r"^\s*(?:(?:please|finally|also|then|instead)\s*,?\s+)?(?:write|return|respond|answer|reply|provide|produce|give|"
