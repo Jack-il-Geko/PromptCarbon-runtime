@@ -1,6 +1,6 @@
 {
   "export_date": "2026-11-09",
-  "selection": "Component exports retain their complete samples. EcoLogits comparisons distinguish original and error-selected samples. Energy uses 100 randomly selected requests, all 306 original/repeat blocks and 99 valid paired comparisons.",
+  "selection": "Component exports retain their complete samples. EcoLogits comparisons distinguish original and error-selected samples. Energy uses the same 100 randomly selected requests, all 307 measurement blocks and 100 valid paired comparisons.",
   "components": {
     "task_classifier": {
       "split": "test_v2",
@@ -83,13 +83,13 @@
   "exported_files_sha256": {
     "component_results.xlsx": "f44f26a39f4f57e535c74d49e78d4fc8d2038d7d91099f5c13f8c719a5f96d23",
     "ecologits_comparison.xlsx": "ce15773274938419180a4882b0a0d6cf6b593db4040c7292eea675f9644fef2d",
-    "energy_comparison.xlsx": "1d12d04225b032ee182d6a5067ee9e241f33be608609dcf4a103ac05a766a807",
+    "energy_comparison.xlsx": "e57e21b44875fd1e882cbc030eed88c269309f8c67c3e7a49f551ac3cc71c37d",
     "constraint_extractor/results.csv": "b0ca16658e862e1a844c4ba85a579d7a139321fafa7ca479e0c25772ef293fd0",
-    "energy/per_prompt.csv": "45f1556739ef58ffeddd55f0d185f82c402fa0ee68e8130d5a5abbecca0bf6a3",
-    "energy/summary.csv": "e681ba72771aab65ca271cd7d288c8d81f8399599d0c4500096aa99980bcc684",
-    "energy/runs.csv": "362087157662b151cf56c9d2afee4a009ea8819882468ed3023b8a5b759e49c5",
+    "energy/per_prompt.csv": "5df9910fc153e4877527d4e490ef43af8515db748867af865299bbed107bf164",
+    "energy/summary.csv": "3d0bc2e7a7a060585a600b8e984dd89e1a3038699682bb22e35351359b10e572",
+    "energy/runs.csv": "787d0e1160ef55622503c648a576015211265cc9e64fb1363d8f4f0b05768865",
     "energy/prompts.csv": "07f1e44bf7a9304593f02e32d2dd11aa8d21a9ee67374f6e7813e38300ef6142",
-    "energy/protocol.json": "4f57f351569982af3fbab528b570e6650c56a837a7e8d3d0f510d96601e6fd36",
+    "energy/protocol.json": "3e8e9f1c2f6508964d47e6970948528e45c932c08a2f66b27562814a5ac0c2cd",
     "output_tokens/results.csv": "13282b55213c030be5e7e477f9be1dbe6c89e05d6f85ce77d585d27398661a94",
     "task_classifier/results.csv": "3fc0e29a340802f4f37772f6767b004780baaa2f218247d753ec034b9dd01a08",
     "constraint_extractor/README.md": "d9b3ad0bc2d95e4e19217f5dc586df53ab77d0d5c43abf764ec5b55cf80e0c9e",
@@ -108,17 +108,28 @@
     },
     "energy_comparison.xlsx": {
       "prompts": 100,
-      "promptcarbon_blocks": 106,
+      "promptcarbon_blocks": 107,
       "qwen_blocks": 200,
       "operations_per_promptcarbon_block": 3,
       "original_workbook_sha256": "c07ede45bbaa95de85abf4c597d187f0b2cf832a8f37163bae57743740a30506",
       "additional_manual_recalculations": 48,
-      "valid_pairs": 99,
-      "invalid_windows": 1,
+      "valid_pairs": 100,
+      "invalid_windows": 0,
       "idle_corrected": true,
-      "publication_note": "Same three sheets; all 306 blocks retained. Five valid authorised repeats replace only their invalid originals in the averages.",
+      "publication_note": "Same three sheets; all 307 blocks retained. Five three-analysis repeats and one ten-analysis block recover the invalid originals. Block totals are normalized by operation count before equal-weight averaging.",
       "repeated_windows": 6,
-      "recovered_windows": 5
+      "recovered_windows": 6,
+      "long_block_operations": 10,
+      "three_analysis_recoveries": 5,
+      "long_block": {
+        "id": "P-en13",
+        "attempted": 1,
+        "operations": 10,
+        "accepted": 1,
+        "normalization": "Block time and energy divided by ten",
+        "qwen_regenerated": false,
+        "idle_power_w": 0.3716712912348603
+      }
     },
     "ecologits_comparison.xlsx": {
       "original": {
@@ -138,17 +149,25 @@
   },
   "energy": {
     "prompts": 100,
-    "measurement_blocks": 306,
-    "promptcarbon_workflows": 318,
+    "measurement_blocks": 307,
+    "promptcarbon_workflows": 328,
     "initial_promptcarbon_workflows": 300,
     "repeat_workflows": 18,
+    "long_block_workflows": 10,
+    "long_block": {
+      "id": "P-en13",
+      "attempted": 1,
+      "operations": 10,
+      "accepted": 1,
+      "normalization": "Block time and energy divided by ten",
+      "qwen_regenerated": false,
+      "idle_power_w": 0.3716712912348603
+    },
     "additional_manual_recalculations": 48,
     "qwen_responses": 200,
-    "valid_pairs": 99,
-    "excluded_windows": 1,
-    "excluded_ids": [
-      "P-en13"
-    ],
+    "valid_pairs": 100,
+    "excluded_windows": 0,
+    "excluded_ids": [],
     "repeat_measurements": {
       "attempted": 6,
       "operations": 18,
@@ -162,9 +181,9 @@
     "idle_subtraction": true,
     "source_directory": "benchmarks/results/energy_100_20261116",
     "all_qwen_responses_complete": true,
-    "mean_promptcarbon_net_wh": 0.00031969086413666297,
-    "mean_qwen_net_wh": 0.030486461930868458,
-    "lower_energy_percent": 98.95136777477951
+    "mean_promptcarbon_net_wh": 0.00031736629287664055,
+    "mean_qwen_net_wh": 0.03044381012688628,
+    "lower_energy_percent": 98.95753425227035
   },
   "last_updated": "2026-11-17"
 }

@@ -57,14 +57,15 @@
       "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
     }
   },
-  "benchmark_sha256": "1689bbfbbc36f8f58b8a4040edbe99936e35aee99f9735cbbc89984d4ac067b7",
+  "benchmark_sha256": "81a023e190102ee055a1f62e7a102f29cfa82da455d16d6efbb2a4a26614581b",
   "promptcarbon": {
     "blocks_per_prompt": 1,
     "analyses_per_block": 3,
     "total_analyses": 300,
     "reasoning_included": false,
     "mode": "automatic",
-    "forecasts": "fixed fixture; no network"
+    "forecasts": "fixed fixture; no network",
+    "scope": "Initial measurement plan. Accepted blocks use three workflows except P-en13, whose authorised ten-workflow block is normalized by ten. Repeats and total measured operation counts are recorded separately."
   },
   "qwen": {
     "responses_per_prompt": 2,
@@ -115,10 +116,10 @@
     "labels": "Reviewed from request instructions before measuring; never chosen using prediction errors or energy results.",
     "original_automatic_preflight_sha256": "9a3836dc9f05b781b04975fcdd07cad035524398cc4ab6de4b6038d89149d2c5"
   },
-  "completed_utc": "2026-11-17T10:24:02.918429+00:00",
+  "completed_utc": "2026-11-17T10:43:45.226437+00:00",
   "executed_benchmark_sha256": "517fa2ffc67ad9d8fb4790849b1ca2c643c280895eb1381bb417a2250eb8831e",
   "post_run_cleanup_fix": "Only cleanup of sudo keep-alive is changed after measurement. The exact executed source is retained in powermetrics_logs.zip; measurement and summary algorithms are unchanged.",
-  "raw_archive_sha256": "8cd43475621e4846ec29e04170985d5264d9656df6cf5d03400bd409610183ed",
+  "raw_archive_sha256": "f5c75701b07b06f78ecbc736310a07846fdb6d8a596148ad725f1b047bb1a4a1",
   "active_benchmark_path": "benchmarks/execution_comparison.py",
   "executed_benchmark_path": "benchmarks/energy_100.py (exact executed source retained in the raw archive)",
   "repeat_protocol": {
@@ -157,18 +158,59 @@
     "raw_records_archived": true
   },
   "original_raw_archive_sha256": "e74bb25962295c2237d87c0c01477b8c724360989ad8296480ad52f329dcb095",
+  "long_block_protocol": {
+    "prepared_utc": "2026-11-17T10:41:06.363825+00:00",
+    "ids": [
+      "P-en13"
+    ],
+    "operations_per_block": 10,
+    "attempts": 1,
+    "total_additional_workflows": 10,
+    "qwen_responses_to_generate": 0,
+    "purpose": "Longer measurement duration for the sole remaining invalid window; unchanged original prompt and no selection by energy.",
+    "previous_benchmark_sha256": "1689bbfbbc36f8f58b8a4040edbe99936e35aee99f9735cbbc89984d4ac067b7",
+    "benchmark_sha256": "81a023e190102ee055a1f62e7a102f29cfa82da455d16d6efbb2a4a26614581b",
+    "original_files_sha256": {
+      "promptcarbon/measurements.jsonl": "fcd7e4919a2f3eeb69c13280da8ee03c6e0efd2534b0895ba4b6f6876d538086",
+      "promptcarbon/idle_before.json": "d670cbf2e9ad334259c4e189aaa8f95813981c42235e9830e9fbb34fc3d68d75",
+      "promptcarbon/idle_after.json": "80f1c96b9c974ca1bc819b0efc29ca21921d42d21ec84d6f97bc1179fc55c08e",
+      "promptcarbon/config.json": "d18be6b39fb95f6952a46022db8d22f1c59e38e462cb7cd18eccb1b501591449",
+      "qwen/measurements.jsonl": "9d64b86e77e0cfdb41b3f6f95898980af52260c3836305b8bd7f2b3e599f348d",
+      "qwen/idle_before.json": "e8bf20326024151d376cbde7f605233a7a7d286aff3bee0ea0bb73f856c4856c",
+      "qwen/idle_after.json": "f6825656c3912b4a97e26ad01dc2ce71ef83ae1a222ac7d3b0110b85703ff08b",
+      "qwen/config.json": "aa56eb4b2800e104d19279d7e1261e5e002cda79d39f06939a1e88c026229594",
+      "promptcarbon/repeat_measurements.jsonl": "1458d62c5f10eff57af1a20eaf65ebbcb64c6aeb5d7498ef55ec0a08ab2e2545",
+      "promptcarbon/repeat_idle_before.json": "d08c17057d0c2f7017097788691353e61c7804682050c8f0dd40d575a6c5e904",
+      "promptcarbon/repeat_idle_after.json": "540ed8d331149711c5a250762b5f314840cba56ed695169c76ae6fca4fc5c359"
+    },
+    "coverage_rule": "Original unchanged rule; no relaxation.",
+    "sampling_ms": 10,
+    "new_idle_baselines_seconds": 30,
+    "normalization": "Divide total measured time and energy by ten. All other accepted observations retain their original operation counts.",
+    "replacement_rule": "Only P-en13; status ok, ten operations, valid original coverage criterion and identical final request hash. Keep all earlier attempts. No automatic retry.",
+    "baseline": "Use resting power measured before/after this session only for the accepted long block.",
+    "raw_records_archived": true
+  },
+  "pre_long_block_raw_archive_sha256": "8cd43475621e4846ec29e04170985d5264d9656df6cf5d03400bd409610183ed",
   "prompts": 100,
-  "valid_pairs": 99,
-  "invalid_measurement_pairs": 1,
-  "excluded_ids": [
-    "P-en13"
-  ],
-  "measurement_blocks": 306,
-  "promptcarbon_analyses": 318,
+  "valid_pairs": 100,
+  "invalid_measurement_pairs": 0,
+  "excluded_ids": [],
+  "measurement_blocks": 307,
+  "promptcarbon_analyses": 328,
   "qwen_responses": 200,
   "initial_promptcarbon_analyses": 300,
   "repeat_blocks": 6,
   "repeat_workflows": 18,
+  "long_block": {
+    "id": "P-en13",
+    "attempted": 1,
+    "operations": 10,
+    "accepted": 1,
+    "normalization": "Block time and energy divided by ten",
+    "qwen_regenerated": false,
+    "idle_power_w": 0.3716712912348603
+  },
   "additional_manual_recalculations": 48,
   "idle_subtraction": true,
   "all_responses_complete": true,
@@ -176,10 +218,10 @@
   "energy_basis": "Idle-corrected energy in summary and workbook; gross observations also retained in CSV.",
   "results_summary": {
     "total_prompts": 100,
-    "complete_valid_pairs": 99,
+    "complete_valid_pairs": 100,
     "manual_confirmation": 0,
     "completed_with_manual_fallback": 16,
-    "invalid_measurement_pairs": 1,
+    "invalid_measurement_pairs": 0,
     "incomplete_qwen_pairs": 0,
     "baseline_power_w": {
       "promptcarbon": 0.3194556285624013,
@@ -203,23 +245,32 @@
       "qwen_regenerated": false,
       "idle_power_w": 0.3608805138402966
     },
-    "mean_promptcarbon_seconds": 0.1374364224242594,
-    "mean_qwen_seconds": 25.161522043540398,
-    "mean_promptcarbon_gross_wh": 0.00033191085220725776,
-    "mean_qwen_gross_wh": 0.0329821015670174,
-    "mean_promptcarbon_idle_corrected_wh": 0.00031969086413666297,
-    "mean_qwen_idle_corrected_wh": 0.030486461930868458,
-    "lower_energy_percent_gross_wh": 98.99366372536075,
-    "lower_energy_percent_idle_corrected_wh": 98.95136777477951,
+    "long_block_measurement": {
+      "id": "P-en13",
+      "attempted": 1,
+      "operations": 10,
+      "accepted": 1,
+      "normalization": "Block time and energy divided by ten",
+      "qwen_regenerated": false,
+      "idle_power_w": 0.3716712912348603
+    },
+    "mean_promptcarbon_seconds": 0.13648062732501906,
+    "mean_qwen_seconds": 25.030594653734987,
+    "mean_promptcarbon_gross_wh": 0.00032950729499074075,
+    "mean_qwen_gross_wh": 0.032926463760722224,
+    "mean_promptcarbon_idle_corrected_wh": 0.00031736629287664055,
+    "mean_qwen_idle_corrected_wh": 0.03044381012688628,
+    "lower_energy_percent_gross_wh": 98.99926303235816,
+    "lower_energy_percent_idle_corrected_wh": 98.95753425227035,
     "by_workflow": {
       "automatic": {
-        "prompts": 83,
-        "mean_promptcarbon_seconds": 0.12407667370684958,
-        "mean_promptcarbon_gross_wh": 0.00029731356937751004,
-        "mean_promptcarbon_idle_corrected_wh": 0.00028627442936992936,
-        "mean_qwen_seconds": 24.111967478150564,
-        "mean_qwen_gross_wh": 0.029686116355471887,
-        "mean_qwen_idle_corrected_wh": 0.027294576541629225
+        "prompts": 84,
+        "mean_promptcarbon_seconds": 0.12309786702581833,
+        "mean_promptcarbon_gross_wh": 0.00029486406415343917,
+        "mean_promptcarbon_idle_corrected_wh": 0.00028390489733141146,
+        "mean_qwen_seconds": 23.96859623511305,
+        "mean_qwen_gross_wh": 0.029659118790972223,
+        "mean_qwen_idle_corrected_wh": 0.027281799220093765
       },
       "automatic_then_manual": {
         "prompts": 16,
