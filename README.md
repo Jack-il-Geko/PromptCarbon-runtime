@@ -90,7 +90,7 @@ PromptCarbon sends the request text to OpenAI only to count input tokens; it doe
 Open [evaluation/](evaluation/README.md) and download one of the three workbooks:
 
 - [component_results.xlsx](evaluation/component_results.xlsx): expected and predicted results for task classification, word constraints and output tokens, including the current 200-prompt constraint evaluation with 130 long requests.
-- [energy_comparison.xlsx](evaluation/energy_comparison.xlsx): the 100-prompt comparison between PromptCarbon analysis and direct Qwen execution, with 94 valid energy pairs and idle subtraction.
+- [energy_comparison.xlsx](evaluation/energy_comparison.xlsx): the 100-prompt comparison between PromptCarbon analysis and direct Qwen execution, with 99 valid energy pairs after six documented repeats, and idle subtraction.
 - [ecologits_comparison.xlsx](evaluation/ecologits_comparison.xlsx): original and separately labelled demonstration comparisons with EcoLogits.
 
 Component and energy data are also available as CSV.
