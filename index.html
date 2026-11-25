@@ -684,7 +684,7 @@
           </div>
           <div class="form-actions">
             <button id="carbonButton" type="button">Update estimate</button>
-            <a id="chatgptLink" class="run-link disabled" target="_blank" rel="noopener noreferrer" aria-disabled="true">Run in ChatGPT</a>
+            <a id="chatgptLink" class="run-link disabled" target="_blank" rel="noopener noreferrer" aria-disabled="true">Run in Qwen</a>
           </div>
         </div>
       </section>
@@ -724,8 +724,8 @@
         <p class="calculation-note">PromptCarbon analyses your prompt and estimates visible output tokens using Random Forest models. Automatic mode detects word limits with BERT; manual mode uses the limit you enter. Limits are requests, so the actual response may differ.</p>
         <p class="calculation-note">EcoLogits uses the output-token estimate to calculate energy and allocated hardware emissions for a reference scenario for the selected target model: H100 GPUs, batch size 64 and PUE 1.20. This is not a measurement of your computer.</p>
         <p class="calculation-note">For GPT, energy uses EcoLogits architecture assumptions. Displayed values use the midpoint of the architecture range. Additional hidden reasoning tokens are outside this estimate.</p>
-        <p class="formula">SCI = energy × carbon intensity + allocated hardware emissions</p>
-        <p class="calculation-note">SCI represents the estimated footprint of one request. The same energy and hardware emissions are used for all six periods; only the Great Britain electricity forecast changes. Operational CO₂ is treated as CO₂e when combined with hardware emissions.</p>
+        <p class="formula">Estimated emissions = energy × carbon intensity + allocated hardware emissions</p>
+        <p class="calculation-note">Estimated emissions represent the footprint of one request. The same energy and hardware emissions are used for all six periods; only the Great Britain electricity forecast changes. Operational CO₂ is treated as CO₂e when combined with hardware emissions.</p>
         <p class="calculation-note">Input-processing energy is not explicitly modelled. Forecasts and model estimates are uncertain; savings are not guaranteed.</p>
       </details>
     </main>
@@ -777,13 +777,36 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
     let lastEstimate = null;
     function updateChatLink() {
       const prompt = document.getElementById('userPrompt').value;
-      const empty = !prompt.trim();
-      chatgptLink.classList.toggle('disabled', empty);
-      chatgptLink.setAttribute('aria-disabled', String(empty));
-      if (empty) chatgptLink.removeAttribute('href');
-      else chatgptLink.href = 'https://chatgpt.com/?q=' + encodeURIComponent(prompt);
+      const model = document.getElementById('targetModel').value;
+      const isQwen = model === 'Qwen/Qwen2.5-3B-Instruct';
+      const isGPT = model === 'gpt-6-sol';
+      const available = isQwen || isGPT;
+      const disabled = !available || !prompt.trim();
+      chatgptLink.hidden = !available;
+      chatgptLink.textContent = isQwen ? 'Run in Qwen' : 'Run in ChatGPT';
+      chatgptLink.title = isQwen
+        ? 'Open Qwen Chat. The prompt is also copied so you can paste it if needed.'
+        : 'Open ChatGPT with this prompt.';
+      chatgptLink.classList.toggle('disabled', disabled);
+      chatgptLink.setAttribute('aria-disabled', String(disabled));
+      if (disabled) chatgptLink.removeAttribute('href');
+      else chatgptLink.href = isQwen
+        ? 'https://chat.qwen.ai/'
+        : 'https://chatgpt.com/?q=' + encodeURIComponent(prompt);
     }
+    chatgptLink.addEventListener('click', event => {
+      if (chatgptLink.getAttribute('aria-disabled') === 'true') {
+        event.preventDefault();
+        return;
+      }
+      if (document.getElementById('targetModel').value === 'Qwen/Qwen2.5-3B-Instruct'
+          && navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(document.getElementById('userPrompt').value)
+          .catch(() => {});
+      }
+    });
     document.getElementById('userPrompt').addEventListener('input', updateChatLink);
+    document.getElementById('targetModel').addEventListener('change', updateChatLink);
     updateChatLink();
     const status = document.getElementById('status');
     const result = document.getElementById('result');
@@ -939,7 +962,7 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
         const forecast = add(panel,'section','','data-section');
         const heading=add(forecast,'div','','section-heading');
         const title=add(heading,'div');add(title,'p','Next 3 hours','kicker');
-        add(title,'h2','Estimated SCI by half-hour slot');
+        add(title,'h2','Estimated emissions by half-hour slot');
         const refresh = add(heading, 'button', '↻', 'icon-button');
         refresh.type = 'button';
         refresh.title = 'Refresh carbon estimates';
@@ -987,7 +1010,7 @@ async function estimateOutputTokens(endpoint = "/api/estimate-output-tokens") {
         const wrap=add(forecast,'div','','table-wrap');
         const table=add(wrap,'table');
         const head=add(add(table,'thead'),'tr');
-        for(const label of ['Time','Carbon intensity','Saving vs now','SCI','Energy consumption']) add(head,'th',label).setAttribute('scope','col');
+        for(const label of ['Time','Carbon intensity','Saving vs now','Estimated emissions','Energy consumption']) add(head,'th',label).setAttribute('scope','col');
         const body=add(table,'tbody');
         const sorted = c.periods.map(p => p.totalGCO2eApprox).sort((a, b) => a - b);
         for (const [index, period] of c.periods.entries()) {
