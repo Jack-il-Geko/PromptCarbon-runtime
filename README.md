@@ -54,7 +54,15 @@ The browser opens automatically. If it does not, open the address printed after 
 3. Choose **Automatic** to detect a word limit with BERT, or **Manual** to enter one or select **No word limit**.
 4. Click **Update estimate** to see the analysis and environmental estimate.
 
-The refresh button above the forecast table updates the carbon comparison using the saved token counts. **Run in ChatGPT** opens ChatGPT with your prompt; it does not run the local Qwen model or guarantee the selected target model in ChatGPT.
+The refresh button above the forecast table updates the carbon comparison using the saved token counts.
+
+The chat button follows the selected target model:
+
+- **Qwen:** **Run in Qwen** opens Qwen Chat and copies your prompt to the clipboard. Paste it into the chat with **Command+V**.
+- **GPT-6-Sol:** **Run in ChatGPT** opens ChatGPT with your prompt.
+- **Other:** no chat button is shown.
+
+These buttons open external chat services; they do not run Qwen locally or guarantee that the external service uses the target model selected in PromptCarbon.
 
 Keep Terminal open. To stop PromptCarbon, press **Ctrl+C** there. Closing the browser tab does not stop it.
 
