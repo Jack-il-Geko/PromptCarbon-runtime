@@ -99,7 +99,7 @@ Open [evaluation/](evaluation/README.md) and download one of the three workbooks
 
 - [component_results.xlsx](evaluation/component_results.xlsx): expected and predicted results for task classification, word constraints and output tokens, including the current 200-prompt constraint evaluation with 130 long requests.
 - [energy_comparison.xlsx](evaluation/energy_comparison.xlsx): the 100-prompt comparison between PromptCarbon analysis and direct Qwen execution, with 100 valid pairs, documented repeat measurements and idle subtraction.
-- [ecologits_comparison.xlsx](evaluation/ecologits_comparison.xlsx): original and separately labelled demonstration comparisons with EcoLogits.
+- [ecologits_comparison.xlsx](evaluation/ecologits_comparison.xlsx): full 260-prompt validation with EcoLogits, plus the preserved original 100-prompt comparison and separately labelled demonstration; detailed CSVs and protocol are in [evaluation/ecologits/](evaluation/ecologits/).
 
 Component and energy data are also available as CSV.
 

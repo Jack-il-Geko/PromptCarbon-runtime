@@ -1,0 +1,148 @@
+{
+  "created_utc": "2026-11-26T15:38:10.984306+00:00",
+  "scope": "Extension of original environmental comparison to all 260 frozen validation predictions; not new generations, inference, training or independent validation.",
+  "prediction_source": "data/output_token_estimator/training_revision/manifest.json (private research archive; all selected counts are published in results.csv)",
+  "prediction_field": "training_revision.comparison_predictions[].selected_prediction",
+  "model_sha256": "0b9f0d5b118499ed19883f25d1bf8c551d3f5e53551a85131cb64e5045030ff1",
+  "n": 260,
+  "none_preferences": 188,
+  "word_preferences": 72,
+  "selection": "All original 260 complete no-preference/word-preference validation cases; no error-based filtering.",
+  "excluded_from_this_sample": 0,
+  "outside_scope": "23 complete validation cases with historical sentence/paragraph preferences are outside the established 260-case scope, not removed after error inspection.",
+  "assumptions": {
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "parametersBillion": 3.09,
+    "precisionBits": 16,
+    "gpu": "NVIDIA H100 80GB",
+    "requiredGPUs": 1,
+    "installedGPUs": 8,
+    "batchSize": 64,
+    "serverPowerKW": 1.2,
+    "pue": 1.2,
+    "lifetimeSeconds": 94608000,
+    "serverEmbodiedKgCO2e": 5700,
+    "gpuEmbodiedKgCO2e": 273,
+    "ecologitsVersion": "0.11.3",
+    "electricity_intensity_gco2_kwh": 257,
+    "gpu_energy_coefficients": [
+      1.1665273170451914e-06,
+      -0.011205921025579175,
+      4.052928146734005e-05
+    ],
+    "latency_coefficients": [
+      0.0006785088094353663,
+      0.0003119310311688259,
+      0.019473717579473387
+    ]
+  },
+  "units": "Local API returns kWh and g embodied CO2e. Operational CO2 = kWh * 257 gCO2/kWh, treated as CO2e approximation for total. Summary uses mWh and mg.",
+  "metric_definitions": {
+    "mae": "mean(abs(predicted-observed))",
+    "nmae": "100*sum(abs(predicted-observed))/sum(observed)",
+    "median_ape": "median(100*abs(predicted-observed)/observed), positive references only",
+    "aggregate": "sum(predicted)-sum(observed); percentage relative to sum(observed)"
+  },
+  "zero_handling": "Zero references retained for MAE and aggregates; excluded only from individual percentage errors. None present.",
+  "integrity": {
+    "original_100_reference_pairs_verified": 100,
+    "protected_sources_unchanged": true,
+    "source_sha256": {
+      "data/output_token_estimator/training_revision/manifest.json": "563e2d07f7cac090b3bac01cb0f9dd2d938638acdc19a20d39e9b1783c2260a8",
+      "data/carbon_footprint_estimator/promptcarbon_browser_results100.jsonl": "998c864cfff3bad72eedd75d4ef460b579ba40f15a1864de9e9a2edc6c0dd85b",
+      "data/carbon_footprint_estimator/selection_protocol.json": "ea7d721cf92d4e8da80c53df5b70a327b8f4a37a0376102b9e426cb664516c34",
+      "evaluation/ecologits_comparison.xlsx": "ce15773274938419180a4882b0a0d6cf6b593db4040c7292eea675f9644fef2d",
+      "output_token_estimator/random_forest/model/model.joblib": "0b9f0d5b118499ed19883f25d1bf8c551d3f5e53551a85131cb64e5045030ff1",
+      "data/output_token_estimator/generazioni/dataset_test_set_conferma_90.jsonl": "3819a67db0284f41e6059595fb855116095f94b0515a019ee3c559fa722a9673",
+      "data/output_token_estimator/generazioni/dataset_training_validation_espansione_1350.jsonl": "35318212c3c4480126c2c0eec99049df51e9daf23e9a5b128aa7100c05af198f",
+      "data/output_token_estimator/generazioni/dataset_training_validation_test_set_aggiuntive_120.jsonl": "914f05e779044487df998341407981fb39ae960e990951360daf198d9f83f44c",
+      "data/output_token_estimator/generazioni/dataset_training_validation_test_set_originali_500.jsonl": "092a6a69b2a86c6999e0561e993718d982139b790726dcceac4bb05b7f718e8d",
+      "data/output_token_estimator/generazioni/dataset_training_validation_test_set_pilota_200.jsonl": "9a9097e323ca5f994818c8135920fddffc5fb0e15f8d84b753df0d9e72bb4129",
+      "data/output_token_estimator/code_output_contrast/generations_90.jsonl": "a59c1848c4dc01011096d0f00df6d0762b3dd01d26861ff62906a0e812326765"
+    },
+    "source_hash_scope": "Pre-publication calculation inputs. The workbook was subsequently extended; its published hash is recorded in evaluation/metadata.json."
+  },
+  "software": {
+    "ecologits": "0.11.3"
+  },
+  "summary": [
+    {
+      "quantity": "tokens",
+      "unit": "tokens",
+      "n": 260,
+      "mean_observed_length": 340.75,
+      "mean_predicted_length": 291.0269230769231,
+      "mae": 101.81538461538462,
+      "nmae_percent": 29.879790055872228,
+      "median_ape_percent": 24.11715828832572,
+      "mape_percent": 53.31659205827869,
+      "sum_observed_length": 88595,
+      "sum_predicted_length": 75667,
+      "signed_aggregate_difference": -12928,
+      "absolute_aggregate_difference": 12928,
+      "signed_aggregate_difference_percent": -14.592245612054857,
+      "zero_reference_count": 0,
+      "percentage_metric_n": 260
+    },
+    {
+      "quantity": "energy",
+      "unit": "mWh",
+      "n": 260,
+      "mean_observed_length": 28.348655545456154,
+      "mean_predicted_length": 24.21195010054778,
+      "mae": 8.47051876064468,
+      "nmae_percent": 29.879790055872224,
+      "median_ape_percent": 24.117158288325722,
+      "mape_percent": 53.316592058278694,
+      "sum_observed_length": 7370.6504418186005,
+      "sum_predicted_length": 6295.107026142424,
+      "signed_aggregate_difference": -1075.5434156761767,
+      "absolute_aggregate_difference": 1075.5434156761767,
+      "signed_aggregate_difference_percent": -14.592245612054857,
+      "zero_reference_count": 0,
+      "percentage_metric_n": 260
+    },
+    {
+      "quantity": "operational_emissions",
+      "unit": "mgCO2",
+      "n": 260,
+      "mean_observed_length": 7.2856044751822315,
+      "mean_predicted_length": 6.222471175840781,
+      "mae": 2.1769233214856825,
+      "nmae_percent": 29.879790055872224,
+      "median_ape_percent": 24.11715828832572,
+      "mape_percent": 53.316592058278694,
+      "sum_observed_length": 1894.2571635473803,
+      "sum_predicted_length": 1617.842505718603,
+      "signed_aggregate_difference": -276.4146578287773,
+      "absolute_aggregate_difference": 276.4146578287773,
+      "signed_aggregate_difference_percent": -14.592245612054853,
+      "zero_reference_count": 0,
+      "percentage_metric_n": 260
+    },
+    {
+      "quantity": "total_emissions",
+      "unit": "mgCO2e_approx",
+      "n": 260,
+      "mean_observed_length": 9.589099753875912,
+      "mean_predicted_length": 8.189834765805392,
+      "mae": 2.865202874706283,
+      "nmae_percent": 29.879790055872224,
+      "median_ape_percent": 24.11715828832573,
+      "mape_percent": 53.31659205827869,
+      "sum_observed_length": 2493.1659360077374,
+      "sum_predicted_length": 2129.3570391094017,
+      "signed_aggregate_difference": -363.80889689833566,
+      "absolute_aggregate_difference": 363.80889689833566,
+      "signed_aggregate_difference_percent": -14.592245612054866,
+      "zero_reference_count": 0,
+      "percentage_metric_n": 260
+    }
+  ],
+  "publication_date": "2026-11-26",
+  "published_files": {
+    "results": "evaluation/ecologits/results.csv",
+    "summary": "evaluation/ecologits/summary.csv",
+    "workbook": "evaluation/ecologits_comparison.xlsx"
+  }
+}

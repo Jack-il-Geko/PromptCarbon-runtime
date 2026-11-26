@@ -1,6 +1,6 @@
 {
-  "export_date": "2026-11-09",
-  "selection": "Component exports retain their complete samples. EcoLogits comparisons distinguish original and error-selected samples. Energy uses the same 100 randomly selected requests, all 307 measurement blocks and 100 valid paired comparisons.",
+  "export_date": "2026-11-26",
+  "selection": "Component exports retain their complete samples. EcoLogits comparisons distinguish original and error-selected samples. Energy uses the same 100 randomly selected requests, all 307 measurement blocks and 100 valid paired comparisons. The primary environmental comparison now retains all 260 frozen original validation predictions without error filtering; both earlier 100-case workbook samples are preserved.",
   "components": {
     "task_classifier": {
       "split": "test_v2",
@@ -82,7 +82,7 @@
   },
   "exported_files_sha256": {
     "component_results.xlsx": "f44f26a39f4f57e535c74d49e78d4fc8d2038d7d91099f5c13f8c719a5f96d23",
-    "ecologits_comparison.xlsx": "ce15773274938419180a4882b0a0d6cf6b593db4040c7292eea675f9644fef2d",
+    "ecologits_comparison.xlsx": "f9e99778281158653611ae6b2495bdcb122ea160bc88eacad90c59c1adef13ab",
     "energy_comparison.xlsx": "e57e21b44875fd1e882cbc030eed88c269309f8c67c3e7a49f551ac3cc71c37d",
     "constraint_extractor/results.csv": "b0ca16658e862e1a844c4ba85a579d7a139321fafa7ca479e0c25772ef293fd0",
     "energy/per_prompt.csv": "5df9910fc153e4877527d4e490ef43af8515db748867af865299bbed107bf164",
@@ -94,7 +94,11 @@
     "task_classifier/results.csv": "3fc0e29a340802f4f37772f6767b004780baaa2f218247d753ec034b9dd01a08",
     "constraint_extractor/README.md": "d9b3ad0bc2d95e4e19217f5dc586df53ab77d0d5c43abf764ec5b55cf80e0c9e",
     "constraint_extractor/metrics.json": "be82c13b2075fc5884db364d0d3cabf1d8c4ca35faefc3ff18f2daaf192dbb4d",
-    "constraint_extractor/protocol.json": "8e6c44d5b15e47ca981627d9d1f8014587d4aba6174fae72b91a2acbffbe78e8"
+    "constraint_extractor/protocol.json": "8e6c44d5b15e47ca981627d9d1f8014587d4aba6174fae72b91a2acbffbe78e8",
+    "README.md": "472d4c3ea56eeb2347e9373239110a71a6f0e5f77825d16e2dd89bc8965b89b7",
+    "ecologits/summary.csv": "b7340f54ad3c9228ec5420f5f7527d65f7bdac3824804deb7ec2d863724d7c63",
+    "ecologits/protocol.json": "b2a682b4a8850c02b44fdd2a8fa1333a5aaaa788db649014397750af562f93d8",
+    "ecologits/results.csv": "40d7d1f4925985f75297d379713fefb991237407b49f43333f48a6a5d0d9ec2d"
   },
   "workbooks": {
     "component_results.xlsx": {
@@ -144,7 +148,24 @@
         "emissions_mae_gco2e": 0.0013685045371415573,
         "selection": "Selected after observing output-length errors; demonstration only."
       },
-      "original_workbook_sha256": "ce15773274938419180a4882b0a0d6cf6b593db4040c7292eea675f9644fef2d"
+      "original_workbook_sha256": "ce15773274938419180a4882b0a0d6cf6b593db4040c7292eea675f9644fef2d",
+      "validation260": {
+        "n": 260,
+        "selection": "All complete none/words examples of the established validation scope; original frozen predictions.",
+        "sheets": {
+          "Validation 260": 260,
+          "Prompts 260": 260
+        },
+        "token_mae": 101.81538461538462,
+        "energy_mae_wh": 0.00847051876064468,
+        "operational_mae_gco2": 0.0021769233214856826,
+        "total_mae_gco2e_approx": 0.002865202874706283,
+        "nmae_percent": 29.879790055872228,
+        "median_ape_percent": 24.11715828832572,
+        "signed_aggregate_difference_percent": -14.592245612054857
+      },
+      "previous_sheets_unchanged": true,
+      "published_workbook_sha256": "f9e99778281158653611ae6b2495bdcb122ea160bc88eacad90c59c1adef13ab"
     }
   },
   "energy": {
@@ -185,5 +206,6 @@
     "mean_qwen_net_wh": 0.03044381012688628,
     "lower_energy_percent": 98.95753425227035
   },
-  "last_updated": "2026-11-17"
+  "last_updated": "2026-11-17",
+  "previous_export_date": "2026-11-09"
 }

@@ -6,7 +6,7 @@
 | --- | --- |
 | [component_results.xlsx](component_results.xlsx) | Three sheets: Task Classifier (330 prompts), Constraint Extractor (200 prompts), and Output Token Estimator (260 prompts). Each record contains the prompt, expected or observed result, and prediction. |
 | [energy_comparison.xlsx](energy_comparison.xlsx) | 100 prompts, 100 valid comparisons. Same three sheets, all 307 original/repeat measurement blocks, protocol and exact requests. |
-| [ecologits_comparison.xlsx](ecologits_comparison.xlsx) | Original 100-prompt comparison and a separate 100-prompt demonstration selected after observing errors. Both samples and their Qwen responses are retained and labelled. |
+| [ecologits_comparison.xlsx](ecologits_comparison.xlsx) | Primary full 260-prompt validation, followed by the preserved original 100-prompt comparison and separate error-selected demonstration. Saved Qwen responses are included. |
 
 Download an Excel file to open it locally. GitHub does not display workbook sheets directly.
 
@@ -21,13 +21,27 @@ The same component and energy records are also provided as CSV for automated ana
 | [output_tokens](output_tokens/results.csv) | Complete supported validation sample: 260 responses | MAE 101.81 tokens in this export |
 | [energy](energy/) | 100 randomly selected requests from the existing validation pool | 300 initial PromptCarbon workflows, 18 repeat workflows and a ten-analysis block; 200 complete Qwen responses; 100 valid pairs |
 
+## Full environmental validation (RQ2)
+
+The main comparison uses all 260 original complete validation examples: 188 without structured preferences and 72 with word preferences. It reuses the frozen original predictions (MAE 101.82 tokens), not the browser-normalized CSV predictions. No new inference, training, generated responses or error-based filtering was used.
+
+- [ecologits/results.csv](ecologits/results.csv): every pair of token counts, energy, operational emissions, embodied emissions and total emissions, with individual errors.
+- [ecologits/summary.csv](ecologits/summary.csv): means, MAE, NMAE, median absolute percentage error and signed aggregate differences.
+- [ecologits/protocol.json](ecologits/protocol.json): assumptions, definitions and original-source hashes.
+
+The workbook opens with `Validation 260` (summary and individual comparisons) and `Prompts 260` (exact original prompts, saved responses and source IDs). All four earlier worksheets retain their original cells and formatting. IDs are local to each sample; use Source ID to link records.
+
+Energy MAE is 8.470519 mWh; operational-emission MAE is 2.176923 mgCO2; total-emission MAE is 2.865203 mgCO2e (approximate). NMAE is 29.88%, median absolute percentage error 24.12%, and the signed aggregate difference -14.59% for each quantity. NMAE and the signed aggregate difference are different measures; the latter permits cancellation. The old 100-prompt workbook percentage is MAPE, not NMAE.
+
+Both estimates use EcoLogits 0.11.3, Qwen2.5-3B-Instruct, 3.09B dense parameters, 16-bit H100 reference, batch 64, PUE 1.20, a three-year hardware lifetime and 257 gCO2/kWh. Only output length changes. Operational CO2 is treated as a CO2e approximation in the total. This measures prediction-error propagation, not physical environmental accuracy or independent generalisation.
+
 ## Interpretation
 
 Component samples include successful and unsuccessful predictions and were not selected by prediction error. The task test was revised and already used during development. Constraint extraction uses a revised synthetic sample, including previously evaluated short prompts and long variants of twenty reports. It is not independent real-user validation. RF results use development validation, not a new independent final test. The export preserves browser-normalized prompt records; the historical RF report retains its original-record MAE of 101.82 tokens.
 
 Constraint results evaluate decoder word constraints, including correct empty results. They do not score the server's decision to request manual input.
 
-The EcoLogits workbook keeps two distinct samples. The original sample was selected without prediction-error filtering. The demonstration sample was chosen after inspecting errors and cannot establish general prediction accuracy. Both reuse development records. The reference calculation uses observed visible Qwen output length, while PromptCarbon uses predicted length under the same environmental assumptions. This is not a comparison with measured physical emissions.
+In addition to the full validation, the EcoLogits workbook keeps two historical 100-prompt samples. The original sample was selected without prediction-error filtering. The demonstration sample was chosen after inspecting errors and cannot establish general prediction accuracy. Both reuse development records. The reference calculation uses observed visible Qwen output length, while PromptCarbon uses predicted length under the same environmental assumptions. This is not a comparison with measured physical emissions.
 
 ## Energy records
 
